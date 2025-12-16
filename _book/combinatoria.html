@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 3 Combinatoria | modelizacion-del-azar.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 3 Combinatoria | modelizacion-del-azar.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 3 Combinatoria | modelizacion-del-azar.knit" />
+  
+  
+  
+
+<meta name="author" content="" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="probabilidad.html"/>
+<link rel="next" href="variables-aleatorias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Modelización del azar</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i>“”</a></li>
+<li class="chapter" data-level="1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.1</b> Sucesos y operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad.html"><a href="probabilidad.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad.html"><a href="probabilidad.html#sucesos"><i class="fa fa-check"></i><b>2.3</b> Sucesos</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad.html"><a href="probabilidad.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.3.1</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad.html"><a href="probabilidad.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.3.2</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.3.3" data-path="02-probabilidad.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.3.3</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad.html"><a href="probabilidad.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.4</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad.html"><a href="probabilidad.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.4.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="02-probabilidad.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.5</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad.html"><a href="probabilidad.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.5.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.5.2" data-path="02-probabilidad.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.5.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.5.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.5.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad.html"><a href="probabilidad.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.6</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="probabilidad.html"><a href="probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.6.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.6.2" data-path="probabilidad.html"><a href="probabilidad.html#regla-del-producto"><i class="fa fa-check"></i><b>2.6.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.6.3" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.6.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.6.4" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.6.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="probabilidad.html"><a href="probabilidad.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.7</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="02-probabilidad.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="02-probabilidad.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.8</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="02-probabilidad.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.8.1</b> Principio de multiplicación</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="combinatoria.html"><a href="combinatoria.html"><i class="fa fa-check"></i><b>3</b> Combinatoria</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="combinatoria.html"><a href="combinatoria.html#combinaciones"><i class="fa fa-check"></i><b>3.1</b> Combinaciones</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="02-probabilidad.html"><a href="#combinaciones-sin-repetici%C3%B3n"><i class="fa fa-check"></i><b>3.1.1</b> Combinaciones sin repetición</a></li>
+<li class="chapter" data-level="3.1.2" data-path="02-probabilidad.html"><a href="#combinaciones-con-repetici%C3%B3n"><i class="fa fa-check"></i><b>3.1.2</b> Combinaciones con repetición:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="combinatoria.html"><a href="combinatoria.html#variaciones"><i class="fa fa-check"></i><b>3.2</b> Variaciones</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="02-probabilidad.html"><a href="#variaciones-sin-repetici%C3%B3n"><i class="fa fa-check"></i><b>3.2.1</b> Variaciones sin repetición</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="combinatoria.html"><a href="combinatoria.html#permutaciones"><i class="fa fa-check"></i><b>3.3</b> Permutaciones</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="02-probabilidad.html"><a href="#permutaciones-sin-repetici%C3%B3n"><i class="fa fa-check"></i><b>3.3.1</b> Permutaciones sin repetición</a></li>
+<li class="chapter" data-level="3.3.2" data-path="02-probabilidad.html"><a href="#permutaciones-con-repetici%C3%B3n"><i class="fa fa-check"></i><b>3.3.2</b> Permutaciones con repetición</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>4</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>4.1</b> Variables aleatorias discretas</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="02-probabilidad.html"><a href="#funci%C3%B3n-de-probabilidad-o-funci%C3%B3n-de-cuant%C3%ADa"><i class="fa fa-check"></i><b>4.1.1</b> Función de probabilidad o función de cuantía</a></li>
+<li class="chapter" data-level="4.1.2" data-path="02-probabilidad.html"><a href="#funci%C3%B3n-de-distribuci%C3%B3n-acumulada-fda"><i class="fa fa-check"></i><b>4.1.2</b> Función de distribución acumulada (FDA)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>5.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="5.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>5.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="5.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>5.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>5.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>5.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>5.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="5.8" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>5.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="5.9" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>5.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="5.10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>5.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html"><i class="fa fa-check"></i><b>6</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>6.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="6.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>6.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>6.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>6.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>6.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>6.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="6.3.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>6.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="6.3.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>6.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>6.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>6.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="6.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>6.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="6.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>6.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="6.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>6.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="6.8" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>6.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="6.9" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-entre-distribuciones.-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>7.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.2" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html"><i class="fa fa-check"></i><b>7.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="02-probabilidad.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>7.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="7.2.2" data-path="02-probabilidad.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>7.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="02-probabilidad.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="02-probabilidad.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>7.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="7.3.2" data-path="02-probabilidad.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>7.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="02-probabilidad.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>7.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="7.3.4" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>7.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="7.3.5" data-path="02-probabilidad.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>7.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="02-probabilidad.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>7.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="7.5" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>7.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>8</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>8.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>8.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>8.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="8.1.3" data-path="02-probabilidad.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>8.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="8.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>8.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>8.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>8.2.1</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>8.2.2</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>8.3</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="combinatoria" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Tema 3</span> Combinatoria<a href="combinatoria.html#combinatoria" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La combinatoria es la rama de las matemáticas que estudia los distintos modos de agrupar o disponer elementos de un conjunto, bajo diferentes condiciones (con o sin repetición, con o sin tener en cuenta el orden).</p>
+<p>Se utiliza para contar el número de formas posibles de seleccionar o disponer elementos sin necesidad de enumerar todos los casos posibles.</p>
+<div id="combinaciones" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Combinaciones<a href="combinatoria.html#combinaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las combinaciones se utilizan cuando lo que importa es el conjunto elegido, no el orden. Es decir, se trata de selecciones sin importar cómo se ordenan. Esto es común en contextos como la formación de comités, grupos de trabajo o en la elección de cartas en un juego.</p>
+<div id="combinaciones-sin-repetición" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Combinaciones sin repetición<a href="#combinaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>combinación sin repetición</strong> es una selección de <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetición</strong> y <strong>sin importar el orden</strong>.</p>
+<p><span class="math display">\[
+C(n,k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\]</span></p>
+<p>Se utiliza cuando se quiere saber de cuántas formas se pueden <strong>elegir</strong> <span class="math inline">\(k\)</span> elementos de entre <span class="math inline">\(n\)</span>, <strong>sin repetir</strong> y <strong>sin importar el orden</strong>.</p>
+<p><strong>Ejemplo:</strong> ¿Cuántos grupos de 3 estudiantes se pueden formar a partir de un grupo de 5?</p>
+<p><span class="math display">\[
+C(5,3) = \frac{5!}{3! \cdot 2!} = 10
+\]</span></p>
+<p><strong>En R</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="combinatoria.html#cb15-1" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+</div>
+<div id="combinaciones-con-repetición" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Combinaciones con repetición:<a href="#combinaciones-con-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>combinación con repetición</strong> es una forma de seleccionar <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>permitiendo la repetición</strong> de elementos y <strong>sin importar el orden</strong> en que se seleccionan.</p>
+<p><span class="math display">\[
+C&#39;(n,k) = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{k!(n - 1)!}
+\]</span></p>
+<p>Se utiliza cuando queremos saber cuántas maneras hay de <strong>elegir</strong> <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> opciones <strong>con repetición permitida</strong> y donde <strong>no importa el orden</strong>.</p>
+<p><strong>Ejemplo</strong> Supongamos que disponemos de 4 tipos de caramelos y queremos escoger 3 (permitiendo repetir sabores). ¿Cuántas combinaciones diferentes de caramelos podemos formar?</p>
+<p><span class="math display">\[
+C&#39;(4,3) = \binom{4 + 3 - 1}{3} = \binom{6}{3} = 20
+\]</span></p>
+<p><strong>En R</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="combinatoria.html#cb17-1" tabindex="-1"></a><span class="co"># Número de combinaciones con repetición de 3 elementos tomados de 4 tipos</span></span>
+<span id="cb17-2"><a href="combinatoria.html#cb17-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">4</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+</div>
+</div>
+<div id="variaciones" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Variaciones<a href="combinatoria.html#variaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las <strong>variaciones</strong> son disposiciones de elementos tomados de un conjunto, en las que <strong>importa el orden</strong>. Pueden ser <strong>con o sin repetición</strong>, según si se permite o no repetir elementos en la selección.</p>
+<div id="variaciones-sin-repetición" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Variaciones sin repetición<a href="#variaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>variación sin repetición</strong> es una forma de seleccionar y ordenar <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetir</strong> elementos. La fórmula de cálculo es:</p>
+<p><span class="math display">\[
+V(n,k) = \frac{n!}{(n-k)!}
+\]</span></p>
+<p>Las variaciones se usan cuando se desea contar cuántas formas hay de ordenar <span class="math inline">\(k\)</span> elementos tomados de un total de <span class="math inline">\(n\)</span>, sin repetir ningún elemento.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántos números de 2 cifras distintas se pueden formar con los dígitos del 1 al 5?
+<span class="math display">\[
+V(5,2) = \frac{5!}{(5 - 2)!} = \frac{120}{6} = 20
+\]</span></p>
+<p><strong>Código en R</strong></p>
+<p>No existe una fórmula directa para calcular las variaciones, así que se calcula directamente mediante factoriales.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="combinatoria.html#cb19-1" tabindex="-1"></a><span class="co"># Variaciones sin repetición: V(5,2)</span></span>
+<span id="cb19-2"><a href="combinatoria.html#cb19-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="fu">factorial</span>(<span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<p>###Variaciones con repetición</p>
+<p>Una <strong>variación con repetición</strong> es una disposición de <span class="math inline">\(K\)</span> elementos seleccionados de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>permitiendo repetición</strong> y <strong>teniendo en cuenta el orden</strong>. SU fórmula es:</p>
+<p><span class="math display">\[
+V&#39;(n,k) = n^k
+\]</span></p>
+<p>Las variaciones con repetición se utilizan cuando se desea contar cuántas formas hay de ordenar <span class="math inline">\(k\)</span> elementos de entre <span class="math inline">\(n\)</span>, <strong>con repetición</strong> y <strong>cuando el orden importa</strong>.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántos códigos de 3 dígitos se pueden formar con los números del 1 al 4 si se pueden repetir?</p>
+<p><span class="math display">\[
+V&#39;(4,3) = 4^3 = 64
+\]</span></p>
+<p><strong>Código en R</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="combinatoria.html#cb21-1" tabindex="-1"></a><span class="co"># Variaciones con repetición: V&#39;(4,3)</span></span>
+<span id="cb21-2"><a href="combinatoria.html#cb21-2" tabindex="-1"></a><span class="dv">4</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 64</code></pre>
+</div>
+</div>
+<div id="permutaciones" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Permutaciones<a href="combinatoria.html#permutaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las <strong>permutaciones</strong> son disposiciones u ordenaciones de elementos. Se caracterizan porque <strong>el orden sí importa</strong>. Se utilizan cuando queremos contar de cuántas maneras diferentes se pueden ordenar o disponer elementos, y el orden importa. Son muy comunes en contextos donde cada posición tiene un significado distinto, como la asignación de premios o el orden de llegada en una competición. Se dividen en dos tipos principales: sin repetición y con repetición.</p>
+<div id="permutaciones-sin-repetición" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Permutaciones sin repetición<a href="#permutaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>permutación sin repetición</strong> es una ordenación de <strong>todos los elementos</strong> de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetir</strong> ninguno. Su fórmula es:</p>
+<p><span class="math display">\[
+P(n) = n!
+\]</span></p>
+<p>Se emplean cuando queremos contar el número de formas diferentes de <strong>ordenar todos los elementos</strong> de un conjunto, sin que se repita ninguno.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántas formas hay de ordenar las letras de la palabra <strong>ROMA</strong>?</p>
+<p>Como tiene 4 letras distintas:
+<span class="math display">\[
+P(4) = 4! = 24
+\]</span></p>
+<p><strong>Código en R</strong>
+No hay una fórmula expresa para las permuntaciones, sino que se caclula con la función ‘factorial’.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="combinatoria.html#cb23-1" tabindex="-1"></a><span class="co"># Permutaciones sin repetición: P(4)</span></span>
+<span id="cb23-2"><a href="combinatoria.html#cb23-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 24</code></pre>
+</div>
+<div id="permutaciones-con-repetición" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Permutaciones con repetición<a href="#permutaciones-con-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>permutación con repetición</strong> es una ordenación de un conjunto de elementos donde algunos son <strong>idénticos entre sí</strong>. Se trata de contar cuántas formas distintas hay de ordenar dichos elementos, <strong>sin distinguir los repetidos</strong>.</p>
+<p><span class="math display">\[
+P(n; n_1, n_2, \dots, n_k) = \frac{n!}{n_1! \cdot n_2! \cdots n_k!}
+\]</span></p>
+<p>Donde:
+- <span class="math inline">\(n\)</span> es el número total de elementos,
+- <span class="math inline">\(n_1, n_2, \dots, n_k\)</span> representan las repeticiones de cada tipo de elemento indistinguible.</p>
+<p>Se usa cuando hay elementos <strong>repetidos</strong> en el conjunto, y queremos contar <strong>las disposiciones distintas</strong> teniendo en cuenta que los elementos iguales <strong>no se diferencian</strong>.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántas formas distintas hay de ordenar las letras de la palabra <strong>ANA</strong>?</p>
+<ul>
+<li>Total de letras: <span class="math inline">\(n = 3\)</span></li>
+<li>La letra A se repite dos veces: <span class="math inline">\(n_1 = 2\)</span></li>
+<li>La letra N aparece una vez: <span class="math inline">\(n_2 = 1\)</span></li>
+</ul>
+<p><span class="math display">\[
+P = \frac{3!}{2! \cdot 1!} = \frac{6}{2} = 3
+\]</span></p>
+<p><strong>Código en R</strong>
+COmo en el caso anterior, no existe una fórmula para las permutaciones.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="combinatoria.html#cb25-1" tabindex="-1"></a><span class="co"># Permutaciones con repetición: letras de &quot;ANA&quot;</span></span>
+<span id="cb25-2"><a href="combinatoria.html#cb25-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>) <span class="sc">/</span> (<span class="fu">factorial</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">factorial</span>(<span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probabilidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed",
+"collapse": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 2 Probabilidad | modelizacion-del-azar.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 2 Probabilidad | modelizacion-del-azar.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 2 Probabilidad | modelizacion-del-azar.knit" />
+  
+  
+  
+
+<meta name="author" content="" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción.html"/>
+<link rel="next" href="variables-aleatorias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Modelización del azar</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="probabilidad.html"><a href="probabilidad.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probabilidad.html"><a href="probabilidad.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.2.2</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="probabilidad.html"><a href="probabilidad.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="02-probabilidad.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.2.4</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad.html"><a href="probabilidad.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad.html"><a href="probabilidad.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.3.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="02-probabilidad.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad.html"><a href="probabilidad.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.4.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="02-probabilidad.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.4.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad.html"><a href="probabilidad.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad.html"><a href="probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.5.2" data-path="probabilidad.html"><a href="probabilidad.html#regla-del-producto"><i class="fa fa-check"></i><b>2.5.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.5.3" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.5.4" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad.html"><a href="probabilidad.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="02-probabilidad.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="02-probabilidad.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.7</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="02-probabilidad.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.7.2" data-path="probabilidad.html"><a href="probabilidad.html#combinaciones"><i class="fa fa-check"></i><b>2.7.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.7.3" data-path="probabilidad.html"><a href="probabilidad.html#variaciones"><i class="fa fa-check"></i><b>2.7.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.7.4" data-path="probabilidad.html"><a href="probabilidad.html#permutaciones"><i class="fa fa-check"></i><b>2.7.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="02-probabilidad.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="02-probabilidad.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-entre-distribuciones.-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-2"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="02-probabilidad.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="02-probabilidad.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="02-probabilidad.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="02-probabilidad.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="02-probabilidad.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="02-probabilidad.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="02-probabilidad.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="02-probabilidad.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="02-probabilidad.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.3</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probabilidad" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Tema 2</span> Probabilidad<a href="probabilidad.html#probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducción-1" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introducción<a href="#introducci%C3%B3n-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A lo largo de nuestra vida —como ciudadanos, analistas o científicos— estamos expuestos constantemente a fenómenos inciertos: los resultados de un experimento, las fluctuaciones de los mercados, el clima, o el comportamiento humano. Todos estos fenómenos comparten una característica común: la <strong>incertidumbre</strong>.</p>
+<p>Esta incertidumbre nos lleva a formular preguntas como: - ¿Por qué se ha producido este resultado? - ¿Era previsible? - ¿Cuál es el resultado más probable? - ¿Podría haberse anticipado? - ¿Cómo influye la información disponible en nuestras expectativas?</p>
+<p>Es aquí donde entra en juego la <strong>probabilidad</strong>, que proporciona un lenguaje matemático para describir, cuantificar y gestionar la incertidumbre. Nos permite asignar un valor numérico (una probabilidad) a la posibilidad de que ocurra un determinado suceso dentro de un fenómeno aleatorio, , ayudándonos a comprender mejor lo que observamos y, en algunos casos, a anticiparlo.</p>
+<p>La <strong>Estadística</strong>, como disciplina, se apoya en dos grandes pilares:</p>
+<ul>
+<li><strong>Estadística descriptiva</strong>: organiza y resume la información observada.</li>
+<li><strong>Inferencia estadística</strong>: extrae conclusiones generales a partir de los datos, basándose en modelos de probabilidad.</li>
+</ul>
+<p>La probabilidad actúa como puente entre ambas etapas. Antes de poder interpretar datos inciertos o extraer conclusiones válidas, es necesario comprender cómo se comportan los fenómenos aleatorios.</p>
+<p>Este tema constituye la base para desarrollar ese conocimiento y tiene como objetivo:</p>
+<ul>
+<li>Introducir los elementos básicos de la teoría de la probabilidad.</li>
+<li>Analizar distintas formas de entender la probabilidad.</li>
+<li>Presentar las reglas fundamentales para operar con sucesos.</li>
+<li>Establecer las bases para trabajar con modelos probabilísticos.</li>
+<li>Introducir los principios de combinatoria, necesarios para calcular probabilidades en experimentos complejos.</li>
+</ul>
+<p>A lo largo del tema combinaremos teoría, ejemplos intuitivos y simulaciones con R para que puedas aplicar estos conceptos en problemas reales de análisis de datos, economía o gestión empresarial.</p>
+</div>
+<div id="sucesos-y-operaciones-con-sucesos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Sucesos y operaciones con sucesos<a href="probabilidad.html#sucesos-y-operaciones-con-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de estudiar cómo calcular la probabilidad de un fenómeno aleatorio, es fundamental comprender qué es un experimento aleatorio, qué posibles resultados puede tener y cómo representarlos mediante sucesos.</p>
+<div id="experimento-aleatorio-y-espacio-muestral" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Experimento aleatorio y espacio muestral<a href="probabilidad.html#experimento-aleatorio-y-espacio-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un <strong>experimento aleatorio</strong> es un proceso cuyo resultado no puede preverse con certeza, aunque se conocen todos los posibles resultados que pueden ocurrir.</p>
+<p>El conjunto de todos los resultados posibles se denomina <strong>espacio muestral</strong>, y se representa habitualmente por <span class="math inline">\(\Omega\)</span> o <span class="math inline">\(E\)</span>.</p>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li>Lanzar una moneda una vez: <span class="math inline">\(\Omega = { c, + }\)</span>, donde <span class="math inline">\(c\)</span> representa cara y <span class="math inline">\(+\)</span> cruz.</li>
+<li>Lanzar una moneda dos veces: <span class="math inline">\(\Omega = { cc, c+, +c, ++ }\)</span>.</li>
+<li>Lanzar un dado una vez: <span class="math inline">\(\Omega = {1, 2, 3, 4, 5, 6}\)</span>.</li>
+</ul>
+</div>
+<div id="tipos-de-sucesos" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Tipos de sucesos<a href="probabilidad.html#tipos-de-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un <strong>suceso</strong> (también llamado evento) es cualquier subconjunto del espacio muestral: <span class="math inline">\(A \subseteq \Omega\)</span>.</p>
+<ul>
+<li>Si contiene un solo resultado → <strong>suceso elemental</strong>.</li>
+<li>Si contiene varios → <strong>suceso compuesto</strong>.</li>
+</ul>
+<p><strong>Ejemplo:</strong> Se lanza un dado y se observa el número que aparece. El espacio muestral es: <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span><br />
+- <span class="math inline">\(A = \{2, 4, 6\}\)</span>: suceso compuesto (“salir número par”).<br />
+- <span class="math inline">\(B = \{3\}\)</span>: suceso elemental (“salir un 3”).</p>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-omega-A-1.png" width="672" /></p>
+<p><strong>Casos particulares de de sucesos</strong></p>
+<ul>
+<li><strong>Suceso seguro</strong>: contiene todos los resultados posibles (todos los elementos del espacio muestral). Siempre ocurre. <span class="math inline">\(A = \Omega\)</span>.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:diagrama-suceso-seguro"></span>
+<img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-seguro-1.png" alt="Suceso seguro: A = Ω" width="60%" />
+<p class="caption">
+Figure 2.1: Suceso seguro: A = Ω
+</p>
+</div>
+<ul>
+<li><strong>Suceso imposible</strong>: no contiene ningún resultado. Nunca ocurre. <span class="math inline">\(A = \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-imposible-1.png" width="672" /></p>
+<ul>
+<li><strong>Sucesos incompatibles</strong>: No pueden ocurrir a la vez. <span class="math inline">\(A \cap B = \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-1-1.png" width="60%" /></p>
+<ul>
+<li><strong>Sucesos compatibles</strong>: Pueden ocurrir simultáneamente. <span class="math inline">\(A \cap B \neq \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/sucesos-compatibles-1.png" width="60%" /></p>
+</div>
+<div id="operaciones-con-sucesos" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Operaciones con sucesos<a href="probabilidad.html#operaciones-con-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las operaciones con sucesos se corresponden con operaciones de conjuntos. A continuación se presentan las más relevantes, con su interpretación y visualización.</p>
+<ul>
+<li><strong>Unión</strong>: El suceso <span class="math inline">\(A \cup B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, o ambos.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:union-sucesos"></span>
+<img src="modelizacion-del-azar_files/figure-html/union-sucesos-1.png" alt="Unión de sucesos: A ∪ B" width="60%" />
+<p class="caption">
+Figure 2.2: Unión de sucesos: A ∪ B
+</p>
+</div>
+<ul>
+<li><strong>Intersección</strong>: El suceso <span class="math inline">\(A \cap B\)</span> ocurre solo si ocurren ambos sucesos a la vez.</li>
+</ul>
+<pre><code>## Loading required package: futile.logger</code></pre>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ul>
+<li><strong>Complementario</strong>: El suceso <span class="math inline">\(\overline{A}\)</span> (también denotado <span class="math inline">\(A^c\)</span>) ocurre cuando no ocurre el suceso <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<ul>
+<li><strong>Diferencia</strong>: El suceso <span class="math inline">\(A - B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span> pero no ocurre <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Por analogía, el suceso <span class="math inline">\(B-A\)</span> ocurre si ocurre <span class="math inline">\(B\)</span> pero no ocurre <span class="math inline">\(A\)</span>.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><strong>Ejemplo:</strong>Dado el espacio muestral <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>, y los sucesos:</p>
+<p>- <span class="math inline">\(A = \{2, 4, 6\}\)</span></p>
+<p>- <span class="math inline">\(B = \{1, 2, 3, 4\}\)</span></p>
+<p>entonces:</p>
+<p>- <span class="math inline">\(A \cup B = \{1, 2, 3, 4, 6\}\)</span></p>
+<p>- <span class="math inline">\(A \cap B = \{2, 4\}\)</span></p>
+<p>- <span class="math inline">\(\overline{A} = \{1, 3, 5\}\)</span></p>
+<p>- <span class="math inline">\(A - B = \{6\}\)</span></p>
+</div>
+<div id="propiedades-del-álgebra-de-sucesos" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Propiedades del álgebra de sucesos<a href="#propiedades-del-%C3%A1lgebra-de-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> sucesos del espacio muestral <span class="math inline">\(\Omega\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Idempotencia</strong>: <span class="math inline">\(A \cup A = A\)</span>, <span class="math inline">\(A \cap A = A\)</span></li>
+<li><strong>Conmutativa</strong>: <span class="math inline">\(A \cup B = B \cup A\)</span>, <span class="math inline">\(A \cap B = B \cap A\)</span></li>
+<li><strong>Asociativa</strong>: <span class="math inline">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>, etc.</li>
+<li><strong>Distributiva</strong>: <span class="math inline">\((A \cup B) \cap C = (A \cap C) \cup (B \cap C)\)</span></li>
+<li><strong>Neutro</strong>: <span class="math inline">\(A \cup \emptyset = A\)</span>, <span class="math inline">\(A \cap \Omega = A\)</span></li>
+<li><strong>Absorbente</strong>: <span class="math inline">\(A \cup \Omega = \Omega\)</span>, <span class="math inline">\(A \cap \emptyset = \emptyset\)</span></li>
+<li><strong>Complemento</strong>: <span class="math inline">\(A \cup \overline{A} = \Omega\)</span>, <span class="math inline">\(A \cap \overline{A} = \emptyset\)</span></li>
+<li><strong>Doble complemento</strong>: <span class="math inline">\(\overline{\overline{A}} = A\)</span></li>
+<li><strong>Leyes de Morgan</strong>: 1ª ley de Morgan: <span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span>, 2ª Ley de Morgan: <span class="math inline">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
+</ol>
+<p>Esta última propiedad es especialmente útil, ya que permite simplificar muchos cálculos. Por ello, vamos a definirla con mayor detalle.</p>
+<p>Las <strong>leyes de De Morgan</strong> son reglas fundamentales del álgebra de conjuntos que permiten expresar el complemento de una unión o de una intersección mediante las operaciones inversas.</p>
+<p>Se formulan del siguiente modo:</p>
+<ol style="list-style-type: decimal">
+<li>Primera ley de Morgan: <span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></li>
+</ol>
+<p>La <strong>primera ley</strong> indica que todo lo que <strong>no pertenece a la unión</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cup B}\)</span>, coincide con lo que está <strong>fuera de</strong> <span class="math inline">\(A\)</span> y <strong>fuera de</strong> <span class="math inline">\(B\)</span> simultáneamente.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Segunda Ley de Morgan: <span class="math inline">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
+</ol>
+<p>La <strong>segunda ley</strong> señala que todo lo que <strong>no pertenece a la intersección</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cap B}\)</span>, equivale a lo que <strong>no está en</strong> <span class="math inline">\(A\)</span> o <strong>no está en</strong> <span class="math inline">\(B\)</span>.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Estas leyes nos permiten transformar expresiones con complementos de conjuntos compuestos en otras más manejables, lo cual resulta especialmente útil al calcular probabilidades y trabajar con eventos complejos.</p>
+<p>###Ejercicios</p>
+<ol style="list-style-type: decimal">
+<li><p>Dado el espacio muestral <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>, define los siguientes sucesos:</p>
+<ul>
+<li>Suceso seguro: <span class="math inline">\(A = \Omega\)</span></li>
+<li>Suceso imposible: <span class="math inline">\(B = \emptyset\)</span></li>
+<li>Sucesos incompatibles: <span class="math inline">\(C = \{1, 2\},\quad D = \{3, 4\}\)</span> ya que <span class="math inline">\(C \cap D = \emptyset\)</span></li>
+<li>Sucesos compatibles: <span class="math inline">\(E = \{2, 3, 4\},\quad F = \{4, 5, 6\}\)</span> ya que <span class="math inline">\(E \cap F = \{4\}\)</span></li>
+</ul></li>
+<li><p>Verifica la primera ley de De Morgan para:
+<span class="math inline">\(A = {2, 4, 6}\)</span>,<span class="math inline">\(B = {1, 2, 3, 4}\)</span>,<span class="math inline">\(\Omega = {1, 2, 3, 4, 5, 6}\)</span></p></li>
+</ol>
+<p><span class="math display">\[
+\overline{A \cup B} = \overline{A} \cap \overline{B}
+\]</span>
+<span class="math display">\[
+A \cup B = \{1, 2, 3, 4, 6\}
+\]</span></p>
+<p>Calculamos el complementario de <span class="math inline">\(A \cup B\)</span>**</p>
+<p>Recordamos que el complemento de un conjunto <span class="math inline">\(C\)</span>, denotado <span class="math inline">\(\overline{C}\)</span>, es el conjunto de los elementos de <span class="math inline">\(\Omega\)</span> que no están en <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[
+\overline{A \cup B} = \Omega - (A \cup B) = \{1, 2, 3, 4, 5, 6\} - \{1, 2, 3, 4, 6\} = \{5\}
+\]</span></p>
+<p>Calculamos <span class="math inline">\(\overline{A}\)</span> y <span class="math inline">\(\overline{B}\)</span>**</p>
+<ul>
+<li><span class="math inline">\(\overline{A} = \Omega - A = \{1, 3, 5\}\)</span></li>
+<li><span class="math inline">\(\overline{B} = \Omega - B = \{5, 6\}\)</span></li>
+</ul>
+<p>Calculamos la intersección <span class="math inline">\(\overline{A} \cap \overline{B}\)</span>**</p>
+<p><span class="math display">\[
+\overline{A} \cap \overline{B} = \{1, 3, 5\} \cap \{5, 6\} = \{5\}
+\]</span></p>
+<p>Si comparamos los resultados</p>
+<ul>
+<li><span class="math inline">\(\overline{A \cup B} = \{5\}\)</span></li>
+<li><span class="math inline">\(\overline{A} \cap \overline{B} = \{5\}\)</span></li>
+</ul>
+<p>ambos conjuntos coinciden, por tanto:</p>
+<p><span class="math display">\[
+\boxed{\overline{A \cup B} = \overline{A} \cap \overline{B}}
+\]</span></p>
+</div>
+</div>
+<div id="concepto-de-probabilidad" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Concepto de probabilidad<a href="probabilidad.html#concepto-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La probabilidad es el lenguaje matemático con el que medimos la incertidumbre. Nos permite asignar un valor numérico a qué tan probable es que ocurra un determinado suceso dentro de un experimento aleatorio. Esta asignación es clave cuando pasamos de describir lo que ha ocurrido —estadística descriptiva— a estimar lo que podría ocurrir en el futuro o en otros contextos —inferencia estadística—.</p>
+<p>En estadística, trabajamos habitualmente con muestras para extraer conclusiones sobre poblaciones. Sin embargo, como las muestras se obtienen al azar, necesitamos herramientas para cuantificar hasta qué punto las conclusiones que obtenemos son fiables. Aquí es donde entra en juego la probabilidad: es la base teórica que justifica los métodos inferenciales.</p>
+<p>El objetivo de esta sección es proporcionar una primera aproximación al concepto de probabilidad, mostrar las principales interpretaciones existentes y presentar las herramientas que nos permitirán calcularla en distintos contextos. Estos fundamentos son esenciales para todo el análisis probabilístico posterior, incluyendo el estudio de variables aleatorias y distribuciones.</p>
+<p>La probabilidad es una herramienta matemática fundamental para analizar fenómenos inciertos. Su utilidad es clave en la toma de decisiones bajo incertidumbre, en ámbitos tan diversos como los seguros, la economía, la gestión empresarial o las ciencias sociales. Antes de aplicar reglas o fórmulas, es necesario entender qué significa hablar de la probabilidad de un suceso.</p>
+<div id="interpretaciones-de-la-probabilidad" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Interpretaciones de la probabilidad<a href="probabilidad.html#interpretaciones-de-la-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="probabilidad-clásica" class="section level4 hasAnchor" number="2.3.1.1">
+<h4><span class="header-section-number">2.3.1.1</span> Probabilidad clásica<a href="#probabilidad-cl%C3%A1sica" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una de las primeras formas de entender la probabilidad es la llamada <strong>probabilidad clásica</strong>, también conocida como <strong>probabilidad a priori</strong>. Esta interpretación surge en el contexto de los juegos de azar, donde todos los resultados posibles se consideran igualmente probables.</p>
+<p><strong>Definición</strong>: La <strong>probabilidad clásica</strong> de un suceso <span class="math inline">\(A\)</span> se define como el cociente entre el número de casos favorables a <span class="math inline">\(A\)</span> y el número total de casos posibles, siempre que todos ellos tengan la misma probabilidad de ocurrir:</p>
+<p><span class="math display">\[
+P(A) = \frac{\text{número de casos favorables a } A}{\text{número total de casos posibles}} = \frac{n(A)}{n(\Omega)}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><p><span class="math inline">\(n(A)\)</span>: número de resultados favorables al suceso <span class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(n(\Omega)\)</span>: número total de resultados posibles en el espacio muestral <span class="math inline">\(\Omega\)</span></p></li>
+<li><p>Condiciones de aplicación</p></li>
+</ul>
+<p>Esta definición solo es válida cuando:</p>
+<ul>
+<li>El espacio muestral es <strong>finito</strong></li>
+<li>Todos los resultados elementales son <strong>equiprobables</strong></li>
+</ul>
+<div id="propiedades-de-la-probabilidad-clásica" class="section level5 hasAnchor" number="2.3.1.1.1">
+<h5><span class="header-section-number">2.3.1.1.1</span> Propiedades de la probabilidad clásica<a href="#propiedades-de-la-probabilidad-cl%C3%A1sica" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>A partir de esta definición, se pueden deducir las siguientes propiedades fundamentales:</p>
+<ul>
+<li><p><strong>Rango</strong>: La probabilidad de cualquier suceso está entre 0 y 1:</p>
+<p><span class="math display">\[
+0 \leq P(A) \leq 1
+\]</span></p></li>
+<li><p><strong>Suceso imposible</strong>:</p>
+<p><span class="math display">\[
+P(\emptyset) = 0
+\]</span></p></li>
+<li><p><strong>Suceso seguro</strong>:</p>
+<p><span class="math display">\[
+P(\Omega) = 1
+\]</span></p></li>
+<li><p><strong>Complementario</strong>:</p>
+<p><span class="math display">\[
+P(\overline{A}) = 1 - P(A)
+\]</span></p></li>
+<li><p><strong>Adición para sucesos incompatibles</strong>:</p>
+<p><span class="math display">\[
+A \cap B = \emptyset \Rightarrow P(A \cup B) = P(A) + P(B)
+\]</span></p></li>
+<li><p><strong>Monotonía</strong>:</p>
+<p><span class="math display">\[
+A \subseteq B \Rightarrow P(A) \leq P(B)
+\]</span></p></li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<p>Al lanzar un dado justo, la probabilidad de obtener un número par es:</p>
+<p><span class="math display">\[
+P(\text{par}) = \frac{3}{6} = 0{,}5
+\]</span></p>
+</div>
+</div>
+<div id="probabilidad-frecuentista" class="section level4 hasAnchor" number="2.3.1.2">
+<h4><span class="header-section-number">2.3.1.2</span> Probabilidad frecuentista<a href="probabilidad.html#probabilidad-frecuentista" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una interpretación alternativa y muy influyente de la probabilidad es la <strong>frecuentista</strong>. Esta concepción se basa en la observación de fenómenos repetidos un gran número de veces.</p>
+<p><strong>Definición</strong>: La <strong>probabilidad frecuentista</strong> de un suceso <span class="math inline">\(A\)</span> se define como el <strong>límite de la frecuencia relativa</strong> de aparición de <span class="math inline">\(A\)</span> cuando el experimento se repite muchas veces en condiciones similares:</p>
+<p><span class="math display">\[
+P(A) = \lim_{n \to \infty} \frac{n(A)}{n}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(n(A)\)</span>: número de veces que ocurre el suceso <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(n\)</span>: número total de repeticiones del experimento</li>
+</ul>
+<p>Esta definición se entiende como una <strong>propiedad empírica</strong> del experimento aleatorio: cuanto mayor sea el número de repeticiones, más se estabiliza la frecuencia relativa del suceso <span class="math inline">\(A\)</span>.</p>
+<p><strong>Condiciones de aplicación</strong></p>
+<ul>
+<li>El experimento debe poder <strong>repetirse</strong> en condiciones similares o idénticas.</li>
+<li>Se requiere un número <strong>suficientemente grande</strong> de repeticiones para aproximarse al valor de la probabilidad.</li>
+</ul>
+<div id="propiedades-de-la-probabilidad-frecuentista" class="section level5 hasAnchor" number="2.3.1.2.1">
+<h5><span class="header-section-number">2.3.1.2.1</span> Propiedades de la probabilidad frecuentista<a href="probabilidad.html#propiedades-de-la-probabilidad-frecuentista" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Al igual que con la probabilidad clásica, se cumplen las propiedades fundamentales:</p>
+<ul>
+<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
+<li><span class="math inline">\(P(\Omega) = 1\)</span></li>
+<li><span class="math inline">\(P(\emptyset) = 0\)</span></li>
+<li><span class="math inline">\(P(\overline{A}) = 1 - P(A)\)</span></li>
+<li>Si <span class="math inline">\(A \cap B = \emptyset\)</span>, entonces <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span></li>
+</ul>
+<p>Estas propiedades pueden observarse empíricamente al analizar datos de experimentos reales repetidos muchas veces.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que lanzamos una moneda 1.000 veces y obtenemos 513 caras.</p>
+<p>La probabilidad frecuentista de obtener cara se estima como:</p>
+<p><span class="math display">\[
+P(\text{cara}) \approx \frac{513}{1000} = 0.513
+\]</span></p>
+<p>A medida que se incrementa el número de lanzamientos, esta frecuencia relativa tiende a estabilizarse en torno al valor teórico (0,5 si la moneda es equilibrada).</p>
+</div>
+</div>
+<div id="probabilidad-bayesiana" class="section level4 hasAnchor" number="2.3.1.3">
+<h4><span class="header-section-number">2.3.1.3</span> Probabilidad bayesiana<a href="probabilidad.html#probabilidad-bayesiana" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La <strong>probabilidad bayesiana</strong> interpreta la probabilidad como un <strong>grado de creencia subjetivo</strong> que tiene una persona sobre la ocurrencia de un suceso, en función de la <strong>información disponible</strong>.</p>
+<p>Este enfoque reconoce que las personas pueden asignar probabilidades diferentes a un mismo suceso, dependiendo del conocimiento previo que posean. A diferencia de la probabilidad clásica o frecuentista, no exige que el experimento sea repetible ni que todos los resultados sean equiprobables.</p>
+<p><strong>Características clave</strong></p>
+<ul>
+<li><strong>Subjetiva</strong>: se basa en el conocimiento, experiencia o información previa del observador.</li>
+<li><strong>Dinamismo</strong>: la probabilidad se <strong>actualiza</strong> cuando se dispone de nueva información (usando el <strong>Teorema de Bayes</strong>).</li>
+<li><strong>Útil en contextos de incertidumbre parcial</strong>, como la medicina, el diagnóstico, las decisiones económicas, etc.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<p>Supongamos que sabemos que un paciente pertenece a un grupo de riesgo de cierta enfermedad. Esto nos lleva a asignar una <strong>probabilidad inicial</strong> (o <strong>a priori</strong>) de que esté enfermo.</p>
+<p>Tras realizarle una prueba médica, si el resultado es positivo, <strong>actualizamos nuestra creencia</strong> sobre su estado de salud combinando la información previa con la nueva evidencia. Este proceso se realiza aplicando el <strong>Teorema de Bayes</strong>, que permite pasar de la probabilidad a priori a una <strong>probabilidad a posteriori</strong>.</p>
+<p><strong>Interpretación</strong></p>
+<p>La probabilidad bayesiana <strong>no es una propiedad objetiva del suceso</strong>, sino una expresión del <strong>conocimiento y la incertidumbre</strong> del observador.</p>
+<p>Por ello, es especialmente útil en situaciones donde la información es incompleta o se va obteniendo progresivamente.</p>
+</div>
+</div>
+</div>
+<div id="axiomas-de-kolmogórov" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Axiomas de Kolmogórov<a href="#axiomas-de-kolmog%C3%B3rov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La formulación matemática moderna de la probabilidad se basa en el sistema axiomático propuesto por <strong>Andréi Kolmogórov</strong> en 1933. Este enfoque establece las reglas fundamentales que debe cumplir toda asignación de probabilidades.</p>
+<p>Sean <span class="math inline">\(\Omega\)</span> el espacio muestral y <span class="math inline">\(\mathcal{F}\)</span> una colección de sucesos (subconjuntos de <span class="math inline">\(\Omega\)</span>). Una función <span class="math inline">\(P\)</span> que asigna un número real <span class="math inline">\(P(A)\)</span> a cada suceso <span class="math inline">\(A \in \mathcal{F}\)</span> es una <strong>probabilidad</strong> si cumple los siguientes axiomas:</p>
+<div id="axioma-1-no-negatividad" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Axioma 1: No negatividad<a href="probabilidad.html#axioma-1-no-negatividad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\forall A \in \mathcal{F}, \quad P(A) \geq 0
+\]</span></p>
+<p>La probabilidad de cualquier suceso es un número mayor o igual que cero.</p>
+</div>
+<div id="axioma-2-normalización" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Axioma 2: Normalización<a href="#axioma-2-normalizaci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+P(\Omega) = 1
+\]</span></p>
+<p>La probabilidad del suceso seguro (es decir, el conjunto de todos los posibles resultados) es igual a 1.</p>
+<p>###Axioma 3: Aditividad numerable</p>
+<p>Si <span class="math inline">\(A_1, A_2, A_3, \ldots\)</span> son sucesos mutuamente incompatibles (es decir, <span class="math inline">\(A_i \cap A_j = \emptyset\)</span> para <span class="math inline">\(i \neq j\)</span>), entonces:</p>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} P(A_i)
+\]</span></p>
+<p>Este axioma se conoce como <strong>sigma-aditividad</strong> y garantiza que la probabilidad se comporta de forma coherente incluso cuando consideramos una sucesión infinita de sucesos disjuntos.</p>
+<p>La tripleta <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> se denomina <strong>espacio de probabilidad</strong>.</p>
+<p><strong>Justificación y contexto</strong></p>
+<p>Aunque estos axiomas se aceptan sin demostración, tienen una fuerte motivación basada en la realidad que modelan:</p>
+<ul>
+<li>Los <strong>dos primeros axiomas</strong> pueden justificarse desde la <strong>teoría clásica</strong> (equiprobabilidad) y la <strong>frecuentista</strong> (frecuencias relativas):
+<ul>
+<li>La probabilidad no debe ser negativa.<br />
+</li>
+<li>La probabilidad del suceso seguro debe ser 1.</li>
+</ul></li>
+<li>El <strong>tercer axioma</strong> es más técnico: en la práctica, se trabaja con <strong>sucesiones finitas</strong> de sucesos, pero su generalización a casos infinitos es fundamental en el plano teórico y en el desarrollo de la probabilidad continua.</li>
+</ul>
+</div>
+<div id="propiedades-derivadas-de-los-axiomas" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Propiedades derivadas de los axiomas<a href="probabilidad.html#propiedades-derivadas-de-los-axiomas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A partir de los tres axiomas de Kolmogórov, se pueden deducir una serie de propiedades que facilitan el cálculo de probabilidades y permiten desarrollar el resto de la teoría:</p>
+<p><strong>1. Probabilidad del suceso imposible</strong></p>
+<p>El suceso imposible es el conjunto vacío, <span class="math inline">\(\emptyset\)</span>, y su probabilidad es:</p>
+<p><span class="math display">\[
+P(\emptyset) = 0
+\]</span></p>
+<p>Esto se deduce del axioma 3 aplicándolo a una familia vacía de sucesos.</p>
+<p><strong>2. Probabilidad del Complemento de un suceso</strong></p>
+<p>Dado un suceso <span class="math inline">\(A\)</span>, su complemento se denota <span class="math inline">\(\overline{A}\)</span> (o <span class="math inline">\(A^c\)</span>) y representa que no ocurre <span class="math inline">\(A\)</span>. Entonces:</p>
+<p><span class="math display">\[
+P(\overline{A}) = 1 - P(A)
+\]</span></p>
+<p>Esto se deduce usando que <span class="math inline">\(A \cup \overline{A} = \Omega\)</span> y que <span class="math inline">\(A \cap \overline{A} = \emptyset\)</span>.</p>
+<p><strong>3. Monotonía</strong></p>
+<p>Si un suceso <span class="math inline">\(A\)</span> está contenido en otro suceso <span class="math inline">\(B\)</span>, es decir <span class="math inline">\(A \subseteq B\)</span>, entonces:</p>
+<p><span class="math display">\[
+P(A) \leq P(B)
+\]</span></p>
+<p><strong>4. Aditividad finita</strong></p>
+<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son sucesos incompatibles, es decir <span class="math inline">\(A \cap B = \emptyset\)</span>, entonces:</p>
+<p><span class="math display">\[
+P(A \cup B) = P(A) + P(B)
+\]</span></p>
+<p>Este resultado es un caso particular del axioma 3.</p>
+<p>Fórmula de la unión para dos sucesos</p>
+<p>Cuando <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no son disjuntos, se puede calcular la probabilidad de su unión mediante:</p>
+<p><span class="math display">\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]</span></p>
+<p><strong>5.Probabilidad de la diferencia de sucesos</strong></p>
+<p>La probabilidad de <span class="math inline">\(A - B\)</span> (es decir, de que ocurra <span class="math inline">\(A\)</span> pero no <span class="math inline">\(B\)</span>) es:</p>
+<p><span class="math display">\[
+P(A - B) = P(A) - P(A \cap B)
+\]</span></p>
+<p>Todas estas propiedades se aplican de forma sistemática en los ejercicios prácticos y en el desarrollo de técnicas más avanzadas, como el cálculo de probabilidades condicionadas o el uso del teorema de Bayes.</p>
+</div>
+</div>
+<div id="reglas-teoremas-de-la-probabilidad" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Reglas (Teoremas) de la probabilidad<a href="probabilidad.html#reglas-teoremas-de-la-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una vez comprendido el concepto de probabilidad, es necesario aprender a combinarla en distintos contextos. Las reglas que veremos a continuación nos permiten calcular probabilidades más complejas, muchas veces necesarias en aplicaciones estadísticas, financieras o de gestión de riesgos.</p>
+<p>Estas reglas permiten calcular probabilidades más complejas combinando sucesos conocidos. Son fundamentales en aplicaciones como la predicción de riesgos o el diagnóstico médico.</p>
+<p>A partir de los axiomas de Kolmogórov y las propiedades deducidas, se pueden establecer una serie de resultados fundamentales que permiten calcular probabilidades en situaciones más complejas. A continuación presentamos los más importantes.</p>
+<div id="probabilidad-condicionada" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Probabilidad condicionada<a href="probabilidad.html#probabilidad-condicionada" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>probabilidad condicionada</strong> de un suceso <span class="math inline">\(A\)</span> dado que ha ocurrido otro suceso <span class="math inline">\(B\)</span> (con <span class="math inline">\(P(B) &gt; 0\)</span>) se define como:</p>
+<p><span class="math display">\[
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+\]</span></p>
+<p>Esta expresión representa la probabilidad de que ocurra <span class="math inline">\(A\)</span>, sabiendo que ya ha ocurrido <span class="math inline">\(B\)</span>. Es útil cuando tenemos información adicional que modifica nuestro punto de vista sobre el experimento.</p>
+<p><strong>Ejemplo:</strong> Si sabemos que ha salido un número par al lanzar un dado, la probabilidad de que sea mayor que 3 ya no es <span class="math inline">\(\frac{3}{6}\)</span>, sino <span class="math inline">\(\frac{2}{3}\)</span>, porque solo consideramos los pares: <span class="math inline">\(\{2,4,6\}\)</span>.</p>
+</div>
+<div id="regla-del-producto" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Regla del producto<a href="probabilidad.html#regla-del-producto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A partir de la definición de probabilidad condicionada, se obtiene la <strong>regla del producto</strong> para dos sucesos:</p>
+<p><span class="math display">\[
+P(A \cap B) = P(B) \cdot P(A \mid B) = P(A) \cdot P(B \mid A)
+\]</span></p>
+<p>Esta fórmula permite calcular la probabilidad de la intersección de dos sucesos.</p>
+</div>
+<div id="teorema-de-la-probabilidad-total" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Teorema de la probabilidad total<a href="probabilidad.html#teorema-de-la-probabilidad-total" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sea <span class="math inline">\(\{B_1, B_2, \dots, B_n\}\)</span> una <strong>partición del espacio muestral</strong> <span class="math inline">\(\Omega\)</span> (es decir, sucesos incompatibles y cuya unión es <span class="math inline">\(\Omega\)</span>), y sea <span class="math inline">\(A\)</span> un suceso cualquiera. Entonces:</p>
+<p><span class="math display">\[
+P(A) = \sum_{i=1}^n P(B_i) \cdot P(A \mid B_i)
+\]</span></p>
+<p>Este teorema permite descomponer la probabilidad de un suceso complejo en términos de probabilidades condicionadas, lo que resulta especialmente útil cuando se tienen diferentes escenarios posibles.</p>
+</div>
+<div id="teorema-de-bayes" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Teorema de Bayes<a href="probabilidad.html#teorema-de-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Este resultado permite <strong>invertir la condición</strong> en una probabilidad condicionada. Es decir, calcular <span class="math inline">\(P(B_i \mid A)\)</span> a partir de <span class="math inline">\(P(A \mid B_i)\)</span> y <span class="math inline">\(P(B_i)\)</span>.</p>
+<p><span class="math display">\[
+P(B_i \mid A) = \frac{P(B_i) \cdot P(A \mid B_i)}{\sum_{j=1}^n P(B_j) \cdot P(A \mid B_j)}
+\]</span></p>
+<p>Este teorema se entiende mejor visualmente a través de un diagrama de árbol, que representa cómo se ramifican los sucesos condicionales.</p>
+<p><strong>Ejemplo resuelto con el Teorema de Bayes</strong></p>
+<p>Supongamos que en una población:</p>
+<ul>
+<li>El <strong>40% fuma</strong> y el <strong>60% no fuma</strong>.</li>
+<li>Entre los fumadores, el <strong>75% son hombres</strong>.</li>
+<li>Entre los no fumadores, el <strong>40% son hombres</strong>.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:arbol-bayes"></span>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-529caf7c500a6f2c59b6" style="width:80%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-529caf7c500a6f2c59b6">{"x":{"diagram":"\ndigraph bayes_tree {\n  graph [rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightYellow]\n\n  Inicio -> Fuma [label = \"0.4\"]\n  Inicio -> NoFuma [label = \"0.6\"]\n  Fuma -> HombreF [label = \"0.75\"]\n  Fuma -> MujerF [label = \"0.25\"]\n  NoFuma -> HombreNF [label = \"0.4\"]\n  NoFuma -> MujerNF [label = \"0.6\"]\n\n  Inicio [label=\"Inicio\", fillcolor=LightBlue]\n  Fuma [label=\"Fuma\"]\n  NoFuma [label=\"No fuma\"]\n  HombreF [label=\"Hombre\"]\n  MujerF [label=\"Mujer\"]\n  HombreNF [label=\"Hombre\"]\n  MujerNF [label=\"Mujer\"]\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2.3: Diagrama de árbol para el Teorema de Bayes
+</p>
+</div>
+<p><strong>Pregunta:</strong> Si una persona seleccionada al azar es <strong>hombre</strong>, ¿cuál es la probabilidad de que <strong>fume</strong>?</p>
+<p><strong>✅ Paso 1: Definir los sucesoss</strong></p>
+<p>- <span class="math inline">\(F\)</span>: la persona <strong>fuma</strong><br />
+- <span class="math inline">\(\overline{F}\)</span>: la persona <strong>no fuma</strong><br />
+- <span class="math inline">\(H\)</span>: la persona es <strong>hombre</strong></p>
+<p>Queremos calcular:<br />
+<span class="math display">\[
+P(F \mid H) = ?
+\]</span></p>
+<p><strong>✅ Paso 2: Aplicar el Teorema de Bayes</strong></p>
+<p><span class="math display">\[
+P(F \mid H) = \frac{P(F) \cdot P(H \mid F)}{P(F) \cdot P(H \mid F) + P(\overline{F}) \cdot P(H \mid \overline{F})}
+\]</span></p>
+<p>Sustituimos los datos del árbol:</p>
+<p><span class="math display">\[
+P(F \mid H) = \frac{0.4 \cdot 0.75}{0.4 \cdot 0.75 + 0.6 \cdot 0.4} = \frac{0.3}{0.3 + 0.24} = \frac{0.3}{0.54} \approx 0{,}556
+\]</span></p>
+<p><strong>✅ Conclusión</strong></p>
+<p>La probabilidad de que una persona <strong>fume</strong>, sabiendo que es <strong>hombre</strong>, es aproximadamente <strong>0,556</strong>.</p>
+<p>Este ejemplo muestra cómo el Teorema de Bayes nos permite <strong>invertir la condición</strong> y obtener una probabilidad a posteriori a partir de datos previos y condicionales.</p>
+<p>Permite invertir probabilidades condicionadas, pasando de <span class="math inline">\(P(A \mid B)\)</span> a <span class="math inline">\(P(B \mid A)\)</span>. Es la base del razonamiento bayesiano:</p>
+<p><span class="math display">\[
+P(B_j \mid A) = \frac{P(A \mid B_j) P(B_j)}{\sum_{i=1}^n P(A \mid B_i) P(B_i)}
+\]</span></p>
+<p>Este teorema es la base de la <strong>probabilidad bayesiana</strong>, y se aplica frecuentemente en diagnóstico médico, toma de decisiones y clasificación en ciencia de datos.</p>
+<p><strong>Ejemplo típico:</strong> Si un test médico da positivo, ¿cuál es la probabilidad de que realmente el paciente esté enfermo? Bayes permite responder a esta pregunta teniendo en cuenta la probabilidad previa de enfermedad y las tasas de falsos positivos y negativos.</p>
+<div id="ejercicios-teorema-de-bayes" class="section level4 hasAnchor" number="2.5.4.1">
+<h4><span class="header-section-number">2.5.4.1</span> Ejercicios Teorema de Bayes<a href="probabilidad.html#ejercicios-teorema-de-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ejercicio-1-diagnóstico-médico" class="section level5 hasAnchor" number="2.5.4.1.1">
+<h5><span class="header-section-number">2.5.4.1.1</span> Ejercicio 1: Diagnóstico médico<a href="#ejercicio-1-diagn%C3%B3stico-m%C3%A9dico" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una enfermedad afecta al 2 % de la población. Existe una prueba médica que:</p>
+<ul>
+<li>Da positivo en el <strong>99 %</strong> de los casos si la persona está <strong>enferma</strong>.</li>
+<li>Da positivo en el <strong>5 %</strong> de los casos si la persona <strong>no está enferma</strong> (falso positivo).</li>
+</ul>
+<p><strong>Pregunta:</strong> Si una persona da positivo en la prueba, ¿cuál es la probabilidad de que esté realmente enferma?</p>
+<hr />
+<p><strong>✅Solución</strong></p>
+<p><strong>Paso 1: Definir los sucesos</strong></p>
+<ul>
+<li><span class="math inline">\(E\)</span>: persona está enferma<br />
+</li>
+<li><span class="math inline">\(\overline{E}\)</span>: persona no está enferma<br />
+</li>
+<li><span class="math inline">\(+\)</span>: la prueba da positivo</li>
+</ul>
+<p>Queremos calcular:<br />
+<span class="math display">\[
+P(E \mid +)
+\]</span></p>
+<p><strong>Paso 2: Aplicar el Teorema de Bayes</strong></p>
+<p><span class="math display">\[
+P(E \mid +) = \frac{P(E) \cdot P(+ \mid E)}{P(E) \cdot P(+ \mid E) + P(\overline{E}) \cdot P(+ \mid \overline{E})}
+\]</span></p>
+<p>Sustituimos:</p>
+<p>[ P(E +) = = = </p>
+<p>]</p>
+<p><strong>Conclusión:</strong> Aunque la prueba sea bastante fiable, la probabilidad de que una persona <strong>realmente esté enferma</strong> si da positivo es solo <strong>0,288</strong>. Esto se debe a que la enfermedad es poco frecuente.</p>
+<hr />
+</div>
+<div id="ejercicio-2-contratación-en-una-empresa" class="section level5 hasAnchor" number="2.5.4.1.2">
+<h5><span class="header-section-number">2.5.4.1.2</span> Ejercicio 2: Contratación en una empresa<a href="#ejercicio-2-contrataci%C3%B3n-en-una-empresa" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una empresa contrata a candidatos de dos universidades:</p>
+<ul>
+<li>El <strong>30%</strong> de los contratados proviene de la Universidad A, y el <strong>70%</strong> de la Universidad B.</li>
+<li>El <strong>90%</strong> de los egresados de A superan el periodo de prueba.</li>
+<li>El <strong>60%</strong> de los egresados de B lo superan.</li>
+</ul>
+<p><strong>Pregunta:</strong> Si un empleado ha superado el periodo de prueba, ¿cuál es la probabilidad de que haya estudiado en la Universidad A?</p>
+<hr />
+<p>✅ Solución guiada</p>
+<p><strong>Paso 1: Definir los sucesos</strong></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: proviene de la Universidad A<br />
+</li>
+<li><span class="math inline">\(B\)</span>: proviene de la Universidad B<br />
+</li>
+<li><span class="math inline">\(S\)</span>: supera el periodo de prueba</li>
+</ul>
+<p>Queremos calcular:<br />
+<span class="math display">\[
+P(A \mid S)
+\]</span></p>
+<p><strong>Paso 2: Aplicar el Teorema de Bayes</strong></p>
+<p><span class="math display">\[
+P(A \mid S) = \frac{P(A) \cdot P(S \mid A)}{P(A) \cdot P(S \mid A) + P(B) \cdot P(S \mid B)}
+\]</span></p>
+<p>Sustituimos:</p>
+<p><span class="math display">\[
+P(A \mid S) = \frac{0.3 \cdot 0.9}{0.3 \cdot 0.9 + 0.7 \cdot 0.6} = \frac{0.27}{0.27 + 0.42} = \frac{0.27}{0.69} \approx 0.391
+\]</span></p>
+<p><strong>Conclusión:</strong> Si un empleado supera el periodo de prueba, la probabilidad de que provenga de la Universidad A es aproximadamente <strong>0.391</strong>.</p>
+</div>
+</div>
+<div id="ejercicio-con-r-clasificación-de-correos-como-spam-aprendizaje-automático" class="section level4 hasAnchor" number="2.5.4.2">
+<h4><span class="header-section-number">2.5.4.2</span> Ejercicio con R: Clasificación de correos como spam (aprendizaje automático)<a href="#ejercicio-con-r-clasificaci%C3%B3n-de-correos-como-spam-aprendizaje-autom%C3%A1tico" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En un sistema de detección de spam, se ha entrenado un clasificador que detecta si un correo es spam o no, basado en ciertas palabras clave. Se sabe que:</p>
+<p>El 10% de los correos recibidos son spam.</p>
+<p>El clasificador:</p>
+<ul>
+<li><p>Detecta correctamente un spam el 98 % de las veces (sensibilidad).</p></li>
+<li><p>Clasifica como no spam correctamente un 90 % de los correos legítimos (especificidad).</p></li>
+</ul>
+<p>Pregunta: Si un correo ha sido marcado como spam, ¿cuál es la probabilidad de que realmente lo sea?</p>
+<p><strong>Solución</strong> En primer lugar simulamos con R:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="probabilidad.html#cb3-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb3-2"><a href="probabilidad.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="probabilidad.html#cb3-3" tabindex="-1"></a><span class="co"># Tamaño de muestra</span></span>
+<span id="cb3-4"><a href="probabilidad.html#cb3-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb3-5"><a href="probabilidad.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="probabilidad.html#cb3-6" tabindex="-1"></a><span class="co"># Generamos si el correo es spam (10%)</span></span>
+<span id="cb3-7"><a href="probabilidad.html#cb3-7" tabindex="-1"></a>es_spam <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>)</span>
+<span id="cb3-8"><a href="probabilidad.html#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="probabilidad.html#cb3-9" tabindex="-1"></a><span class="co"># Clasificador identifica spam con sensibilidad 98% y especificidad 90%</span></span>
+<span id="cb3-10"><a href="probabilidad.html#cb3-10" tabindex="-1"></a>marcado_spam <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(es_spam <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb3-11"><a href="probabilidad.html#cb3-11" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.98</span>),  <span class="co"># verdadero positivo</span></span>
+<span id="cb3-12"><a href="probabilidad.html#cb3-12" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>))  <span class="co"># falso positivo</span></span>
+<span id="cb3-13"><a href="probabilidad.html#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="probabilidad.html#cb3-14" tabindex="-1"></a><span class="co"># Guardamos en un data.frame</span></span>
+<span id="cb3-15"><a href="probabilidad.html#cb3-15" tabindex="-1"></a>correos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(es_spam, marcado_spam)</span>
+<span id="cb3-16"><a href="probabilidad.html#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="probabilidad.html#cb3-17" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
+<span id="cb3-18"><a href="probabilidad.html#cb3-18" tabindex="-1"></a><span class="fu">table</span>(correos<span class="sc">$</span>marcado_spam, correos<span class="sc">$</span>es_spam,</span>
+<span id="cb3-19"><a href="probabilidad.html#cb3-19" tabindex="-1"></a>      <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;Marcado como spam&quot;</span>, <span class="st">&quot;Es spam&quot;</span>))</span></code></pre></div>
+<pre><code>##                  Es spam
+## Marcado como spam    0    1
+##                 0 8093   20
+##                 1  876 1011</code></pre>
+<p>A continuación calculamos la probabilidad empírica:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="probabilidad.html#cb5-1" tabindex="-1"></a><span class="co"># Correos marcados como spam</span></span>
+<span id="cb5-2"><a href="probabilidad.html#cb5-2" tabindex="-1"></a>correos_marcados <span class="ot">&lt;-</span> correos[correos<span class="sc">$</span>marcado_spam <span class="sc">==</span> <span class="dv">1</span>, ]</span>
+<span id="cb5-3"><a href="probabilidad.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="probabilidad.html#cb5-4" tabindex="-1"></a><span class="co"># Proporción de verdaderos spam entre los marcados</span></span>
+<span id="cb5-5"><a href="probabilidad.html#cb5-5" tabindex="-1"></a>prob_spam_dado_marcado <span class="ot">&lt;-</span> <span class="fu">mean</span>(correos_marcados<span class="sc">$</span>es_spam)</span>
+<span id="cb5-6"><a href="probabilidad.html#cb5-6" tabindex="-1"></a>prob_spam_dado_marcado</span></code></pre></div>
+<pre><code>## [1] 0.5357711</code></pre>
+<p>Aunque el clasificador es bastante preciso (98% de sensibilidad y 90% de especificidad), solo el 53.6% de los correos marcados como spam son realmente spam.</p>
+<p>Esto ocurre porque el evento “ser spam” es poco frecuente (solo el 10% de todos los correos). En estos casos, incluso una pequeña tasa de error puede provocar que muchos correos legítimos sean marcados erróneamente como spam (falsos positivos), y eso hace que la probabilidad de que un correo marcado como spam sea realmente spam no sea tan alta como cabría esperar.</p>
+<p><strong>Conclusión clave:</strong> El valor del 53.6% muestra que en contextos con baja prevalencia (como el spam), la probabilidad posterior puede alejarse bastante de la sensibilidad del test. Es decir, tener un buen clasificador no garantiza una alta fiabilidad en los positivos si el evento que se intenta detectar es raro. Esto es una consecuencia directa del teorema de Bayes.</p>
+<p><strong>Visualización</strong></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Interpretación del gráfico Barra izquierda (Spam): Mayoritariamente clasificados correctamente como spam (color rojo). Barra derecha (No spam): Un pequeño porcentaje se clasifica erróneamente como spam (falsos positivos).</p>
+<p><strong>✅ Conclusión</strong> Con esta simulación, hemos estimado empíricamente la probabilidad <span class="math inline">\(P(Spam∣Marcado)\)</span>, es decir, la probabilidad de que un correo realmente sea spam si ha sido clasificado como tal. Este valor estará alrededor del 52%, mostrando cómo incluso un buen clasificador puede producir una alta tasa de falsos positivos cuando el evento es poco frecuente.</p>
+</div>
+</div>
+</div>
+<div id="independencia-de-sucesos" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Independencia de sucesos<a href="probabilidad.html#independencia-de-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En muchos fenómenos reales, algunos sucesos no se afectan entre sí. Por ejemplo, lanzar un dado y tirar una moneda son experimentos que no interfieren uno con otro. El concepto de independencia formaliza esta idea y nos permite simplificar notablemente los cálculos cuando se cumple. Es especialmente relevante en modelos de probabilidad compuesta y en teoría estadística.</p>
+<p>La independencia permite identificar situaciones en las que un suceso no afecta a la ocurrencia de otro, algo muy relevante para modelos de riesgo o predicciones múltiples.</p>
+<p><strong>Definición</strong></p>
+<p>Dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se consideran independientes cuando la ocurrencia de uno de ellos (por ejemplo, <span class="math inline">\(B\)</span>) no modifica la probabilidad de que ocurra el otro (<span class="math inline">\(A\)</span>). Matemáticamente, esta relación se expresa mediante las igualdades:</p>
+<ul>
+<li><span class="math inline">\(P(A \mid B) = P(A)\)</span></li>
+<li><span class="math inline">\(P(B \mid A) = P(B)\)</span></li>
+</ul>
+<p>Es decir, si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, conocer que ha ocurrido uno de ellos no aporta información adicional sobre la ocurrencia del otro. La probabilidad de <span class="math inline">\(A\)</span> condicionada a <span class="math inline">\(B\)</span> coincide con la probabilidad incondicional de <span class="math inline">\(A\)</span>, y lo mismo sucede con <span class="math inline">\(B\)</span> condicionado a <span class="math inline">\(A\)</span>.</p>
+<p>Por tanto, si dos sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes se verifica que:</p>
+<p><span class="math display">\[
+P(A \cap B) = P(A) P(B)
+\]</span></p>
+<p>En estas circunastancias:</p>
+<ul>
+<li><span class="math inline">\(P(A \mid B) = \frac{P(A \cap B)}{P(A)}=P(A)\)</span></li>
+</ul>
+<p><strong>Ejemplo:</strong> Lanzar una moneda y tirar un dado. El resultado del dado no influye en la moneda. ### Ejemplo: Independencia entre dos sucesos</p>
+<p>Supongamos que lanzamos un dado y tiramos una moneda. Definimos los siguientes sucesos:</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: obtener un número par en el dado.</li>
+<li><span class="math inline">\(B\)</span>: obtener cara en la moneda.</li>
+</ul>
+<p>Queremos saber si los sucesos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong>.</p>
+<p>Calculamos <span class="math inline">\(P(A)\)</span></p>
+<p>En un dado hay 3 números pares: 2, 4 y 6. Por tanto:</p>
+<p><span class="math display">\[
+P(A) = \frac{3}{6} = 0.5
+\]</span></p>
+<p>Calculamos <span class="math inline">\(P(B)\)</span></p>
+<p>La moneda tiene dos caras: cara y cruz. La probabilidad de sacar cara es:</p>
+<p><span class="math display">\[
+P(B) = \frac{1}{2} = 0.5
+\]</span></p>
+<p>Calculamos <span class="math inline">\(P(A \cap B)\)</span></p>
+<p>Como el resultado del dado no afecta al de la moneda y viceversa, el total de posibles combinaciones es <span class="math inline">\(6 \times 2 = 12\)</span>. Las combinaciones que dan <em>par</em> y <em>cara</em> son:</p>
+<ul>
+<li>(2, cara), (4, cara), (6, cara) → 3 casos favorables.</li>
+</ul>
+<p><span class="math display">\[
+P(A \cap B) = \frac{3}{12} = 0.25
+\]</span></p>
+<p>Verificamos si <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B)\)</span></p>
+<p><span class="math display">\[
+P(A) \cdot P(B) = 0.5 \cdot 0.5 = 0.25 = P(A \cap B)
+\]</span></p>
+<p>Como se cumple la igualdad:</p>
+<p><span class="math display">\[
+\boxed{A \text{ y } B \text{ son sucesos independientes}}
+\]</span></p>
+<p><strong>Simulación en R</strong></p>
+<p>Vamos a simular este experimento 100.000 veces y comprobar empíricamente la independencia:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="probabilidad.html#cb7-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb7-2"><a href="probabilidad.html#cb7-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb7-3"><a href="probabilidad.html#cb7-3" tabindex="-1"></a>dado <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-4"><a href="probabilidad.html#cb7-4" tabindex="-1"></a>moneda <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;cara&quot;</span>, <span class="st">&quot;cruz&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a href="probabilidad.html#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="probabilidad.html#cb7-6" tabindex="-1"></a>A <span class="ot">&lt;-</span> dado <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="probabilidad.html#cb7-7" tabindex="-1"></a>B <span class="ot">&lt;-</span> moneda <span class="sc">==</span> <span class="st">&quot;cara&quot;</span></span>
+<span id="cb7-8"><a href="probabilidad.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="probabilidad.html#cb7-9" tabindex="-1"></a>p_A <span class="ot">&lt;-</span> <span class="fu">mean</span>(A)</span>
+<span id="cb7-10"><a href="probabilidad.html#cb7-10" tabindex="-1"></a>p_B <span class="ot">&lt;-</span> <span class="fu">mean</span>(B)</span>
+<span id="cb7-11"><a href="probabilidad.html#cb7-11" tabindex="-1"></a>p_AB <span class="ot">&lt;-</span> <span class="fu">mean</span>(A <span class="sc">&amp;</span> B)</span>
+<span id="cb7-12"><a href="probabilidad.html#cb7-12" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="probabilidad.html#cb7-13" tabindex="-1"></a><span class="fu">c</span>(<span class="at">P_A =</span> p_A, <span class="at">P_B =</span> p_B, <span class="at">P_AyB =</span> p_AB, <span class="at">Producto =</span> p_A <span class="sc">*</span> p_B, <span class="at">dif =</span> p_AB <span class="sc">-</span> p_A <span class="sc">*</span> p_B)</span></code></pre></div>
+<pre><code>##         P_A         P_B       P_AyB    Producto         dif 
+## 0.498520000 0.498450000 0.249800000 0.248487294 0.001312706</code></pre>
+<p>Nota: al ser un experimento empírico, la igualdad no se cumple perfectamente. Obsérvese que sacar un número par en un lanzamiento de un dado no es exáctamente 0.5, y lo mismo ocurre con el número de caras al lanzar una moneda. Si se incrementa el número de repeticiones se espera que esas diferencias son menores.</p>
+<div id="regla-del-producto-o-de-la-multiplicación" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Regla del producto o de la multiplicación<a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>regla del producto o multiplicación</strong> permite calcular la probabilidad de que ocurran simultáneamente varios sucesos, incluso si no son independientes. Para <span class="math inline">\(n\)</span> sucesos <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>, la probabilidad conjunta se puede expresar como una cadena de probabilidades condicionadas:</p>
+<p><span class="math display">\[
+P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 \mid A_1) \cdot P(A_3 \mid A_1 \cap A_2) \cdot \dots \cdot P(A_n \mid A_1 \cap A_2 \cap \dots \cap A_{n-1})
+\]</span></p>
+<p>Esta fórmula nos dice que para conocer la probabilidad de que ocurran todos los sucesos a la vez, primero calculamos la probabilidad del primero, luego la del segundo en función de que haya ocurrido el primero, después la del tercero dado que han ocurrido los dos anteriores, y así sucesivamente.</p>
+<p>Cuando los sucesos son <strong>independientes entre sí</strong>, esta fórmula se simplifica notablemente, ya que las probabilidades condicionadas se igualan a las incondicionales. En ese caso, basta con multiplicar las probabilidades individuales:</p>
+<p><span class="math display">\[
+P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2) \cdot \dots \cdot P(A_n)
+\]</span></p>
+<p>Este resultado es una consecuencia directa de la definición de independencia para más de dos sucesos.</p>
+<p><strong>Ejemplo:</strong> <em>Aplicación de la regla del producto</em></p>
+<p>Supongamos que en una empresa se están seleccionando candidatos para tres puestos diferentes: A, B y C. Cada selección depende de la anterior:</p>
+<ul>
+<li>La probabilidad de seleccionar un candidato adecuado para el puesto A es <span class="math inline">\(P(A) = 0.9\)</span>.</li>
+<li>Si se ha seleccionado a alguien para A, la probabilidad de encontrar un candidato adecuado para B es <span class="math inline">\(P(B \mid A) = 0.8\)</span>.</li>
+<li>Si se han seleccionado candidatos para A y B, la probabilidad de seleccionar a uno adecuado para C es <span class="math inline">\(P(C \mid A \cap B) = 0.7\)</span>.</li>
+</ul>
+<p>Queremos calcular la probabilidad de que se seleccionen buenos candidatos para los tres puestos a la vez, es decir:</p>
+<p><span class="math display">\[
+P(A \cap B \cap C)
+\]</span></p>
+<p>En primer lugar, según la regla del producto:</p>
+<p><span class="math display">\[
+P(A \cap B \cap C) = P(A) \cdot P(B \mid A) \cdot P(C \mid A \cap B)
+\]</span></p>
+<p>Si sustituimos valores</p>
+<p><span class="math display">\[
+P(A \cap B \cap C) = 0.9 \cdot 0.8 \cdot 0.7=0.504
+\]</span></p>
+<p>Por tanto, la probabilidad de que se encuentren buenos candidatos para los tres puestos es del 50.4%:</p>
+<p><span class="math display">\[
+\boxed{P(A \cap B \cap C) = 0.504}
+\]</span></p>
+<p>Podemos confirmar este resultado <strong>mediante simulación</strong>. Supongamos que repetimos este proceso 10000 veces:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="probabilidad.html#cb9-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-2"><a href="probabilidad.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="probabilidad.html#cb9-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb9-4"><a href="probabilidad.html#cb9-4" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.9</span></span>
+<span id="cb9-5"><a href="probabilidad.html#cb9-5" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">&amp;</span> A         <span class="co"># B depende de A</span></span>
+<span id="cb9-6"><a href="probabilidad.html#cb9-6" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.7</span> <span class="sc">&amp;</span> A <span class="sc">&amp;</span> B     <span class="co"># C depende de A y B</span></span>
+<span id="cb9-7"><a href="probabilidad.html#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="probabilidad.html#cb9-8" tabindex="-1"></a><span class="co"># Probabilidad empírica de que A, B y C ocurran a la vez</span></span>
+<span id="cb9-9"><a href="probabilidad.html#cb9-9" tabindex="-1"></a><span class="fu">mean</span>(A <span class="sc">&amp;</span> B <span class="sc">&amp;</span> C)</span></code></pre></div>
+<pre><code>## [1] 0.5041</code></pre>
+</div>
+</div>
+<div id="combinatoria-técnicas-de-enumeración" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Combinatoria: Técnicas de enumeración<a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para aplicar la probabilidad clásica o calcular el tamaño de espacios muestrales, a menudo necesitamos contar cuántas formas hay de que ocurran determinados sucesos. La combinatoria o técnicas de enumeración (principio de multiplicación, permutaciones y combinaciones) nos proporcionan métodos sistemáticos para hacerlo. Son herramientas clave cuando trabajamos con espacios discretos finitos.</p>
+<p>Estas herramientas permiten contar de forma eficiente el número de casos posibles, crucial para calcular probabilidades en espacios muestrales grandes o abstractos.</p>
+<div id="principio-de-multiplicación" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Principio de multiplicación<a href="#principio-de-multiplicaci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si un experimento consta de <span class="math inline">\(k\)</span> etapas independientes, y cada etapa puede realizarse de un número determinado de formas (<span class="math inline">\(n_i\)</span>), el número total de formas de realizar el experimento completo es el producto del número de opciones en cada etapa:</p>
+<p><span class="math display">\[
+\text{Total de casos} = n_1 \cdot n_2 \cdot \cdots \cdot n_k
+\]</span></p>
+<p><strong>Condiciones</strong>:</p>
+<ul>
+<li><p>Las elecciones son independientes entre sí.</p></li>
+<li><p>Se realiza una acción por cada etapa.</p>
+<p><strong>Ejemplo</strong>: Un menú tiene 2 primeros platos, 3 segundos y 2 postres. ¿Cuántos menús diferentes pueden hacerse?</p></li>
+</ul>
+<p><span class="math inline">\(2 \times 3 \times 2 = 12 \text{ menús distintos}\)</span></p>
+</div>
+<div id="combinaciones" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Combinaciones<a href="probabilidad.html#combinaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las combinaciones se utilizan cuando lo que importa es el conjunto elegido, no el orden. Es decir, se trata de selecciones sin importar cómo se ordenan. Esto es común en contextos como la formación de comités, grupos de trabajo o en la elección de cartas en un juego.</p>
+<div id="combinaciones-sin-repetición" class="section level4 hasAnchor" number="2.7.2.1">
+<h4><span class="header-section-number">2.7.2.1</span> Combinaciones sin repetición<a href="#combinaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una <strong>combinación sin repetición</strong> es una selección de <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetición</strong> y <strong>sin importar el orden</strong>.</p>
+<p><span class="math display">\[
+C(n,k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\]</span></p>
+<p>Se utiliza cuando se quiere saber de cuántas formas se pueden <strong>elegir</strong> <span class="math inline">\(k\)</span> elementos de entre <span class="math inline">\(n\)</span>, <strong>sin repetir</strong> y <strong>sin importar el orden</strong>.</p>
+<p><strong>Ejemplo:</strong> ¿Cuántos grupos de 3 estudiantes se pueden formar a partir de un grupo de 5?</p>
+<p><span class="math display">\[
+C(5,3) = \frac{5!}{3! \cdot 2!} = 10
+\]</span></p>
+<p><strong>En R</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="probabilidad.html#cb11-1" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+</div>
+<div id="combinaciones-con-repetición" class="section level4 hasAnchor" number="2.7.2.2">
+<h4><span class="header-section-number">2.7.2.2</span> Combinaciones con repetición:<a href="#combinaciones-con-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una <strong>combinación con repetición</strong> es una forma de seleccionar <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>permitiendo la repetición</strong> de elementos y <strong>sin importar el orden</strong> en que se seleccionan.</p>
+<p><span class="math display">\[
+C&#39;(n,k) = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{k!(n - 1)!}
+\]</span></p>
+<p>Se utiliza cuando queremos saber cuántas maneras hay de <strong>elegir</strong> <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> opciones <strong>con repetición permitida</strong> y donde <strong>no importa el orden</strong>.</p>
+<p><strong>Ejemplo</strong> Supongamos que disponemos de 4 tipos de caramelos y queremos escoger 3 (permitiendo repetir sabores). ¿Cuántas combinaciones diferentes de caramelos podemos formar?</p>
+<p><span class="math display">\[
+C&#39;(4,3) = \binom{4 + 3 - 1}{3} = \binom{6}{3} = 20
+\]</span></p>
+<p><strong>En R</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="probabilidad.html#cb13-1" tabindex="-1"></a><span class="co"># Número de combinaciones con repetición de 3 elementos tomados de 4 tipos</span></span>
+<span id="cb13-2"><a href="probabilidad.html#cb13-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">4</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+</div>
+</div>
+<div id="variaciones" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Variaciones<a href="probabilidad.html#variaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las <strong>variaciones</strong> son disposiciones de elementos tomados de un conjunto, en las que <strong>importa el orden</strong>. Pueden ser <strong>con o sin repetición</strong>, según si se permite o no repetir elementos en la selección.</p>
+<div id="variaciones-sin-repetición" class="section level4 hasAnchor" number="2.7.3.1">
+<h4><span class="header-section-number">2.7.3.1</span> Variaciones sin repetición<a href="#variaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una <strong>variación sin repetición</strong> es una forma de seleccionar y ordenar <span class="math inline">\(k\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetir</strong> elementos. La fórmula de cálculo es:</p>
+<p><span class="math display">\[
+V(n,k) = \frac{n!}{(n-k)!}
+\]</span></p>
+<p>Las variaciones se usan cuando se desea contar cuántas formas hay de ordenar <span class="math inline">\(k\)</span> elementos tomados de un total de <span class="math inline">\(n\)</span>, sin repetir ningún elemento.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántos números de 2 cifras distintas se pueden formar con los dígitos del 1 al 5? <span class="math display">\[
+V(5,2) = \frac{5!}{(5 - 2)!} = \frac{120}{6} = 20
+\]</span></p>
+<p><strong>Código en R</strong></p>
+<p>No existe una fórmula directa para calcular las variaciones, así que se calcula directamente mediante factoriales.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="probabilidad.html#cb15-1" tabindex="-1"></a><span class="co"># Variaciones sin repetición: V(5,2)</span></span>
+<span id="cb15-2"><a href="probabilidad.html#cb15-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="fu">factorial</span>(<span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<p>####Variaciones con repetición</p>
+<p>Una <strong>variación con repetición</strong> es una disposición de <span class="math inline">\(K\)</span> elementos seleccionados de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>permitiendo repetición</strong> y <strong>teniendo en cuenta el orden</strong>. SU fórmula es:</p>
+<p><span class="math display">\[
+V&#39;(n,k) = n^k
+\]</span></p>
+<p>Las variaciones con repetición se utilizan cuando se desea contar cuántas formas hay de ordenar <span class="math inline">\(k\)</span> elementos de entre <span class="math inline">\(n\)</span>, <strong>con repetición</strong> y <strong>cuando el orden importa</strong>.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántos códigos de 3 dígitos se pueden formar con los números del 1 al 4 si se pueden repetir?</p>
+<p><span class="math display">\[
+V&#39;(4,3) = 4^3 = 64
+\]</span></p>
+<p><strong>Código en R</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="probabilidad.html#cb17-1" tabindex="-1"></a><span class="co"># Variaciones con repetición: V&#39;(4,3)</span></span>
+<span id="cb17-2"><a href="probabilidad.html#cb17-2" tabindex="-1"></a><span class="dv">4</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 64</code></pre>
+</div>
+</div>
+<div id="permutaciones" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Permutaciones<a href="probabilidad.html#permutaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las <strong>permutaciones</strong> son disposiciones u ordenaciones de elementos. Se caracterizan porque <strong>el orden sí importa</strong>. Se utilizan cuando queremos contar de cuántas maneras diferentes se pueden ordenar o disponer elementos, y el orden importa. Son muy comunes en contextos donde cada posición tiene un significado distinto, como la asignación de premios o el orden de llegada en una competición. Se dividen en dos tipos principales: sin repetición y con repetición.</p>
+<div id="permutaciones-sin-repetición" class="section level4 hasAnchor" number="2.7.4.1">
+<h4><span class="header-section-number">2.7.4.1</span> Permutaciones sin repetición<a href="#permutaciones-sin-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una <strong>permutación sin repetición</strong> es una ordenación de <strong>todos los elementos</strong> de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>sin repetir</strong> ninguno. Su fórmula es:</p>
+<p><span class="math display">\[
+P(n) = n!
+\]</span></p>
+<p>Se emplean cuando queremos contar el número de formas diferentes de <strong>ordenar todos los elementos</strong> de un conjunto, sin que se repita ninguno.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántas formas hay de ordenar las letras de la palabra <strong>ROMA</strong>?</p>
+<p>Como tiene 4 letras distintas: <span class="math display">\[
+P(4) = 4! = 24
+\]</span></p>
+<p><strong>Código en R</strong> No hay una fórmula expresa para las permuntaciones, sino que se caclula con la función ‘factorial’.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="probabilidad.html#cb19-1" tabindex="-1"></a><span class="co"># Permutaciones sin repetición: P(4)</span></span>
+<span id="cb19-2"><a href="probabilidad.html#cb19-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 24</code></pre>
+</div>
+<div id="permutaciones-con-repetición" class="section level4 hasAnchor" number="2.7.4.2">
+<h4><span class="header-section-number">2.7.4.2</span> Permutaciones con repetición<a href="#permutaciones-con-repetici%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una <strong>permutación con repetición</strong> es una ordenación de un conjunto de elementos donde algunos son <strong>idénticos entre sí</strong>. Se trata de contar cuántas formas distintas hay de ordenar dichos elementos, <strong>sin distinguir los repetidos</strong>.</p>
+<p><span class="math display">\[
+P(n; n_1, n_2, \dots, n_k) = \frac{n!}{n_1! \cdot n_2! \cdots n_k!}
+\]</span></p>
+<p>Donde: - <span class="math inline">\(n\)</span> es el número total de elementos, - <span class="math inline">\(n_1, n_2, \dots, n_k\)</span> representan las repeticiones de cada tipo de elemento indistinguible.</p>
+<p>Se usa cuando hay elementos <strong>repetidos</strong> en el conjunto, y queremos contar <strong>las disposiciones distintas</strong> teniendo en cuenta que los elementos iguales <strong>no se diferencian</strong>.</p>
+<p><strong>Ejemplo práctico</strong></p>
+<p>¿Cuántas formas distintas hay de ordenar las letras de la palabra <strong>ANA</strong>?</p>
+<ul>
+<li>Total de letras: <span class="math inline">\(n = 3\)</span></li>
+<li>La letra A se repite dos veces: <span class="math inline">\(n_1 = 2\)</span></li>
+<li>La letra N aparece una vez: <span class="math inline">\(n_2 = 1\)</span></li>
+</ul>
+<p><span class="math display">\[
+P = \frac{3!}{2! \cdot 1!} = \frac{6}{2} = 3
+\]</span></p>
+<p><strong>Código en R</strong> COmo en el caso anterior, no existe una fórmula para las permutaciones.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="probabilidad.html#cb21-1" tabindex="-1"></a><span class="co"># Permutaciones con repetición: letras de &quot;ANA&quot;</span></span>
+<span id="cb21-2"><a href="probabilidad.html#cb21-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>) <span class="sc">/</span> (<span class="fu">factorial</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">factorial</span>(<span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed",
+"collapse": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

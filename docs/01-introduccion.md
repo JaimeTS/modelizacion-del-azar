@@ -1,0 +1,17 @@
+# Introducción {#intro}
+
+La incertidumbre es un elemento central en numerosos problemas económicos, empresariales y sociales. Desde la toma de decisiones bajo riesgo hasta el análisis de fenómenos aleatorios observados en datos reales, resulta imprescindible disponer de herramientas formales que permitan describir, modelizar e interpretar situaciones en las que el resultado no es determinista. La Modelización del Azar proporciona ese marco conceptual y técnico, apoyándose en la teoría de la probabilidad y en el estudio de las variables aleatorias.
+
+Estos apuntes están concebidos como material de apoyo para la asignatura Modelización del Azar y Toma de Decisiones, dirigida a estudiantes de primer curso. Su objetivo principal es introducir de forma progresiva los fundamentos del razonamiento probabilístico, combinando el rigor matemático con una orientación aplicada y computacional. A lo largo del texto se desarrollan los conceptos clave que permiten pasar de la descripción de experimentos aleatorios a la construcción de modelos probabilísticos capaces de explicar y anticipar el comportamiento de fenómenos reales.
+
+El recorrido comienza con el estudio de la probabilidad, partiendo de la noción de experimento aleatorio y espacio muestral, el análisis de sucesos y sus operaciones, y la formulación axiomática de Kolmogórov. Sobre esta base se introducen las reglas fundamentales de la probabilidad, la probabilidad condicionada y los principales teoremas, que constituyen el núcleo del razonamiento probabilístico.
+
+A continuación se aborda el concepto de variable aleatoria como herramienta fundamental para cuantificar resultados aleatorios. Se distinguen variables discretas y continuas, se analizan sus funciones de distribución y de densidad, y se introducen las principales medidas descriptivas asociadas, como la esperanza matemática y la varianza. Estos conceptos permiten conectar la teoría probabilística con el análisis de datos y la interpretación estadística.
+
+Sobre esta base, los apuntes desarrollan los modelos de probabilidad discretos y continuos más relevantes, prestando especial atención a su interpretación, propiedades y ámbitos de aplicación. El tratamiento no se limita a la exposición teórica, sino que se acompaña de ejemplos, representaciones gráficas y simulaciones que facilitan la comprensión de los modelos y su comportamiento.
+
+El material se completa con un capítulo dedicado a la relación entre distribuciones y la convergencia en distribución, donde se introducen ideas clave para entender aproximaciones probabilísticas y resultados asintóticos fundamentales, como el papel de la distribución normal en contextos muy diversos.
+
+Finalmente, se incluye una colección de ejercicios orientados a consolidar los conceptos trabajados, fomentar el razonamiento probabilístico y desarrollar la capacidad de modelización. A lo largo de los apuntes se incorporan además ejemplos y simulaciones realizadas con R, con el doble objetivo de reforzar la intuición teórica y familiarizar al alumnado con herramientas computacionales ampliamente utilizadas en el análisis de datos.
+
+Por tanto, estos apuntes pretenden servir como guía estructurada para el aprendizaje de la asignatura Modelización del azar y toma de decisiones, facilitando la transición desde los conceptos básicos hasta resultados de mayor profundidad, y proporcionando una base sólida para asignaturas posteriores de estadística, econometría y análisis de datos.

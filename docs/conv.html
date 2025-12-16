@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 6 Relación entre Distribuciones. Convergencia en Distribución | modelizacion-del-azar</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 6 Relación entre Distribuciones. Convergencia en Distribución | modelizacion-del-azar" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 6 Relación entre Distribuciones. Convergencia en Distribución | modelizacion-del-azar" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cont.html"/>
+<link rel="next" href="ejercicios.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="portada.html"><strong>Inicio</strong></a></li>
+<li><a href="portada.html"><strong>Modelización del azar</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="portada.html"><a href="portada.html"><i class="fa fa-check"></i>Modelización del azar y toma de decisiones</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="06-relacion-convergencia.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="prob.html"><a href="prob.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.2.2</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="prob.html"><a href="prob.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="06-relacion-convergencia.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.2.4</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="prob.html"><a href="prob.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.3.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="06-relacion-convergencia.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="prob.html"><a href="prob.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.4.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="06-relacion-convergencia.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.4.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="prob.html"><a href="prob.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="prob.html"><a href="prob.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="prob.html"><a href="prob.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.5.2" data-path="prob.html"><a href="prob.html#regla-del-producto"><i class="fa fa-check"></i><b>2.5.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.5.3" data-path="prob.html"><a href="prob.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.5.4" data-path="prob.html"><a href="prob.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="prob.html"><a href="prob.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="06-relacion-convergencia.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="06-relacion-convergencia.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.7</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="06-relacion-convergencia.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.7.2" data-path="prob.html"><a href="prob.html#combinaciones"><i class="fa fa-check"></i><b>2.7.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.7.3" data-path="prob.html"><a href="prob.html#variaciones"><i class="fa fa-check"></i><b>2.7.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.7.4" data-path="prob.html"><a href="prob.html#permutaciones"><i class="fa fa-check"></i><b>2.7.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="varale.html"><a href="varale.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="06-relacion-convergencia.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="06-relacion-convergencia.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="varale.html"><a href="varale.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="varale.html"><a href="varale.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="06-relacion-convergencia.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="varale.html"><a href="varale.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="varale.html"><a href="varale.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="varale.html"><a href="varale.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="varale.html"><a href="varale.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="varale.html"><a href="varale.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="varale.html"><a href="varale.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discr.html"><a href="discr.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="discr.html"><a href="discr.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="discr.html"><a href="discr.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cont.html"><a href="cont.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="cont.html"><a href="cont.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="cont.html"><a href="cont.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="06-relacion-convergencia.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="cont.html"><a href="cont.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="cont.html"><a href="cont.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conv.html"><a href="conv.html"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="06-relacion-convergencia.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="conv.html"><a href="conv.html#relaciones-entre-distribuciones"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="06-relacion-convergencia.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="06-relacion-convergencia.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="06-relacion-convergencia.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="06-relacion-convergencia.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="06-relacion-convergencia.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="06-relacion-convergencia.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="conv.html"><a href="conv.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="06-relacion-convergencia.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="06-relacion-convergencia.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="conv.html"><a href="conv.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="06-relacion-convergencia.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.2.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.2.4</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="conv" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Tema 6</span> Relación entre Distribuciones. Convergencia en Distribución<a href="conv.html#conv" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introducción-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introducción<a href="#introducci%C3%B3n-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el estudio de los fenómenos aleatorios y en la modelización del azar, las distribuciones de probabilidad desempeñan un papel fundamental. No obstante, en muchas situaciones prácticas no se trabaja con distribuciones exactas, sino con aproximaciones. Comprender cómo se relacionan diferentes distribuciones y bajo qué condiciones una puede aproximarse por otra es una herramienta clave en el análisis de datos, en la inferencia estadística y en la toma de decisiones fundamentadas en incertidumbre.</p>
+<p>Este tema aborda dos ideas centrales. Por un lado, el estudio de las <strong>relaciones entre distribuciones</strong> permite simplificar cálculos complejos utilizando distribuciones límite o aproximadas. Por ejemplo, en vez de trabajar directamente con una distribución binomial con gran número de ensayos, puede resultar mucho más eficiente aproximarla por una normal. Estas aproximaciones son esenciales para desarrollar soluciones prácticas en contextos reales, donde la precisión absoluta cede paso a la eficiencia computacional y a la interpretabilidad.</p>
+<p>Por otro lado, se introduce el concepto de <strong>convergencia en distribución</strong>, una noción fundamental en probabilidad que explica cómo se comportan las distribuciones de ciertas variables aleatorias a medida que se incrementa el tamaño de la muestra o cambia un parámetro clave. Esta idea es la base teórica detrás del Teorema Central del Límite y sustenta muchas de las técnicas estadísticas modernas, desde la estimación mediante remuestreo (bootstrap) hasta el análisis asintótico de estimadores y contrastes.</p>
+<p>En el ámbito del análisis de datos, estas herramientas permiten justificar el uso de modelos simplificados en grandes volúmenes de datos, aplicar inferencias sobre parámetros poblacionales o entender el comportamiento de algoritmos estadísticos. En economía y empresa, facilitan la toma de decisiones bajo incertidumbre, el análisis de riesgos, la evaluación de políticas y la previsión basada en grandes muestras o en distribuciones derivadas de simulaciones.</p>
+</div>
+<div id="relaciones-entre-distribuciones" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Relaciones entre distribuciones<a href="conv.html#relaciones-entre-distribuciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En estadística y teoría de la probabilidad, es frecuente que una variable aleatoria se modele inicialmente con una cierta distribución, pero que para facilitar los cálculos o el análisis, se recurra a una <strong>distribución aproximada</strong>. Estas relaciones entre distribuciones son particularmente útiles cuando los parámetros de la distribución original se encuentran en ciertos rangos que permiten una buena aproximación.</p>
+<p>En este apartado se revisan algunas de las <strong>aproximaciones clásicas</strong> más utilizadas, así como ejemplos prácticos que ilustran sus condiciones de validez.</p>
+<div id="aproximaciones-clásicas" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Aproximaciones clásicas<a href="#aproximaciones-cl%C3%A1sicas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Binomial ≈ Poisson</strong></p>
+<p>La distribución binomial <span class="math inline">\(B(n, p)\)</span> puede aproximarse por una distribución de Poisson <span class="math inline">\(\text{Po}(\lambda)\)</span> cuando:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> es grande,</li>
+<li><span class="math inline">\(p\)</span> es pequeño,</li>
+<li>y <span class="math inline">\(\lambda = np\)</span> se mantiene constante.</li>
+</ul>
+<p><strong>Condiciones típicas:</strong></p>
+<p>- <span class="math inline">\(n \geq 30\)</span></p>
+<p>- <span class="math inline">\(p \leq 0.1\)</span></p>
+<p>Esta aproximación es útil en contextos como la modelización de defectos poco frecuentes en procesos industriales o incidencias poco comunes en un gran número de observaciones.</p>
+<p><strong>Binomial ≈ Normal</strong></p>
+<p>Cuando <span class="math inline">\(n\)</span> es grande, la distribución binomial puede aproximarse por una normal:</p>
+<p><span class="math display">\[
+B(n, p) \approx \mathcal{N}(np, np(1 - p))
+\]</span></p>
+<p><strong>Condiciones típicas:</strong></p>
+<p>- <span class="math inline">\(np \geq 5\)</span></p>
+<p>- <span class="math inline">\(n(1 - p) \geq 5\)</span></p>
+<p><strong>Corrección por continuidad:</strong> Para mejorar la aproximación, se usa una corrección por continuidad. Por ejemplo, para calcular <span class="math inline">\(P(X \leq k)\)</span>, se utiliza:</p>
+<p><span class="math display">\[
+P(Y \leq k + 0.5), \quad Y \sim \mathcal{N}(np, np(1-p))
+\]</span></p>
+<p>Esta aproximación es especialmente útil en análisis de proporciones, encuestas y estudios de comportamiento del consumidor.</p>
+<p><strong>Poisson ≈ Normal</strong></p>
+<p>Si <span class="math inline">\(\lambda\)</span> es suficientemente grande, una variable Poisson puede aproximarse por una normal:</p>
+<p><span class="math display">\[
+\text{Po}(\lambda) \approx \mathcal{N}(\lambda, \lambda)
+\]</span></p>
+<p><strong>Condición típica:</strong> - <span class="math inline">\(\lambda \geq 10\)</span></p>
+<p>Este caso aparece en problemas de conteo, como el número de llamadas en un centro de atención al cliente por minuto o el número de transacciones por segundo en una plataforma digital.</p>
+<pre><code>## Warning: package &#39;DiagrammeR&#39; was built under R version 4.3.3</code></pre>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-857f8eeff75ed09a373b" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-857f8eeff75ed09a373b">{"x":{"diagram":"\ndigraph {\n  rankdir=TB;\n  node [shape=ellipse, style=filled, fillcolor=gray95, fontname=Helvetica];\n  Bin [label=\"Distribución Binomial\"];\n  Poi [label=\"Distribución Poisson\"];\n  Nor [label=\"Distribución Normal\"];\n  Bin -> Poi [label=\"n grande, p pequeño, np = constante\"];\n  Bin -> Nor [label=\"np ≥ 5, n(1-p) ≥ 5\"];\n  Poi -> Nor [label=\"λ ≥ 10\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p><img src="Modelos-continuos_files/aproximaciones%20cl%C3%A1sicas.png" /></p>
+<p><strong>Figura 1:</strong> Diagrama de las relaciones de aproximación entre la distribución binomial, Poisson y normal. Las flechas indican que una distribución sirve de aproximación a otra bajo las condiciones señaladas junto a cada flecha. Por ejemplo, una <span class="math inline">\(B(n,p)\)</span> con <span class="math inline">\(n\)</span> muy grande y <span class="math inline">\(p\)</span> muy pequeño (de modo que <span class="math inline">\(np\)</span> se mantiene aproximadamente constante) se puede aproximar mediante una <span class="math inline">\(Poisson(n p)\)</span>; si <span class="math inline">\(np\)</span> y <span class="math inline">\(n(1-p)\)</span> son bastante grandes, <span class="math inline">\(B(n,p)\)</span> se aproxima bien por una normal; y si <span class="math inline">\(\lambda\)</span> es grande, <span class="math inline">\(Poisson(\lambda)\)</span> se aproxima por <span class="math inline">\(\mathcal{N}(\lambda,\lambda)\)</span>.</p>
+</div>
+<div id="condiciones-de-validez-para-cada-aproximación" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Condiciones de validez para cada aproximación<a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las siguientes condiciones son orientativas y ayudan a decidir si una aproximación es razonable en la práctica:</p>
+<ul>
+<li><p><strong>Binomial ≈ Poisson</strong>: válida cuando el número de ensayos <span class="math inline">\(n\)</span> es grande (por ejemplo, <span class="math inline">\(n \geq 30\)</span>) y la probabilidad de éxito <span class="math inline">\(p\)</span> es pequeña (por ejemplo, <span class="math inline">\(p \leq 0.1\)</span>), de forma que <span class="math inline">\(\lambda = np\)</span> se mantenga constante y de valor moderado.</p></li>
+<li><p><strong>Binomial ≈ Normal</strong>: se recomienda que tanto <span class="math inline">\(np \geq 5\)</span> como <span class="math inline">\(n(1 - p) \geq 5\)</span>. Además, la corrección por continuidad mejora significativamente la aproximación cuando <span class="math inline">\(n\)</span> no es muy grande.</p></li>
+<li><p><strong>Poisson ≈ Normal</strong>: adecuada cuando <span class="math inline">\(\lambda \geq 10\)</span>. A mayor valor de <span class="math inline">\(\lambda\)</span>, mejor será la aproximación, ya que la distribución Poisson se vuelve más simétrica.</p></li>
+</ul>
+<p>Estas condiciones son de carácter práctico y deben verificarse antes de aplicar la aproximación. En caso contrario, se corre el riesgo de obtener resultados imprecisos.</p>
+<p><strong>Aplicaciones prácticas: simplificación de cálculos, simulaciones, modelización en contexto económico y empresarial</strong></p>
+<p>Estas aproximaciones son fundamentales en numerosos entornos de trabajo donde la eficiencia computacional, la rapidez de decisión y la claridad de interpretación son clave. Algunos ejemplos incluyen:</p>
+<ul>
+<li><p><strong>Simplificación de cálculos</strong>: en vez de trabajar con sumas de probabilidades o combinatorias complicadas (como en la binomial), se puede utilizar una distribución más manejable como la normal, con funciones ya integradas en la mayoría de software estadísticos.</p></li>
+<li><p><strong>Simulación de escenarios</strong>: en análisis de datos y econometría, las simulaciones con miles de repeticiones son comunes. Utilizar distribuciones límite (como la normal) permite generar datos de forma más rápida y con menor coste computacional.</p></li>
+<li><p><strong>Modelización en economía y empresa</strong>:</p>
+<ul>
+<li>En estudios de mercado, se modelan proporciones (clientes que compran un producto, votantes que eligen una opción) mediante binomiales, que pueden aproximarse por normales en grandes muestras.</li>
+<li>En análisis de riesgos, incidentes o reclamaciones poco frecuentes (seguros, sistemas de calidad) se modelan con Poisson, y si el número esperado de eventos es alto, se emplea la normal.</li>
+<li>En logística o producción, el número de errores, fallos o llegadas a un sistema se puede modelar inicialmente con Poisson y luego aproximarse por normal si se cumplen las condiciones adecuadas.</li>
+</ul></li>
+</ul>
+<p>Estas aproximaciones también constituyen una introducción natural al uso de métodos asintóticos, fundamentales en técnicas modernas como los contrastes de hipótesis, la inferencia basada en simulación y el aprendizaje automático con grandes volúmenes de datos.</p>
+<p><strong>Ejemplos con condiciones de validez</strong></p>
+<p>A continuación se presentan algunos ejemplos ilustrativos que muestran cómo aplicar las aproximaciones mencionadas y en qué situaciones son válidas.</p>
+<p><strong><em>Ejemplo 1: Binomial grande, Poisson como aproximación</em></strong></p>
+<p>Supongamos que en una gran fábrica hay 10,000 productos y la probabilidad de que uno sea defectuoso es de 0.001.</p>
+<p><span class="math display">\[
+X \sim B(10000, 0.001), \quad \lambda = np = 10
+\]</span></p>
+<p>Dado que <span class="math inline">\(n\)</span> es grande y <span class="math inline">\(p\)</span> es pequeño, podemos aproximar:</p>
+<p><span class="math display">\[
+X \approx \text{Po}(10)
+\]</span></p>
+<p>Esto permite simplificar el cálculo de probabilidades como <span class="math inline">\(P(X = 0)\)</span>, <span class="math inline">\(P(X \leq 5)\)</span>, etc., sin tener que calcular combinatorias.</p>
+<p><strong><em>Ejemplo 2: Binomial a Normal con corrección</em></strong></p>
+<p>Sea <span class="math inline">\(X \sim B(100, 0.4)\)</span>. Queremos calcular <span class="math inline">\(P(X \geq 45)\)</span>. Dado que <span class="math inline">\(np = 40\)</span> y <span class="math inline">\(n(1 - p) = 60\)</span>, se cumple la condición para usar la normal.</p>
+<p><span class="math display">\[
+X \approx \mathcal{N}(40, 24)
+\]</span></p>
+<p>Aplicamos la corrección por continuidad:</p>
+<p><span class="math display">\[
+P(X \geq 45) \approx P(Y \geq 44.5), \quad Y \sim \mathcal{N}(40, 24)
+\]</span></p>
+<p>Este tipo de aproximación es habitual en estudios de población donde se analizan porcentajes de respuestas o elecciones en muestras grandes.</p>
+<p><strong><em>Ejemplo 3: Poisson con parámetro alto</em></strong></p>
+<p>Si el número de accidentes laborales mensuales sigue una Poisson con <span class="math inline">\(\lambda = 15\)</span>, entonces:</p>
+<p><span class="math display">\[
+X \sim \text{Po}(15) \approx \mathcal{N}(15, 15)
+\]</span></p>
+<p>Esto permite usar la normal para construir intervalos de confianza o contrastes, incluso si originalmente se partía de una distribución discreta.</p>
+<p>Estas relaciones entre distribuciones son esenciales para aplicar herramientas de inferencia estadística de forma eficiente, especialmente en escenarios donde el volumen de datos es elevado o el tiempo de cálculo es limitado. También constituyen la base intuitiva para introducir el concepto de <strong>convergencia en distribución</strong>, que será formalizado en el siguiente apartado.</p>
+</div>
+</div>
+<div id="convergencia-en-distribución" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Convergencia en distribución<a href="#convergencia-en-distribuci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hasta ahora hemos visto cómo algunas distribuciones pueden aproximarse por otras bajo ciertas condiciones. Sin embargo, para dar rigor a estas afirmaciones, es necesario entender en qué sentido una sucesión de distribuciones se aproxima a una distribución límite. Esto nos lleva al concepto fundamental de <strong>convergencia de variables aleatorias</strong>, y en particular a la <strong>convergencia en distribución</strong>, también conocida como <em>convergencia débil</em>.</p>
+<p>Entre los distintos tipos de convergencia existentes en teoría de la probabilidad, la convergencia en distribución es especialmente relevante en estadística porque:</p>
+<ul>
+<li>Permite justificar aproximaciones como <span class="math inline">\(B(n, p) \approx \mathcal{N}(np, np(1-p))\)</span> o <span class="math inline">\(\text{Poisson}(\lambda) \approx \mathcal{N}(\lambda, \lambda)\)</span>.</li>
+<li>Aparece de forma natural en resultados fundamentales como el Teorema Central del Límite.</li>
+<li>Se emplea para estudiar el comportamiento asintótico de estadísticos y estimadores cuando el tamaño muestral tiende a infinito.</li>
+<li>Es la base teórica de técnicas modernas como el bootstrap o la validación empírica por simulación.</li>
+</ul>
+<p>A diferencia de otras formas más fuertes de convergencia, como la convergencia en probabilidad o en media cuadrática, la convergencia en distribución no requiere que las variables aleatorias estén definidas en un mismo espacio de probabilidad ni que las realizaciones individuales se acerquen. Solo exige que las <strong>funciones de distribución acumulada</strong> converjan.</p>
+<p>En este apartado, exploraremos primero los distintos tipos de convergencia para situar la convergencia en distribución en su contexto teórico. A continuación, abordaremos el Teorema Central del Límite, la convergencia de las distribuciones empíricas, y finalizaremos con aplicaciones relevantes en economía, empresa y análisis de datos.</p>
+<div id="tipos-de-convergencia-y-definición-formal" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Tipos de convergencia y definición formal<a href="#tipos-de-convergencia-y-definici%C3%B3n-formal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En teoría de la probabilidad, es fundamental distinguir entre los distintos tipos de convergencia de sucesiones de variables aleatorias. Cada tipo de convergencia expresa una forma diferente en la que una secuencia de variables aleatorias puede aproximarse a una variable aleatoria límite. Estas nociones son esenciales tanto desde un punto de vista teórico como aplicado, especialmente en estadística asintótica y modelización del azar.</p>
+<p>A continuación se presentan los principales tipos de convergencia, ordenados de más fuerte a más débil:</p>
+<div id="convergencia-casi-segura-convergencia-con-probabilidad" class="section level4 hasAnchor" number="6.3.1.1">
+<h4><span class="header-section-number">6.3.1.1</span> Convergencia casi segura (convergencia con probabilidad)<a href="conv.html#convergencia-casi-segura-convergencia-con-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se dice que una sucesión de variables aleatorias <span class="math inline">\(X_n\)</span> converge casi seguramente a una variable aleatoria <span class="math inline">\(X\)</span> si:</p>
+<p><span class="math display">\[
+P\left( \lim_{n \to \infty} X_n = X \right) = 1
+\]</span></p>
+<p>Esta forma de convergencia asegura que las realizaciones de <span class="math inline">\(X_n\)</span> se aproximan indefinidamente a las de <span class="math inline">\(X\)</span>, salvo en un conjunto de probabilidad cero.</p>
+</div>
+<div id="convergencia-en-probabilidad" class="section level4 hasAnchor" number="6.3.1.2">
+<h4><span class="header-section-number">6.3.1.2</span> Convergencia en probabilidad<a href="conv.html#convergencia-en-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se dice que <span class="math inline">\(X_n \xrightarrow{P} X\)</span> si, para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} P(|X_n - X| &gt; \varepsilon) = 0
+\]</span></p>
+<p>Es decir, la probabilidad de que <span class="math inline">\(X_n\)</span> esté lejos de <span class="math inline">\(X\)</span> se hace cada vez más pequeña a medida que <span class="math inline">\(n\)</span> crece.</p>
+</div>
+<div id="convergencia-en-media-r-ésima-por-ejemplo-en-media-cuadrática" class="section level4 hasAnchor" number="6.3.1.3">
+<h4><span class="header-section-number">6.3.1.3</span> Convergencia en media <span class="math inline">\(r\)</span>-ésima (por ejemplo, en media cuadrática)<a href="#convergencia-en-media-r-%C3%A9sima-por-ejemplo-en-media-cuadr%C3%A1tica" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se dice que <span class="math inline">\(X_n \xrightarrow{L^r} X\)</span> si:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \mathbb{E}[|X_n - X|^r] = 0
+\]</span></p>
+<p>Un caso particular importante es <span class="math inline">\(r = 2\)</span>, conocido como <strong>convergencia en media cuadrática</strong>. Esta convergencia implica la convergencia en probabilidad bajo ciertas condiciones.</p>
+</div>
+<div id="convergencia-en-distribución-o-en-ley" class="section level4 hasAnchor" number="6.3.1.4">
+<h4><span class="header-section-number">6.3.1.4</span> Convergencia en distribución (o en ley)<a href="#convergencia-en-distribuci%C3%B3n-o-en-ley" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Se dice que <span class="math inline">\(X_n \xrightarrow{d} X\)</span> si la función de distribución acumulada <span class="math inline">\(F_{X_n}(x)\)</span> converge puntualmente a <span class="math inline">\(F_X(x)\)</span> en los puntos de continuidad de <span class="math inline">\(F_X\)</span>:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} F_{X_n}(x) = F_X(x)
+\]</span></p>
+<p>Esta es la forma más débil de convergencia y la más utilizada en estadística inferencial, ya que permite estudiar el comportamiento asintótico de secuencias de variables aleatorias sin requerir convergencia en términos más fuertes.</p>
+</div>
+<div id="relación-entre-los-tipos-de-convergencia" class="section level4 hasAnchor" number="6.3.1.5">
+<h4><span class="header-section-number">6.3.1.5</span> Relación entre los tipos de convergencia<a href="#relaci%C3%B3n-entre-los-tipos-de-convergencia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las implicaciones entre los distintos tipos de convergencia pueden resumirse en el siguiente esquema:</p>
+<p><span class="math display">\[
+\text{Casi segura} \Rightarrow \text{En probabilidad} \Rightarrow \text{En distribución}
+\]</span></p>
+<p>Además:</p>
+<p><span class="math display">\[
+\text{En media cuadrática ($L^2$)} \Rightarrow \text{En probabilidad}
+\]</span></p>
+<p>Sin embargo, las implicaciones no se dan en sentido contrario: - La convergencia en distribución no implica convergencia en probabilidad. - La convergencia en probabilidad no implica convergencia casi segura ni en media. - La convergencia en distribución puede darse incluso si <span class="math inline">\(X_n\)</span> y <span class="math inline">\(X\)</span> no están definidas en el mismo espacio de probabilidad.</p>
+<p>Esta jerarquía de convergencias proporciona el marco formal necesario para entender los resultados asintóticos y las aproximaciones entre distribuciones que estudiaremos en los siguientes apartados.</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1323e59d601523424c86" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1323e59d601523424c86">{"x":{"diagram":"\ndigraph jerarquia_convergencia {\n  graph [rankdir=TB, layout=dot]\n\n  # Nodos\n  cs [label = \"Convergencia casi segura\", shape = ellipse, style = filled, fillcolor = gray95]\n  mq [label = \"Convergencia en media cuadrática (L²)\", shape = ellipse, style = filled, fillcolor = gray95]\n  cp [label = \"Convergencia en probabilidad\", shape = ellipse, style = filled, fillcolor = gray95]\n  cd [label = \"Convergencia en distribución\", shape = ellipse, style = filled, fillcolor = gray95]\n\n  # Agrupar nodos en el mismo nivel\n  {rank = same; cs; mq}\n\n  # Flechas\n  cs -> cp\n  mq -> cp\n  cp -> cd\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Figura 2. Jerarquía entre tipos de convergencia</p>
+</div>
+</div>
+<div id="teorema-central-del-límite-tcl" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Teorema Central del Límite (TCL)<a href="#teorema-central-del-l%C3%ADmite-tcl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El <strong>Teorema Central del Límite (TCL)</strong> es uno de los resultados más importantes de la teoría de la probabilidad y constituye la base teórica de muchas técnicas estadísticas. Justifica por qué en muchos contextos, incluso cuando los datos individuales no siguen una distribución normal, la distribución de ciertos estadísticos tiende a ser normal cuando el tamaño muestral es grande.</p>
+<p><strong>Definición</strong></p>
+<p>Sea <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> una sucesión de variables aleatorias independientes e idénticamente distribuidas (i.i.d.) con:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}(X_i) = \mu\)</span></li>
+<li><span class="math inline">\(\text{Var}(X_i) = \sigma^2 &lt; \infty\)</span></li>
+</ul>
+<p>Entonces, la variable aleatoria:</p>
+<p><span class="math display">\[
+Z_n = \frac{\overline{X}_n - \mu}{\sigma / \sqrt{n}} \quad \text{donde} \quad \overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i
+\]</span></p>
+<p>converge en distribución a una normal estándar:</p>
+<p><span class="math display">\[
+Z_n \xrightarrow{d} \mathcal{N}(0,1)
+\]</span></p>
+<p><strong>Interpretación intuitiva</strong></p>
+<p>Aunque los datos individuales <span class="math inline">\(X_i\)</span> no estén normalmente distribuidos, al tomar una media de muchas observaciones (muestra grande), la distribución de esa media se aproxima a una normal. Cuanto mayor es el tamaño de la muestra, mejor es la aproximación.</p>
+<p>Por simplicicdad, en la definición se ha supuesto que las medias y varianzas de las variables aleatorias eran iguales, sin embargo ese supuesto no es necesario, y se puede hacer con cualquier media o varianza. En el siguiente link se explica muy claramente esta afirmación. (.<a href="https://bookdown.org/aquintela/EBE/el-teorema-central-del-limite.html" class="uri">https://bookdown.org/aquintela/EBE/el-teorema-central-del-limite.html</a>)</p>
+<p>Este resultado explica por qué la distribución normal aparece con tanta frecuencia en estadística, incluso cuando los fenómenos originales no son normales.</p>
+<p><strong>Ejemplos de aplicación en análisis de datos y economía</strong></p>
+<ul>
+<li><strong>Encuestas</strong>: al calcular la media de respuestas de una muestra grande (por ejemplo, gasto mensual), el TCL permite aproximar la distribución de la media por una normal, lo cual es clave para construir intervalos de confianza y realizar contrastes de hipótesis.</li>
+<li><strong>Análisis financiero</strong>: al modelar rendimientos medios de activos financieros en periodos largos, el TCL justifica el uso de herramientas normales, incluso si los rendimientos individuales tienen colas pesadas o asimetría.</li>
+<li><strong>Control de calidad</strong>: en procesos industriales donde se toma una muestra de productos, el TCL permite estimar con precisión el valor medio del parámetro de interés (por ejemplo, peso, tamaño, tiempo de fabricación).</li>
+</ul>
+<p><strong>Relación con las aproximaciones vistas</strong></p>
+<p>El Teorema Central del Límite <strong>justifica las aproximaciones</strong> que hemos visto anteriormente, como:</p>
+<ul>
+<li><span class="math inline">\(B(n,p) \approx \mathcal{N}(np, np(1-p))\)</span></li>
+<li><span class="math inline">\(\text{Poisson}(\lambda) \approx \mathcal{N}(\lambda, \lambda)\)</span></li>
+</ul>
+<p>En ambos casos, lo que subyace es que se están sumando muchas variables aleatorias independientes (Bernoulli o indicadores de ocurrencia), y su suma se aproxima a una normal, tal como predice el TCL.</p>
+<p>Este teorema es esencial en inferencia estadística porque permite aplicar métodos basados en la normalidad en una gran variedad de contextos, incluso cuando los datos originales no son normales.</p>
+</div>
+<div id="convergencia-de-distribuciones-empíricas-f_n" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En estadística aplicada y en ciencia de datos es habitual trabajar con muestras y estimar la distribución de una variable aleatoria a partir de sus valores observados. Una herramienta fundamental para ello es la <strong>función de distribución empírica</strong>, que permite aproximar la distribución teórica a partir de una muestra.</p>
+<p><strong>Distribución empírica</strong> <span class="math inline">\(F_n\)</span></p>
+<p>Dada una muestra aleatoria <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> de una variable aleatoria <span class="math inline">\(X\)</span>, se define la <strong>función de distribución empírica</strong> como:</p>
+<p><span class="math display">\[
+F_n(x) = \frac{1}{n} \sum_{i=1}^n \mathbb{I}_{\{X_i \leq x\}}
+\]</span></p>
+<p>donde <span class="math inline">\(\mathbb{I}_{\{X_i \leq x\}}\)</span> es una función indicadora que vale 1 si <span class="math inline">\(X_i \leq x\)</span> y 0 en caso contrario.</p>
+<p><span class="math inline">\(F_n(x)\)</span> representa la proporción de valores de la muestra que son menores o iguales que <span class="math inline">\(x\)</span>, y constituye una estimación natural de la función de distribución verdadera <span class="math inline">\(F(x)\)</span>.</p>
+<p><strong>Convergencia de</strong> <span class="math inline">\(F_n\)</span> a <span class="math inline">\(F\)</span></p>
+<p>A medida que aumenta el tamaño muestral <span class="math inline">\(n\)</span>, la función de distribución empírica <span class="math inline">\(F_n(x)\)</span> converge a la verdadera función de distribución <span class="math inline">\(F(x)\)</span>. Esta convergencia se produce <strong>uniformemente en todos los puntos</strong> <span class="math inline">\(x\)</span>, y se puede expresar formalmente como:</p>
+<p><span class="math display">\[
+\sup_x |F_n(x) - F(x)| \xrightarrow{a.s.} 0
+\]</span></p>
+<p>Esta es una forma fuerte de convergencia (convergencia casi segura), y garantiza que, con suficiente tamaño muestral, la distribución empírica se aproxima arbitrariamente bien a la real.</p>
+<p><strong>Teorema de Glivenko-Cantelli (opcional)</strong></p>
+<p>Este resultado formaliza la convergencia uniforme de la distribución empírica:</p>
+<p>Sea <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> una muestra i.i.d. de una variable con función de distribución <span class="math inline">\(F\)</span>. Entonces:</p>
+<p><span class="math display">\[
+\sup_x |F_n(x) - F(x)| \xrightarrow{a.s.} 0 \quad \text{cuando } n \to \infty
+\]</span></p>
+<p>Este teorema garantiza que, con probabilidad 1, la distribución empírica converge uniformemente a la distribución real a medida que el tamaño muestral crece.</p>
+<p><strong>Aplicación práctica</strong></p>
+<p>La distribución empírica es ampliamente utilizada en:</p>
+<ul>
+<li><strong>Visualización de datos</strong>: al comparar <span class="math inline">\(F_n(x)\)</span> con distribuciones teóricas (gráficas Q-Q o P-P).</li>
+<li><strong>Simulación y bootstrap</strong>: se parte de <span class="math inline">\(F_n\)</span> para generar nuevas muestras (remuestreo con reemplazo).</li>
+<li><strong>Contrastes no paramétricos</strong>: como el test de Kolmogórov-Smirnov, que mide la distancia entre <span class="math inline">\(F_n\)</span> y una distribución teórica.</li>
+</ul>
+</div>
+<div id="ejemplos-y-visualizaciones" class="section level3 hasAnchor" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Ejemplos y visualizaciones<a href="conv.html#ejemplos-y-visualizaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ejemplo 1: Convergencia en media cuadrática pero no casi seguramente</strong></p>
+<p>Este ejemplo muestra que la <strong>convergencia en media cuadrática</strong> no implica necesariamente la <strong>convergencia casi segura</strong>. Simularemos una sucesión de variables aleatorias <span class="math inline">\(X_n\)</span> definida de la siguiente manera:</p>
+<p><span class="math display">\[
+X_n =
+\begin{cases}
+1 &amp; \text{con probabilidad } \frac{1}{n} \\
+0 &amp; \text{con probabilidad } 1 - \frac{1}{n}
+\end{cases}
+\]</span></p>
+<p>Esto significa que a medida que <span class="math inline">\(n\)</span> crece, la probabilidad de que <span class="math inline">\(X_n = 1\)</span> disminuye, pero <strong>nunca es cero</strong>.</p>
+<p>¿Qué vamos a observar?</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Convergencia en media cuadrática</strong>: la esperanza <span class="math inline">\(\mathbb{E}(X_n^2) = \mathbb{E}(X_n) = \frac{1}{n} \to 0\)</span>. Veremos que el promedio de los cuadrados de los <span class="math inline">\(X_n\)</span> tiende a 0.</p></li>
+<li><p><strong>¿Convergencia casi segura?</strong>: veremos que, aunque los valores de <span class="math inline">\(X_n\)</span> son mayoritariamente ceros, <strong>nunca dejan de aparecer algunos unos</strong> (saltos). Por tanto, no hay una realización fija hacia la que todos los <span class="math inline">\(X_n\)</span> tiendan.</p></li>
+</ol>
+<p><strong><em>Simulación en R</em></strong></p>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><strong>Conclusión</strong></p>
+<ul>
+<li><p><strong>Sí hay convergencia en media cuadrática</strong>:<br />
+En el gráfico de la izquierda observamos que la media de los cuadrados de los <span class="math inline">\(X_n\)</span> tiende a 0 cuando <span class="math inline">\(n\)</span> crece. Esto confirma que la sucesión <span class="math inline">\(X_n\)</span> converge a 0 en media cuadrática.</p></li>
+<li><p><strong>No hay convergencia casi segura</strong>:<br />
+En el gráfico de la derecha vemos que, aunque los unos aparecen cada vez con menos frecuencia, <strong>nunca desaparecen del todo</strong>. Es decir, por grande que sea <span class="math inline">\(n\)</span>, siempre existe una probabilidad (aunque pequeña) de que <span class="math inline">\(X_n = 1\)</span>. Por tanto, no hay una realización de la sucesión que se mantenga fija a partir de cierto punto, y eso <strong>viola la definición de convergencia casi segura</strong>.</p></li>
+</ul>
+<p>Este ejemplo demuestra que <strong>la convergencia en media cuadrática no implica convergencia casi segura</strong>. Es una excelente ilustración de la jerarquía entre tipos de convergencia y de por qué no deben confundirse.</p>
+<p><strong>Ejemplo 2: El método bootstrap como aplicación de la convergencia de</strong> <span class="math inline">\(F_n\)</span></p>
+<p>El <strong>método bootstrap</strong> es una técnica de remuestreo que permite estimar la distribución de un estadístico (como la media, la mediana, o la varianza) <strong>a partir de una única muestra</strong>. En lugar de asumir una distribución teórica concreta, se utiliza la <strong>distribución empírica</strong> <span class="math inline">\(F_n\)</span> como una aproximación de la distribución real de los datos.</p>
+<p>La idea central del bootstrap es que si <span class="math inline">\(F_n\)</span> se aproxima bien a la distribución verdadera <span class="math inline">\(F\)</span>, entonces al generar nuevas muestras (con reemplazo) a partir de los datos observados, podemos simular el comportamiento del estadístico como si estuviéramos muestreando del modelo original.</p>
+<p><strong>¿Qué se persigue?</strong> Queremos estimar la <strong>distribución de la media muestral</strong> sin conocer la distribución de la población original. Para ello:</p>
+<ul>
+<li>Tomamos una muestra original de tamaño <span class="math inline">\(n\)</span>.</li>
+<li>Generamos muchas <strong>muestras bootstrap</strong> de tamaño <span class="math inline">\(n\)</span>, remuestreando con reemplazo de la muestra original.</li>
+<li>Calculamos la <strong>media</strong> en cada una de esas muestras bootstrap.</li>
+<li>Observamos cómo se distribuyen esas medias y comparamos su forma con la predicha por el Teorema Central del Límite.</li>
+</ul>
+<p>Se <strong>observa</strong> que la distribución de las medias bootstrap:</p>
+<ul>
+<li>Se aproxima a una <strong>normal</strong> cuando <span class="math inline">\(n\)</span> es suficientemente grande.</li>
+<li>Tiene una <strong>dispersión similar</strong> a la que tendría la distribución real del estadístico si se repitiera el muestreo desde la población.</li>
+</ul>
+<p><strong>¿Cuál es el resultado?</strong> El bootstrap <strong>simula</strong> la distribución del estadístico sin necesidad de conocer la verdadera distribución de los datos. Y, gracias a la <strong>convergencia en distribución</strong> y al hecho de que <span class="math inline">\(F_n \to F\)</span>, esta aproximación es <strong>cada vez más precisa</strong> conforme aumenta el tamaño muestral.</p>
+<p>El ejemplo que sigue permite visualizar cómo el bootstrap se apoya en la distribución empírica y en el Teorema Central del Límite para generar inferencias válidas de forma no paramétrica.</p>
+<p><strong><em>Resultados de la estimación de la distribución de la media mediante bootstrap</em></strong></p>
+<p>Vamos a aplicar el método bootstrap para estimar la distribución de la media muestral a partir de una sola muestra. Usaremos una variable con distribución desconocida (en este caso una <strong>exponencial</strong>) y observaremos cómo el bootstrap reproduce la forma de la distribución del estadístico.</p>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong>Interpretación</strong> La distribución de las medias bootstrap (en azul) se ajusta notablemente bien a una distribución normal (curva roja), a pesar de que la variable original sigue una distribución exponencial (asimétrica y no normal).</p>
+<p>Esto confirma el poder del Teorema Central del Límite y la validez del uso de <span class="math inline">\(F_n\)</span> (la distribución empírica) para aproximar la distribución de un estadístico.</p>
+<p>Este procedimiento permite construir intervalos de confianza o estimar errores estándar sin necesidad de asumir una distribución poblacional conocida.</p>
+<p><strong><em>Ejemplo 3: Comparación de</em></strong> <span class="math inline">\(F_n\)</span> <strong><em>y</em></strong> <span class="math inline">\(F\)</span> <strong><em>con el test de Kolmogórov-Smirnov</em></strong></p>
+<p>Este ejemplo muestra cómo se mide formalmente la <strong>diferencia entre la distribución empírica</strong> <span class="math inline">\(F_n(x)\)</span> y la distribución teórica <span class="math inline">\(F(x)\)</span> usando el <strong>estadístico de Kolmogórov-Smirnov</strong>, definido como:</p>
+<p><span class="math display">\[
+D_n = \sup_x |F_n(x) - F(x)|
+\]</span></p>
+<p>Queremos observar cómo <span class="math inline">\(D_n\)</span> disminuye al aumentar el tamaño muestral, lo que ilustra la <strong>convergencia uniforme</strong> de <span class="math inline">\(F_n\)</span> a <span class="math inline">\(F\)</span>, como afirma el Teorema de Glivenko-Cantelli.</p>
+<p><strong><em>Simulación en R</em></strong></p>
+<p><img src="06-relacion-convergencia_files/figure-html/kolmogorov-smirnov-demo-1.png" width="672" /></p>
+<p><strong>Interpretación</strong></p>
+<ul>
+<li>El <strong>estadístico</strong> <span class="math inline">\(D\)</span> mide la <strong>máxima diferencia vertical</strong> entre la función de distribución empírica <span class="math inline">\(F_n(x)\)</span> y la función de distribución teórica <span class="math inline">\(F(x)\)</span>.</li>
+<li>En los gráficos se observa que, a medida que aumenta el tamaño de la muestra <span class="math inline">\(n\)</span>, la curva empírica <span class="math inline">\(F_n(x)\)</span> se ajusta cada vez mejor a la curva teórica <span class="math inline">\(F(x)\)</span>.</li>
+<li>La <strong>distancia</strong> <span class="math inline">\(D\)</span> disminuye con <span class="math inline">\(n\)</span>, lo que ilustra de forma empírica el <strong>Teorema de Glivenko-Cantelli</strong>, que afirma que <span class="math inline">\(F_n(x) \to F(x)\)</span> uniformemente con probabilidad 1.</li>
+</ul>
+<p>Este ejemplo muestra cómo la convergencia de la distribución empírica no solo es una herramienta teórica, sino que tiene aplicaciones prácticas directas como el <strong>test de Kolmogórov-Smirnov</strong>, muy utilizado en análisis no paramétrico y validación de modelos.</p>
+<p><strong><em>Ejemplo 4 del TCL: Ingresos de clientes (distribución exponencial)</em></strong></p>
+<p>Supongamos que los ingresos diarios de ciertos clientes en una empresa siguen una distribución <strong>exponencial</strong> con media 100. Esta distribución es muy asimétrica, lo cual la aleja de una normal.</p>
+<p>Queremos ver cómo se comporta la distribución de la media muestral para distintos tamaños de muestra.</p>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><em>Interpretación:</em> aunque la distribución original es claramente no normal (muy asimétrica), la distribución de la media muestral se va aproximando a una normal a medida que aumenta el tamaño de la muestra, como predice el TCL.</p>
+<p><strong><em>Ejemplo 5 del TCL: Tiempo de respuesta de clientes (distribución uniforme)</em></strong></p>
+<p>Supongamos ahora que el tiempo de respuesta de los clientes ante una campaña publicitaria sigue una distribución <strong>uniforme entre 0 y 10 minutos</strong>. Esta distribución es simétrica pero no normal. Observamos cómo evoluciona la distribución de la media muestral a medida que aumenta el tamaño de la muestra.</p>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><em>Interpretación:</em> aunque la variable original (tiempo de respuesta) no sigue una normal sino una distribución uniforme, la distribución de la media muestral se aproxima progresivamente a una distribución normal a medida que se incrementa el tamaño de la muestra.</p>
+<p>Esto confirma empíricamente el Teorema Central del Límite y justifica por qué podemos utilizar herramientas basadas en la normalidad (como intervalos de confianza o contrastes) incluso con variables originales no normales, siempre que el tamaño de muestra sea suficientemente grande.</p>
+<p><strong><em>Ejemplo 6 de convergencia en distribución: Distribución normal estándar</em></strong></p>
+<p>A continuación ilustramos mediante una simulación en R cómo la función de distribución empírica <span class="math inline">\(F_n\)</span> se aproxima a la función de distribución teórica <span class="math inline">\(F\)</span> al aumentar el tamaño muestral, tal como garantiza el <strong>Teorema de Glivenko-Cantelli</strong>.</p>
+<p>Generamos tres muestras de tamaños crecientes <span class="math inline">\(n = 10, 50, 500\)</span> de una distribución normal estándar, y comparamos sus funciones de distribución empíricas <span class="math inline">\(F_n(x)\)</span> con la distribución acumulada teórica <span class="math inline">\(\Phi(x)\)</span>.</p>
+<p><img src="06-relacion-convergencia_files/figure-html/dist-empirica-vs-teorica-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> En los tres gráficos se comparan las funciones de distribución empíricas <span class="math inline">\(F_n(x)\)</span> con la función teórica <span class="math inline">\(\Phi(x)\)</span> de la normal estándar, para distintos tamaños muestrales <span class="math inline">\(n = 10, 50, 500\)</span>.</p>
+<ul>
+<li>Cuando <span class="math inline">\(n = 10\)</span>, la función empírica presenta <strong>saltos y desviaciones notables</strong> respecto a la distribución teórica.</li>
+<li>Con <span class="math inline">\(n = 50\)</span>, los saltos son menores y el ajuste mejora, aunque sigue habiendo variabilidad.</li>
+<li>A partir de <span class="math inline">\(n = 500\)</span>, <span class="math inline">\(F_n(x)\)</span> se <strong>aproxima muy bien a</strong> <span class="math inline">\(\Phi(x)\)</span>, y apenas se distinguen visualmente.</li>
+</ul>
+<p>Este comportamiento confirma el <strong>Teorema de Glivenko-Cantelli</strong>, que garantiza que la función de distribución empírica <strong>converge uniformemente</strong> a la verdadera función de distribución cuando el tamaño de la muestra tiende a infinito.</p>
+<p>Este ejemplo también refuerza la utilidad de <span class="math inline">\(F_n(x)\)</span> en estadística aplicada, ya que permite aproximar la distribución de una variable aleatoria a partir de observaciones reales, incluso cuando se desconoce su forma exacta.</p>
+</div>
+<div id="aplicaciones-en-economía-empresa-y-análisis-de-datos" class="section level3 hasAnchor" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Aplicaciones en Economía, empresa y análisis de datos<a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El concepto de <strong>convergencia en distribución</strong> no es solo una herramienta teórica, sino que se encuentra en el núcleo de muchas aplicaciones modernas en análisis de datos, economía y empresa. Su utilidad principal radica en que permite justificar el uso de distribuciones límite (como la normal) para estadísticos muestrales, incluso cuando los datos originales no siguen distribuciones conocidas.</p>
+<p>A continuación se presentan algunas aplicaciones representativas:</p>
+<p><strong>1. Justificación asintótica de contrastes y estimadores</strong></p>
+<p>Muchos procedimientos de inferencia estadística, como los <strong>contrastres de hipótesis</strong> y los <strong>intervalos de confianza</strong>, se basan en el hecho de que ciertos estadísticos convergen en distribución a una normal. Por ejemplo:</p>
+<ul>
+<li>La media muestral <span class="math inline">\(\overline{X}\)</span> converge a <span class="math inline">\(\mathcal{N}(\mu, \sigma^2/n)\)</span> bajo condiciones generales (por el TCL).</li>
+<li>En regresión lineal, los estimadores de mínimos cuadrados ordinarios convergen en distribución a una normal multivariante.</li>
+</ul>
+<p>Esto permite aplicar resultados normales incluso si la población no es normal, siempre que el tamaño muestral sea grande.</p>
+<p><strong>2. Bootstrap y remuestreo</strong></p>
+<p>El método <strong>bootstrap</strong> se basa en el principio de aproximar la distribución en el muestreo de un estadístico (media, mediana, etc.) a través de remuestreo con reemplazo. Bajo ciertas condiciones, se demuestra que la distribución bootstrap <strong>converge en distribución</strong> a la misma distribución límite que tendría el estadístico original.</p>
+<p>Este enfoque es especialmente útil en:</p>
+<ul>
+<li>Estimación de errores estándar sin fórmulas analíticas.</li>
+<li>Construcción de intervalos de confianza en muestras pequeñas.</li>
+<li>Evaluación de la robustez de estimadores.</li>
+</ul>
+<p><strong>3. Evaluación de políticas económicas basada en grandes muestras</strong></p>
+<p>En estudios de impacto de políticas públicas o programas sociales, se suele estimar el efecto medio del tratamiento (por ejemplo, un subsidio o reforma). Si se cuenta con una muestra grande, la distribución del estimador converge a una normal, lo que permite construir intervalos de confianza o realizar contrastes utilizando esta distribución límite, incluso si la distribución original de los datos es asimétrica o presenta colas pesadas.</p>
+<p><strong>4. Inferencia para big data</strong></p>
+<p>En contextos de <strong>grandes volúmenes de datos</strong> (por ejemplo, comportamiento de usuarios, datos financieros de alta frecuencia, registros administrativos masivos), no siempre se conoce la distribución exacta de las variables de interés. Sin embargo, gracias a la convergencia en distribución, es posible:</p>
+<ul>
+<li>Utilizar inferencia basada en resultados asintóticos.</li>
+<li>Justificar la validez de algoritmos de aprendizaje estadístico.</li>
+<li>Evaluar el comportamiento de modelos de predicción en muestras grandes.</li>
+</ul>
+<p>La convergencia en distribución permite aplicar resultados normales y métodos de simulación en una amplia gama de problemas económicos y empresariales, facilitando el análisis de fenómenos complejos incluso cuando las distribuciones originales son desconocidas o difíciles de manejar.</p>
+</div>
+</div>
+<div id="ejercicios-prácticos" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Ejercicios prácticos<a href="#ejercicios-pr%C3%A1cticos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Ejercicio 1. Aproximación de la binomial por la distribución de Poisson</strong></p>
+<p>Supongamos que en una fábrica se producen piezas electrónicas con una probabilidad de defecto del 1%. Si se inspecciona una muestra de 100 piezas:</p>
+<ul>
+<li>Sea <span class="math inline">\(X \sim B(100, 0.01)\)</span> el número de piezas defectuosas.</li>
+<li>Queremos calcular <span class="math inline">\(P(X = 2)\)</span>, es decir, la probabilidad de encontrar exactamente 2 defectuosos.</li>
+</ul>
+<p>Se pide:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(X = 2)\)</span> exactamente usando la fórmula de la binomial.</li>
+<li>Aproximar <span class="math inline">\(P(X = 2)\)</span> usando una distribución de Poisson.</li>
+<li>Comparar ambos resultados e interpretar.</li>
+</ol>
+<p><strong>Solución</strong></p>
+<p><em>1. Cálculo exacto con la distribución binomial:</em></p>
+<p><span class="math display">\[
+P(X = 2) = \binom{100}{2} \cdot (0.01)^2 \cdot (0.99)^{98}
+\]</span></p>
+<p>Calculamos:</p>
+<ul>
+<li><span class="math inline">\(\binom{100}{2} = \frac{100 \cdot 99}{2} = 4950\)</span></li>
+<li><span class="math inline">\((0.01)^2 = 0.0001\)</span></li>
+<li><span class="math inline">\((0.99)^{98} \approx 0.366\)</span></li>
+</ul>
+<p>Entonces:</p>
+<p><span class="math display">\[
+P(X = 2) \approx 4950 \cdot 0.0001 \cdot 0.366 = 0.181
+\]</span></p>
+<p><em>2. Aproximación con una distribución de Poisson:</em></p>
+<p>Usamos que si <span class="math inline">\(X \sim B(n, p)\)</span>, con <span class="math inline">\(n\)</span> grande y <span class="math inline">\(p\)</span> pequeño, entonces:</p>
+<p><span class="math display">\[
+X \approx \text{Poisson}(\lambda = np) = \text{Poisson}(1)
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+P(X = 2) \approx \frac{1^2}{2!} e^{-1} = \frac{1}{2} \cdot \frac{1}{e} \approx 0.184
+\]</span></p>
+<p>Como resultado se ha obtenido:</p>
+<ul>
+<li>Exacto (binomial): <span class="math inline">\(P(X = 2) \approx 0.181\)</span></li>
+<li>Aproximado (Poisson): <span class="math inline">\(P(X = 2) \approx 0.184\)</span></li>
+</ul>
+<p>La diferencia es mínima: la aproximación de Poisson <strong>simplifica los cálculos</strong> y es muy aceptable en este caso, ya que <span class="math inline">\(n = 100\)</span> es suficientemente grande y <span class="math inline">\(p = 0.01\)</span> es pequeño.</p>
+<p><strong>Interpretación:</strong> Este ejercicio muestra cómo aplicar la <strong>aproximación binomial → Poisson</strong>, una herramienta práctica cuando el número de ensayos es grande y la probabilidad de éxito es pequeña. Es útil en contextos donde calcular la binomial exacta puede ser costoso, y demuestra cómo las relaciones entre distribuciones permiten <strong>simplificar problemas sin perder precisión significativa</strong>.</p>
+<p><strong>Ejercicio 2. Aproximación de la binomial por la distribución normal</strong></p>
+<p>Una empresa realiza un estudio sobre el cumplimiento puntual de sus envíos. Se sabe que, históricamente, el 80% de los pedidos se entregan a tiempo. Se selecciona una muestra aleatoria de 100 envíos.</p>
+<p>Sea <span class="math inline">\(X \sim B(100, 0.8)\)</span> el número de pedidos entregados puntualmente.</p>
+<p>Queremos estimar la probabilidad de que <strong>al menos 85 pedidos lleguen a tiempo</strong>, es decir, <span class="math inline">\(P(X \geq 85)\)</span>, usando:</p>
+<ol style="list-style-type: decimal">
+<li>La fórmula exacta de la binomial (solo se planteará, no se calculará a mano).</li>
+<li>La distribución normal <strong>sin corrección por continuidad</strong>.</li>
+<li>La distribución normal <strong>con corrección por continuidad</strong>.</li>
+<li>Comparación e interpretación.</li>
+</ol>
+<p><strong>Solución</strong></p>
+<p><strong>Parámetros de la binomial:</strong></p>
+<p><span class="math display">\[
+n = 100, \quad p = 0.8, \quad \mu = np = 80, \quad \sigma = \sqrt{np(1 - p)} = \sqrt{100 \cdot 0.8 \cdot 0.2} = \sqrt{16} = 4
+\]</span></p>
+<p><em>1. Cálculo exacto (no se desarrolla):</em></p>
+<p><span class="math display">\[
+P(X \geq 85) = \sum_{x=85}^{100} \binom{100}{x} (0.8)^x (0.2)^{100 - x}=0.0951
+\]</span></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="conv.html#cb174-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb174-2"><a href="conv.html#cb174-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb174-3"><a href="conv.html#cb174-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.8</span></span>
+<span id="cb174-4"><a href="conv.html#cb174-4" tabindex="-1"></a></span>
+<span id="cb174-5"><a href="conv.html#cb174-5" tabindex="-1"></a><span class="co"># Cálculo exacto de P(X &gt;= 85)</span></span>
+<span id="cb174-6"><a href="conv.html#cb174-6" tabindex="-1"></a>prob_exacta <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="dv">84</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb174-7"><a href="conv.html#cb174-7" tabindex="-1"></a>prob_exacta</span></code></pre></div>
+<pre><code>## [1] 0.1285055</code></pre>
+<p>Es complejo para hacerlo a mano ⇒ se recurre a una aproximación (si se hiciera a mano habría que calcular 16 probabilidades individuales para agregarlas, por lo que es muy laborioso y se muestra con R).</p>
+<p><em>2. Aproximación normal sin corrección por continuidad:</em></p>
+<p>Explicación del cálculo con distribución normal</p>
+<p>Para aproximar la probabilidad <span class="math inline">\(P(X \geq 85)\)</span> cuando <span class="math inline">\(X \sim B(100, 0.8)\)</span>, se utiliza una distribución normal con la misma media y desviación típica:</p>
+<ul>
+<li><span class="math inline">\(\mu = np = 100 \cdot 0.8 = 80\)</span></li>
+<li><span class="math inline">\(\sigma = \sqrt{np(1 - p)} = \sqrt{100 \cdot 0.8 \cdot 0.2} = \sqrt{16} = 4\)</span></li>
+</ul>
+<p>En este caso (sin correción por continuidad), se sustituye directamente la binomial por una normal:</p>
+<p><span class="math display">\[
+P(X \geq 85) \approx P(Z \geq \frac{85 - 80}{4}) = P(Z \geq 1.25)
+\]</span></p>
+<p>Buscando en la tabla de la normal estándar:</p>
+<p><span class="math display">\[
+P(Z \geq 1.25) = 1 - F(1.25) \approx 1 - 0.8944 = 0.1056
+\]</span></p>
+<p><em>3. Aproximación normal con corrección por continuidad:</em></p>
+<p>La corrección por continuidad consiste en ajustar el valor discreto al entorno continuo. Como queremos <span class="math inline">\(P(X \geq 85)\)</span>, pasamos a:</p>
+<p><span class="math display">\[
+P(Y \geq 84.5), \quad \text{donde } Y \sim \mathcal{N}(80, 4)
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+Z = \frac{84.5 - 80}{4} = 1.125
+\]</span></p>
+<p><span class="math display">\[
+P(Z \geq 1.125) = 1 - F(1.125) \approx 1 - 0.8690 = 0.1310
+\]</span></p>
+<div id="correccion_continuidad" class="note">
+<p><strong>Nota didáctica: ¿Por qué se aplica la corrección por continuidad?</strong></p>
+<p>Cuando usamos la distribución normal para <em>aproximar una binomial</em>, debemos tener en cuenta que:</p>
+<ul>
+<li>La binomial es <em>discreta</em>.</li>
+<li>La normal es <em>continua</em>.</li>
+</ul>
+<p>Por ejemplo:</p>
+<p><span class="math display">\[
+P(X \geq 85) = P(X = 85) + P(X = 86) + \cdots + P(X = 100)
+\]</span></p>
+<p>En la normal se calcula el área bajo la curva, por eso se sustituye por:</p>
+<p><span class="math display">\[
+P(X \geq 85) \approx P(Y \geq 84.5)
+\]</span></p>
+<p><strong>Regla práctica:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Binomial</th>
+<th>Normal (con corrección)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(P(X \geq k)\)</span></td>
+<td><span class="math inline">\(P(Y \geq k - 0.5)\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(P(X \leq k)\)</span></td>
+<td><span class="math inline">\(P(Y \leq k + 0.5)\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(P(X = k)\)</span></td>
+<td><span class="math inline">\(P(k - 0.5 &lt; Y &lt; k + 0.5)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La corrección mejora el ajuste porque tiene en cuenta que la binomial toma valores discretos, mientras que la normal es continua.</p>
+<p><span class="math display">\[
+Z = \frac{85 - 80}{4} = 1.25
+\]</span></p>
+<p><span class="math display">\[
+P(X \geq 85) \approx P(Z \geq 1.25) = 1 - F(1.25) \approx 1 - 0.8944 = 0.1056
+\]</span></p>
+<p><span class="math display">\[
+P(X \geq 85) \approx P(Y \geq 84.5), \quad Y \sim \mathcal{N}(80, 16)
+\]</span></p>
+<p><span class="math display">\[
+Z = \frac{84.5 - 80}{4} = 1.125
+\]</span></p>
+<p><span class="math display">\[
+P(Z \geq 1.125) = 1 - \Phi(1.125) \approx 1 - 0.869 = 0.131
+\]</span></p>
+<p>Como resultado tenemos:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Probabilidad aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binomial exacta</td>
+<td>0.095</td>
+</tr>
+<tr>
+<td>Normal sin corrección</td>
+<td>0.106</td>
+</tr>
+<tr>
+<td>Normal con corrección</td>
+<td>0.131</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretación:</strong></p>
+<p>- La <strong>aproximación normal</strong> es válida porque se cumplen las condiciones:<br />
+<span class="math inline">\(np = 80 \geq 5\)</span>, <span class="math inline">\(n(1 - p) = 20 \geq 5\)</span></p>
+<p>- La <strong>corrección por continuidad</strong> mejora el ajuste, ya que la binomial es discreta y la normal es continua.</p>
+<p>- Este tipo de aproximación permite resolver problemas de forma rápida en estudios de calidad, logística o análisis de eficiencia.</p>
+<p>El ejercicio refuerza el papel del <strong>Teorema Central del Límite</strong> como herramienta para pasar de una distribución discreta a una continua.</p>
+<div class="note">
+<p>❓ ¿Por qué la corrección por continuidad se aleja más del valor exacto en este caso?</p>
+<p>En el ejemplo de la aproximación binomial-normal:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Probabilidad aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binomial exacta</td>
+<td>0.095</td>
+</tr>
+<tr>
+<td>Normal sin corrección</td>
+<td>0.106</td>
+</tr>
+<tr>
+<td>Normal con corrección</td>
+<td>0.131</td>
+</tr>
+</tbody>
+</table>
+<p>Aunque la <strong>corrección por continuidad</strong> se considera una mejora técnica, <strong>no siempre se traduce en una mejor aproximación numérica</strong>. En este caso, la normal con corrección da un valor más lejano al exacto que la normal sin corregir.</p>
+<p>📌 ¿Por qué ocurre?</p>
+<ul>
+<li>La corrección por continuidad ajusta la normal (continua) a la binomial (discreta) desplazando el umbral:<br />
+<span class="math inline">\(P(X \geq 85) \rightarrow P(Y \geq 84.5)\)</span></li>
+<li>Esto <strong>amplía el área bajo la curva</strong>, aumentando la probabilidad estimada.</li>
+<li>En los <strong>extremos de la distribución</strong> (colas), la binomial y la normal pueden diferir más. La normal tiende a <strong>sobreestimar</strong> las colas.</li>
+<li>La corrección mejora el ajuste estructural, pero <strong>puede exagerar</strong> la probabilidad cuando se trata de eventos poco frecuentes.</li>
+</ul>
+<p>✅ Conclusión didáctica</p>
+<blockquote>
+<p>La corrección por continuidad mejora la adaptación entre una distribución continua y una discreta, <strong>pero no garantiza un ajuste numérico más preciso en todos los casos</strong>.<br />
+Lo importante es que <strong>respeta mejor la estructura de la binomial</strong>, especialmente cuando se trabaja con rangos o se realizan contrastes.</p>
+</blockquote>
+</div>
+<p><strong>Ejercicio 3. Función de distribución empírica</strong> <span class="math inline">\(F_n(x)\)</span></p>
+<p>Se ha registrado el tiempo (en minutos) que tardan 8 empleados en resolver una tarea:</p>
+<p><span class="math display">\[
+\{4, 6, 5, 3, 5, 4, 7, 6\}
+\]</span></p>
+<p>Se pide:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la función de distribución empírica <span class="math inline">\(F_n(x)\)</span> para esta muestra.</li>
+<li>Representar gráficamente <span class="math inline">\(F_n(x)\)</span> (forma escalonada).</li>
+<li>Indicar el valor de <span class="math inline">\(F_n(5)\)</span>, <span class="math inline">\(F_n(6.5)\)</span>, y <span class="math inline">\(F_n(10)\)</span>.</li>
+<li>Interpretar qué significa <span class="math inline">\(F_n(x)\)</span> y cómo se relaciona con la función de distribución teórica.</li>
+</ol>
+<p><em>Solución:</em></p>
+<p>Ordenamos los datos:</p>
+<p><span class="math display">\[
+\{3, 4, 4, 5, 5, 6, 6, 7\}
+\]</span></p>
+<p>Recordamos la definición:</p>
+<p><span class="math display">\[
+F_n(x) = \frac{\text{número de observaciones} \leq x}{n}
+\]</span></p>
+<p>Donde <span class="math inline">\(n = 8\)</span>. Calculamos <span class="math inline">\(F_n(x)\)</span> para los valores distintos observados:</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(F_n(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td><span class="math inline">\(\frac{1}{8} = 0.125\)</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math inline">\(\frac{3}{8} = 0.375\)</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math inline">\(\frac{5}{8} = 0.625\)</span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math inline">\(\frac{7}{8} = 0.875\)</span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math inline">\(\frac{8}{8} = 1.000\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Entre valores, la función se mantiene constante.</p>
+<ul>
+<li><span class="math inline">\(F_n(5) = 0.625\)</span></li>
+<li><span class="math inline">\(F_n(6.5) = F_n(6) = 0.875\)</span></li>
+<li><span class="math inline">\(F_n(10) = 1\)</span> (todos los valores son menores o iguales)</li>
+</ul>
+<p><em>Representación gráfica (escalonada)</em></p>
+<p>Pueden representarlo como una función <strong>escalonada</strong> que <strong>salta</strong> en cada valor observado. El salto en cada punto es de <span class="math inline">\(\frac{1}{8}\)</span>, y se mantiene constante entre valores.</p>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> La función <span class="math inline">\(F_n(x)\)</span> representa la <strong>proporción acumulada</strong> de observaciones hasta <span class="math inline">\(x\)</span>. Es una herramienta muy útil para:</p>
+<ul>
+<li>Visualizar la distribución de los datos</li>
+<li>Comparar con distribuciones teóricas (como la normal o exponencial)</li>
+<li>Realizar tests de bondad de ajuste (como Kolmogórov-Smirnov)</li>
+<li>Servir como base para el bootstrap</li>
+</ul>
+<p>En este caso, por ejemplo, podemos decir que el <strong>62.5% de los empleados tardaron 5 minutos o menos</strong> en completar la tarea.</p>
+<p><strong>Ejercicio 4. Jerarquía entre tipos de convergencia</strong></p>
+<p>Se presentan tres sucesiones de variables aleatorias <span class="math inline">\(\{X_n\}\)</span>, todas con valor esperado 0 y varianzas decrecientes. Se indica el tipo de convergencia que verifican respecto a una variable aleatoria <span class="math inline">\(X \equiv 0\)</span>. En cada caso, responde:</p>
+<ol style="list-style-type: decimal">
+<li>¿Qué tipo de convergencia se verifica?</li>
+<li>¿Qué se puede demostrar a partir de ella?</li>
+<li>¿Qué otras convergencias no se pueden asegurar?</li>
+<li>Justifica tu razonamiento brevemente.</li>
+</ol>
+<p><strong>Casos propuestos</strong></p>
+<p><strong>a)</strong> La sucesión <span class="math inline">\(X_n\)</span> verifica que <span class="math inline">\(\mathbb{E}[(X_n - 0)^2] \to 0\)</span></p>
+<p><strong>b)</strong> La sucesión <span class="math inline">\(X_n\)</span> verifica que <span class="math inline">\(P(|X_n| &gt; \varepsilon) \to 0\)</span> para todo <span class="math inline">\(\varepsilon &gt; 0\)</span></p>
+<p><strong>c)</strong> La sucesión <span class="math inline">\(X_n\)</span> verifica que <span class="math inline">\(P(\lim_{n \to \infty} X_n = 0) = 1\)</span></p>
+<p><em>Solución guiada</em></p>
+<p>🔹 Caso a) Se verifica que:</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} \mathbb{E}[|X_n|^2] = 0
+\]</span></p>
+<p>Esto es <strong>convergencia en media cuadrática</strong> hacia 0:<br />
+<span class="math display">\[
+X_n \xrightarrow{L^2} 0
+\]</span></p>
+<p>Demostración:</p>
+<p>Por definición, la convergencia en media <span class="math inline">\(r\)</span>-ésima se cumple si:<br />
+<span class="math display">\[
+\mathbb{E}[|X_n - X|^r] \to 0
+\]</span><br />
+En este caso, con <span class="math inline">\(r = 2\)</span> y <span class="math inline">\(X = 0\)</span>, se cumple.</p>
+<p>Esto implica:</p>
+<ul>
+<li><span class="math inline">\(X_n \xrightarrow{P} 0\)</span> (convergencia en probabilidad)<br />
+</li>
+<li><span class="math inline">\(X_n \xrightarrow{d} 0\)</span> (convergencia en distribución)</li>
+</ul>
+<p>y no implica:</p>
+<ul>
+<li>No se puede concluir que <span class="math inline">\(X_n \to 0\)</span> casi seguramente.<br />
+</li>
+<li>Tampoco garantiza que las trayectorias converjan punto a punto.</li>
+</ul>
+<p>🔹 Caso b) Se verifica que:</p>
+<p><span class="math display">\[
+\forall \varepsilon &gt; 0,\quad P(|X_n| &gt; \varepsilon) \to 0
+\]</span></p>
+<p>Esto es la definición de <strong>convergencia en probabilidad</strong> hacia 0:<br />
+<span class="math display">\[
+X_n \xrightarrow{P} 0
+\]</span></p>
+<p>Demostración:</p>
+<p>La definición formal de convergencia en probabilidad se cumple directamente por hipótesis.</p>
+<p>Lo qué implica:</p>
+<ul>
+<li><span class="math inline">\(X_n \xrightarrow{d} 0\)</span> (convergencia en distribución)</li>
+</ul>
+<p>y no implica:</p>
+<ul>
+<li>No implica convergencia en media cuadrática: podrían existir varianzas grandes pero con probabilidad concentrada.<br />
+</li>
+<li>No implica convergencia casi segura.</li>
+</ul>
+<p>🔹 Caso c) Se verifica que:</p>
+<p><span class="math display">\[
+P\left( \lim_{n \to \infty} X_n = 0 \right) = 1
+\]</span></p>
+<p>Esto es <strong>convergencia casi segura</strong> (también llamada con probabilidad 1):<br />
+<span class="math display">\[
+X_n \xrightarrow{a.s.} 0
+\]</span></p>
+<p>Demostración:</p>
+<p>La hipótesis coincide exactamente con la definición de convergencia casi segura.</p>
+<p>Lo que implica:</p>
+<ul>
+<li><span class="math inline">\(X_n \xrightarrow{P} 0\)</span><br />
+</li>
+<li><span class="math inline">\(X_n \xrightarrow{d} 0\)</span></li>
+</ul>
+<p>y no implica:</p>
+<ul>
+<li>No implica convergencia en media cuadrática (podrían existir valores extremos poco frecuentes que inflen la varianza)</li>
+</ul>
+<p><strong>Conclusión general</strong></p>
+<p>Este ejercicio ilustra que:</p>
+<ul>
+<li>La <strong>convergencia casi segura</strong> es la más fuerte.</li>
+<li>La <strong>convergencia en distribución</strong> es la más débil.</li>
+<li><strong>Cada tipo de convergencia implica otras más débiles</strong>, pero no al revés.</li>
+</ul>
+<p>Jerarquía:</p>
+<p><span class="math display">\[
+X_n \xrightarrow{a.s.} X \Rightarrow X_n \xrightarrow{P} X \Rightarrow X_n \xrightarrow{d} X
+\]</span> <span class="math display">\[
+X_n \xrightarrow{L^2} X \Rightarrow X_n \xrightarrow{P} X
+\]</span></p>
+</div>
+<div id="ejercicio-guiado-en-r" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Ejercicio guiado en R<a href="conv.html#ejercicio-guiado-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Supongamos que una empresa registra el número de unidades vendidas por día durante una semana:</p>
+<p><span class="math display">\[
+\text{Ventas} = \{12,\ 9,\ 13,\ 16,\ 8,\ 14,\ 11\}
+\]</span></p>
+<p>Queremos:</p>
+<ol style="list-style-type: decimal">
+<li>Estimar la media de ventas por día.</li>
+<li>Estimar la <strong>distribución de la media</strong> mediante bootstrap.</li>
+<li>Comparar visualmente la distribución bootstrap con una distribución normal (Teorema Central del Límite).</li>
+<li>Reflexionar sobre el uso de aproximaciones en contextos con pocos datos.</li>
+</ol>
+<p><strong>Resolución guiada con R</strong></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="conv.html#cb176-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2025</span>)</span>
+<span id="cb176-2"><a href="conv.html#cb176-2" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="conv.html#cb176-3" tabindex="-1"></a><span class="co"># Datos originales</span></span>
+<span id="cb176-4"><a href="conv.html#cb176-4" tabindex="-1"></a>ventas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">16</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">11</span>)</span>
+<span id="cb176-5"><a href="conv.html#cb176-5" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(ventas)</span>
+<span id="cb176-6"><a href="conv.html#cb176-6" tabindex="-1"></a></span>
+<span id="cb176-7"><a href="conv.html#cb176-7" tabindex="-1"></a><span class="co"># Estadístico original</span></span>
+<span id="cb176-8"><a href="conv.html#cb176-8" tabindex="-1"></a>media_original <span class="ot">&lt;-</span> <span class="fu">mean</span>(ventas)</span>
+<span id="cb176-9"><a href="conv.html#cb176-9" tabindex="-1"></a>media_original</span></code></pre></div>
+<pre><code>## [1] 11.85714</code></pre>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="conv.html#cb178-1" tabindex="-1"></a><span class="co"># Bootstrap</span></span>
+<span id="cb178-2"><a href="conv.html#cb178-2" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb178-3"><a href="conv.html#cb178-3" tabindex="-1"></a>medias_bootstrap <span class="ot">&lt;-</span> <span class="fu">replicate</span>(B, <span class="fu">mean</span>(<span class="fu">sample</span>(ventas, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb178-4"><a href="conv.html#cb178-4" tabindex="-1"></a></span>
+<span id="cb178-5"><a href="conv.html#cb178-5" tabindex="-1"></a><span class="co"># Estimación normal según TCL</span></span>
+<span id="cb178-6"><a href="conv.html#cb178-6" tabindex="-1"></a>media_hat <span class="ot">&lt;-</span> media_original</span>
+<span id="cb178-7"><a href="conv.html#cb178-7" tabindex="-1"></a>sd_hat <span class="ot">&lt;-</span> <span class="fu">sd</span>(ventas) <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
+<span id="cb178-8"><a href="conv.html#cb178-8" tabindex="-1"></a></span>
+<span id="cb178-9"><a href="conv.html#cb178-9" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb178-10"><a href="conv.html#cb178-10" tabindex="-1"></a><span class="fu">hist</span>(medias_bootstrap, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">breaks =</span> <span class="dv">40</span>,</span>
+<span id="cb178-11"><a href="conv.html#cb178-11" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Distribución bootstrap de la media&quot;</span>,</span>
+<span id="cb178-12"><a href="conv.html#cb178-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Media muestral (bootstrap)&quot;</span>, <span class="at">border =</span> <span class="st">&quot;white&quot;</span>)</span>
+<span id="cb178-13"><a href="conv.html#cb178-13" tabindex="-1"></a></span>
+<span id="cb178-14"><a href="conv.html#cb178-14" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> media_hat, <span class="at">sd =</span> sd_hat),</span>
+<span id="cb178-15"><a href="conv.html#cb178-15" tabindex="-1"></a>      <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb178-16"><a href="conv.html#cb178-16" tabindex="-1"></a></span>
+<span id="cb178-17"><a href="conv.html#cb178-17" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Bootstrap&quot;</span>, <span class="st">&quot;Normal (TCL)&quot;</span>),</span>
+<span id="cb178-18"><a href="conv.html#cb178-18" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="cn">NA</span>), <span class="at">border =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="cn">NA</span>),</span>
+<span id="cb178-19"><a href="conv.html#cb178-19" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">1</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;darkred&quot;</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="06-relacion-convergencia_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> - El histograma representa la <strong>distribución empírica</strong> de la media de ventas por día, generada mediante <strong>remuestreo bootstrap</strong> a partir de la muestra original. - La curva representa la <strong>aproximación normal</strong> basada en el <strong>Teorema Central del Límite (TCL)</strong>, utilizando la media y desviación típica estimadas de los datos originales. - Aunque la muestra es pequeña (<span class="math inline">\(n = 7\)</span>), la distribución bootstrap ya muestra una forma <strong>aproximadamente simétrica y unimodal</strong>, próxima a una distribución normal. - Esto sugiere que <strong>la distribución de la media muestral converge en distribución hacia una normal</strong>, como predice el TCL.</p>
+<p>Además, se observa que:</p>
+<ul>
+<li>El bootstrap no necesita asumir normalidad de los datos originales.</li>
+<li>La aproximación normal basada en el TCL puede ser <strong>razonable incluso con muestras pequeñas</strong>, aunque con mayor incertidumbre.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cont.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": null,
+"view": null,
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

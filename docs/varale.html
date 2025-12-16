@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 3 Variables aleatorias | modelizacion-del-azar</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 3 Variables aleatorias | modelizacion-del-azar" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 3 Variables aleatorias | modelizacion-del-azar" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prob.html"/>
+<link rel="next" href="discr.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="portada.html"><strong>Inicio</strong></a></li>
+<li><a href="portada.html"><strong>Modelización del azar</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="portada.html"><a href="portada.html"><i class="fa fa-check"></i>Modelización del azar y toma de decisiones</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="03-variables-aleatorias.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="prob.html"><a href="prob.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.2.2</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="prob.html"><a href="prob.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="03-variables-aleatorias.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.2.4</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="prob.html"><a href="prob.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.3.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="03-variables-aleatorias.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="prob.html"><a href="prob.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.4.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="03-variables-aleatorias.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.4.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="prob.html"><a href="prob.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="prob.html"><a href="prob.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="prob.html"><a href="prob.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.5.2" data-path="prob.html"><a href="prob.html#regla-del-producto"><i class="fa fa-check"></i><b>2.5.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.5.3" data-path="prob.html"><a href="prob.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.5.4" data-path="prob.html"><a href="prob.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="prob.html"><a href="prob.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="03-variables-aleatorias.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="03-variables-aleatorias.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.7</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="03-variables-aleatorias.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.7.2" data-path="prob.html"><a href="prob.html#combinaciones"><i class="fa fa-check"></i><b>2.7.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.7.3" data-path="prob.html"><a href="prob.html#variaciones"><i class="fa fa-check"></i><b>2.7.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.7.4" data-path="prob.html"><a href="prob.html#permutaciones"><i class="fa fa-check"></i><b>2.7.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="varale.html"><a href="varale.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-variables-aleatorias.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-variables-aleatorias.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="varale.html"><a href="varale.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="varale.html"><a href="varale.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="03-variables-aleatorias.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="varale.html"><a href="varale.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="varale.html"><a href="varale.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="varale.html"><a href="varale.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="varale.html"><a href="varale.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="varale.html"><a href="varale.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="varale.html"><a href="varale.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discr.html"><a href="discr.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="discr.html"><a href="discr.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="discr.html"><a href="discr.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cont.html"><a href="cont.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="cont.html"><a href="cont.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="cont.html"><a href="cont.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="03-variables-aleatorias.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="cont.html"><a href="cont.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="cont.html"><a href="cont.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conv.html"><a href="conv.html"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="03-variables-aleatorias.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="conv.html"><a href="conv.html#relaciones-entre-distribuciones"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="03-variables-aleatorias.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="03-variables-aleatorias.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="03-variables-aleatorias.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="03-variables-aleatorias.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="03-variables-aleatorias.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="03-variables-aleatorias.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="conv.html"><a href="conv.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="03-variables-aleatorias.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="03-variables-aleatorias.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="conv.html"><a href="conv.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="03-variables-aleatorias.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.2.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.2.4</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="varale" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Tema 3</span> Variables aleatorias<a href="varale.html#varale" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En el estudio de fenómenos aleatorios —como lanzar una moneda, medir el tiempo que tarda en llegar un pedido o analizar el número de visitas a una página web— nos interesa modelizar los posibles resultados numéricamente. Para ello utilizamos las <strong>variables aleatorias</strong>, que permiten asociar un valor numérico a cada resultado posible de un experimento aleatorio. Esta idea sencilla nos permite transformar la incertidumbre en un objeto matemático que puede ser analizado con herramientas estadísticas.</p>
+<p>Las variables aleatorias se utilizan cada vez que queremos cuantificar resultados inciertos, modelizar procesos aleatorios o construir modelos probabilísticos que nos ayuden a tomar decisiones. Son fundamentales en economía, empresa, ciencia de datos, ingeniería o ciencias sociales, ya que permiten calcular probabilidades, medias, varianzas y, en general, describir el comportamiento de un fenómeno aleatorio.</p>
+<p>Una <strong>variable aleatoria</strong> es una función que asigna un número real a cada resultado del espacio muestral de un experimento aleatorio. Es decir, es una regla que traduce los posibles resultados de un fenómeno aleatorio en valores numéricos que podemos estudiar matemáticamente.</p>
+<p>Formalmente, una variable aleatoria <span class="math inline">\(X\)</span> es una función:</p>
+<p><span class="math display">\[
+X: \Omega \longrightarrow \mathbb{R}
+\]</span></p>
+<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral (conjunto de todos los posibles resultados del experimento) y <span class="math inline">\(( \mathbb{R}\)</span> es el conjunto de los números reales.</p>
+<div id="clasificación-de-las-variables-aleatorias" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Clasificación de las variables aleatorias<a href="#clasificaci%C3%B3n-de-las-variables-aleatorias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos clasificar las variables aleatorias en función de dos criterios principales:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Número de dimensiones (número de variables)</strong>:</p>
+<ul>
+<li><p><strong>Unidimensionales</strong>: asocian un único número real a cada resultado del experimento.<br />
+Por ejemplo, medir el peso de un paquete o contar el número de reclamaciones recibidas en un día.</p></li>
+<li><p><strong>Bidimensionales</strong> (o más generalmente, <strong>multidimensionales</strong>): asocian un vector de números reales a cada resultado del experimento.<br />
+Por ejemplo, registrar simultáneamente el peso y el volumen de un paquete, o medir el gasto mensual y el ingreso mensual de un hogar.<br />
+En este caso, hablamos de una <em>variable aleatoria vectorial</em> o un <em>vector aleatorio</em>.</p></li>
+</ul>
+<p>Formalmente, si <span class="math inline">\(X = (X_1, X_2)\)</span> es una variable aleatoria bidimensional:</p>
+<p><span class="math display">\[
+X: \Omega \longrightarrow \mathbb{R}^2
+\]</span></p></li>
+<li><p><strong>Naturaleza de los valores que pueden tomar</strong>:</p>
+<ul>
+<li><strong>Discretas</strong>: cuando sus valores posibles son finitos o infinitos numerables (por ejemplo, <span class="math inline">\(0,1,2,\ldots\)</span>,el número de hijos de una familia o el número de fallos en una cadena de producción).</li>
+<li><strong>Continuas</strong>: cuando pueden tomar cualquier valor dentro de un intervalo o subconjunto de los números reales (por ejemplo, la altura de una persona o el tiempo que tarda un cliente en ser atendido).</li>
+</ul></li>
+</ol>
+</div>
+<div id="variables-aleatorias-unidimensionales" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Variables aleatorias Unidimensionales<a href="varale.html#variables-aleatorias-unidimensionales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="variables-aleatorias-discretas" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Variables aleatorias discretas<a href="varale.html#variables-aleatorias-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>variable aleatoria discreta</strong> es aquella que solo puede tomar un número <strong>finito o numerable</strong> de valores. Estos valores suelen estar separados entre sí, como los números enteros, y cada uno tiene una probabilidad asociada.</p>
+<p>Ejemplos comunes de variables aleatorias discretas son:</p>
+<ul>
+<li><p>El número de caras al lanzar varias monedas.</p></li>
+<li><p>El número de clientes que llegan a una tienda en una hora.</p></li>
+</ul>
+<p>- El número de errores en un documento.</p>
+<div id="función-de-probabilidad-o-función-de-cuantía" class="section level4 hasAnchor" number="3.2.1.1">
+<h4><span class="header-section-number">3.2.1.1</span> Función de probabilidad o función de cuantía<a href="#funci%C3%B3n-de-probabilidad-o-funci%C3%B3n-de-cuant%C3%ADa" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La <strong>función de probabilidad</strong> (también llamada función de masa de probabilidad o función de cuantía) de una variable aleatoria discreta <span class="math inline">\(X\)</span> es una función que asigna a cada valor posible <span class="math inline">\(x_i\)</span> la probabilidad de que la variable tome ese valor:</p>
+<p><span class="math display">\[
+f(x_i) = P(X = x_i)
+\]</span></p>
+<p>Cumple dos propiedades fundamentales:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f(x_i) \geq 0\)</span> para todo <span class="math inline">\(x_i\)</span></li>
+<li><span class="math inline">\(\sum_i f(x_i) = 1\)</span></li>
+</ol>
+<p>Estas probabilidades pueden representarse en una tabla, un gráfico de barras o en forma de función.</p>
+</div>
+<div id="función-de-distribución-acumulada-fda" class="section level4 hasAnchor" number="3.2.1.2">
+<h4><span class="header-section-number">3.2.1.2</span> Función de distribución acumulada (FDA)<a href="#funci%C3%B3n-de-distribuci%C3%B3n-acumulada-fda" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La <strong>función de distribución acumulada</strong> <span class="math inline">\(F(x)\)</span> de una variable aleatoria discreta se define como:</p>
+<p><span class="math display">\[
+F(x) = P(X \leq x) = \sum_{x_i \leq x} f(x_i)
+\]</span></p>
+<p>La FDA representa la probabilidad de que la variable tome un valor <strong>menor o igual</strong> que <span class="math inline">\(x\)</span>. Es una función escalonada, monótona no decreciente, con las siguientes propiedades:</p>
+<ul>
+<li><span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span></li>
+<li><span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span></li>
+<li><span class="math inline">\(0 \leq F(x) \leq 1\)</span> para todo <span class="math inline">\(x\)</span>.</li>
+<li>Es una función <strong>monótona no decreciente</strong>: si <span class="math inline">\(x &lt; y\)</span>, entonces <span class="math inline">\(F(x) \leq F(y)\)</span>.</li>
+<li>Es <strong>escalonada</strong>: aumenta en los puntos donde la variable aleatoria toma valores, y es constante entre ellos.</li>
+<li>Es <strong>continua por la derecha</strong>: en cada punto <span class="math inline">\(x\)</span>, se cumple que <span class="math inline">\(F(x) = \lim_{t \downarrow x} F(t)\)</span>.</li>
+</ul>
+<p>Gráficamente, tanto la función de cuantía como de distribución tienen la siguiente forma:</p>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p><strong>Ejemplos de variables aleatorias discretas</strong></p>
+<p><strong>Ejemplo 1: Número de clientes atendidos en una hora</strong></p>
+<p>La variable aleatoria <span class="math inline">\(X\)</span> representa el número de clientes que entran en una tienda durante una hora. Supongamos que los valores posibles son 0, 1, 2 o 3 clientes, y las probabilidades se basan en la experiencia previa.</p>
+<table>
+<thead>
+<tr>
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(f(x) = P(X = x)\)</span></th>
+<th align="right"><span class="math inline">\(F(x) = P(X \leq x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0.1</td>
+<td align="right">0.1</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0.3</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">0.4</td>
+<td align="right">0.8</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo 2 (distribución de Bernoulli): Aprobación de un test</strong></p>
+<p>La variable aleatoria <span class="math inline">\(X\)</span> representa si un estudiante aprueba (1) o suspende (0) un test. Supongamos que la probabilidad de aprobar es 0.7.</p>
+<table>
+<thead>
+<tr>
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(f(x) = P(X = x)\)</span></th>
+<th align="right"><span class="math inline">\(F(x) = P(X \leq x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right">0.3</td>
+<td align="right">0.3</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">0.7</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo 3 (distribución uniforme discreta): Sorteo de una plaza</strong></p>
+<p>La variable aleatoria <span class="math inline">\(X\)</span> representa el número del participante que gana una beca, entre 5 candidatos con igual probabilidad.</p>
+<table>
+<thead>
+<tr>
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(f(x) = P(X = x)\)</span></th>
+<th align="right"><span class="math inline">\(F(x) = P(X \leq x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="right">0.2</td>
+<td align="right">0.2</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">0.2</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">0.2</td>
+<td align="right">0.6</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">0.2</td>
+<td align="right">0.8</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">0.2</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo 4: número de caras al lanzar 3 monedas</strong></p>
+<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que cuenta el <em>número de caras</em> <em>al lanzar tres monedas.</em></p>
+<p>Los posibles valores que puede tomar son: <span class="math inline">\(X = 0, 1, 2, 3\)</span></p>
+<p>La tabla muestra la función de cuantía <span class="math inline">\(f(x) = P(X = x)\)</span> y la función de distribución acumulada <span class="math inline">\(F(x) = P(X \leq x)\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(f(x) = P(X = x)\)</span></th>
+<th align="right"><span class="math inline">\(F(x) = P(X \leq x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="right"><span class="math inline">\(\frac{1}{8}\)</span> = 0.125</td>
+<td align="right">0.125</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right"><span class="math inline">\(\frac{3}{8}\)</span> = 0.375</td>
+<td align="right">0.500</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right"><span class="math inline">\(\frac{3}{8}\)</span> = 0.375</td>
+<td align="right">0.875</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right"><span class="math inline">\(\frac{1}{8}\)</span> = 0.125</td>
+<td align="right">1.000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Representación gráfica en R del “número de caras al lanzar tres monedas”</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="varale.html#cb22-1" tabindex="-1"></a><span class="co"># Valores posibles de X</span></span>
+<span id="cb22-2"><a href="varale.html#cb22-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb22-3"><a href="varale.html#cb22-3" tabindex="-1"></a><span class="co"># Función de cuantía</span></span>
+<span id="cb22-4"><a href="varale.html#cb22-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">8</span></span>
+<span id="cb22-5"><a href="varale.html#cb22-5" tabindex="-1"></a><span class="co"># Función de distribución acumulada</span></span>
+<span id="cb22-6"><a href="varale.html#cb22-6" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(p)</span>
+<span id="cb22-7"><a href="varale.html#cb22-7" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="varale.html#cb22-8" tabindex="-1"></a><span class="co"># Función de cuantía (gráfico de &quot;palos&quot;)</span></span>
+<span id="cb22-9"><a href="varale.html#cb22-9" tabindex="-1"></a><span class="fu">plot</span>(x, p, <span class="at">type =</span> <span class="st">&quot;h&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb22-10"><a href="varale.html#cb22-10" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Función de cuantía f(x)&quot;</span>,</span>
+<span id="cb22-11"><a href="varale.html#cb22-11" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Valores de X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;P(X = x)&quot;</span>)</span>
+<span id="cb22-12"><a href="varale.html#cb22-12" tabindex="-1"></a><span class="fu">points</span>(x, p, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="varale.html#cb23-1" tabindex="-1"></a><span class="co"># Función de distribución acumulada (gráfico escalera)</span></span>
+<span id="cb23-2"><a href="varale.html#cb23-2" tabindex="-1"></a><span class="fu">plot</span>(x, F, <span class="at">type =</span> <span class="st">&quot;s&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb23-3"><a href="varale.html#cb23-3" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Función de distribución acumulada F(x)&quot;</span>,</span>
+<span id="cb23-4"><a href="varale.html#cb23-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Valores de X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;F(x)&quot;</span>)</span>
+<span id="cb23-5"><a href="varale.html#cb23-5" tabindex="-1"></a><span class="fu">points</span>(x, F, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span></code></pre></div>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+</div>
+</div>
+<div id="variables-aleatorias-continuas" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Variables aleatorias continuas<a href="varale.html#variables-aleatorias-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una <strong>variable aleatoria continua</strong> es aquella que puede tomar <strong>infinitos valores dentro de un intervalo del conjunto de los números reales</strong>. A diferencia de las variables discretas, donde los valores están separados unos de otros (por ejemplo, 0, 1, 2…), en las variables continuas no hay “saltos” entre los posibles resultados. Es decir, entre dos valores cualesquiera, siempre existe otro valor posible, por lo que el conjunto de valores que puede tomar <strong>no es numerable</strong>.</p>
+<p>Dado que hay infinitos valores posibles, <strong>la probabilidad de que la variable tome un valor exacto es siempre cero</strong>: <span class="math inline">\(P(X = x) = 0\)</span>. Por tanto, <strong>solo se pueden calcular probabilidades sobre intervalos</strong>, como <span class="math inline">\(P(a \leq X \leq b)\)</span>.</p>
+<p>Ejemplos comunes de variables aleatorias continuas son:</p>
+<ul>
+<li>El tiempo de espera de un cliente en una cola: puede ser 1,85 minutos, 3,142 minutos, o cualquier número real positivo.</li>
+<li>La cantidad diaria de lluvia en una ciudad, medida en litros por metro cuadrado: puede ser 0, 1,5, 2,78, etc.</li>
+<li>La altura de una persona, que puede medirse con tanta precisión como permita el instrumento: 165,0 cm, 165,01 cm, 165,001 cm…</li>
+</ul>
+<p>Estas variables requieren herramientas matemáticas diferentes a las discretas, como la función de densidad y el cálculo integral, para poder estudiar sus propiedades y calcular probabilidades.</p>
+<div id="función-de-densidad-de-probabilidad" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Función de densidad de probabilidad<a href="#funci%C3%B3n-de-densidad-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La función de densidad de una variable aleatoria continua <span class="math inline">\(f(x)\)</span> cumple:</p>
+<ul>
+<li><span class="math inline">\(f(x) \geq 0\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span> (es no negativa)</li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty} f(x) dx = 1\)</span></li>
+<li>La probabilidad de que <span class="math inline">\(X\)</span> esté entre dos puntos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> se calcula como el área bajo la curva:</li>
+</ul>
+<p><span class="math display">\[
+P(a \leq X \leq b) = \int_a^b f(x) dx
+\]</span></p>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="función-de-distribución-acumulada-fda-1" class="section level4 hasAnchor" number="3.2.2.2">
+<h4><span class="header-section-number">3.2.2.2</span> Función de distribución acumulada (FDA)<a href="#funci%C3%B3n-de-distribuci%C3%B3n-acumulada-fda-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La función de distribución acumulada de una variable aleatoria continua <span class="math inline">\(X\)</span> es una función <span class="math inline">\(F(x)\)</span> que asocia a cada valor <span class="math inline">\(a\)</span> la probabilidad de que la variable tome un valor menor o igual que <span class="math inline">\(a\)</span>, es decir:</p>
+<p><span class="math display">\[
+F(a) = P(X \leq a) = \int_{-\infty}^a f(x) dx
+\]</span></p>
+<p>Esta función también cumple:</p>
+<ul>
+<li><span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span></li>
+<li><span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span></li>
+<li>Es continua, monótona no decreciente.</li>
+<li>Su derivada (si existe) es la función de densidad:<br />
+<span class="math display">\[
+f(x) = \frac{dF(x)}{dx}
+\]</span></li>
+</ul>
+<p><img src="03-variables-aleatorias_files/figure-html/grafico-fda-continua-1.png" width="672" /></p>
+<p><strong>Ejemplo del tiempo de espera en una cola</strong>.</p>
+<p>Sea <span class="math inline">\(X\)</span> la variable aleatoria que representa el tiempo (en minutos) que un cliente espera en una cola de atención. Aunque no podemos asignar una probabilidad exacta a un valor concreto (por ejemplo, <span class="math inline">\(P(X = 3) = 0\)</span>), sí tiene sentido calcular probabilidades en intervalos, como:</p>
+<ul>
+<li><span class="math inline">\(P(1 \leq X \leq 1,5)\)</span>: probabilidad de que espere entre 1 y 1,5 minutos.</li>
+<li><span class="math inline">\(P(X \leq 5)\)</span>: probabilidad de que espere como mucho 5 minutos.</li>
+</ul>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="momentos-estadísticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza<a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los momentos son medidas que permiten describir las características fundamentales de una variable aleatoria, tales como su tendencia central, dispersión, asimetría o curtosis. De manera general, los momentos cuantifican el valor medio de las potencias de la variable aleatoria respecto a un punto de referencia.</p>
+<p>Podemos distinguir dos tipos principales de momentos:</p>
+<ul>
+<li><strong>Momentos respecto del origen</strong>: miden la magnitud promedio de las potencias de la variable respecto a cero.</li>
+<li><strong>Momentos respecto de la media</strong>: miden la dispersión y forma de la distribución respecto a su media.</li>
+</ul>
+<div id="momentos-respecto-del-origen" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Momentos respecto del origen<a href="varale.html#momentos-respecto-del-origen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El momento de orden <span class="math inline">\(k\)</span> respecto del origen de una variable aleatoria <span class="math inline">\(X\)</span> se define como la esperanza de la variable aleatoria de orden <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\alpha_k = E\left[X^k\right]
+\]</span></p>
+<p>El caso particular más importante es el <strong>momento de primer orden respecto del origen</strong>, que corresponde a la media o Esperanza de la variable aleatoria <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+\alpha_1 = E[X]
+\]</span></p>
+</div>
+<div id="momentos-respecto-de-la-media" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Momentos respecto de la media<a href="varale.html#momentos-respecto-de-la-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El momento de orden <span class="math inline">\(k\)</span> respecto de la media (o momento central) se define como:</p>
+<p><span class="math display">\[
+\mu_k = E\left[(X - E[X])^k\right]
+\]</span></p>
+<p>Este tipo de momentos nos informa sobre la dispersión, la asimetría y la forma de la distribución. El más importante es el <strong>momento de segundo orden respecto de la media</strong>, que corresponde a la varianza (<span class="math inline">\(\sigma^2\)</span>):</p>
+<p><span class="math display">\[
+\mu_2 =\sigma^2= Var(X) = E\left[(X - E[X])^2\right]
+\]</span></p>
+<p>En los siguientes puntos se explicará como se calcula para el caso discreto y continuo.</p>
+</div>
+<div id="relación-entre-los-momentos-respecto-de-la-media-y-del-origen" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Relación entre los momentos respecto de la media y del origen<a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Todos los momentos respecto de la media se pueden calcular como una función de los momentos respecto del origen. La fórmula general que los relaciona es:</p>
+<p><span class="math display">\[
+\mu_r = \sum_{k=0}^{r} \binom{r}{k} (-1)^{r-k}\,\mu^{r-k}\,\alpha_k.
+\]</span></p>
+<p>donde <span class="math inline">\(r\)</span> es el orden del momento respecto de la media, <span class="math inline">\(k\)</span> es un número entero que va desde 0 hasta <span class="math inline">\(r\)</span> y <span class="math inline">\(\mu=\alpha_1\)</span> es el momento respecto del origen de orden 1 o la media.</p>
+<p>En particular, los primeros momentos cumplen:</p>
+<ul>
+<li><p><strong>Momento respecto de la media de orden 1:</strong></p>
+<p><span class="math display">\[
+\mu_1 = 0.
+\]</span></p></li>
+<li><p><strong>Momento respecto de la media de orden 2 (varianza):</strong></p>
+<p><span class="math display">\[
+\mu_2 = \alpha_2 - (\alpha_1)^2.
+\]</span> Demostración:</p></li>
+</ul>
+<p>Partiendo de la fórmula general:</p>
+<p><span class="math display">\[
+\mu_r = \sum_{k=0}^{r} \binom{r}{k}\,(-1)^{r-k}\,\mu^{r-k}\,\alpha_k,
+\]</span></p>
+<p>Para <span class="math inline">\(r=2\)</span>:</p>
+<p><span class="math display">\[
+\mu_2 = \sum_{k=0}^{2} \binom{2}{k}\,(-1)^{2-k}\,\mu^{2-k}\,\alpha_k.
+\]</span></p>
+<p>Desarrollamos término a término del valor <span class="math inline">\(k\)</span>:</p>
+<p><em>Primer término (</em><span class="math inline">\(k=0\)</span>):</p>
+<p><span class="math display">\[
+\binom{2}{0}\,(-1)^{2-0}\,\mu^{2-0}\,\alpha_0 = (1)\,(+1)\,\mu^{2}\,(1) = \mu^2.
+\]</span></p>
+<p><em>Segundo término (</em><span class="math inline">\(k=1\)</span>):</p>
+<p><span class="math display">\[
+\binom{2}{1}\,(-1)^{2-1}\,\mu^{2-1}\,\alpha_1 = (2)\,(-1)\,\mu\,\alpha_1 = -2\,\mu\,\alpha_1=-2\,\mu^2
+\]</span></p>
+<p><em>Tercer término (</em><span class="math inline">\(k=2\)</span>):</p>
+<p><span class="math display">\[
+\binom{2}{2}\,(-1)^{2-2}\,\mu^{2-2}\,\alpha_2 = (1)\,(+1)\,(1)\,\alpha_2 = \alpha_2.
+\]</span></p>
+<p>Sumamos los tres términos:</p>
+<p><span class="math display">\[
+\mu_2 = \mu^2 - 2\mu^2 + \alpha_2=\alpha_2-\mu^2
+\]</span></p>
+<p>Finalmente:</p>
+<p><span class="math display">\[
+\boxed{
+\mu_2 = \alpha_2 - \alpha_1^2
+}
+\]</span></p>
+<ul>
+<li><p><strong>Momento respecto de la media de orden 3 (asimetría):</strong></p>
+<p><span class="math display">\[
+\mu_3 = \alpha_3 - 3\,\alpha_1\,\alpha_2 + 2\,(\alpha_1)^3.
+\]</span></p></li>
+<li><p><strong>Momento respecto la media de orden 4 (curtosis):</strong></p>
+<p><span class="math display">\[
+\mu_4 = \alpha_4 - 4\,\alpha_1\,\alpha_3 + 6\,(\alpha_1)^2\,\alpha_2 - 3\,(\alpha_1)^4.
+\]</span></p></li>
+</ul>
+</div>
+<div id="esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Esperanza y varianza de las variables aleatorias unidimensionales<a href="varale.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para definir la media y la varianza de manera más concreta, debemos distinguir entre variables aleatorias discretas y continuas.</p>
+<div id="esperanza-y-varianza-para-variables-aleatorias-discretas" class="section level4 hasAnchor" number="3.3.4.1">
+<h4><span class="header-section-number">3.3.4.1</span> Esperanza y varianza para variables aleatorias discretas<a href="varale.html#esperanza-y-varianza-para-variables-aleatorias-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta con función de masa de probabilidad <span class="math inline">\(p(x)\)</span>:</p>
+<ul>
+<li><strong>Esperanza matemática (media):</strong></li>
+</ul>
+<p><span class="math display">\[
+\mu_X=E[X] = \sum_{x_i} x_i \, p(x_i)
+\]</span></p>
+<ul>
+<li><strong>Varianza:</strong></li>
+</ul>
+<p><span class="math display">\[
+\sigma^2=Var(X) = \sum_{x_i} (x_i - E[X])^2 \, p(x_i)=\sum_{x_i} (x_i - \mu_X)^2 \, p(x_i)
+\]</span></p>
+<p>que también se puede calcular como</p>
+<p><span class="math display">\[
+\sigma^2=\text{Var}(X) = E[X^2] - (E[X])^2=E[X^2] - \mu_X^2
+\]</span></p>
+<p>En este caso, <span class="math inline">\(E[X^2]\)</span> es el momento respecto del origen de orden 2 que se calcula como:</p>
+<p><span class="math display">\[
+E[X^2] = \sum_{x_i} x^2_i \, p(x_i)
+\]</span></p>
+</div>
+<div id="esperanza-y-varianza-para-variables-aleatorias-continuas" class="section level4 hasAnchor" number="3.3.4.2">
+<h4><span class="header-section-number">3.3.4.2</span> Esperanza y varianza para variables aleatorias continuas<a href="varale.html#esperanza-y-varianza-para-variables-aleatorias-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua con función de densidad <span class="math inline">\(f(x)\)</span>:</p>
+<ul>
+<li><strong>Esperanza matemática:</strong></li>
+</ul>
+<p><span class="math display">\[
+E[X] = \int_{-\infty}^{\infty} x \, f(x) \, dx
+\]</span></p>
+<ul>
+<li><strong>Varianza:</strong></li>
+</ul>
+<p><span class="math display">\[
+\sigma^2=Var(X) = \int_{-\infty}^{\infty} (x - E[X])^2f(x)dx=\int_{-\infty}^{\infty} (x - \mu_X)^2f(x)  dx
+\]</span></p>
+<p>que se puede reescribir como:</p>
+<p><span class="math display">\[
+\text{Var}(X) = E[(X - E[X])^2]= E[(X - \mu_X)^2]
+\]</span></p>
+<p>A efectos prácticos y aplicando las relaciones entre momenttos, suele calcularse con la siguiente fórmula:</p>
+<p><span class="math display">\[
+\text{Var}(X) = E[X^2] - (E[X])^2=E[X^2] - \mu_X^2
+\]</span></p>
+<p>donde <span class="math inline">\(E[X^2]\)</span> para el caso continuo es igual a:</p>
+<p><span class="math display">\[
+E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x)dx
+\]</span></p>
+<p>A continuación se presentan las definiciones y fórmulas para variables aleatorias discretas y continuas. Notar, que la definición de estos momentos poblacionales es análoga a la de momentos muestrales (y sus propiedades son las mismas), pero en vez de emplear frecuencias (relativas o absolutas) se emplean probabilidades o densidades.</p>
+<p><strong>Interpretación</strong></p>
+<ul>
+<li>La <strong>esperanza</strong> representa la media de la variable aleatoria e indica el “centro de gravedad” de la distribución.</li>
+<li>La <strong>varianza</strong> mide la <strong>dispersión</strong> alrededor de ese centro.</li>
+<li>Cuanto mayor es la varianza, más alejados están, en promedio, los valores posibles de la media.</li>
+</ul>
+<p><strong>Ejemplo en R (variable discreta)</strong>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="varale.html#cb24-1" tabindex="-1"></a><span class="co"># Valores y probabilidades</span></span>
+<span id="cb24-2"><a href="varale.html#cb24-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb24-3"><a href="varale.html#cb24-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.15</span>, <span class="fl">0.05</span>)</span>
+<span id="cb24-4"><a href="varale.html#cb24-4" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="varale.html#cb24-5" tabindex="-1"></a><span class="co"># Esperanza</span></span>
+<span id="cb24-6"><a href="varale.html#cb24-6" tabindex="-1"></a>esperanza <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> p)</span>
+<span id="cb24-7"><a href="varale.html#cb24-7" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="varale.html#cb24-8" tabindex="-1"></a><span class="co"># Varianza</span></span>
+<span id="cb24-9"><a href="varale.html#cb24-9" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> esperanza)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> p)</span>
+<span id="cb24-10"><a href="varale.html#cb24-10" tabindex="-1"></a>varianza_momentos <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> p) <span class="sc">-</span> esperanza<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb24-11"><a href="varale.html#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="varale.html#cb24-12" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Esperanza =</span> esperanza, <span class="at">Varianza =</span> varianza, <span class="at">Varianza_mom =</span> varianza_momentos)</span></code></pre></div>
+<pre><code>##    Esperanza     Varianza Varianza_mom 
+##       1.7500       0.9875       0.9875</code></pre>
+<p><strong>Ejemplo en R (variable continua)</strong>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="varale.html#cb26-1" tabindex="-1"></a><span class="co"># Normal estándar: media 0, varianza 1</span></span>
+<span id="cb26-2"><a href="varale.html#cb26-2" tabindex="-1"></a>esperanza <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(x) x <span class="sc">*</span> <span class="fu">dnorm</span>(x), <span class="sc">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span>)<span class="sc">$</span>value</span>
+<span id="cb26-3"><a href="varale.html#cb26-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(x) (x <span class="sc">-</span> esperanza)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">dnorm</span>(x), <span class="sc">-</span><span class="cn">Inf</span>, <span class="cn">Inf</span>)<span class="sc">$</span>value</span>
+<span id="cb26-4"><a href="varale.html#cb26-4" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="varale.html#cb26-5" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Esperanza =</span> esperanza, <span class="at">Varianza =</span> varianza)</span></code></pre></div>
+<pre><code>## Esperanza  Varianza 
+##         0         1</code></pre>
+</div>
+</div>
+<div id="propiedades-de-la-esperanza-y-la-varianza" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Propiedades de la esperanza y la varianza<a href="varale.html#propiedades-de-la-esperanza-y-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las propiedades algebraicas de la esperanza y la varianza permiten simplificar muchos cálculos y analizar el comportamiento de las variables aleatorias cuando se transforman o combinan.</p>
+<div id="propiedades-de-la-esperanza-matemática" class="section level4 hasAnchor" number="3.3.5.1">
+<h4><span class="header-section-number">3.3.5.1</span> Propiedades de la esperanza matemática<a href="#propiedades-de-la-esperanza-matem%C3%A1tica" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Esperanza de una constante</strong><br />
+Si <span class="math inline">\(c\)</span> es una constante:</p>
+<p><span class="math display">\[
+\mathbb{E}[c] = c
+\]</span></p></li>
+<li><p><strong>Cambio de origen</strong></p></li>
+</ol>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(a\)</span> es una constante, entonces:</p>
+<p><span class="math display">\[
+E[X + a] = E[X] + a
+\]</span></p>
+<p>Sumar una constante <span class="math inline">\(a\)</span> a una variable aleatoria <strong>desplaza su esperanza</strong> en esa misma cantidad. La forma de la distribución no cambia, solo se traslada a la derecha o a la izquierda.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Cambio de escala</strong></li>
+</ol>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(b\)</span> es una constante, entonces:</p>
+<p><span class="math display">\[
+E[bX] = b \cdot E[X]
+\]</span></p>
+<p>Multiplicar una variable aleatoria por una constante <strong>escala su esperanza</strong> por ese mismo valor. Esta propiedad es un caso particular de la linealidad de la esperanza cuando no hay término independiente.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Linealidad de la esperanza</strong></li>
+</ol>
+<p>Para cualquier variable aleatoria <span class="math inline">\(X\)</span> y constantes <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>:</p>
+<p><span class="math display">\[
+   E[bX + a] = b \cdot E[X] + a
+\]</span></p>
+<p>La esperanza se comporta como una media: escalar por <span class="math inline">\(b\)</span> escala la media, y sumar <span class="math inline">\(a\)</span> la desplaza.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Esperanza de la suma o diferencia de variables aleatorias</strong><br />
+Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son variables aleatorias (independientes o no):</p>
+<p><span class="math display">\[
+E[X + Y] = E[X] + E[Y]
+\]</span></p>
+<p>Y en general, para <span class="math inline">\(X_1, X_2, \dots, X_n\)</span>:</p>
+<p><span class="math display">\[
+E\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n E[X_i]
+\]</span> y lo mismo para <span class="math display">\[
+E[X-Y]=E[X]-E[Y]
+\]</span></p></li>
+<li><p><strong>Esperanza del producto de dos variables aleatorias</strong></p></li>
+</ol>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son dos variables aleatorias, en general:</p>
+<p><span class="math display">\[
+E[XY] \neq E[X] \cdot E[Y]
+\]</span></p>
+<p>Sin embargo, <strong>si</strong> <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces:</p>
+<p><span class="math display">\[
+E[XY] = E[X] \cdot E[Y]
+\]</span></p>
+<p>Esta propiedad es muy útil cuando se trabaja con productos de variables aleatorias independientes, ya que permite descomponer la esperanza del producto como el producto de las esperanzas.</p>
+<p><strong>Importante</strong>:<br />
+La <strong>independencia</strong> es una condición <strong>necesaria</strong> para que la igualdad se cumpla. Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> no son independientes, la relación <strong>no</strong> es válida en general.</p>
+</div>
+<div id="propiedades-de-la-varianza" class="section level4 hasAnchor" number="3.3.5.2">
+<h4><span class="header-section-number">3.3.5.2</span> Propiedades de la varianza<a href="varale.html#propiedades-de-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>No negatividad de la varianza</strong></li>
+</ol>
+<p>Para cualquier variable aleatoria <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+\text{Var}(X) \geq 0
+\]</span></p>
+<p>La varianza <strong>nunca puede ser negativa</strong>, ya que está definida como la esperanza de un cuadrado:</p>
+<p><span class="math display">\[
+\text{Var}(X) = E\left[(X - E[X])^2\right]
+\]</span></p>
+<p>Dado que los cuadrados son siempre mayores o iguales que cero, su media también lo es.</p>
+<p>La varianza es cero <strong>solo cuando</strong> <span class="math inline">\(X\)</span> toma siempre el mismo valor (es decir, es una constante).</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Varianza de una constante</strong></p>
+<p>Si <span class="math inline">\(c\)</span> es una constante:</p>
+<p><span class="math display">\[
+\text{Var}(c) = 0
+\]</span></p>
+<p>No hay variabilidad si el valor es constante, ya que siempre toma el mismo valor.</p></li>
+<li><p><strong>Cambio de origen</strong><br />
+Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(a\)</span> una constante:</p>
+<p><span class="math display">\[
+\text{Var}(X + a) = \text{Var}(X)
+\]</span></p>
+<p>Sumar una constante a una variable aleatoria <strong>no cambia su dispersión</strong>, solo traslada la distribución horizontalmente. Por tanto, la varianza permanece inalterada.</p></li>
+<li><p><strong>Cambio de escala</strong><br />
+Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(b\)</span> una constante:</p>
+<p><span class="math display">\[
+\text{Var}(bX) = b^2 \cdot \text{Var}(X)
+\]</span></p>
+<p>Multiplicar una variable aleatoria por una constante <strong>escala su varianza al cuadrado de esa constante</strong>. La dispersión se amplifica o reduce según el valor de <span class="math inline">\(b\)</span>.</p></li>
+<li><p><strong>Combinación lineal con cambio de origen y escala</strong></p>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> constantes:</p>
+<p><span class="math display">\[
+\text{Var}(a + bX) = b^2 \cdot \text{Var}(X)
+\]</span></p>
+<p>La varianza <strong>no se ve afectada</strong> por el término constante <span class="math inline">\(a\)</span>, y <strong>se escala al cuadrado</strong> con <span class="math inline">\(b\)</span>.</p></li>
+<li><p><strong>Varianza de la suma de variables aleatorias independientes</strong></p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son <strong>independientes</strong>:</p>
+<p><span class="math display">\[
+\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)
+\]</span></p>
+<p>Y más generalmente, si <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> son independientes:</p>
+<p><span class="math display">\[
+\text{Var}\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i)
+\]</span></p>
+<p>La <strong>dispersión total</strong> es la suma de las dispersiónes individuales si las variables son independientes.</p></li>
+<li><p><strong>Varianza de la diferencia de variables aleatorias independientes</strong></p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son <strong>independientes</strong>:</p>
+<p><span class="math display">\[
+\text{Var}(X - Y) = \text{Var}(X) + \text{Var}(Y)
+\]</span></p>
+<p>Aunque se trata de una resta, las dispersiónes <strong>se suman</strong> si las variables son independientes, ya que la varianza mide magnitud, no dirección.</p></li>
+<li><p><strong>Varianza de la suma si las variables NO son independientes</strong></p>
+<p>En el caso general, si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> <strong>no son independientes</strong>, entonces:</p>
+<p><span class="math display">\[
+\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2 \cdot \text{Cov}(X, Y)
+\]</span></p>
+<p>La covarianza introduce un ajuste que depende de cómo se relacionan las variables. Si la covarianza es positiva, aumenta la varianza total; si es negativa, la reduce.</p></li>
+<li><p><strong>Varianza de la diferencia de variables aleatorias NO independientes</strong></p></li>
+</ol>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son variables aleatorias <strong>no independientes</strong>, entonces:</p>
+<p><span class="math display">\[
+\text{Var}(X - Y) = \text{Var}(X) + \text{Var}(Y) - 2 \cdot \text{Cov}(X, Y)
+\]</span></p>
+<p>Cuando las variables <strong>no son independientes</strong>, la covarianza entre ellas afecta a la dispersión total.</p>
+<ul>
+<li>Si <span class="math inline">\(\text{Cov}(X, Y) &gt; 0\)</span> (tienden a variar en la misma dirección), la varianza de la diferencia <strong>disminuye</strong>.</li>
+<li>Si <span class="math inline">\(\text{Cov}(X, Y) &lt; 0\)</span> (tienden a variar en direcciones opuestas), la varianza de la diferencia <strong>aumenta</strong>.</li>
+</ul>
+<p>Esta propiedad es útil cuando se analizan diferencias entre medidas correlacionadas, como por ejemplo antes y después de una intervención.</p>
+<ol start="10" style="list-style-type: decimal">
+<li><strong>Varianza del producto de una constante y una suma de variables</strong></li>
+</ol>
+<p>Si <span class="math inline">\(X_1, \dots, X_n\)</span> son variables aleatorias y <span class="math inline">\(b\)</span> una constante:</p>
+<p><span class="math display">\[
+\text{Var}\left(b \cdot \sum_{i=1}^n X_i\right) = b^2 \cdot \text{Var}\left(\sum_{i=1}^n X_i\right)
+\]</span></p>
+<p>Este resultado utiliza la propiedad de cambio de escala. No se requiere independencia entre las variables.</p>
+<p>Si, además, las variables <span class="math inline">\(X_i\)</span> son <strong>independientes</strong>, entonces:</p>
+<p><span class="math display">\[
+\text{Var}\left(b \cdot \sum_{i=1}^n X_i\right) = b^2 \cdot \sum_{i=1}^n \text{Var}(X_i)
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="variables-aleatorias-bidimensionales" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Variables aleatorias Bidimensionales<a href="varale.html#variables-aleatorias-bidimensionales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En muchos problemas de probabilidad y estadística nos interesa estudiar simultáneamente dos variables aleatorias que pueden estar relacionadas. Por ejemplo, el número de productos vendidos y el beneficio obtenido, o el tiempo de servicio y el coste asociado. En estos casos hablamos de <strong>variables aleatorias bidimensionales</strong> o <strong>pares de variables aleatorias</strong>.</p>
+<div id="variables-aleatorias-bidimensionales-discretas" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Variables aleatorias bidimensionales discretas<a href="varale.html#variables-aleatorias-bidimensionales-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Definición:</strong> Un par de variables aleatorias discretas es una función que asigna a cada resultado del espacio muestral un par ordenado de números reales. Sus valores posibles son combinaciones finitas o numerables de valores discretos.</p>
+<div id="función-de-masa-de-probabilidad-conjunta" class="section level4 hasAnchor" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> Función de masa de probabilidad conjunta<a href="#funci%C3%B3n-de-masa-de-probabilidad-conjunta" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La función de masa de probabilidad conjunta se define como:</p>
+<p><span class="math display">\[
+p(x_i, y_j) = P(X = x_i, \, Y = y_j)=f(x,y)
+\]</span></p>
+<p>Esta función da la probabilidad de que <span class="math inline">\(X\)</span> tome el valor <span class="math inline">\(x_i\)</span> e <span class="math inline">\(Y\)</span> tome el valor <span class="math inline">\(y_j\)</span> simultáneamente.</p>
+<p>Para que la función de probabilidad conjunta sea tal, deben cumplirse las siguientes propiedades:</p>
+<ol style="list-style-type: decimal">
+<li>Las probabilidades deben ser siempre nulas o positivas:</li>
+</ol>
+<p><span class="math display">\[
+p(x_i, y_j) \ge 0
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>La masa de probabilidad conjunta debe ser igual a la unidad:</li>
+</ol>
+<p><span class="math display">\[
+\sum_i \sum_j p(x_i, y_j) = 1
+\]</span></p>
+</div>
+<div id="funciones-marginales" class="section level4 hasAnchor" number="3.4.1.2">
+<h4><span class="header-section-number">3.4.1.2</span> Funciones marginales<a href="varale.html#funciones-marginales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las funciones marginales de probabilidad de cada variable se obtienen sumando sobre los posibles valores de la otra variable:</p>
+<ul>
+<li><strong>Función marginal de X:</strong></li>
+</ul>
+<p><span class="math display">\[
+p_X(x_i) = \sum_j p(x_i, y_j)
+\]</span></p>
+<ul>
+<li><strong>Función marginal de Y:</strong></li>
+</ul>
+<p><span class="math display">\[
+p_Y(y_j) = \sum_i p(x_i, y_j)
+\]</span></p>
+<p>Nótese, que para obtener la distribución marginal de una variable, se agregan todos los posibles valores de la otra, obteniéndose valores que dependen exclusivamente de la variable para la que se calcula la marginal. Con un ejemplo se entenderá mejor.</p>
+</div>
+<div id="funciones-de-probabilidad-condicionada" class="section level4 hasAnchor" number="3.4.1.3">
+<h4><span class="header-section-number">3.4.1.3</span> Funciones de probabilidad condicionada<a href="varale.html#funciones-de-probabilidad-condicionada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sea <span class="math inline">\((X,Y)\)</span> una variable aleatoria bidimensional con función de probabilidad conjunta . Una de las formas de estudiar la relación entre ambas variables es a través de las probabilidades condicionadas.</p>
+<p>Si <span class="math inline">\((X,Y)\)</span> es discreta, la probabilidad condicionada de que <span class="math inline">\(X = x_i\)</span> dado que <span class="math inline">\(Y = y_j\)</span> es:</p>
+<p><span class="math display">\[
+P(X = x_i \mid Y = y_j) = \frac{P(X = x_i,\, Y = y_j)}{P(Y = y_j)} = \frac{p_{ij}}{p_{\cdot j}},
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(p_{ij}\)</span> es la probabilidad conjunta <span class="math inline">\(P(X = x_i,\, Y = y_j)\)</span>.</li>
+<li><span class="math inline">\(p_{\cdot j} = \sum_i p_{ij}\)</span> es la probabilidad marginal de <span class="math inline">\(Y = y_j\)</span>.</li>
+</ul>
+<p>De manera análoga:</p>
+<p><span class="math display">\[
+P(Y = y_j \mid X = x_i) = \frac{P(X = x_i,\, Y = y_j)}{P(X = x_i)} = \frac{p_{ij}}{p_{i \cdot}}.
+\]</span></p>
+<p>Estas probabilidades forman las distribuciones condicionadas de una variable dado el valor de la otra.</p>
+<p><strong>Ejemplo de variables aleatorias discretas</strong></p>
+<p>Imaginemos que tenemos dos variables aleatorias discretas:</p>
+<ul>
+<li><span class="math inline">\(X =\)</span> número de reclamaciones en el turno de mañana (puede ser 0 o 1).</li>
+<li><span class="math inline">\(Y =\)</span> número de reclamaciones en el turno de tarde (puede ser 0, 1 o 2).</li>
+</ul>
+<p>La función de masa conjunta (obtenida como frecuencias relativas o probabilidades) es:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="math inline">\(Y=0\)</span></th>
+<th><span class="math inline">\(Y=1\)</span></th>
+<th><span class="math inline">\(Y=2\)</span></th>
+<th><span class="math inline">\(p_X(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(X=0\)</span></td>
+<td>0.10</td>
+<td>0.15</td>
+<td>0.05</td>
+<td>0.30</td>
+</tr>
+<tr>
+<td><span class="math inline">\(X=1\)</span></td>
+<td>0.20</td>
+<td>0.30</td>
+<td>0.20</td>
+<td>0.70</td>
+</tr>
+<tr>
+<td><span class="math inline">\(p_Y(y)\)</span></td>
+<td>0.30</td>
+<td>0.45</td>
+<td>0.25</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretación de la tabla:</strong></p>
+<ul>
+<li>Cada celda o intersección muestra la probabilidad conjunta <span class="math inline">\(P(X = x_i, Y = y_j)\)</span>.</li>
+<li>Las sumas por filas dan las <strong>probabilidades marginales de X</strong>, es decir, es como si sólo se tuviera una única variable X que no depende de Y.</li>
+<li>Las sumas por columnas dan las <strong>probabilidades marginales de Y</strong>, es decir, es como si sólo se tuviera una variable Y que no depende de X.</li>
+<li>La suma total es 1, es decir, el conjunto de todas las probabilidades es igual a 1.</li>
+</ul>
+<p><strong>Cálculo de las marginales:</strong></p>
+<ul>
+<li><strong>Marginal de X:</strong> Para el cálculo de la marginal de X, se suma para cada uno de los valores posibles (0, 1), los datos de Y.</li>
+</ul>
+<p><span class="math display">\[
+p_X(0) = 0.10 + 0.15 + 0.05 = 0.30
+\]</span></p>
+<p><span class="math display">\[
+p_X(1) = 0.20 + 0.30 + 0.20 = 0.70
+\]</span></p>
+<ul>
+<li><strong>Marginal de Y:</strong> Igual que X, pero en ese caso para Y.</li>
+</ul>
+<p><span class="math display">\[
+p_Y(0) = 0.10 + 0.20 = 0.30
+\]</span></p>
+<p><span class="math display">\[
+p_Y(1) = 0.15 + 0.30 = 0.45
+\]</span></p>
+<p><span class="math display">\[
+p_Y(2) = 0.05 + 0.20 = 0.25
+\]</span></p>
+<p><strong>Comprobación:</strong> La suma de todas las probabilidades es igual a la unidad. Esto se puede obtener o sumando cada una de las marginales o sumando el conjunto de probabilidades conjuntas.</p>
+<p><span class="math display">\[
+\sum_x \sum_y p(x,y) = 1.00
+\]</span></p>
+<p>La <strong>probabilidad condicionada</strong> de un valor de <span class="math inline">\(X\)</span> dado un valor de <span class="math inline">\(Y\)</span> se calcula como:</p>
+<p><span class="math display">\[
+P(X = x_i \mid Y = y_j) = \frac{P(X = x_i, Y = y_j)}{P(Y = y_j)}.
+\]</span></p>
+<p>Por ejemplo:</p>
+<ul>
+<li>Probabilidad de que haya una reclamación en la mañana (<span class="math inline">\(X=1\)</span>), sabiendo que en la tarde hubo exactamente una reclamación (<span class="math inline">\(Y=1\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+P(X=1 \mid Y=1) = \frac{P(X=1, Y=1)}{P(Y=1)} = \frac{0.30}{0.45} = 0.6667.
+\]</span></p>
+<ul>
+<li>Probabilidad de que en la tarde haya dos reclamaciones (<span class="math inline">\(Y=2\)</span>), sabiendo que en la mañana hubo una reclamación (<span class="math inline">\(X=1\)</span>):</li>
+</ul>
+<p><span class="math display">\[
+P(Y=2 \mid X=1) = \frac{P(X=1, Y=2)}{P(X=1)} = \frac{0.20}{0.70} \approx 0.2857.
+\]</span></p>
+<p>Estas probabilidades muestran cómo el conocimiento de un suceso afecta la distribución de la otra variable.</p>
+</div>
+</div>
+<div id="variables-aleatorias-bidimensionales-continuas" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Variables aleatorias bidimensionales continuas<a href="varale.html#variables-aleatorias-bidimensionales-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Definición:</strong> Un par de variables aleatorias continuas es aquel cuyas probabilidades se describen mediante una <strong>función de densidad conjunta</strong>.</p>
+<div id="función-de-densidad-conjunta" class="section level4 hasAnchor" number="3.4.2.1">
+<h4><span class="header-section-number">3.4.2.1</span> Función de densidad conjunta<a href="#funci%C3%B3n-de-densidad-conjunta" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La función de densidad conjunta <span class="math inline">\(f(x,y)\)</span>, al igual que en el caso discreto, satisface las siguientes propiedades:</p>
+<p><span class="math display">\[
+f(x,y) \ge 0
+\]</span></p>
+<p><span class="math display">\[
+\iint_{-\infty}^{\infty} f(x,y) \, dx \, dy = 1
+\]</span></p>
+<p>La probabilidad de que <span class="math inline">\((X,Y)\)</span> tome valores dentro de un conjunto <span class="math inline">\(A\)</span> es:</p>
+<p><span class="math display">\[
+P\bigl((X,Y) \in A\bigr) = \iint_A f(x,y)\, dx\, dy
+\]</span></p>
+</div>
+<div id="funciones-marginales-1" class="section level4 hasAnchor" number="3.4.2.2">
+<h4><span class="header-section-number">3.4.2.2</span> Funciones marginales<a href="varale.html#funciones-marginales-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las densidades marginales se obtienen integrando la densidad conjunta respecto de la otra variable:</p>
+<ul>
+<li><strong>Densidad marginal de X:</strong> Para obtener la marginal de X se integra respecto de Y.</li>
+</ul>
+<p><span class="math display">\[
+f_X(x) = \int_{-\infty}^{\infty} f(x,y) \, dy
+\]</span></p>
+<ul>
+<li><strong>Densidad marginal de Y:</strong> Para obtener la marginal de Y se integra respecto de X.</li>
+</ul>
+<p><span class="math display">\[
+f_Y(y) = \int_{-\infty}^{\infty} f(x,y) \, dx
+\]</span></p>
+</div>
+<div id="funciones-de-probabilidad-condicionadas" class="section level4 hasAnchor" number="3.4.2.3">
+<h4><span class="header-section-number">3.4.2.3</span> Funciones de probabilidad condicionadas<a href="varale.html#funciones-de-probabilidad-condicionadas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Si <span class="math inline">\((X,Y)\)</span> es continua con función de densidad conjunta <span class="math inline">\(f_{X,Y}(x,y)\)</span>, la <strong>densidad condicionada de</strong> <span class="math inline">\(X\)</span> dado <span class="math inline">\(Y=y\)</span> es:</p>
+<p><span class="math display">\[
+f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)},
+\]</span></p>
+<p>donde:</p>
+<p><span class="math display">\[
+f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y)\,dx
+\]</span></p>
+<p>es la densidad marginal de <span class="math inline">\(Y\)</span>.</p>
+<p>De forma simétrica:</p>
+<p><span class="math display">\[
+f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}.
+\]</span></p>
+<p>Estas densidades permiten calcular probabilidades y esperanzas condicionadas, y son la base para el estudio de la dependencia entre variables.</p>
+<p><strong>Ejemplo de variables aleatorias bidimensionales continuas</strong></p>
+<p>Consideremos el par de variables aleatorias continuas <span class="math inline">\((X,Y)\)</span> con la siguiente función de densidad conjunta:</p>
+<p><span class="math display">\[
+f(x,y) =
+\begin{cases}
+4xy, &amp; 0 \le x \le 1,\; 0 \le y \le 1 \\
+0, &amp; \text{en otro caso}
+\end{cases}
+\]</span></p>
+<p><strong>Verificación de que es una densidad</strong> (para verificarlo hay que comprobar que el conjunto de la masa de probabilidad sea igual a 1):</p>
+<p><span class="math display">\[
+\int_{0}^{1}\int_{0}^{1}4xy\,dx\,dy = 4 \left(\frac{1}{2}\right)\left(\frac{1}{2}\right) = 1.
+\]</span></p>
+<p>Por tanto, es válida.</p>
+<p><strong>Densidad marginal de X:</strong></p>
+<p><span class="math display">\[
+f_X(x) = \int_0^1 4xy\,dy = 4x \left[\frac{y^2}{2}\right]_0^1 = 4x \cdot \frac{1}{2} = 2x.
+\]</span></p>
+<p><strong>Densidad marginal de Y:</strong></p>
+<p><span class="math display">\[
+f_Y(y) = \int_0^1 4xy\,dx = 4y \left[\frac{x^2}{2}\right]_0^1 = 4y \cdot \frac{1}{2} = 2y.
+\]</span></p>
+<p>La <strong>densidad condicionada de X dado que</strong> <span class="math inline">\(Y=y\)</span> se define como:</p>
+<p><span class="math display">\[
+f_{X \mid Y}(x \mid y) = \frac{f(x,y)}{f_Y(y)}.
+\]</span></p>
+<p>Sustituimos:</p>
+<p><span class="math display">\[
+f_{X \mid Y}(x \mid y) = \frac{4xy}{2y} = \frac{4x}{2} = 2x.
+\]</span></p>
+<p><strong>Interpretación:</strong><br />
+Para cada valor fijo <span class="math inline">\(y\)</span> entre 0 y 1, la distribución de <span class="math inline">\(X\)</span> dado <span class="math inline">\(Y=y\)</span> sigue una densidad <strong>independiente de y</strong>:</p>
+<p><span class="math display">\[
+f_{X \mid Y}(x \mid y) = 2x, \quad 0 \le x \le 1.
+\]</span></p>
+<p>La <strong>densidad condicionada de Y dado que</strong> <span class="math inline">\(X=x\)</span> es:</p>
+<p><span class="math display">\[
+f_{Y \mid X}(y \mid x) = \frac{f(x,y)}{f_X(x)}.
+\]</span></p>
+<p>Sustituyendo:</p>
+<p><span class="math display">\[
+f_{Y \mid X}(y \mid x) = \frac{4xy}{2x} = \frac{4y}{2} = 2y.
+\]</span></p>
+<p><strong>Interpretación:</strong> Para cada valor fijo <span class="math inline">\(x\)</span> entre 0 y 1, la distribución de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=x\)</span> también es independiente de <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[
+f_{Y \mid X}(y \mid x) = 2y, \quad 0 \le y \le 1.
+\]</span></p>
+<p>Vamos a representar gráficamente el soporte y las marginales.</p>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-7-1.png" width="576" /></p>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="03-variables-aleatorias_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Vamos a calcular la propabilidad de que <span class="math inline">\(X \le 0.5\)</span> y <span class="math inline">\(Y \le 0.5\)</span>:</p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(X \le 0.5, \, Y \le 0.5) = \int_{0}^{0.5}\int_{0}^{0.5}4xy\,dx\,dy.
+\]</span></p>
+<p>Caclulamos paso a paso:</p>
+<ol style="list-style-type: decimal">
+<li>Primero integramos respecto a <span class="math inline">\(x\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+\int_0^{0.5} 4y \left[ \frac{x^2}{2} \right]_0^{0.5} dy = \int_0^{0.5} 4y \cdot \frac{(0.5)^2}{2} \,dy.
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Recalculamos dentro de la integral:</li>
+</ol>
+<p><span class="math display">\[
+\frac{(0.5)^2}{2} = \frac{0.25}{2} = 0.125.
+\]</span></p>
+<p>Por tanto:</p>
+<p><span class="math display">\[
+\int_0^{0.5} 4y \cdot 0.125 \,dy = \int_0^{0.5} 0.5y \,dy.
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Integramos respecto a <span class="math inline">\(y\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+0.5 \left[ \frac{y^2}{2} \right]_0^{0.5} = 0.5 \cdot \frac{(0.5)^2}{2} = 0.5 \cdot \frac{0.25}{2} = 0.5 \times 0.125 = 0.0625.
+\]</span></p>
+<p>Por lo que</p>
+<p><span class="math display">\[
+P(X \le 0.5, \, Y \le 0.5) = 0.0625.
+\]</span></p>
+</div>
+</div>
+<div id="independencia-de-variables-aleatorias-bidimensionales" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Independencia de variables aleatorias bidimensionales<a href="varale.html#independencia-de-variables-aleatorias-bidimensionales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dos variables aleatorias <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son <strong>independientes</strong> si conocer el valor de una de ellas <strong>no aporta ninguna información</strong> sobre la distribución de la otra.</p>
+<p>En términos de las funciones de probabilidad condicionada, esto significa que, para todo <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span>:</p>
+<p><span class="math display">\[
+P(X = x \mid Y = y) = P(X = x)
+\]</span></p>
+<p><span class="math display">\[
+P(Y = y \mid X = x) = P(Y = y)
+\]</span></p>
+<p>Es decir, la probabilidad de que <span class="math inline">\(X\)</span> tome el valor <span class="math inline">\(x\)</span> <strong>no depende</strong> del valor que tome <span class="math inline">\(Y\)</span>, y viceversa.</p>
+<p><strong>Definición formal:</strong></p>
+<ul>
+<li><strong>Variables discretas:</strong></li>
+</ul>
+<p><span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes si, para todos los valores posibles <span class="math inline">\(x_i\)</span> y <span class="math inline">\(y_j\)</span>, se cumple:</p>
+<p><span class="math display">\[
+P(X = x_i,\, Y = y_j) = P(X = x_i)P(Y = y_j)
+\]</span></p>
+<p>Es decir, la probabilidad conjunta es igual al producto de las marginales.</p>
+<ul>
+<li><strong>Variables continuas:</strong></li>
+</ul>
+<p><span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes si, para todo par <span class="math inline">\((x,y)\)</span>, se cumple:</p>
+<p><span class="math display">\[
+f(x,y) = f_X(x)\,f_Y(y),
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(f(x,y)\)</span> es la densidad conjunta.</li>
+<li><span class="math inline">\(f_X(x)\)</span> y <span class="math inline">\(f_Y(y)\)</span> son las densidades marginales.</li>
+</ul>
+<p>En este sentido, las consecuencias de la independencia son:</p>
+<ul>
+<li>La <strong>distribución condicionada</strong> de una variable dado un valor de la otra coincide con su distribución marginal. Por ejemplo:</li>
+</ul>
+<p><span class="math display">\[
+P(X = x_i \mid Y = y_j) = P(X = x_i).
+\]</span></p>
+<p>o, en el caso continuo:</p>
+<p><span class="math display">\[
+f_{X \mid Y}(x \mid y) = f_X(x).
+\]</span></p>
+<ul>
+<li>Las variables no presentan ninguna forma de dependencia estadística.</li>
+</ul>
+<p>Por tanto, si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, conocer <span class="math inline">\(Y\)</span> no cambia la probabilidad ni la densidad de <span class="math inline">\(X\)</span>, y viceversa.</p>
+</div>
+</div>
+<div id="momentos-de-variables-aleatorias-bidimensionales" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Momentos de variables aleatorias bidimensionales<a href="varale.html#momentos-de-variables-aleatorias-bidimensionales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los <strong>momentos bidimensionales</strong> permiten describir características de la distribución conjunta de dos variables aleatorias continuas o discretas <span class="math inline">\((X, Y)\)</span>. Al igual que en el caso unidimensional, son herramientas fundamentales para calcular medias, varianzas, covarianza y otras medidas.</p>
+<p>Con caracter general, los momestos respecto del origen y la media se definen como:</p>
+<p><strong><em>Momentos respecto del origen</em></strong>: <span class="math inline">\(\alpha_{rs} = E\bigl(X^r \, Y^s\bigr)\)</span>,</p>
+<p><strong><em>Momentos respecto de la media</em></strong>: <span class="math inline">\(\mu_{rs} = E\Bigl[(X - \alpha_{10})^r \,(Y - \alpha_{01})^s\Bigr]\)</span></p>
+<div id="momentos-respecto-al-origen" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Momentos respecto al origen<a href="varale.html#momentos-respecto-al-origen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Momentos respecto al origen para distribuciones discretas:</strong></p>
+<p>El momento de orden <span class="math inline">\((r,s)\)</span> respecto al origen es:</p>
+<p><span class="math display">\[
+\alpha_{rs} = \sum_i \sum_j x_i^r \, y_j^s \, p_{ij},
+\]</span></p>
+<p>donde <span class="math inline">\(p_{ij}\)</span> es la probabilidad conjunta <span class="math inline">\(P(X = x_i, Y = y_j)\)</span>.</p>
+<p><strong>Momentos respecto al origen para distribuciones continuas:</strong></p>
+<p><span class="math display">\[
+\alpha_{rs} = \iint_{-\infty}^{\infty} x^r \, y^s \, f(x,y) \, dx \, dy,
+\]</span></p>
+<p>donde <span class="math inline">\(f(x,y)\)</span> es la densidad conjunta.</p>
+<p>Los momentos más habituales son:</p>
+<ul>
+<li><strong>De primer orden:</strong>
+<ul>
+<li><span class="math inline">\(\alpha_{10} = E(X)\)</span> (media de <span class="math inline">\(X\)</span>)</li>
+<li><span class="math inline">\(\alpha_{01} = E(Y)\)</span> (media de <span class="math inline">\(Y\)</span>)</li>
+</ul></li>
+<li><strong>De segundo orden:</strong>
+<ul>
+<li><span class="math inline">\(\alpha_{20} = E(X^2)\)</span></li>
+<li><span class="math inline">\(\alpha_{02} = E(Y^2)\)</span></li>
+<li><span class="math inline">\(\alpha_{11} = E(X \, Y)\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="momentos-respecto-a-la-media" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Momentos respecto a la media<a href="varale.html#momentos-respecto-a-la-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los <strong>momentos centrales</strong> o momentos respecto a la media permiten medir la variabilidad y la relación entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>.</p>
+<p><strong>Momentos respecto a la media para distribuciones discretas:</strong></p>
+<p><span class="math display">\[
+\mu_{rs} = \sum_i \sum_j \bigl(x_i - \alpha_{10}\bigr)^r \,\bigl(y_j - \alpha_{01}\bigr)^s \,p_{ij}
+\]</span></p>
+<p><strong>Momentos respecto a la media para distribuciones continuas:</strong></p>
+<p><span class="math display">\[
+\mu_{rs} = \iint_{-\infty}^{\infty}\bigl(x - \alpha_{10}\bigr)^r \,\bigl(y - \alpha_{01}\bigr)^s \,f(x,y)\, dx\, dy
+\]</span></p>
+<p>Los momentos respecto a la media más frecuentes son:</p>
+<ul>
+<li><strong>De primer orden:</strong>
+<ul>
+<li><span class="math inline">\(\mu_{10}=0\)</span></li>
+<li><span class="math inline">\(\mu_{01}=0\)</span></li>
+</ul></li>
+<li><strong>De segundo orden:</strong>
+<ul>
+<li><span class="math inline">\(\mu_{20} = Var(X) = \sigma_X^2\)</span></li>
+<li><span class="math inline">\(\mu_{02} = Var(Y) = \sigma_Y^2\)</span></li>
+<li><span class="math inline">\(\mu_{11} = Cov(X,Y)=\sigma_{XY}\)</span></li>
+</ul></li>
+</ul>
+<p><strong>Cálculo de varianzas y covarianza a partir de los momentos respecto al origen</strong></p>
+<p>Las varianzas marginales de <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> se obtienen como:</p>
+<p><span class="math display">\[
+\sigma_X^2 = Var(X) = E(X^2) - \bigl[E(X)\bigr]^2 = \alpha_{20} - \alpha_{10}^2
+\]</span></p>
+<p><span class="math display">\[
+\sigma_Y^2 = Var(Y) = E(Y^2) - \bigl[E(Y)\bigr]^2 = \alpha_{02} - \alpha_{01}^2
+\]</span></p>
+<p>La covarianza puede calcularse a partir de:</p>
+<p><span class="math display">\[
+\sigma_{XY} = Cov(X,Y) = E(X\,Y) - E(X)\,E(Y) = \alpha_{11} - \alpha_{10}\,\alpha_{01}
+\]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prob.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": null,
+"view": null,
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

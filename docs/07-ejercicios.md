@@ -1,0 +1,825 @@
+# Ejercicios
+
+## Preguntas tipo test
+
+### Preguntas tipo test – Tema 4: Distribuciones discretas
+
+**T4.1** ¿Cuál es la esperanza de una variable aleatoria uniforme
+discreta $X \sim \mathcal{U}_d(1, 7)$?
+
+\- A) 4
+
+\- B) 3.5
+
+\- C) 3
+
+\- D) 5
+
+**T4.2** La función de cuantía de una variable binomial $B(n, p)$ es:
+
+\- A) $p^x (1 - p)^{1 - x}$
+
+\- B) $\binom{n}{x} p^x (1 - p)^{n - x}$
+
+\- C) $\lambda^x e^{-\lambda} / x!$
+
+\- D) $\frac{1}{n}$
+
+**T4.3** Una variable $X \sim \text{Poisson}(\lambda)$ puede tomar:
+
+\- A) Solo valores 0 y 1
+
+\- B) Valores entre 0 y 1
+
+\- C) Cualquier número real positivo
+
+\- D)Cualquier entero no negativo
+
+**T4.4** Si $X \sim B(5, 0.4)$, la probabilidad de obtener exactamente 2
+éxitos es:
+
+\- A) $\binom{5}{2} \cdot 0.4^2 \cdot 0.6^3$
+
+\- B) $0.5$
+
+\- C) $\binom{5}{2} \cdot 0.6^2 \cdot 0.4^3$
+
+\- D) $\frac{1}{5}$
+
+**T4.5** La media de una variable Poisson con parámetro $\lambda = 4$
+es:
+
+\- A) 2
+
+\- B) 4
+
+\- C) 8
+
+\- D) 16
+
+**T4.6** La distribución binomial negativa $BN(r, p)$ modela:
+
+\- A) El número de éxitos en $r$ ensayos
+
+\- B) El número de fallos antes del $r$-ésimo éxito
+
+\- C) El número total de ensayos
+
+\- D) El número de éxitos entre dos fallos
+
+**T4.7** Si una variable tiene una distribución geométrica $G(p)$,
+entonces:
+
+\- A) Tiene media $\frac{1}{p}$
+
+\- B) Puede tomar valores negativos
+
+\- C) Se utiliza solo en muestras pequeñas
+
+\- D) Tiene parámetro $\lambda$
+
+**T4.8** Una variable con distribución hipergeométrica:
+
+\- A) Admite repeticiones
+
+\- B) Tiene media $np$
+
+\- C) Modela extracciones sin reemplazo
+
+\- D) Tiene distribución normal
+
+**T4.9** La distribución multinomial se utiliza para:
+
+\- A) Modelar resultados de más de dos categorías
+
+\- B) Experimentos con solo dos posibles resultados
+
+\- C) Aproximar distribuciones normales
+
+\- D) Datos continuos
+
+**T4.10** ¿Cuál es la varianza de una variable
+$X \sim \text{Bernoulli}(0.3)$?
+
+-   
+
+    A)  0.3
+
+\- B) 0.09
+
+\- C) 0.21
+
+\- D) 0.7
+
+**T4.11** La distribución uniforme discreta:
+
+\- A) Asigna probabilidades diferentes a cada valor
+
+\- B) Tiene media $\frac{a + b}{2}$
+
+\- C) Modela fracasos hasta el primer éxito
+
+\- D) Tiene función de densidad continua
+
+**T4.12** ¿Qué función R permite generar observaciones de una binomial
+negativa?
+
+\- A) `rbinom()`
+
+\- B) `rbeta()`
+
+\- C) `rnbinom()`
+
+\- D) `rgamma()`
+
+**T4.13** La distribución de Poisson se puede usar como aproximación de
+la binomial cuando:
+
+\- A) $n$ es pequeño y $p$ es alto -
+
+B)  $n$ es grande y $p$ es pequeño
+
+\- C) $p \approx 0.5$
+
+\- D) Solo hay un único ensayo
+
+**T4.14** En una multinomial con $n = 10$ y $p_1 = 0.3, p_2 = 0.7$,
+¿cuántas categorías tiene?
+
+\- A) 1
+
+\- B) 2
+
+\- C) 3
+
+\- D) 10
+
+**T4.15** En una distribución geométrica $G(0.25)$, la probabilidad de
+que el primer éxito ocurra en el tercer intento es:
+
+\- A) $0.25 \cdot 0.75^3$
+
+\- B) $0.75 \cdot 0.25^2$
+
+\- C) $0.75^2 \cdot 0.25$
+
+\- D) $0.25^3$
+
+### Preguntas tipo test – Tema 5: Distribuciones continuas
+
+**T5.1.** Si $X \sim \mathcal{U}(2, 6)$, su esperanza es:\
+A) 2\
+B) 4\
+C) 6\
+D) 8
+
+**T5.2.** En una distribución uniforme continua $\mathcal{U}(a, b)$, la
+densidad es:\
+A) $\frac{1}{b - a}$\
+B) $\frac{1}{b + a}$\
+C) $\frac{a}{b}$\
+D) $\frac{b}{a}$
+
+**T5.3.** Si $X \sim \mathcal{N}(10, 4)$, su desviación típica es:\
+A) 4\
+B) 2\
+C) 10\
+D) 6
+
+**T5.4**. La función de densidad de la normal estándar
+$\mathcal{N}(0,1)$ alcanza su máximo en:\
+A) 0\
+B) 1\
+C) -1\
+D) No tiene máximo
+
+**T5.5.** ¿Cuál de las siguientes afirmaciones sobre la normal estándar
+es correcta?\
+A) Tiene varianza 1 y media 0\
+B) Tiene media 1 y varianza 0\
+C) Tiene media 0 y varianza 0\
+D) Tiene media 1 y varianza 1
+
+**T5.6.** La distribución normal es simétrica respecto a:\
+A) Su media\
+B) Su mediana\
+C) Su moda\
+D) Todas las anteriores
+
+**T5.7.** Sea $Z \sim \mathcal{N}(0, 1)$. Entonces $P(Z < -1)$ es:\
+A) Aproximadamente 0.16\
+B) Aproximadamente 0.5\
+C) Aproximadamente 0.84\
+D) Aproximadamente 0.68
+
+**T5.8.** Si $X \sim \mathcal{N}(100, 25)$, entonces
+$Z = \frac{X - 100}{5}$ sigue:\
+A) Una normal estándar\
+B) Una gamma\
+C) Una ji-cuadrado\
+D) Una exponencial
+
+**T5.9.** La distribución $\chi^2_n$ solo toma:\
+A) Valores negativos\
+B) Valores reales\
+C) Valores enteros\
+D) Valores positivos
+
+**T5.10.** La esperanza de una variable $\chi^2_n$ es:\
+A) $n$\
+B) $\sqrt{n}$\
+C) $2n$\
+D) $n - 1$
+
+**T5.11.** Una variable t de Student con $n$ grados de libertad:\
+A) Es simétrica\
+B) Tiene colas más pesadas que la normal\
+C) Se aproxima a la normal cuando $n \to \infty$\
+D) Todas son correctas
+
+**T5.12.** En la distribución $F_{n_1,n_2}$, los grados de libertad
+están asociados a:\
+A) Dos varianzas\
+B) Dos medias\
+C) Dos esperanzas\
+D) Dos proporciones
+
+**T5.13.** La distribución $F$ de Snedecor:\
+A) Es simétrica\
+B) Solo toma valores positivos\
+C) Es idéntica a la normal\
+D) Tiene media 0
+
+**T5.14.** Si $X \sim \text{Exp}(\lambda)$, entonces $E(X) =$:\
+A) $\lambda$\
+B) $\frac{1}{\lambda}$\
+C) $\lambda^2$\
+D) $\log(\lambda)$
+
+**T5.15.** La función de densidad de la distribución exponencial es
+decreciente:\
+A) Si $\lambda > 0$\
+B) Solo si $\lambda = 1$\
+C) Nunca\
+D) Siempre que $\lambda < 1$
+
+**T5.16.** La distribución exponencial es útil para modelar:\
+A) El número de ensayos hasta un éxito\
+B) El tiempo entre eventos\
+C) Las proporciones de éxito\
+D) Los ingresos por persona
+
+**T5.17.** La distribución gamma con parámetro $\alpha = 1$ coincide
+con:\
+A) Una normal estándar\
+B) Una Poisson\
+C) Una exponencial\
+D) Una beta
+
+**T5.18.** La distribución beta está definida sobre el intervalo:\
+A) $[0, \infty)$\
+B) $(-\infty, \infty)$\
+C) $(0, 1)$\
+D) $[0, 1]$
+
+**T5.19.** Una beta $\text{Beta}(\alpha, \beta)$ puede usarse para
+modelar:\
+A) Densidades de probabilidad entre 0 y 1\
+B) Proporciones\
+C) Tasas de éxito\
+D) Todas son correctas
+
+**T5.20.** La distribución de Pareto se caracteriza por:\
+A) Cola pesada\
+B) Densidad decreciente\
+C) Aparece en la distribución de la riqueza\
+D) Todas las anteriores
+
+**T5.21.** El Teorema Central del Límite justifica el uso de la normal
+cuando:\
+A) La muestra es muy grande, sin importar la distribución original\
+B) La variable es categórica\
+C) Se estudia una muestra pequeña\
+D) No hay independencia
+
+**T5.22.** Una función R que permite calcular la probabilidad acumulada
+de una normal es:\
+A) `rnorm()`\
+B) `pnorm()`\
+C) `qnorm()`\
+D) `dnorm()`
+
+**T5.23.** Para generar datos aleatorios de una $t_{10}$, se usa:\
+A) `rt(10)`\
+B) `rt(n = 100, df = 10)`\
+C) `t(10)`\
+D) `rstudent(10)`
+
+**T5.24.** La distribución $\chi^2$ aparece al elevar al cuadrado:\
+A) Una variable t\
+B) Una variable normal estándar\
+C) Una exponencial\
+D) Una binomial
+
+**T5.25.** El cociente de dos variables $\chi^2$ independientes
+divididas por sus grados de libertad sigue:\
+A) Una $t$\
+B) Una normal\
+C) Una $F$\
+D) Una gamma
+
+### Preguntas tipo test – Tema 6: Convergencia en distribución
+
+**T6.1** ¿Cuál es la condición principal para aproximar una binomial
+$B(n, p)$ por una Poisson?\
+A) $p \to 1$, $n \to 0$\
+B) $n$ grande, $p$ cercano a 1\
+C) $n \to \infty$, $p \to 0$, $np = \lambda$ constante\
+D) $p = 0.5$
+
+**T6.2** Una binomial $B(n, p)$ puede aproximarse por una normal
+cuando:\
+A) $n$ pequeño y $p \to 0$\
+B) $np > 5$, $n(1-p) > 5$\
+C) $n \to \infty$, $p = 1$\
+D) Siempre que $p \ne 0.5$
+
+**T6.3** La distribución Poisson puede aproximarse por una normal si:\
+A) $\lambda$ es grande\
+B) $\lambda \to 0$\
+C) La variable es discreta\
+D) No puede aproximarse por una normal
+
+**T6.4** El Teorema Central del Límite afirma que:\
+A) La media muestral tiende a una Poisson\
+B) Toda variable tiende a una chi-cuadrado\
+C) La suma de variables independientes tiende a una normal\
+D) El número de observaciones se reduce a 1
+
+**T6.5** El TCL es válido cuando:\
+A) Las variables tienen distribución simétrica\
+B) Las variables son independientes con media y varianza finitas\
+C) Las variables son categóricas\
+D) Siempre que la muestra sea menor de 30
+
+**T6.6** Según el TCL, la variable que converge es:\
+A) La media poblacional\
+B) La proporción poblacional\
+C) La media muestral\
+D) La mediana
+
+**T6.7** Sea $X_i \sim U(0,1)$. Entonces, por el TCL:\
+A) La suma de los $X_i$ converge a una uniforme\
+B) La media de los $X_i$ converge a una normal\
+C) La varianza converge a una t\
+D) Nada puede decirse
+
+**T6.8** La aproximación binomial → normal requiere corrección de
+continuidad porque:\
+A) La binomial es discreta y la normal continua\
+B) Ambas son continuas\
+C) La normal es más precisa\
+D) La binomial tiene media 0
+
+**T6.9** La variable $Z = \frac{\overline{X} - \mu}{\sigma/\sqrt{n}}$
+tiende a:\
+A) Una distribución exponencial\
+B) Una distribución normal\
+C) Una distribución beta\
+D) Una distribución t
+
+**T6.10** ¿Qué distribución se utiliza para aproximar la distribución
+muestral de la media cuando el tamaño muestral es pequeño y la
+desviación típica poblacional es desconocida?\
+A) Normal\
+B) Binomial\
+C) Exponencial\
+D) t de Student
+
+**T6.11** Una variable binomial negativa puede aproximarse por:\
+A) Una t de Student\
+B) Una normal si $r$ grande\
+C) Una uniforme\
+D) Una beta
+
+**T6.12** La convergencia en distribución se refiere a:\
+A) Valores puntuales exactos\
+B) Igualdad de medias\
+C) Convergencia de las funciones de distribución\
+D) Convergencia casi segura
+
+**T6.13** La relación entre tipos de convergencia indica que:\
+A) Convergencia en distribución implica convergencia casi segura\
+B) Convergencia casi segura implica en probabilidad\
+C) En probabilidad implica en distribución\
+D) b) y c) son correctas
+
+**T6.14** La convergencia en probabilidad se da cuando:\
+A) La probabilidad de que la variable se aleje mucho de un valor tiende
+a cero\
+B) La función de densidad es constante\
+C) La esperanza es 0\
+D) La varianza tiende a infinito
+
+**T6.15** El TCL se aplica también a:\
+A) Variables dependientes\
+B) Distribuciones con varianza infinita\
+C) Proporciones muestrales\
+D) Histogramas
+
+**T6.16** Una variable normalizada mediante $Z = \frac{X - \mu}{\sigma}$
+es útil para:\
+A) Convergencia en media\
+B) Aproximación Poisson\
+C) Comparar con la normal estándar\
+D) Pasar a una t
+
+**T6.17** Si una variable converge en distribución a otra, entonces:\
+A) También converge casi seguramente\
+B) No tiene por qué converger en media\
+C) Las funciones de densidad son idénticas\
+D) Se puede usar la misma simulación
+
+**T6.18** El TCL puede aplicarse en economía para modelar:\
+A) Tasas marginales\
+B) Medias muestrales de ingresos\
+C) Desigualdad extrema\
+D) Probabilidades exactas
+
+**T6.19** ¿Cuándo es adecuada la aproximación de una distribución
+binomial por una distribución normal?\
+A) $p$ está cerca de 0 o 1\
+B) $n$ pequeño y $p = 0.5$\
+C) $n$ grande y $p$ no muy extremo\
+D) Se usa una gamma
+
+**T6.20** El TCL permite justificar el uso de:\
+A) Modelos exponenciales\
+B) Aproximaciones normales en inferencia\
+C) Medidas de concentración\
+D) Histograma de frecuencias relativas
+
+------------------------------------------------------------------------
+
+### Soluciones a los ejercicios tipo test
+
+
+```
+## Warning: package 'dplyr' was built under R version 4.3.3
+```
+
+
+
+Table: (\#tab:unnamed-chunk-1)Respuestas correctas por tema (tipo test)
+
+| Pregunta | T2 | T3 | T4 | T5 | T6 |
+|:--------:|:--:|:--:|:--:|:--:|:--:|
+|    1     |    |    | A  | B  | C  |
+|    2     |    |    | B  | A  | B  |
+|    3     |    |    | D  | B  | A  |
+|    4     |    |    | A  | A  | C  |
+|    5     |    |    | B  | A  | B  |
+|    6     |    |    | B  | D  | C  |
+|    7     |    |    | A  | A  | B  |
+|    8     |    |    | C  | A  | A  |
+|    9     |    |    | A  | D  | B  |
+|    10    |    |    | C  | A  | D  |
+|    11    |    |    | B  | D  | B  |
+|    12    |    |    | C  | A  | C  |
+|    13    |    |    | B  | B  | D  |
+|    14    |    |    | B  | B  | A  |
+|    15    |    |    | C  | A  | C  |
+|    16    |    |    |    | B  | C  |
+|    17    |    |    |    | C  | B  |
+|    18    |    |    |    | D  | B  |
+|    19    |    |    |    | D  | C  |
+|    20    |    |    |    | D  | B  |
+|    21    |    |    |    | A  |    |
+|    22    |    |    |    | B  |    |
+|    23    |    |    |    | B  |    |
+|    24    |    |    |    | B  |    |
+|    25    |    |    |    | C  |    |
+
+-   T4.1: A
+-   T4.2: B
+-   T4.3: D
+-   T4.4: A
+-   T4.5: B
+-   T4.6: B
+-   T4.7: A
+-   T4.8: C
+-   T4.9: A
+-   T4.10: C
+-   T4.11: B
+-   T4.12: C
+-   T4.13: B
+-   T4.14: B
+-   T4.15: C
+
+T5.1: B\
+T5.2: A\
+T5.3: B\
+T5.4: A\
+T5.5: A\
+T5.6: D\
+T5.7: A\
+T5.8: A\
+T5.9: D\
+T5.10: A\
+T5.11: D\
+T5.12: A\
+T5.13: B\
+T5.14: B\
+T5.15: A\
+T5.16: B\
+T5.17: C\
+T5.18: D\
+T5.19: D\
+T5.20: D\
+T5.21: A\
+T5.22: B\
+T5.23: B\
+T5.24: B\
+T5.25: C
+
+T6.1: C\
+T6.2: B\
+T6.3: A\
+T6.4: C\
+T6.5: B\
+T6.6: C\
+T6.7: B\
+T6.8: A\
+T6.9: B\
+T6.10: D\
+T6.11: B\
+T6.12: C\
+T6.13: D\
+T6.14: A\
+T6.15: C\
+T6.16: C\
+T6.17: B\
+T6.18: B\
+T6.19: C\
+T6.20: B
+
+## Ejercicios a desarrollar
+
+### Ejercicios del Tema 1: Probabilidad
+
+**E1.1** Se extrae una bola de una urna con bolas numeradas del 1 al 9. Define:
+
+- $A = \{1, 2, 3\}$
+- $B = \{3, 4, 5, 6, 7, 8, 9\}$
+
+Calcula:
+
+a. $A \cup B$
+b. $A \cap B$
+c. $A - B$
+d. $\overline{A}$ respecto de $\Omega = \{1, \dots, 9\}$
+e. ¿Son incompatibles A y B? ¿Y compatibles?
+
+**E1.2** Lanzamiento de un dado. Sea $\Omega = \{1, 2, 3, 4, 5, 6\}$.
+
+Define:
+
+- $A =$ “obtener un número menor o igual que 3”
+- $B =$ “obtener un número par”
+
+Calcula:
+
+a. $A \cup B$
+b. $A \cap B$
+c. $A - B$
+d. $B - A$
+e. $\overline{A \cap B}$
+
+
+### Ejercicios del Tema 4: Distribuciones discretas
+
+**E4.1** Se lanza un dado de 10 caras numeradas del 1 al 10. Considera
+la variable aleatoria $X$ que representa el número obtenido en un
+lanzamiento.
+
+a\. ¿Qué tipo de distribución tiene $X$? Justifícalo.
+
+b\. Calcula la probabilidad de obtener un número impar.
+
+c\. Calcula la esperanza y la varianza de $X$.
+
+d\. Representa su función de distribución acumulada (a mano o en R).
+
+**E4.2** Un 20% de los usuarios que reciben una campaña de email compran
+el producto. Se seleccionan 6 usuarios al azar.
+
+a\. Modeliza esta situación indicando la variable aleatoria y su
+distribución.
+
+b\. Calcula la probabilidad de que exactamente 2 compren el producto.
+
+c\. Calcula la probabilidad de que al menos 1 realice una compra.
+
+d\. ¿Cuál es la esperanza y varianza del número de compras?
+
+**E4.3** Una empresa recibe una media de 3 reclamaciones diarias. Sea
+$X \sim \text{Poisson}(3)$ el número de reclamaciones en un día.
+
+a\. Calcula la probabilidad de que no se reciba ninguna reclamación.
+
+b\. Calcula la probabilidad de recibir exactamente 2 reclamaciones.
+
+c\. Calcula la probabilidad de recibir 3 o más reclamaciones.
+
+d .¿Cuál es la media y la varianza de esta distribución?
+
+**E4.4** Un lote de 20 productos contiene 4 defectuosos. Se extraen 5 al
+azar sin reemplazo. Sea $X$ el número de defectuosos extraídos.
+
+a\. ¿Qué tipo de distribución sigue $X$? Indica sus parámetros.
+
+b\. Calcula $P(X = 2)$.
+
+c\. Calcula la probabilidad de que al menos uno sea defectuoso.
+
+d\. ¿Cuál es la esperanza de la variable?
+
+**E4.5** La probabilidad de que un usuario haga clic en un anuncio es
+del 10%. Sea $X$ la posición del primer usuario que hace clic.
+
+a\. ¿Qué distribución tiene $X$? ¿Qué valores puede tomar?
+
+b\. Calcula la probabilidad de que el primer clic ocurra en el cuarto
+intento.
+
+c\. Simula en R 1000 repeticiones con `rgeom(n, prob = 0.1)` y
+representa el histograma.
+
+d\. ¿Cuál es la media teórica de la distribución?
+
+**E4.6** Una empresa necesita que su equipo de ventas consiga 3
+contratos. Cada llamada tiene una probabilidad del 20% de terminar en
+contrato y las llamadas son independientes.\
+a) ¿Cuál es la distribución que modela el número total de llamadas
+necesarias hasta lograr los 3 contratos?\
+b) Calcula la probabilidad de que se necesiten exactamente 8 llamadas.\
+c) ¿Cuál es la esperanza y la varianza del número total de llamadas?
+
+**E4.7** Un operario realiza intentos independientes para reparar una
+máquina. La probabilidad de éxito en cada intento es del 30%.\
+a) ¿Cuál es la probabilidad de que el primer intento exitoso se produzca
+en el cuarto intento?\
+b) ¿Cuál es la esperanza y la varianza del número de intentos hasta el
+primer éxito?
+
+**E4.8** En una fábrica, se inspeccionan 10 piezas seleccionadas al azar
+de un lote de 100, de las cuales se sabe que 20 son defectuosas.\
+a) ¿Cuál es la probabilidad de encontrar exactamente 3 piezas
+defectuosas en la muestra?\
+b) ¿Cuál es la esperanza del número de defectuosas encontradas?
+
+**E4.9** En un juego, se lanza una moneda hasta obtener el quinto cara.\
+a) ¿Cuál es la distribución que modela el número total de lanzamientos
+necesarios?\
+b) Calcula la probabilidad de que se necesiten exactamente 7
+lanzamientos.\
+c) Calcula la esperanza y la varianza del número total de lanzamientos.
+
+**E4.10** En una encuesta sobre el desayuno, el 30% de las personas
+eligen café, el 50% té, y el 20% zumo. Se seleccionan al azar 10
+personas.\
+a) ¿Qué distribución modela el número de personas que eligen cada
+bebida?\
+b) Calcula la probabilidad de que 3 elijan café, 5 té y 2 zumo.\
+c) Calcula la esperanza del número de personas que eligen té.
+
+### Ejercicios del Tema 5: Distribuciones continuas
+
+**E5.1** Una variable aleatoria continua sigue una distribución uniforme
+en el intervalo [3, 7].\
+a) Calcula su función de densidad.\
+b) Halla la probabilidad de que la variable tome un valor entre 4 y 5.\
+c) Calcula su esperanza y varianza.
+
+**E5.2** Sea $X \sim \mathcal{N}(100, 16)$.\
+a) Tipifica la variable.\
+b) Calcula $P(X < 104)$.\
+c) Calcula $P(95 < X < 105)$.
+
+**E5.3** Una máquina produce tornillos cuyo peso sigue una distribución
+normal con media 20g y desviación típica 2g.\
+a) ¿Cuál es la probabilidad de que un tornillo pese más de 22g?\
+b) ¿Y de que pese entre 18g y 21g?
+
+**E5.4** Sea $X \sim \text{Exp}(0.5)$.\
+a) Calcula la función de densidad.\
+b) Halla $P(X \leq 3)$.\
+c) Calcula la media y la varianza.
+
+**E5.5** Una variable $X \sim \chi^2_4$.\
+a) ¿Cuál es su esperanza y varianza?\
+b) ¿Cuál es $P(X > 5)$?
+
+**E5.6** La variable $T \sim t_5$.\
+a) ¿Qué forma tiene la distribución?\
+b) ¿Cuál es su esperanza y su varianza?\
+c) ¿Cuál es $P(T < 2.015)$?
+
+**E5.7** En una fábrica se estima que los tiempos de reparación siguen
+una distribución exponencial con $\lambda = 1/30$.\
+a) Calcula la probabilidad de que una reparación dure menos de 15
+minutos.\
+b) Simula 100 tiempos de reparación en R y representa el histograma.
+
+**E5.8** Sea $X \sim \mathcal{N}(80, 25)$.\
+a) ¿Cuál es la probabilidad de que $X > 90$? Calcula este valor
+teóricamente.\
+b) Calcula esa misma probabilidad utilizando R.\
+c) Simula 1000 valores de esta distribución en R y calcula la proporción
+que supera 90.\
+d) Compara el valor teórico, el calculado con R y el empírico.
+
+**E5.9** Una variable $Y \sim \text{Beta}(2, 5)$.\
+a) Genera 1000 valores aleatorios y representa el histograma.\
+b) Calcula la media empírica y compárala con la media teórica.\
+c) Representa sobre el histograma la función de densidad teórica.
+
+**E5.10** Simula 1000 observaciones de dos muestras independientes: una
+con $X \sim \chi^2_{10}$ y otra con $Y \sim \chi^2_{20}$.\
+a) Calcula el cociente $F = \frac{X/10}{Y/20}$ para cada pareja.\
+b) Representa el histograma del cociente obtenido.\
+c) Utiliza R para calcular la probabilidad de que $F > 2.0$ según la
+distribución teórica $F_{10, 20}$.\
+d) Superpón la densidad teórica de la distribución $F_{10, 20}$ sobre el
+histograma del apartado b.
+
+### Ejercicios del Tema 6: Convergencia entre distribuciones
+
+**E6.1** Un operario tiene una probabilidad del 20% de cometer un error
+en una tarea. Si realiza 50 tareas, calcula la probabilidad de que
+cometa exactamente 10 errores: a) Usando la distribución binomial
+exacta.\
+b) Usando una aproximación normal con corrección de continuidad.
+
+**E6.2** La variable aleatoria $X \sim B(100, 0.6)$.\
+a) Calcula la probabilidad de que $X \leq 65$ utilizando la aproximación
+normal con corrección de continuidad.\
+b) Justifica por qué es válida esta aproximación.
+
+**E6.3** Sea $Y \sim \text{Poisson}(20)$.\
+a) Calcula la probabilidad de que $Y \leq 25$ usando la distribución de
+Poisson.\
+b) Aplica la aproximación normal con corrección de continuidad y compara
+los resultados.
+
+**E6.4** Sea $X \sim B(200, 0.05)$.\
+a) Calcula $P(X \leq 10)$ usando la distribución binomial.\
+b) Sustituye la binomial por una distribución de Poisson adecuada y
+calcula la misma probabilidad.
+
+**E6.5** Considera una variable $X \sim \text{Poisson}(8)$.\
+a) Calcula $P(X \geq 10)$ usando la distribución de Poisson.\
+b) Utiliza una distribución normal adecuada con corrección de
+continuidad para aproximar esta probabilidad.
+
+**E6.6** Un lote contiene 2000 productos, de los cuales el 1% está
+defectuoso. Se toma una muestra aleatoria de 100 productos.\
+a) ¿Qué distribución usarías para modelar el número de defectuosos?\
+b) Calcula la probabilidad de obtener exactamente 2 defectuosos usando
+la distribución adecuada.\
+c) Propón una aproximación por otra distribución y calcula la
+probabilidad aproximada.
+
+**E6.7** Simula 1000 observaciones de una binomial $B(30, 0.4)$.\
+a) Representa el histograma de la muestra.\
+b) Superpón la curva de densidad de la distribución normal que aproxima
+esta binomial.\
+c) Comenta si visualmente la normal es una buena aproximación.
+
+**E6.8** Considera una variable $X \sim \text{Poisson}(15)$.\
+a) Simula 1000 valores de esta distribución.\
+b) Representa el histograma.\
+c) Añade la curva de la normal con media y varianza iguales a la de
+$X$.\
+d) Calcula la proporción empírica de valores mayores que 20 y compárala
+con la estimación normal.
+
+**E6.9** Una fábrica ha comprobado que solo el 1% de los productos que
+fabrica presentan defectos. Para controlar la calidad, se selecciona al
+azar una muestra de 100 productos y se cuenta cuántos son defectuosos.
+
+a)  Calcula la probabilidad de que exactamente 2 productos de la muestra
+    sean defectuosos, utilizando el modelo que consideres adecuado.
+
+b)  Dado que la muestra es grande y la probabilidad de defecto es muy
+    baja, se decide utilizar un modelo alternativo que simplifique los
+    cálculos. Estima la probabilidad de que haya exactamente 2 productos
+    defectuosos aplicando este modelo aproximado.
+
+c)  Compara los resultados de los apartados anteriores. ¿Crees que la
+    aproximación del apartado b) es adecuada? Justifica tu respuesta.
+
+d)  Imagina ahora que el número de productos muestreados es 1000 y que
+    la probabilidad de que un producto sea defectuoso es 0.4. ¿A qué
+    otra distribución podría aproximarse este fenómeno bajo esas nuevas
+    condiciones? Justifica tu respuesta.

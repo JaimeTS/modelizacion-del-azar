@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 7 Ejercicios | modelizacion-del-azar</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 7 Ejercicios | modelizacion-del-azar" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 7 Ejercicios | modelizacion-del-azar" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="conv.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="portada.html"><strong>Inicio</strong></a></li>
+<li><a href="portada.html"><strong>Modelización del azar</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="portada.html"><a href="portada.html"><i class="fa fa-check"></i>Modelización del azar y toma de decisiones</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="07-ejercicios.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="prob.html"><a href="prob.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.2.2</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="prob.html"><a href="prob.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="07-ejercicios.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.2.4</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="prob.html"><a href="prob.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.3.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="07-ejercicios.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="prob.html"><a href="prob.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.4.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="07-ejercicios.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.4.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="prob.html"><a href="prob.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="prob.html"><a href="prob.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="prob.html"><a href="prob.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.5.2" data-path="prob.html"><a href="prob.html#regla-del-producto"><i class="fa fa-check"></i><b>2.5.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.5.3" data-path="prob.html"><a href="prob.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.5.4" data-path="prob.html"><a href="prob.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="prob.html"><a href="prob.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="07-ejercicios.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="07-ejercicios.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.7</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="07-ejercicios.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.7.2" data-path="prob.html"><a href="prob.html#combinaciones"><i class="fa fa-check"></i><b>2.7.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.7.3" data-path="prob.html"><a href="prob.html#variaciones"><i class="fa fa-check"></i><b>2.7.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.7.4" data-path="prob.html"><a href="prob.html#permutaciones"><i class="fa fa-check"></i><b>2.7.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="varale.html"><a href="varale.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="07-ejercicios.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="07-ejercicios.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="varale.html"><a href="varale.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="varale.html"><a href="varale.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="07-ejercicios.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="varale.html"><a href="varale.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="varale.html"><a href="varale.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="varale.html"><a href="varale.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="varale.html"><a href="varale.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="varale.html"><a href="varale.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="varale.html"><a href="varale.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="varale.html"><a href="varale.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="discr.html"><a href="discr.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="discr.html"><a href="discr.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="discr.html"><a href="discr.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cont.html"><a href="cont.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="cont.html"><a href="cont.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="cont.html"><a href="cont.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="07-ejercicios.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="cont.html"><a href="cont.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="cont.html"><a href="cont.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conv.html"><a href="conv.html"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="07-ejercicios.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="conv.html"><a href="conv.html#relaciones-entre-distribuciones"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="07-ejercicios.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="07-ejercicios.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="07-ejercicios.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="07-ejercicios.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="07-ejercicios.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="07-ejercicios.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="conv.html"><a href="conv.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="07-ejercicios.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="07-ejercicios.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="conv.html"><a href="conv.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="07-ejercicios.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.2.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.2.4</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Tema 7</span> Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="preguntas-tipo-test" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Preguntas tipo test<a href="ejercicios.html#preguntas-tipo-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="preguntas-tipo-test-tema-4-distribuciones-discretas" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Preguntas tipo test – Tema 4: Distribuciones discretas<a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>T4.1</strong> ¿Cuál es la esperanza de una variable aleatoria uniforme
+discreta <span class="math inline">\(X \sim \mathcal{U}_d(1, 7)\)</span>?</p>
+<p>- A) 4</p>
+<p>- B) 3.5</p>
+<p>- C) 3</p>
+<p>- D) 5</p>
+<p><strong>T4.2</strong> La función de cuantía de una variable binomial <span class="math inline">\(B(n, p)\)</span> es:</p>
+<p>- A) <span class="math inline">\(p^x (1 - p)^{1 - x}\)</span></p>
+<p>- B) <span class="math inline">\(\binom{n}{x} p^x (1 - p)^{n - x}\)</span></p>
+<p>- C) <span class="math inline">\(\lambda^x e^{-\lambda} / x!\)</span></p>
+<p>- D) <span class="math inline">\(\frac{1}{n}\)</span></p>
+<p><strong>T4.3</strong> Una variable <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> puede tomar:</p>
+<p>- A) Solo valores 0 y 1</p>
+<p>- B) Valores entre 0 y 1</p>
+<p>- C) Cualquier número real positivo</p>
+<p>- D)Cualquier entero no negativo</p>
+<p><strong>T4.4</strong> Si <span class="math inline">\(X \sim B(5, 0.4)\)</span>, la probabilidad de obtener exactamente 2
+éxitos es:</p>
+<p>- A) <span class="math inline">\(\binom{5}{2} \cdot 0.4^2 \cdot 0.6^3\)</span></p>
+<p>- B) <span class="math inline">\(0.5\)</span></p>
+<p>- C) <span class="math inline">\(\binom{5}{2} \cdot 0.6^2 \cdot 0.4^3\)</span></p>
+<p>- D) <span class="math inline">\(\frac{1}{5}\)</span></p>
+<p><strong>T4.5</strong> La media de una variable Poisson con parámetro <span class="math inline">\(\lambda = 4\)</span>
+es:</p>
+<p>- A) 2</p>
+<p>- B) 4</p>
+<p>- C) 8</p>
+<p>- D) 16</p>
+<p><strong>T4.6</strong> La distribución binomial negativa <span class="math inline">\(BN(r, p)\)</span> modela:</p>
+<p>- A) El número de éxitos en <span class="math inline">\(r\)</span> ensayos</p>
+<p>- B) El número de fallos antes del <span class="math inline">\(r\)</span>-ésimo éxito</p>
+<p>- C) El número total de ensayos</p>
+<p>- D) El número de éxitos entre dos fallos</p>
+<p><strong>T4.7</strong> Si una variable tiene una distribución geométrica <span class="math inline">\(G(p)\)</span>,
+entonces:</p>
+<p>- A) Tiene media <span class="math inline">\(\frac{1}{p}\)</span></p>
+<p>- B) Puede tomar valores negativos</p>
+<p>- C) Se utiliza solo en muestras pequeñas</p>
+<p>- D) Tiene parámetro <span class="math inline">\(\lambda\)</span></p>
+<p><strong>T4.8</strong> Una variable con distribución hipergeométrica:</p>
+<p>- A) Admite repeticiones</p>
+<p>- B) Tiene media <span class="math inline">\(np\)</span></p>
+<p>- C) Modela extracciones sin reemplazo</p>
+<p>- D) Tiene distribución normal</p>
+<p><strong>T4.9</strong> La distribución multinomial se utiliza para:</p>
+<p>- A) Modelar resultados de más de dos categorías</p>
+<p>- B) Experimentos con solo dos posibles resultados</p>
+<p>- C) Aproximar distribuciones normales</p>
+<p>- D) Datos continuos</p>
+<p><strong>T4.10</strong> ¿Cuál es la varianza de una variable
+<span class="math inline">\(X \sim \text{Bernoulli}(0.3)\)</span>?</p>
+<ul>
+<li><ol style="list-style-type: upper-alpha">
+<li>0.3</li>
+</ol></li>
+</ul>
+<p>- B) 0.09</p>
+<p>- C) 0.21</p>
+<p>- D) 0.7</p>
+<p><strong>T4.11</strong> La distribución uniforme discreta:</p>
+<p>- A) Asigna probabilidades diferentes a cada valor</p>
+<p>- B) Tiene media <span class="math inline">\(\frac{a + b}{2}\)</span></p>
+<p>- C) Modela fracasos hasta el primer éxito</p>
+<p>- D) Tiene función de densidad continua</p>
+<p><strong>T4.12</strong> ¿Qué función R permite generar observaciones de una binomial
+negativa?</p>
+<p>- A) <code>rbinom()</code></p>
+<p>- B) <code>rbeta()</code></p>
+<p>- C) <code>rnbinom()</code></p>
+<p>- D) <code>rgamma()</code></p>
+<p><strong>T4.13</strong> La distribución de Poisson se puede usar como aproximación de
+la binomial cuando:</p>
+<p>- A) <span class="math inline">\(n\)</span> es pequeño y <span class="math inline">\(p\)</span> es alto -</p>
+<ol start="2" style="list-style-type: upper-alpha">
+<li><span class="math inline">\(n\)</span> es grande y <span class="math inline">\(p\)</span> es pequeño</li>
+</ol>
+<p>- C) <span class="math inline">\(p \approx 0.5\)</span></p>
+<p>- D) Solo hay un único ensayo</p>
+<p><strong>T4.14</strong> En una multinomial con <span class="math inline">\(n = 10\)</span> y <span class="math inline">\(p_1 = 0.3, p_2 = 0.7\)</span>,
+¿cuántas categorías tiene?</p>
+<p>- A) 1</p>
+<p>- B) 2</p>
+<p>- C) 3</p>
+<p>- D) 10</p>
+<p><strong>T4.15</strong> En una distribución geométrica <span class="math inline">\(G(0.25)\)</span>, la probabilidad de
+que el primer éxito ocurra en el tercer intento es:</p>
+<p>- A) <span class="math inline">\(0.25 \cdot 0.75^3\)</span></p>
+<p>- B) <span class="math inline">\(0.75 \cdot 0.25^2\)</span></p>
+<p>- C) <span class="math inline">\(0.75^2 \cdot 0.25\)</span></p>
+<p>- D) <span class="math inline">\(0.25^3\)</span></p>
+</div>
+<div id="preguntas-tipo-test-tema-5-distribuciones-continuas" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Preguntas tipo test – Tema 5: Distribuciones continuas<a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>T5.1.</strong> Si <span class="math inline">\(X \sim \mathcal{U}(2, 6)\)</span>, su esperanza es:<br />
+A) 2<br />
+B) 4<br />
+C) 6<br />
+D) 8</p>
+<p><strong>T5.2.</strong> En una distribución uniforme continua <span class="math inline">\(\mathcal{U}(a, b)\)</span>, la
+densidad es:<br />
+A) <span class="math inline">\(\frac{1}{b - a}\)</span><br />
+B) <span class="math inline">\(\frac{1}{b + a}\)</span><br />
+C) <span class="math inline">\(\frac{a}{b}\)</span><br />
+D) <span class="math inline">\(\frac{b}{a}\)</span></p>
+<p><strong>T5.3.</strong> Si <span class="math inline">\(X \sim \mathcal{N}(10, 4)\)</span>, su desviación típica es:<br />
+A) 4<br />
+B) 2<br />
+C) 10<br />
+D) 6</p>
+<p><strong>T5.4</strong>. La función de densidad de la normal estándar
+<span class="math inline">\(\mathcal{N}(0,1)\)</span> alcanza su máximo en:<br />
+A) 0<br />
+B) 1<br />
+C) -1<br />
+D) No tiene máximo</p>
+<p><strong>T5.5.</strong> ¿Cuál de las siguientes afirmaciones sobre la normal estándar
+es correcta?<br />
+A) Tiene varianza 1 y media 0<br />
+B) Tiene media 1 y varianza 0<br />
+C) Tiene media 0 y varianza 0<br />
+D) Tiene media 1 y varianza 1</p>
+<p><strong>T5.6.</strong> La distribución normal es simétrica respecto a:<br />
+A) Su media<br />
+B) Su mediana<br />
+C) Su moda<br />
+D) Todas las anteriores</p>
+<p><strong>T5.7.</strong> Sea <span class="math inline">\(Z \sim \mathcal{N}(0, 1)\)</span>. Entonces <span class="math inline">\(P(Z &lt; -1)\)</span> es:<br />
+A) Aproximadamente 0.16<br />
+B) Aproximadamente 0.5<br />
+C) Aproximadamente 0.84<br />
+D) Aproximadamente 0.68</p>
+<p><strong>T5.8.</strong> Si <span class="math inline">\(X \sim \mathcal{N}(100, 25)\)</span>, entonces
+<span class="math inline">\(Z = \frac{X - 100}{5}\)</span> sigue:<br />
+A) Una normal estándar<br />
+B) Una gamma<br />
+C) Una ji-cuadrado<br />
+D) Una exponencial</p>
+<p><strong>T5.9.</strong> La distribución <span class="math inline">\(\chi^2_n\)</span> solo toma:<br />
+A) Valores negativos<br />
+B) Valores reales<br />
+C) Valores enteros<br />
+D) Valores positivos</p>
+<p><strong>T5.10.</strong> La esperanza de una variable <span class="math inline">\(\chi^2_n\)</span> es:<br />
+A) <span class="math inline">\(n\)</span><br />
+B) <span class="math inline">\(\sqrt{n}\)</span><br />
+C) <span class="math inline">\(2n\)</span><br />
+D) <span class="math inline">\(n - 1\)</span></p>
+<p><strong>T5.11.</strong> Una variable t de Student con <span class="math inline">\(n\)</span> grados de libertad:<br />
+A) Es simétrica<br />
+B) Tiene colas más pesadas que la normal<br />
+C) Se aproxima a la normal cuando <span class="math inline">\(n \to \infty\)</span><br />
+D) Todas son correctas</p>
+<p><strong>T5.12.</strong> En la distribución <span class="math inline">\(F_{n_1,n_2}\)</span>, los grados de libertad
+están asociados a:<br />
+A) Dos varianzas<br />
+B) Dos medias<br />
+C) Dos esperanzas<br />
+D) Dos proporciones</p>
+<p><strong>T5.13.</strong> La distribución <span class="math inline">\(F\)</span> de Snedecor:<br />
+A) Es simétrica<br />
+B) Solo toma valores positivos<br />
+C) Es idéntica a la normal<br />
+D) Tiene media 0</p>
+<p><strong>T5.14.</strong> Si <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, entonces <span class="math inline">\(E(X) =\)</span>:<br />
+A) <span class="math inline">\(\lambda\)</span><br />
+B) <span class="math inline">\(\frac{1}{\lambda}\)</span><br />
+C) <span class="math inline">\(\lambda^2\)</span><br />
+D) <span class="math inline">\(\log(\lambda)\)</span></p>
+<p><strong>T5.15.</strong> La función de densidad de la distribución exponencial es
+decreciente:<br />
+A) Si <span class="math inline">\(\lambda &gt; 0\)</span><br />
+B) Solo si <span class="math inline">\(\lambda = 1\)</span><br />
+C) Nunca<br />
+D) Siempre que <span class="math inline">\(\lambda &lt; 1\)</span></p>
+<p><strong>T5.16.</strong> La distribución exponencial es útil para modelar:<br />
+A) El número de ensayos hasta un éxito<br />
+B) El tiempo entre eventos<br />
+C) Las proporciones de éxito<br />
+D) Los ingresos por persona</p>
+<p><strong>T5.17.</strong> La distribución gamma con parámetro <span class="math inline">\(\alpha = 1\)</span> coincide
+con:<br />
+A) Una normal estándar<br />
+B) Una Poisson<br />
+C) Una exponencial<br />
+D) Una beta</p>
+<p><strong>T5.18.</strong> La distribución beta está definida sobre el intervalo:<br />
+A) <span class="math inline">\([0, \infty)\)</span><br />
+B) <span class="math inline">\((-\infty, \infty)\)</span><br />
+C) <span class="math inline">\((0, 1)\)</span><br />
+D) <span class="math inline">\([0, 1]\)</span></p>
+<p><strong>T5.19.</strong> Una beta <span class="math inline">\(\text{Beta}(\alpha, \beta)\)</span> puede usarse para
+modelar:<br />
+A) Densidades de probabilidad entre 0 y 1<br />
+B) Proporciones<br />
+C) Tasas de éxito<br />
+D) Todas son correctas</p>
+<p><strong>T5.20.</strong> La distribución de Pareto se caracteriza por:<br />
+A) Cola pesada<br />
+B) Densidad decreciente<br />
+C) Aparece en la distribución de la riqueza<br />
+D) Todas las anteriores</p>
+<p><strong>T5.21.</strong> El Teorema Central del Límite justifica el uso de la normal
+cuando:<br />
+A) La muestra es muy grande, sin importar la distribución original<br />
+B) La variable es categórica<br />
+C) Se estudia una muestra pequeña<br />
+D) No hay independencia</p>
+<p><strong>T5.22.</strong> Una función R que permite calcular la probabilidad acumulada
+de una normal es:<br />
+A) <code>rnorm()</code><br />
+B) <code>pnorm()</code><br />
+C) <code>qnorm()</code><br />
+D) <code>dnorm()</code></p>
+<p><strong>T5.23.</strong> Para generar datos aleatorios de una <span class="math inline">\(t_{10}\)</span>, se usa:<br />
+A) <code>rt(10)</code><br />
+B) <code>rt(n = 100, df = 10)</code><br />
+C) <code>t(10)</code><br />
+D) <code>rstudent(10)</code></p>
+<p><strong>T5.24.</strong> La distribución <span class="math inline">\(\chi^2\)</span> aparece al elevar al cuadrado:<br />
+A) Una variable t<br />
+B) Una variable normal estándar<br />
+C) Una exponencial<br />
+D) Una binomial</p>
+<p><strong>T5.25.</strong> El cociente de dos variables <span class="math inline">\(\chi^2\)</span> independientes
+divididas por sus grados de libertad sigue:<br />
+A) Una <span class="math inline">\(t\)</span><br />
+B) Una normal<br />
+C) Una <span class="math inline">\(F\)</span><br />
+D) Una gamma</p>
+</div>
+<div id="preguntas-tipo-test-tema-6-convergencia-en-distribución" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Preguntas tipo test – Tema 6: Convergencia en distribución<a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>T6.1</strong> ¿Cuál es la condición principal para aproximar una binomial
+<span class="math inline">\(B(n, p)\)</span> por una Poisson?<br />
+A) <span class="math inline">\(p \to 1\)</span>, <span class="math inline">\(n \to 0\)</span><br />
+B) <span class="math inline">\(n\)</span> grande, <span class="math inline">\(p\)</span> cercano a 1<br />
+C) <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(p \to 0\)</span>, <span class="math inline">\(np = \lambda\)</span> constante<br />
+D) <span class="math inline">\(p = 0.5\)</span></p>
+<p><strong>T6.2</strong> Una binomial <span class="math inline">\(B(n, p)\)</span> puede aproximarse por una normal
+cuando:<br />
+A) <span class="math inline">\(n\)</span> pequeño y <span class="math inline">\(p \to 0\)</span><br />
+B) <span class="math inline">\(np &gt; 5\)</span>, <span class="math inline">\(n(1-p) &gt; 5\)</span><br />
+C) <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(p = 1\)</span><br />
+D) Siempre que <span class="math inline">\(p \ne 0.5\)</span></p>
+<p><strong>T6.3</strong> La distribución Poisson puede aproximarse por una normal si:<br />
+A) <span class="math inline">\(\lambda\)</span> es grande<br />
+B) <span class="math inline">\(\lambda \to 0\)</span><br />
+C) La variable es discreta<br />
+D) No puede aproximarse por una normal</p>
+<p><strong>T6.4</strong> El Teorema Central del Límite afirma que:<br />
+A) La media muestral tiende a una Poisson<br />
+B) Toda variable tiende a una chi-cuadrado<br />
+C) La suma de variables independientes tiende a una normal<br />
+D) El número de observaciones se reduce a 1</p>
+<p><strong>T6.5</strong> El TCL es válido cuando:<br />
+A) Las variables tienen distribución simétrica<br />
+B) Las variables son independientes con media y varianza finitas<br />
+C) Las variables son categóricas<br />
+D) Siempre que la muestra sea menor de 30</p>
+<p><strong>T6.6</strong> Según el TCL, la variable que converge es:<br />
+A) La media poblacional<br />
+B) La proporción poblacional<br />
+C) La media muestral<br />
+D) La mediana</p>
+<p><strong>T6.7</strong> Sea <span class="math inline">\(X_i \sim U(0,1)\)</span>. Entonces, por el TCL:<br />
+A) La suma de los <span class="math inline">\(X_i\)</span> converge a una uniforme<br />
+B) La media de los <span class="math inline">\(X_i\)</span> converge a una normal<br />
+C) La varianza converge a una t<br />
+D) Nada puede decirse</p>
+<p><strong>T6.8</strong> La aproximación binomial → normal requiere corrección de
+continuidad porque:<br />
+A) La binomial es discreta y la normal continua<br />
+B) Ambas son continuas<br />
+C) La normal es más precisa<br />
+D) La binomial tiene media 0</p>
+<p><strong>T6.9</strong> La variable <span class="math inline">\(Z = \frac{\overline{X} - \mu}{\sigma/\sqrt{n}}\)</span>
+tiende a:<br />
+A) Una distribución exponencial<br />
+B) Una distribución normal<br />
+C) Una distribución beta<br />
+D) Una distribución t</p>
+<p><strong>T6.10</strong> ¿Qué distribución se utiliza para aproximar la distribución
+muestral de la media cuando el tamaño muestral es pequeño y la
+desviación típica poblacional es desconocida?<br />
+A) Normal<br />
+B) Binomial<br />
+C) Exponencial<br />
+D) t de Student</p>
+<p><strong>T6.11</strong> Una variable binomial negativa puede aproximarse por:<br />
+A) Una t de Student<br />
+B) Una normal si <span class="math inline">\(r\)</span> grande<br />
+C) Una uniforme<br />
+D) Una beta</p>
+<p><strong>T6.12</strong> La convergencia en distribución se refiere a:<br />
+A) Valores puntuales exactos<br />
+B) Igualdad de medias<br />
+C) Convergencia de las funciones de distribución<br />
+D) Convergencia casi segura</p>
+<p><strong>T6.13</strong> La relación entre tipos de convergencia indica que:<br />
+A) Convergencia en distribución implica convergencia casi segura<br />
+B) Convergencia casi segura implica en probabilidad<br />
+C) En probabilidad implica en distribución<br />
+D) b) y c) son correctas</p>
+<p><strong>T6.14</strong> La convergencia en probabilidad se da cuando:<br />
+A) La probabilidad de que la variable se aleje mucho de un valor tiende
+a cero<br />
+B) La función de densidad es constante<br />
+C) La esperanza es 0<br />
+D) La varianza tiende a infinito</p>
+<p><strong>T6.15</strong> El TCL se aplica también a:<br />
+A) Variables dependientes<br />
+B) Distribuciones con varianza infinita<br />
+C) Proporciones muestrales<br />
+D) Histogramas</p>
+<p><strong>T6.16</strong> Una variable normalizada mediante <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span>
+es útil para:<br />
+A) Convergencia en media<br />
+B) Aproximación Poisson<br />
+C) Comparar con la normal estándar<br />
+D) Pasar a una t</p>
+<p><strong>T6.17</strong> Si una variable converge en distribución a otra, entonces:<br />
+A) También converge casi seguramente<br />
+B) No tiene por qué converger en media<br />
+C) Las funciones de densidad son idénticas<br />
+D) Se puede usar la misma simulación</p>
+<p><strong>T6.18</strong> El TCL puede aplicarse en economía para modelar:<br />
+A) Tasas marginales<br />
+B) Medias muestrales de ingresos<br />
+C) Desigualdad extrema<br />
+D) Probabilidades exactas</p>
+<p><strong>T6.19</strong> ¿Cuándo es adecuada la aproximación de una distribución
+binomial por una distribución normal?<br />
+A) <span class="math inline">\(p\)</span> está cerca de 0 o 1<br />
+B) <span class="math inline">\(n\)</span> pequeño y <span class="math inline">\(p = 0.5\)</span><br />
+C) <span class="math inline">\(n\)</span> grande y <span class="math inline">\(p\)</span> no muy extremo<br />
+D) Se usa una gamma</p>
+<p><strong>T6.20</strong> El TCL permite justificar el uso de:<br />
+A) Modelos exponenciales<br />
+B) Aproximaciones normales en inferencia<br />
+C) Medidas de concentración<br />
+D) Histograma de frecuencias relativas</p>
+<hr />
+</div>
+<div id="soluciones-a-los-ejercicios-tipo-test" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Soluciones a los ejercicios tipo test<a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.3.3</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 7.1: </span>Respuestas correctas por tema (tipo test)</caption>
+<thead>
+<tr>
+<th align="center">Pregunta</th>
+<th align="center">T2</th>
+<th align="center">T3</th>
+<th align="center">T4</th>
+<th align="center">T5</th>
+<th align="center">T6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center">B</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">A</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">D</td>
+<td align="center">B</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center">A</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">A</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">D</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center">A</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">A</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center">D</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">A</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">D</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">A</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">B</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">B</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">A</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">D</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">D</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">D</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">24</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>T4.1: A</li>
+<li>T4.2: B</li>
+<li>T4.3: D</li>
+<li>T4.4: A</li>
+<li>T4.5: B</li>
+<li>T4.6: B</li>
+<li>T4.7: A</li>
+<li>T4.8: C</li>
+<li>T4.9: A</li>
+<li>T4.10: C</li>
+<li>T4.11: B</li>
+<li>T4.12: C</li>
+<li>T4.13: B</li>
+<li>T4.14: B</li>
+<li>T4.15: C</li>
+</ul>
+<p>T5.1: B<br />
+T5.2: A<br />
+T5.3: B<br />
+T5.4: A<br />
+T5.5: A<br />
+T5.6: D<br />
+T5.7: A<br />
+T5.8: A<br />
+T5.9: D<br />
+T5.10: A<br />
+T5.11: D<br />
+T5.12: A<br />
+T5.13: B<br />
+T5.14: B<br />
+T5.15: A<br />
+T5.16: B<br />
+T5.17: C<br />
+T5.18: D<br />
+T5.19: D<br />
+T5.20: D<br />
+T5.21: A<br />
+T5.22: B<br />
+T5.23: B<br />
+T5.24: B<br />
+T5.25: C</p>
+<p>T6.1: C<br />
+T6.2: B<br />
+T6.3: A<br />
+T6.4: C<br />
+T6.5: B<br />
+T6.6: C<br />
+T6.7: B<br />
+T6.8: A<br />
+T6.9: B<br />
+T6.10: D<br />
+T6.11: B<br />
+T6.12: C<br />
+T6.13: D<br />
+T6.14: A<br />
+T6.15: C<br />
+T6.16: C<br />
+T6.17: B<br />
+T6.18: B<br />
+T6.19: C<br />
+T6.20: B</p>
+</div>
+</div>
+<div id="ejercicios-a-desarrollar" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Ejercicios a desarrollar<a href="ejercicios.html#ejercicios-a-desarrollar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejercicios-del-tema-1-probabilidad" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Ejercicios del Tema 1: Probabilidad<a href="ejercicios.html#ejercicios-del-tema-1-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>E1.1</strong> Se extrae una bola de una urna con bolas numeradas del 1 al 9. Define:</p>
+<ul>
+<li><span class="math inline">\(A = \{1, 2, 3\}\)</span></li>
+<li><span class="math inline">\(B = \{3, 4, 5, 6, 7, 8, 9\}\)</span></li>
+</ul>
+<p>Calcula:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(A \cup B\)</span></li>
+<li><span class="math inline">\(A \cap B\)</span></li>
+<li><span class="math inline">\(A - B\)</span></li>
+<li><span class="math inline">\(\overline{A}\)</span> respecto de <span class="math inline">\(\Omega = \{1, \dots, 9\}\)</span></li>
+<li>¿Son incompatibles A y B? ¿Y compatibles?</li>
+</ol>
+<p><strong>E1.2</strong> Lanzamiento de un dado. Sea <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>.</p>
+<p>Define:</p>
+<ul>
+<li><span class="math inline">\(A =\)</span> “obtener un número menor o igual que 3”</li>
+<li><span class="math inline">\(B =\)</span> “obtener un número par”</li>
+</ul>
+<p>Calcula:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(A \cup B\)</span></li>
+<li><span class="math inline">\(A \cap B\)</span></li>
+<li><span class="math inline">\(A - B\)</span></li>
+<li><span class="math inline">\(B - A\)</span></li>
+<li><span class="math inline">\(\overline{A \cap B}\)</span></li>
+</ol>
+</div>
+<div id="ejercicios-del-tema-4-distribuciones-discretas" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Ejercicios del Tema 4: Distribuciones discretas<a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>E4.1</strong> Se lanza un dado de 10 caras numeradas del 1 al 10. Considera
+la variable aleatoria <span class="math inline">\(X\)</span> que representa el número obtenido en un
+lanzamiento.</p>
+<p>a. ¿Qué tipo de distribución tiene <span class="math inline">\(X\)</span>? Justifícalo.</p>
+<p>b. Calcula la probabilidad de obtener un número impar.</p>
+<p>c. Calcula la esperanza y la varianza de <span class="math inline">\(X\)</span>.</p>
+<p>d. Representa su función de distribución acumulada (a mano o en R).</p>
+<p><strong>E4.2</strong> Un 20% de los usuarios que reciben una campaña de email compran
+el producto. Se seleccionan 6 usuarios al azar.</p>
+<p>a. Modeliza esta situación indicando la variable aleatoria y su
+distribución.</p>
+<p>b. Calcula la probabilidad de que exactamente 2 compren el producto.</p>
+<p>c. Calcula la probabilidad de que al menos 1 realice una compra.</p>
+<p>d. ¿Cuál es la esperanza y varianza del número de compras?</p>
+<p><strong>E4.3</strong> Una empresa recibe una media de 3 reclamaciones diarias. Sea
+<span class="math inline">\(X \sim \text{Poisson}(3)\)</span> el número de reclamaciones en un día.</p>
+<p>a. Calcula la probabilidad de que no se reciba ninguna reclamación.</p>
+<p>b. Calcula la probabilidad de recibir exactamente 2 reclamaciones.</p>
+<p>c. Calcula la probabilidad de recibir 3 o más reclamaciones.</p>
+<p>d .¿Cuál es la media y la varianza de esta distribución?</p>
+<p><strong>E4.4</strong> Un lote de 20 productos contiene 4 defectuosos. Se extraen 5 al
+azar sin reemplazo. Sea <span class="math inline">\(X\)</span> el número de defectuosos extraídos.</p>
+<p>a. ¿Qué tipo de distribución sigue <span class="math inline">\(X\)</span>? Indica sus parámetros.</p>
+<p>b. Calcula <span class="math inline">\(P(X = 2)\)</span>.</p>
+<p>c. Calcula la probabilidad de que al menos uno sea defectuoso.</p>
+<p>d. ¿Cuál es la esperanza de la variable?</p>
+<p><strong>E4.5</strong> La probabilidad de que un usuario haga clic en un anuncio es
+del 10%. Sea <span class="math inline">\(X\)</span> la posición del primer usuario que hace clic.</p>
+<p>a. ¿Qué distribución tiene <span class="math inline">\(X\)</span>? ¿Qué valores puede tomar?</p>
+<p>b. Calcula la probabilidad de que el primer clic ocurra en el cuarto
+intento.</p>
+<p>c. Simula en R 1000 repeticiones con <code>rgeom(n, prob = 0.1)</code> y
+representa el histograma.</p>
+<p>d. ¿Cuál es la media teórica de la distribución?</p>
+<p><strong>E4.6</strong> Una empresa necesita que su equipo de ventas consiga 3
+contratos. Cada llamada tiene una probabilidad del 20% de terminar en
+contrato y las llamadas son independientes.<br />
+a) ¿Cuál es la distribución que modela el número total de llamadas
+necesarias hasta lograr los 3 contratos?<br />
+b) Calcula la probabilidad de que se necesiten exactamente 8 llamadas.<br />
+c) ¿Cuál es la esperanza y la varianza del número total de llamadas?</p>
+<p><strong>E4.7</strong> Un operario realiza intentos independientes para reparar una
+máquina. La probabilidad de éxito en cada intento es del 30%.<br />
+a) ¿Cuál es la probabilidad de que el primer intento exitoso se produzca
+en el cuarto intento?<br />
+b) ¿Cuál es la esperanza y la varianza del número de intentos hasta el
+primer éxito?</p>
+<p><strong>E4.8</strong> En una fábrica, se inspeccionan 10 piezas seleccionadas al azar
+de un lote de 100, de las cuales se sabe que 20 son defectuosas.<br />
+a) ¿Cuál es la probabilidad de encontrar exactamente 3 piezas
+defectuosas en la muestra?<br />
+b) ¿Cuál es la esperanza del número de defectuosas encontradas?</p>
+<p><strong>E4.9</strong> En un juego, se lanza una moneda hasta obtener el quinto cara.<br />
+a) ¿Cuál es la distribución que modela el número total de lanzamientos
+necesarios?<br />
+b) Calcula la probabilidad de que se necesiten exactamente 7
+lanzamientos.<br />
+c) Calcula la esperanza y la varianza del número total de lanzamientos.</p>
+<p><strong>E4.10</strong> En una encuesta sobre el desayuno, el 30% de las personas
+eligen café, el 50% té, y el 20% zumo. Se seleccionan al azar 10
+personas.<br />
+a) ¿Qué distribución modela el número de personas que eligen cada
+bebida?<br />
+b) Calcula la probabilidad de que 3 elijan café, 5 té y 2 zumo.<br />
+c) Calcula la esperanza del número de personas que eligen té.</p>
+</div>
+<div id="ejercicios-del-tema-5-distribuciones-continuas" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Ejercicios del Tema 5: Distribuciones continuas<a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>E5.1</strong> Una variable aleatoria continua sigue una distribución uniforme
+en el intervalo [3, 7].<br />
+a) Calcula su función de densidad.<br />
+b) Halla la probabilidad de que la variable tome un valor entre 4 y 5.<br />
+c) Calcula su esperanza y varianza.</p>
+<p><strong>E5.2</strong> Sea <span class="math inline">\(X \sim \mathcal{N}(100, 16)\)</span>.<br />
+a) Tipifica la variable.<br />
+b) Calcula <span class="math inline">\(P(X &lt; 104)\)</span>.<br />
+c) Calcula <span class="math inline">\(P(95 &lt; X &lt; 105)\)</span>.</p>
+<p><strong>E5.3</strong> Una máquina produce tornillos cuyo peso sigue una distribución
+normal con media 20g y desviación típica 2g.<br />
+a) ¿Cuál es la probabilidad de que un tornillo pese más de 22g?<br />
+b) ¿Y de que pese entre 18g y 21g?</p>
+<p><strong>E5.4</strong> Sea <span class="math inline">\(X \sim \text{Exp}(0.5)\)</span>.<br />
+a) Calcula la función de densidad.<br />
+b) Halla <span class="math inline">\(P(X \leq 3)\)</span>.<br />
+c) Calcula la media y la varianza.</p>
+<p><strong>E5.5</strong> Una variable <span class="math inline">\(X \sim \chi^2_4\)</span>.<br />
+a) ¿Cuál es su esperanza y varianza?<br />
+b) ¿Cuál es <span class="math inline">\(P(X &gt; 5)\)</span>?</p>
+<p><strong>E5.6</strong> La variable <span class="math inline">\(T \sim t_5\)</span>.<br />
+a) ¿Qué forma tiene la distribución?<br />
+b) ¿Cuál es su esperanza y su varianza?<br />
+c) ¿Cuál es <span class="math inline">\(P(T &lt; 2.015)\)</span>?</p>
+<p><strong>E5.7</strong> En una fábrica se estima que los tiempos de reparación siguen
+una distribución exponencial con <span class="math inline">\(\lambda = 1/30\)</span>.<br />
+a) Calcula la probabilidad de que una reparación dure menos de 15
+minutos.<br />
+b) Simula 100 tiempos de reparación en R y representa el histograma.</p>
+<p><strong>E5.8</strong> Sea <span class="math inline">\(X \sim \mathcal{N}(80, 25)\)</span>.<br />
+a) ¿Cuál es la probabilidad de que <span class="math inline">\(X &gt; 90\)</span>? Calcula este valor
+teóricamente.<br />
+b) Calcula esa misma probabilidad utilizando R.<br />
+c) Simula 1000 valores de esta distribución en R y calcula la proporción
+que supera 90.<br />
+d) Compara el valor teórico, el calculado con R y el empírico.</p>
+<p><strong>E5.9</strong> Una variable <span class="math inline">\(Y \sim \text{Beta}(2, 5)\)</span>.<br />
+a) Genera 1000 valores aleatorios y representa el histograma.<br />
+b) Calcula la media empírica y compárala con la media teórica.<br />
+c) Representa sobre el histograma la función de densidad teórica.</p>
+<p><strong>E5.10</strong> Simula 1000 observaciones de dos muestras independientes: una
+con <span class="math inline">\(X \sim \chi^2_{10}\)</span> y otra con <span class="math inline">\(Y \sim \chi^2_{20}\)</span>.<br />
+a) Calcula el cociente <span class="math inline">\(F = \frac{X/10}{Y/20}\)</span> para cada pareja.<br />
+b) Representa el histograma del cociente obtenido.<br />
+c) Utiliza R para calcular la probabilidad de que <span class="math inline">\(F &gt; 2.0\)</span> según la
+distribución teórica <span class="math inline">\(F_{10, 20}\)</span>.<br />
+d) Superpón la densidad teórica de la distribución <span class="math inline">\(F_{10, 20}\)</span> sobre el
+histograma del apartado b.</p>
+</div>
+<div id="ejercicios-del-tema-6-convergencia-entre-distribuciones" class="section level3 hasAnchor" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> Ejercicios del Tema 6: Convergencia entre distribuciones<a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>E6.1</strong> Un operario tiene una probabilidad del 20% de cometer un error
+en una tarea. Si realiza 50 tareas, calcula la probabilidad de que
+cometa exactamente 10 errores: a) Usando la distribución binomial
+exacta.<br />
+b) Usando una aproximación normal con corrección de continuidad.</p>
+<p><strong>E6.2</strong> La variable aleatoria <span class="math inline">\(X \sim B(100, 0.6)\)</span>.<br />
+a) Calcula la probabilidad de que <span class="math inline">\(X \leq 65\)</span> utilizando la aproximación
+normal con corrección de continuidad.<br />
+b) Justifica por qué es válida esta aproximación.</p>
+<p><strong>E6.3</strong> Sea <span class="math inline">\(Y \sim \text{Poisson}(20)\)</span>.<br />
+a) Calcula la probabilidad de que <span class="math inline">\(Y \leq 25\)</span> usando la distribución de
+Poisson.<br />
+b) Aplica la aproximación normal con corrección de continuidad y compara
+los resultados.</p>
+<p><strong>E6.4</strong> Sea <span class="math inline">\(X \sim B(200, 0.05)\)</span>.<br />
+a) Calcula <span class="math inline">\(P(X \leq 10)\)</span> usando la distribución binomial.<br />
+b) Sustituye la binomial por una distribución de Poisson adecuada y
+calcula la misma probabilidad.</p>
+<p><strong>E6.5</strong> Considera una variable <span class="math inline">\(X \sim \text{Poisson}(8)\)</span>.<br />
+a) Calcula <span class="math inline">\(P(X \geq 10)\)</span> usando la distribución de Poisson.<br />
+b) Utiliza una distribución normal adecuada con corrección de
+continuidad para aproximar esta probabilidad.</p>
+<p><strong>E6.6</strong> Un lote contiene 2000 productos, de los cuales el 1% está
+defectuoso. Se toma una muestra aleatoria de 100 productos.<br />
+a) ¿Qué distribución usarías para modelar el número de defectuosos?<br />
+b) Calcula la probabilidad de obtener exactamente 2 defectuosos usando
+la distribución adecuada.<br />
+c) Propón una aproximación por otra distribución y calcula la
+probabilidad aproximada.</p>
+<p><strong>E6.7</strong> Simula 1000 observaciones de una binomial <span class="math inline">\(B(30, 0.4)\)</span>.<br />
+a) Representa el histograma de la muestra.<br />
+b) Superpón la curva de densidad de la distribución normal que aproxima
+esta binomial.<br />
+c) Comenta si visualmente la normal es una buena aproximación.</p>
+<p><strong>E6.8</strong> Considera una variable <span class="math inline">\(X \sim \text{Poisson}(15)\)</span>.<br />
+a) Simula 1000 valores de esta distribución.<br />
+b) Representa el histograma.<br />
+c) Añade la curva de la normal con media y varianza iguales a la de
+<span class="math inline">\(X\)</span>.<br />
+d) Calcula la proporción empírica de valores mayores que 20 y compárala
+con la estimación normal.</p>
+<p><strong>E6.9</strong> Una fábrica ha comprobado que solo el 1% de los productos que
+fabrica presentan defectos. Para controlar la calidad, se selecciona al
+azar una muestra de 100 productos y se cuenta cuántos son defectuosos.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calcula la probabilidad de que exactamente 2 productos de la muestra
+sean defectuosos, utilizando el modelo que consideres adecuado.</p></li>
+<li><p>Dado que la muestra es grande y la probabilidad de defecto es muy
+baja, se decide utilizar un modelo alternativo que simplifique los
+cálculos. Estima la probabilidad de que haya exactamente 2 productos
+defectuosos aplicando este modelo aproximado.</p></li>
+<li><p>Compara los resultados de los apartados anteriores. ¿Crees que la
+aproximación del apartado b) es adecuada? Justifica tu respuesta.</p></li>
+<li><p>Imagina ahora que el número de productos muestreados es 1000 y que
+la probabilidad de que un producto sea defectuoso es 0.4. ¿A qué
+otra distribución podría aproximarse este fenómeno bajo esas nuevas
+condiciones? Justifica tu respuesta.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="conv.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": null,
+"view": null,
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 4 Modelos de probabilidad discretos | modelizacion-del-azar.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 4 Modelos de probabilidad discretos | modelizacion-del-azar.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 4 Modelos de probabilidad discretos | modelizacion-del-azar.knit" />
+  
+  
+  
+
+<meta name="author" content="" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variables-aleatorias.html"/>
+<link rel="next" href="modelos-de-probabilidad-continuos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Modelización del azar</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="04-distribuciones-discretas.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="04-distribuciones-discretas.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad.html"><a href="probabilidad.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.3</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad.html"><a href="probabilidad.html#sucesos"><i class="fa fa-check"></i><b>2.4</b> Sucesos</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad.html"><a href="probabilidad.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.4.1</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad.html"><a href="probabilidad.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.4.2</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="04-distribuciones-discretas.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad.html"><a href="probabilidad.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad.html"><a href="probabilidad.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="04-distribuciones-discretas.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.6</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="probabilidad.html"><a href="probabilidad.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.6.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.6.2" data-path="04-distribuciones-discretas.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.6.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.6.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="probabilidad.html"><a href="probabilidad.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.7</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="probabilidad.html"><a href="probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.7.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.7.2" data-path="probabilidad.html"><a href="probabilidad.html#regla-del-producto"><i class="fa fa-check"></i><b>2.7.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.7.3" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.7.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.7.4" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.7.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="probabilidad.html"><a href="probabilidad.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.8</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="04-distribuciones-discretas.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.8.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="04-distribuciones-discretas.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.9</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="04-distribuciones-discretas.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.9.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.9.2" data-path="probabilidad.html"><a href="probabilidad.html#combinaciones"><i class="fa fa-check"></i><b>2.9.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.9.3" data-path="probabilidad.html"><a href="probabilidad.html#variaciones"><i class="fa fa-check"></i><b>2.9.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.9.4" data-path="probabilidad.html"><a href="probabilidad.html#permutaciones"><i class="fa fa-check"></i><b>2.9.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="04-distribuciones-discretas.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="04-distribuciones-discretas.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="04-distribuciones-discretas.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="04-distribuciones-discretas.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="04-distribuciones-discretas.html"><a href="#relaci%C3%B3n-entre-distribuciones.-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="04-distribuciones-discretas.html"><a href="#introducci%C3%B3n-2"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="04-distribuciones-discretas.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="04-distribuciones-discretas.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="04-distribuciones-discretas.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="04-distribuciones-discretas.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="04-distribuciones-discretas.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="04-distribuciones-discretas.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="04-distribuciones-discretas.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="04-distribuciones-discretas.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="04-distribuciones-discretas.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.3</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modelos-de-probabilidad-discretos" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Tema 4</span> Modelos de probabilidad discretos<a href="modelos-de-probabilidad-discretos.html#modelos-de-probabilidad-discretos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Uno de los principales objetivos del Cálculo de Probabilidades es construir modelos teóricos que representen de forma adecuada el comportamiento de fenómenos aleatorios observables en la realidad. Estos modelos permiten al científico simular situaciones, analizar comportamientos complejos y formular predicciones que, de otro modo, serían difíciles o imposibles de estudiar directamente. Modelizar lo observable no solo responde a una necesidad científica básica, sino que constituye una herramienta fundamental para entender y explicar el entorno que nos rodea, aunque ello implique necesariamente una simplificación de la realidad.</p>
+<p>En este tema nos centraremos en el estudio de los modelos de probabilidad discretos, es decir, aquellos que describen situaciones en las que las variables aleatorias solo pueden tomar un número finito o numerable de valores posibles.</p>
+<p>Comprender estos modelos es esencial porque proporcionan una base sólida para analizar fenómenos tan variados como el número de llamadas que recibe un centro de atención, el resultado de experimentos repetidos o los patrones de demanda en un sistema económico. Estudiar sus propiedades, estructura y aplicaciones nos permitirá no solo interpretar correctamente situaciones aleatorias, sino también tomar decisiones informadas en contextos reales basados en incertidumbre.</p>
+<p>Este documento desarrolla los casos prácticos de cada distribución discreta, con teoría, ejemplos aplicados al ámbito económico-empresarial y ejercicios resueltos, acompañados de código en R. El objetivo es proporcionar una herramienta completa que permita al alumno no solo comprender los fundamentos teóricos de cada modelo, sino también aplicarlos a problemas reales que surgen en el análisis de datos económicos, financieros o empresariales.</p>
+<div id="distribución-uniforme-discreta-u_d" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span><a href="#distribuci%C3%B3n-uniforme-discreta-u_d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria discreta sigue una <strong>distribución uniforme discreta</strong> cuando puede tomar un número finito de valores distintos, todos ellos con <strong>la misma probabilidad</strong>. Es decir, cada uno de los posibles valores es <strong>equiprobable</strong>. Esta distribución representa situaciones en las que no existe preferencia por ningún resultado en particular, y todos los resultados posibles son igualmente probables.</p>
+<p><strong>¿Para qué sirve?</strong> Se utiliza cuando todos los resultados son igualmente probables. En el contexto de empresa, sirve para modelar sorteos, selección aleatoria de clientes, o cualquier proceso donde no hay sesgo hacia ningún resultado.</p>
+<p><strong>Teoría:</strong> Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta que toma <span class="math inline">\(n\)</span> valores distintos: {<span class="math inline">\(x_1, x_2, ..., x_n\)</span>} con igual probabilidad.</p>
+<p>Se denota que la variable aleatoria <span class="math inline">\(X\)</span> sigue una distribución uniforme de la siguiente manera <span class="math display">\[
+X \sim \mathcal{U}\_d(x_1, x_2, \dots, x_n)
+\]</span> o bien, si los valores son enteros consecutivos entre dos extremos: <span class="math display">\[
+X \sim \mathcal{U}_d(a, b)
+\]</span> donde <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son enteros, y <span class="math inline">\(X\)</span> puede tomar cualquier valor en el conjunto <span class="math inline">\(\{a, a+1, \dots, b\}\)</span> con igual probabilidad.</p>
+<p>En esta caso, su <strong>función de cuantía</strong> será:<span class="math display">\[
+P(X = x_i) = \frac{1}{n}, \\ i = 1, 2, ..., n.
+\]</span></p>
+<p>y su <strong>función de distribución</strong> (que representa la probabilidad acumulada) es:</p>
+<p><span class="math display">\[
+F(x_k) = P(X \leq x_k) = \sum_{i=1}^{k} \frac{1}{n} = \frac{k}{n}
+\]</span></p>
+<p>Esto da lugar a una función escalonada, que puede expresarse como:</p>
+<p><span class="math display">\[
+F(x) =
+\begin{cases}
+0 &amp; \text{si } x &lt; x_1 \\\\
+\frac{1}{n} &amp; \text{si } x_1 \leq x &lt; x_2 \\\\
+\frac{2}{n} &amp; \text{si } x_2 \leq x &lt; x_3 \\\\
+\vdots &amp; \vdots \\\\
+\frac{k}{n} &amp; \text{si } x_k \leq x &lt; x_{k+1} \\\\
+\vdots &amp; \vdots \\\\
+1 &amp; \text{si } x \geq x_n
+\end{cases}
+\]</span></p>
+<p><strong>Parámetros fundamentales:</strong></p>
+<p>- <span class="math inline">\(n\)</span>: número de posibles valores de la variable (positivo y entero).</p>
+<p><strong>Momentos:</strong></p>
+<p>- Media: <span class="math inline">\(E(X) = \frac{n + 1}{2}\)</span></p>
+<p>- Varianza: <span class="math inline">\(Var(X) = \frac{n^2 - 1}{12}\)</span></p>
+<p><strong>Ejercicio:</strong> Se lanza un dado de 8 caras. ¿Cuál es la probabilidad de que salga un número menor o igual a 3? Calcula su media y su varianza.</p>
+<p><em>Solución:</em></p>
+<p><em>- Probabilidad de obtener un número menor o igual a 3</em></p>
+<p>Hay 3 resultados favorables: <span class="math inline">\(\{1, 2, 3\}\)</span>, de un total de 8 posibles. Por tanto:</p>
+<p><span class="math display">\[
+P(X \leq 3) = \frac{3}{8} = 0{,}375
+\]</span></p>
+<p><em>- Esperanza matemática</em></p>
+<p>La esperanza de una distribución uniforme discreta sobre <span class="math inline">\(n\)</span> valores es:</p>
+<p><span class="math display">\[
+E(X) = \frac{n + 1}{2} = \frac{8 + 1}{2} = \frac{9}{2} = 4{,}5
+\]</span></p>
+<p><em>- Varianza</em></p>
+<p>La varianza se calcula con la fórmula:</p>
+<p><span class="math display">\[
+V(X) = \frac{n^2 - 1}{12} = \frac{8^2 - 1}{12} = \frac{63}{12} = 5{,}25
+\]</span></p>
+<p><strong>Ejemplo en <em>R</em>:</strong></p>
+<p>Consideremos un dado <em>perfecto</em> o <em>justo</em>, en el que la probabilidad de que salga cualquiera de sus caras es igual a <span class="math inline">\(\frac{1}{6}\)</span>. Determínese la esperanza y la varianza de los posibles resultados que se pueden obtener.</p>
+<p>La variable aleatoria <span class="math inline">\(X\)</span> puede tomar los valores <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span>, todos ellos con probabilidad <span class="math inline">\(\frac{1}{6}\)</span>. Por tanto, puede modelizarse mediante una distribución uniforme discreta.</p>
+<p>Resolución:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="modelos-de-probabilidad-discretos.html#cb29-1" tabindex="-1"></a><span class="co"># Probabilidad de obtener más de 4</span></span>
+<span id="cb29-2"><a href="modelos-de-probabilidad-discretos.html#cb29-2" tabindex="-1"></a>n_caras <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb29-3"><a href="modelos-de-probabilidad-discretos.html#cb29-3" tabindex="-1"></a>prob_mayor_4 <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">/</span> n_caras</span>
+<span id="cb29-4"><a href="modelos-de-probabilidad-discretos.html#cb29-4" tabindex="-1"></a>prob_mayor_4</span></code></pre></div>
+<pre><code>## [1] 0.3333333</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="modelos-de-probabilidad-discretos.html#cb31-1" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
+<span id="cb31-2"><a href="modelos-de-probabilidad-discretos.html#cb31-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> (n_caras <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb31-3"><a href="modelos-de-probabilidad-discretos.html#cb31-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> (n_caras<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">12</span></span>
+<span id="cb31-4"><a href="modelos-de-probabilidad-discretos.html#cb31-4" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 3.5</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="modelos-de-probabilidad-discretos.html#cb33-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 2.916667</code></pre>
+</div>
+<div id="distribución-bernoulli-b1-p" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span><a href="#distribuci%C3%B3n-bernoulli-b1-p" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria discreta sigue una <strong>distribución de Bernoulli</strong>, es decir, <span class="math inline">\(\text{Binomial}(1, p)\)</span>, cuando modela una situación en la que se realiza un único experimento aleatorio con dos posibles resultados complementarios, a los que comúnmente se denomina <strong>éxito</strong> y <strong>fracaso</strong>,.</p>
+<p><strong>¿Para qué sirve?</strong> Es muy habitual encontrar situaciones en las que se encuentre esta distribución ya que modela experimentos de tipo éxito/fracaso. Ejemplos típicos en empresa serían si un cliente hace o no una compra, si una campaña publicitaria logra o no un clic, si una pieza sale defectuosa o no, etc.</p>
+<p><strong>Teoría:</strong> Una variable aleatoria discreta <span class="math inline">\(X\)</span> sigue una <strong>distribución de Bernoulli</strong> de parámetro <span class="math inline">\(p\)</span>, con <span class="math inline">\(0 &lt; p &lt; 1\)</span>, si toma únicamente los valores 0 y 1, que representan dos resultados complementarios de un único experimento aleatorio <span class="math display">\[
+X = \begin{cases} 1 &amp; \text{con probabilidad } p \\ 0 &amp; \text{con probabilidad } 1 - p \end{cases}
+\]</span></p>
+<p>Se denota como: <span class="math display">\[
+X \sim \text{Bernoulli}(p) \quad \text{o bien} \quad X \sim \text{Binomial}(1, p)
+\]</span></p>
+<p>Resumiendo la información</p>
+<table>
+<thead>
+<tr>
+<th>Valor de <span class="math inline">\(X\)</span></th>
+<th>Probabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1 - p\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(p\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>De este modo, la <strong>función de cuantía</strong> o de probabilidad de <span class="math inline">\(X\)</span> es:</p>
+<p><span class="math display">\[
+f(x) = P(X = x) =
+\begin{cases}
+p &amp; \text{si } x = 1 \\\\
+1 - p &amp; \text{si } x = 0 \\\\
+0 &amp; \text{en otro caso}
+\end{cases}
+\]</span></p>
+<p>También puede escribirse de forma compacta como:</p>
+<p><span class="math display">\[
+f(x)=P(X = x) = p^x (1 - p)^{1 - x}, \quad \text{para } x \in \{0, 1\}
+\]</span></p>
+<p>Y la <strong>Función de Distribución</strong> o probabilidad acumulada <span class="math inline">\(F(x) = P(X \leq x)\)</span> es:</p>
+<p><span class="math display">\[
+F(x) =
+\begin{cases}
+0 &amp; \text{si } x &lt; 0 \\\\
+1 - p &amp; \text{si } 0 \leq x &lt; 1 \\\\
+1 &amp; \text{si } x \geq 1
+\end{cases}
+\]</span></p>
+<p><strong>Parámetros fundamentales:</strong></p>
+<ul>
+<li><span class="math inline">\(p \in [0,1]\)</span>: probabilidad de éxito.</li>
+</ul>
+<p>- <span class="math inline">\(q = 1 - p\)</span>: probabilidad de fracaso.</p>
+<p><strong>Momentos:</strong></p>
+<p>- Media: <span class="math inline">\(E(X) = p\)</span></p>
+<p>- Varianza: <span class="math inline">\(Var(X) = p(1 - p)\)</span></p>
+<p><strong>Ejercicio:</strong> La probabilidad de que un cliente compre un producto tras recibir una oferta comercial es 0,3.</p>
+<p>Determínese la media y la varianza de esta variable, y la probabilidad de que el cliente no realice la compra.</p>
+<p>Dado que el fenómeno presenta dos posibles resultados —<strong>compra (C)</strong> o <strong>no compra (NC)</strong>—, se puede modelizar mediante una distribución binomial de un solo ensayo, es decir, <span class="math inline">\(B(1; 0,3)\)</span>, donde:</p>
+<p><span class="math display">\[
+P(C) = P(X = 1) = p = 0{,}3 \\
+P(NC) = P(X = 0) = q = 1 - p = 0{,}7
+\]</span></p>
+<p>La esperanza y la varianza de esta variable son:</p>
+<p><span class="math display">\[
+E(X) = p = 0{,}3 \\
+V(X) = p \cdot q = 0{,}3 \cdot 0{,}7 = 0{,}21
+\]</span></p>
+<p><strong>Ejemplo en <em>R</em>: Simulación</strong></p>
+<p>Supongamos que la probabilidad de que un usuario haga clic en un anuncio es del 15 % (es decir, <span class="math inline">\(p = 0{,}15\)</span>). Esta situación se puede modelizar con una variable aleatoria de Bernoulli, donde el valor 1 (<em>éxito</em>) representa que el usuario hace clic y el valor 0 (<em>fracaso</em>) que no lo hace. Vamos a simular el comportamiento de 10 individuos y posteriormente compararlo con el valor teórico o esperado.</p>
+<p>Para realizar esa simulación del comportamiento de 10 usuarios utilizamos la función <code>rbinom()</code> de R, y comparamos los resultados empíricos (media y varianza observadas) con los valores teóricos esperados:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="modelos-de-probabilidad-discretos.html#cb35-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb35-2"><a href="modelos-de-probabilidad-discretos.html#cb35-2" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.15</span>)</span>
+<span id="cb35-3"><a href="modelos-de-probabilidad-discretos.html#cb35-3" tabindex="-1"></a>resultados</span></code></pre></div>
+<pre><code>##  [1] 0 0 0 1 1 0 0 1 0 0</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="modelos-de-probabilidad-discretos.html#cb37-1" tabindex="-1"></a><span class="co"># Media y varianza empíricas</span></span>
+<span id="cb37-2"><a href="modelos-de-probabilidad-discretos.html#cb37-2" tabindex="-1"></a>media_empirica <span class="ot">&lt;-</span> <span class="fu">mean</span>(resultados); media_empirica</span></code></pre></div>
+<pre><code>## [1] 0.3</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="modelos-de-probabilidad-discretos.html#cb39-1" tabindex="-1"></a>var_empirica <span class="ot">&lt;-</span> <span class="fu">var</span>(resultados); var_empirica</span></code></pre></div>
+<pre><code>## [1] 0.2333333</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="modelos-de-probabilidad-discretos.html#cb41-1" tabindex="-1"></a><span class="co"># Valores teóricos</span></span>
+<span id="cb41-2"><a href="modelos-de-probabilidad-discretos.html#cb41-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb41-3"><a href="modelos-de-probabilidad-discretos.html#cb41-3" tabindex="-1"></a>media_teorica <span class="ot">&lt;-</span> p</span>
+<span id="cb41-4"><a href="modelos-de-probabilidad-discretos.html#cb41-4" tabindex="-1"></a>var_teorica <span class="ot">&lt;-</span> p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p)</span>
+<span id="cb41-5"><a href="modelos-de-probabilidad-discretos.html#cb41-5" tabindex="-1"></a>media_teorica</span></code></pre></div>
+<pre><code>## [1] 0.15</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="modelos-de-probabilidad-discretos.html#cb43-1" tabindex="-1"></a>var_teorica</span></code></pre></div>
+<pre><code>## [1] 0.1275</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="modelos-de-probabilidad-discretos.html#cb45-1" tabindex="-1"></a>dif_media <span class="ot">&lt;-</span> media_empirica<span class="sc">-</span>media_teorica; dif_media</span></code></pre></div>
+<pre><code>## [1] 0.15</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="modelos-de-probabilidad-discretos.html#cb47-1" tabindex="-1"></a>dif_var <span class="ot">&lt;-</span> var_empirica<span class="sc">-</span>var_teorica; dif_var</span></code></pre></div>
+<pre><code>## [1] 0.1058333</code></pre>
+</div>
+<div id="distribución-binomial-bn-p" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Distribución binomial <span class="math inline">\((B(n, p))\)</span><a href="#distribuci%C3%B3n-binomial-bn-p" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> sigue una <strong>distribución binomial</strong> con parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span>, que se denota como <span class="math inline">\(X \sim B(n; p)\)</span>, cuando puede expresarse como la suma de <span class="math inline">\(n\)</span> variables aleatorias independientes e idénticamente distribuidas según una distribución de Bernoulli <span class="math inline">\(B(1, p)\)</span>, es decir:</p>
+<p><span class="math display">\[
+X = X_1 + X_2 + \cdots + X_n \quad \text{con} \quad X_i \overset{\text{iid}}{\sim} B(1; p)
+\]</span></p>
+<p>Desde un punto de vista conceptual, la distribución <span class="math inline">\(B(n; p)\)</span> modeliza situaciones en las que un mismo experimento aleatorio dicotómico (con dos posibles resultados: éxito o fracaso) se repite <span class="math inline">\(n\)</span> veces bajo condiciones de independencia entre ensayos.</p>
+<p>Dado que cada variable <span class="math inline">\(X_i\)</span> puede tomar solo los valores 0 o 1, la variable total <span class="math inline">\(X\)</span>, que cuenta cuántos éxitos se han producido, puede tomar cualquier valor entero desde 0 (si todos los ensayos resultan en fracaso) hasta <span class="math inline">\(n\)</span> (si todos los ensayos resultan en éxito). Por tanto, el rango de <span class="math inline">\(X\)</span> es:</p>
+<p><span class="math display">\[
+X \in \{0, 1, 2, \dots, n\}
+\]</span></p>
+<p>Al codificar el resultado “éxito” como 1 y “fracaso” como 0, si la variable aleatoria <span class="math inline">\(X\)</span> toma el valor 3, significa que en las <span class="math inline">\(n\)</span> repeticiones se ha producido el suceso de interés 3 veces y su complementario <span class="math inline">\(n - 3\)</span> veces. De este modo, <span class="math inline">\(X\)</span> funciona como una <strong>variable contadora del número de éxitos</strong> obtenidos en <span class="math inline">\(n\)</span> ensayos independientes, cada uno con probabilidad de éxito <span class="math inline">\(p\)</span>.</p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución binomial es una herramienta fundamental en la modelización de fenómenos aleatorios dicotómicos, es decir, aquellos en los que solo pueden ocurrir dos resultados mutuamente excluyentes (por ejemplo, éxito o fracaso, compra o no compra, impago o pago, etc.).</p>
+<p>Su principal uso es contar el número de veces que ocurre un determinado resultado (denominado éxito) en un número fijo de repeticiones independientes de un mismo experimento aleatorio, cuando la probabilidad de éxito se mantiene constante en cada ensayo.</p>
+<p>En el ámbito económico y de la empresa, la distribución binomial es especialmente útil para modelar situaciones como:</p>
+<ul>
+<li><strong>Análisis de campañas de marketing</strong>, donde se cuenta cuántos clientes responden positivamente a una promoción, sabiendo que cada uno tiene una probabilidad conocida de hacerlo.</li>
+<li><strong>Control de calidad</strong>, para calcular la probabilidad de que un lote contenga un cierto número de productos defectuosos.</li>
+<li><strong>Estudios de mercado</strong>, donde se estima el número de consumidores que prefieren una marca entre varios entrevistados.</li>
+<li><strong>Gestión del riesgo financiero</strong>, al modelar el número de impagos entre una cartera de créditos, cuando la probabilidad de impago es conocida y constante.</li>
+<li><strong>Evaluación del rendimiento de ventas</strong>, como el número de cierres exitosos entre un número determinado de visitas comerciales.</li>
+<li><strong>Toma de decisiones con incertidumbre</strong>, al predecir resultados binarios en contextos repetidos como la aceptación/rechazo de propuestas o la ocurrencia de eventos adversos.</li>
+</ul>
+<p>Su simplicidad, interpretabilidad y aplicabilidad la convierten en una de las distribuciones más utilizadas en análisis de datos y en procesos de toma de decisiones bajo incertidumbre.</p>
+<p><strong>Teoría:</strong></p>
+<p>Una variable aleatoria discreta <span class="math inline">\(X\)</span> se dice que sigue una <strong>distribución binomial</strong> con parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> si representa el número de éxitos obtenidos en <span class="math inline">\(n\)</span> ensayos independientes, cada uno con probabilidad de éxito <span class="math inline">\(p\)</span>. Se denota:</p>
+<p><span class="math display">\[
+X \sim B(n, p)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(n \in \mathbb{N}\)</span> es el número de ensayos (experimentos independientes),</li>
+<li><span class="math inline">\(p \in (0,1)\)</span> es la probabilidad de éxito en cada ensayo,</li>
+<li><span class="math inline">\(X \in \{0, 1, 2, \dots, n\}\)</span> representa el número total de éxitos.</li>
+</ul>
+<p>La <strong>función de cuantía</strong> o función de probabilidad de la distribución binomial está dada por:</p>
+<p><span class="math display">\[
+P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}, \quad \text{para } x = 0, 1, 2, \dots, n
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\binom{n}{x}\)</span> es el coeficiente binomial, que cuenta el número de formas de obtener <span class="math inline">\(x\)</span> éxitos en <span class="math inline">\(n\)</span> ensayos,</li>
+<li><span class="math inline">\(p^k\)</span> representa la probabilidad de obtener <span class="math inline">\(k\)</span> éxitos,</li>
+<li><span class="math inline">\((1 - p)^{n - x}\)</span> representa la probabilidad de obtener <span class="math inline">\(n - x\)</span> fracasos.</li>
+</ul>
+<p>Esta fórmula permite calcular la probabilidad exacta de observar <span class="math inline">\(x\)</span> éxitos en una secuencia de <span class="math inline">\(n\)</span> ensayos independientes con igual probabilidad de éxito.</p>
+<p>¿Cómo se llega a esta función de cuantía?</p>
+<p>La <strong>función de cuantía</strong> de una variable aleatoria binomial permite calcular la probabilidad de obtener exactamente <span class="math inline">\(x\)</span> éxitos en <span class="math inline">\(n\)</span> ensayos independientes, cada uno con probabilidad de éxito <span class="math inline">\(p\)</span> y de fracaso <span class="math inline">\(q = 1 - p\)</span>.</p>
+<p>Supongamos que realizamos <span class="math inline">\(n\)</span> repeticiones de un experimento aleatorio. Si en <span class="math inline">\(x\)</span> de esas repeticiones se obtiene el resultado deseado (éxito), y en las <span class="math inline">\(n - x\)</span> restantes se obtiene el complementario (fracaso), la probabilidad de esa secuencia concreta es:</p>
+<p><span class="math display">\[
+\underbrace{p \cdot p \cdot \dots \cdot p}_{x \text{ veces}} \cdot \underbrace{q \cdot q \cdot \dots \cdot q}_{n - x \text{ veces}} = p^x q^{n - x}
+\]</span></p>
+<p>Pero esa es solo una de muchas formas posibles de obtener <span class="math inline">\(x\)</span> éxitos y <span class="math inline">\(n - x\)</span> fracasos. Como el orden no importa, debemos contar cuántas disposiciones distintas pueden formarse con <span class="math inline">\(x\)</span> éxitos y <span class="math inline">\(n - x\)</span> fracasos. Esa cantidad viene dada por el <strong>coeficiente binomial</strong>:</p>
+<p><span class="math display">\[
+\binom{n}{x} = \frac{n!}{x!(n - x)!}
+\]</span></p>
+<p>Esto representa el número de formas distintas en que podemos elegir <span class="math inline">\(x\)</span> posiciones para los éxitos (valor 1) entre los <span class="math inline">\(n\)</span> ensayos.</p>
+<p>De este modo, la probabilidad total de obtener exactamente <span class="math inline">\(x\)</span> éxitos en <span class="math inline">\(n\)</span> ensayos es la función de cuantía previa.</p>
+<p><strong>Parámetros fundamentales:</strong></p>
+<p>- <span class="math inline">\(n\)</span>: número de ensayos.</p>
+<p>- <span class="math inline">\(p\)</span>: probabilidad de éxito.</p>
+<p><strong>Momentos:</strong></p>
+<p>- Media: <span class="math inline">\(E(X) = n p\)</span></p>
+<p>- Varianza: <span class="math inline">\(Var(X) = n p (1 - p)\)</span></p>
+<p><strong>Propiedad aditiva o reproductiva de la distribución binomial</strong></p>
+<p>La distribución binomial es reproductiva respecto al parámetro <span class="math inline">\(n\)</span>. Esta propiedad establece que la suma de variables aleatorias independientes, cada una con distribución binomial y el mismo parámetro de éxito <span class="math inline">\(p\)</span>, también sigue una distribución binomial.</p>
+<p>Formalmente, si:</p>
+<p><span class="math display">\[
+X \sim B(n_1, p), \quad Y \sim B(n_2, p), \quad \text{y} \quad X \perp Y
+\]</span></p>
+<p>entonces:</p>
+<p><span class="math display">\[
+X + Y \sim B(n_1 + n_2, p)
+\]</span></p>
+<p>Esta propiedad puede generalizarse a un número finito de variables binomiales independientes que compartan el mismo parámetro de probabilidad <span class="math inline">\(p\)</span>.</p>
+<p>La explicación de esta propiedad se encuentra en la definición estructural de la binomial: una variable aleatoria <span class="math inline">\(X \sim B(n, p)\)</span> puede construirse como la suma de<span class="math inline">\(n\)</span> variables aleatorias independientes e idénticamente distribuidas según una distribución de Bernoulli<span class="math inline">\(B(1, p)\)</span>:</p>
+<p><span class="math display">\[
+X = \sum_{i=1}^{n} \xi_i, \quad \text{con } \xi_i \overset{\text{iid}}{\sim} B(1, p)
+\]</span></p>
+<p>Dado que la suma de variables Bernoulli independientes con parámetro <span class="math inline">\(p\)</span> genera una binomial, resulta inmediato que la suma de dos (o más) variables binomiales independientes, cada una como suma de variables Bernoulli independientes, también sigue una distribución binomial, con número total de ensayos igual a la suma de los ensayos de las variables originales.</p>
+<p><strong>Ejercicios resueltos:</strong></p>
+<p><strong>Ejercicio 1: Inspección de productos</strong></p>
+<p>Un inspector revisa 12 productos. La probabilidad de que un producto sea defectuoso es <span class="math inline">\(p = 0.1\)</span>.</p>
+<p>Se pide:</p>
+<p>a. Calcular la probabilidad de que exactamente 2 productos sean defectuosos.</p>
+<p>b. Determinar la media y la varianza del número de productos defectuosos.</p>
+<p><em>Solución:</em></p>
+<p>La variable aleatoria que cuenta el número de defectuosos se modeliza como:</p>
+<p><span class="math display">\[
+X \sim B(12, 0.1)
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Probabilidad de que<span class="math inline">\(X = 2\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+P(X = 2) = \binom{12}{2} \cdot 0.1^2 \cdot 0.9^{10} = 66 \cdot 0.01 \cdot 0.3487 \approx 0.2301
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Media y varianza:</li>
+</ol>
+<p><span class="math display">\[
+\mathbb{E}(X) = 12 \cdot 0.1 = 1.2 \\
+\operatorname{Var}(X) = 12 \cdot 0.1 \cdot 0.9 = 1.08
+\]</span></p>
+<p><strong>Ejercicio 2: Campaña de ventas en dos regiones</strong></p>
+<p>Una empresa lanza una campaña de ventas en dos regiones. En la <strong>Región A</strong>, se contacta a 10 clientes potenciales; en la <strong>Región B</strong>, a 15 clientes. La probabilidad de que un cliente realice una compra tras el contacto es <span class="math inline">\(p = 0.4\)</span>, y se asume que las decisiones de los clientes son independientes.</p>
+<p>Se pide:</p>
+<p>a. Determinar la distribución del número total de compras realizadas en ambas regiones.</p>
+<p>b. Calcular la esperanza y la varianza del número total de compras.</p>
+<p><em>Solución:</em></p>
+<p>Sea:</p>
+<p><span class="math display">\[
+X \sim B(10, 0.4), \quad Y \sim B(15, 0.4)
+\]</span></p>
+<p>el número de compras en cada región. Como las variables son independientes y tienen el mismo valor de <span class="math inline">\(p\)</span>, por la propiedad de <strong>reproductividad</strong> de la binomial, se tiene que:</p>
+<p><span class="math display">\[
+Z = X + Y \sim B(25, 0.4)
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Esperanza:</li>
+</ol>
+<p><span class="math display">\[
+E(Z) = 25 \cdot 0.4 = 10
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Varianza:</li>
+</ol>
+<p><span class="math display">\[
+\operatorname{Var}(Z) = 25 \cdot 0.4 \cdot 0.6 = 6
+\]</span></p>
+<p>Esto significa que, en promedio, se esperan 10 compras en total, con una variabilidad medida por la varianza de 6 (una variabilidad baja).</p>
+<p><strong>Ejercicio en R: Inspección de productos con defectos</strong></p>
+<p>Se inspeccionan 15 productos y la probabilidad de que un producto sea defectuoso es del 5 % (<span class="math inline">\(p = 0.05\)</span>).</p>
+<p>Vamos a calcular:</p>
+<ul>
+<li>La probabilidad de que haya exactamente 3 productos defectuosos.</li>
+<li>La probabilidad de que haya <strong>más de 4</strong> productos defectuosos.</li>
+<li>La media y la varianza de la variable aleatoria <span class="math inline">\(X \sim B(15, 0.05)\)</span>, que cuenta el número de defectuosos.</li>
+</ul>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="modelos-de-probabilidad-discretos.html#cb49-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb49-2"><a href="modelos-de-probabilidad-discretos.html#cb49-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb49-3"><a href="modelos-de-probabilidad-discretos.html#cb49-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb49-4"><a href="modelos-de-probabilidad-discretos.html#cb49-4" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="modelos-de-probabilidad-discretos.html#cb49-5" tabindex="-1"></a><span class="co"># a) Probabilidad de que haya exactamente 3 defectuosos</span></span>
+<span id="cb49-6"><a href="modelos-de-probabilidad-discretos.html#cb49-6" tabindex="-1"></a>prob_3_defectuosos <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb49-7"><a href="modelos-de-probabilidad-discretos.html#cb49-7" tabindex="-1"></a>prob_3_defectuosos</span></code></pre></div>
+<pre><code>## [1] 0.03073298</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="modelos-de-probabilidad-discretos.html#cb51-1" tabindex="-1"></a><span class="co"># b) Probabilidad de que haya más de 4 defectuosos: P(X &gt; 4) = 1 - P(X &lt;= 4)</span></span>
+<span id="cb51-2"><a href="modelos-de-probabilidad-discretos.html#cb51-2" tabindex="-1"></a>prob_mas_4_defectuosos <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">4</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb51-3"><a href="modelos-de-probabilidad-discretos.html#cb51-3" tabindex="-1"></a>prob_mas_4_defectuosos</span></code></pre></div>
+<pre><code>## [1] 0.0006146829</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="modelos-de-probabilidad-discretos.html#cb53-1" tabindex="-1"></a><span class="co"># c) Media y varianza</span></span>
+<span id="cb53-2"><a href="modelos-de-probabilidad-discretos.html#cb53-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> n <span class="sc">*</span> p</span>
+<span id="cb53-3"><a href="modelos-de-probabilidad-discretos.html#cb53-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> n <span class="sc">*</span> p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p)</span>
+<span id="cb53-4"><a href="modelos-de-probabilidad-discretos.html#cb53-4" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 0.75</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="modelos-de-probabilidad-discretos.html#cb55-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 0.7125</code></pre>
+</div>
+<div id="distribución-binomial-negativa-bnr-p" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Supongamos que realizamos un experimento de Bernoulli (con dos posibles resultados: éxito o fracaso) de forma repetida hasta alcanzar un número fijo de éxitos, denotado por <span class="math inline">\(r\)</span>.</p>
+<p>Definimos la variable aleatoria <span class="math inline">\(X\)</span> como el <strong>número de fracasos que se producen antes de lograr el éxito número</strong> <span class="math inline">\(r\)</span>. En este contexto, decimos que:</p>
+<p><span class="math display">\[
+X \sim \operatorname{BN}(r, p)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(r \in \mathbb{N}\)</span> es el número de éxitos deseados,</li>
+<li><span class="math inline">\(p \in (0,1)\)</span> es la probabilidad de éxito en cada ensayo,</li>
+<li><span class="math inline">\(X \in \{0, 1, 2, \dots\}\)</span> representa el número de fracasos antes de lograr el <span class="math inline">\(r\)</span>-ésimo éxito.</li>
+</ul>
+<p>Esta distribución modeliza procesos donde el experimento se repite hasta alcanzar <span class="math inline">\(r\)</span> éxitos, y nos interesa contar <strong>cuántos fracasos ocurren hasta ese momento (alcanzar el éxito)</strong>.</p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución binomial negativa se emplea cuando se desea modelar el número de <strong>fracasos necesarios para alcanzar un número fijo de éxitos</strong> en experimentos de Bernoulli independientes, donde la probabilidad de éxito se mantiene constante.</p>
+<p>A diferencia de la distribución binomial clásica, donde se fija el número de ensayos y se cuenta cuántos éxitos se obtienen, en la binomial negativa se fija el número de éxitos y se deja que el número de ensayos (y por tanto de fracasos) varíe.</p>
+<p>Esta distribución resulta útil en distintos contextos, como por ejemplo:</p>
+<ul>
+<li><strong>Marketing y ventas:</strong> número de contactos fallidos hasta lograr un número determinado de ventas.</li>
+<li><strong>Atención al cliente:</strong> número de intentos fallidos antes de resolver satisfactoriamente <span class="math inline">\(r\)</span> casos.</li>
+<li><strong>Recursos humanos:</strong> número de entrevistas no satisfactorias antes de contratar a <span class="math inline">\(r\)</span> personas adecuadas.</li>
+<li><strong>Control de calidad:</strong> número de piezas defectuosas producidas antes de encontrar <span class="math inline">\(r\)</span> unidades sin defecto.</li>
+<li><strong>Finanzas y riesgo:</strong> número de inversiones fallidas antes de lograr 𝑟 operaciones rentables.</li>
+</ul>
+<p>En todos estos casos, el interés está en <strong>cuántos intentos fallidos</strong> ocurren antes de conseguir <strong>un número de éxitos definidos</strong>, lo cual es clave en análisis de costos, eficiencia y planificación.</p>
+<p><strong>Teoría:</strong></p>
+<p>En este caso, la <strong>función de cuantía</strong> (función de probabilidad) es:</p>
+<p><span class="math display">\[
+P(X = x) = \binom{x + r - 1}{x} \cdot p^r \cdot (1 - p)^x, \quad x = 0, 1, 2, \dots
+\]</span></p>
+<p>Esta fórmula representa la probabilidad de que se observen exactamente <span class="math inline">\(x\)</span> fracasos antes de que ocurra el éxito número <span class="math inline">\(r\)</span>, sin importar el orden en que ocurren los fracasos y los éxitos intermedios.</p>
+<p><strong>¿Cómo se construye la función de cuantía?</strong></p>
+<p>Suponiendo que denotamos a <span class="math inline">\(A\)</span> como éxito y <span class="math inline">\(A^*\)</span> fracaso. Queremos calcular la probabilidad de que ocurran exactamente <span class="math inline">\(x\)</span> fracasos antes de que se produzca el éxito número <span class="math inline">\(r\)</span>.</p>
+<p>El suceso que describe la variable aleatoria <span class="math inline">\(X\)</span> se puede descomponer de la siguiente forma:</p>
+<ul>
+<li>Se producen <span class="math inline">\(r - 1\)</span> éxitos en algún orden, <span class="math inline">\(A, A, \dots, A\)</span></li>
+<li>Seguidos de <span class="math inline">\(x\)</span> fracasos, <span class="math inline">\(A^*, A^*, \dots, A^*\)</span></li>
+<li>Y finalmente el éxito número <span class="math inline">\(r\)</span>, que cierra el experimento, <span class="math inline">\(A\)</span>.</li>
+</ul>
+<p>Este patrón se representa como:</p>
+<p><span class="math display">\[
+\underbrace{A, A, \dots, A}_{r-1 \text{ veces}}, \quad \underbrace{A^*, A^*, \dots, A^*}_{x \text{ veces}}, \quad A
+\]</span></p>
+<p>La probabilidad de esta <strong>secuencia concreta</strong> (un único orden específico) es:</p>
+<p><span class="math display">\[
+P(A, A, \dots, A, A^*, A^*, \dots, A^*, A) = p^{r-1} \cdot q^x \cdot p = p^r \cdot q^x
+\]</span></p>
+<p>Sin embargo, los <span class="math inline">\(r - 1\)</span> éxitos y los <span class="math inline">\(x\)</span> fracasos pueden ocurrir <strong>en cualquier orden</strong> antes del último éxito. Por tanto, necesitamos contar cuántas disposiciones distintas de esos <span class="math inline">\(r - 1\)</span> éxitos y <span class="math inline">\(x\)</span> fracasos existen en <span class="math inline">\(x + r - 1\)</span> posiciones.</p>
+<p>Este número de disposiciones se calcula mediante <strong>permutaciones con repetición</strong>, que dan lugar al <strong>coeficiente binomial</strong>:</p>
+<p><span class="math display">\[
+\binom{x + r - 1}{x} = \frac{(x + r - 1)!}{x! \cdot (r - 1)!}
+\]</span></p>
+<p>Finalmente, multiplicamos este número de disposiciones por la probabilidad de cada una, obteniendo así la <strong>función de cuantía</strong> de la distribución binomial negativa:</p>
+<p><span class="math display">\[
+P(X = x) = \binom{x + r - 1}{x} \cdot p^r \cdot q^x, \quad \text{para } x = 0, 1, 2, \dots
+\]</span></p>
+<p><strong>Parámetros fundamentales:</strong></p>
+<p>- <span class="math inline">\(r\)</span>: número de éxitos deseados.</p>
+<p>- <span class="math inline">\(p\)</span>: probabilidad de éxito.</p>
+<p><strong>Momentos:</strong></p>
+<p>- Media: <span class="math inline">\(E(X) = r\frac{q}{p}\)</span></p>
+<p>- Varianza: <span class="math inline">\(Var(X) = r\frac{(1 - p)}{p^2}\)</span></p>
+<p><strong>Ejercicio resuelto:</strong></p>
+<p>Un operador comercial realiza llamadas a clientes. La probabilidad de que una llamada termine en una venta es <span class="math inline">\(p = 0.2\)</span>. Se pide:</p>
+<p>a. Calcular la probabilidad de que el operador haga exactamente 4 llamadas sin éxito antes de conseguir su tercera venta.</p>
+<p>b. Calcular la esperanza y la varianza del número de fracasos antes de alcanzar 3 éxitos.</p>
+<p><em>Solución:</em></p>
+<p>Sea <span class="math inline">\(X \sim \operatorname{BN}(r = 3, p = 0.2)\)</span>.<br />
+a. Queremos calcular <span class="math inline">\(P(X = 4)\)</span>.</p>
+<p>La función de cuantía es:</p>
+<p><span class="math display">\[
+P(X = x) = \binom{x + r - 1}{x} \cdot p^r \cdot (1 - p)^x
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+P(X = 4) = \binom{6}{4} \cdot (0.2)^3 \cdot (0.8)^4 = 15 \cdot 0.008 \cdot 0.4096 \approx 0.0492
+\]</span></p>
+<p>La probabilidad de que el operador realice exactamente 4 llamadas fallidas antes de conseguir su tercera venta es aproximadamente 0,0492, es decir, un 4,92 %</p>
+<p>b. Esperanza y varianza:</p>
+<p>Para una binomial negativa:</p>
+<p>- Esperanza:</p>
+<p><span class="math display">\[
+\mathbb{E}(X) = \frac{r(1 - p)}{p} = \frac{3 \cdot 0.8}{0.2} = 12
+\]</span></p>
+<p>Si este experimento se repitiera muchas veces (es decir, muchos operadores realizando llamadas en condiciones similares), el número medio de llamadas sin éxito antes de alcanzar la tercera venta tendería a ser 12.</p>
+<p>- Varianza:</p>
+<p><span class="math display">\[
+\operatorname{Var}(X) = \frac{r(1 - p)}{p^2} = \frac{3 \cdot 0.8}{0.04} = 60
+\]</span></p>
+<p><strong>Ejercicio con R: Distribución binomial negativa</strong></p>
+<p>Una empresa realiza encuestas telefónicas. La probabilidad de que una persona acepte responder la encuesta es <span class="math inline">\(p = 0.25\)</span>.<br />
+</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la probabilidad de que se necesiten exactamente 5 rechazos antes de obtener la cuarta respuesta afirmativa?</p></li>
+<li><p>Calcula la esperanza y la varianza teóricas.</p></li>
+<li><p>Simula 10,000 repeticiones del experimento y compara los resultados empíricos.</p></li>
+</ol>
+<p>La variable aleatoria que cuenta el número de rechazos (fracasos) antes de obtener 4 éxitos se modeliza como:</p>
+<p><span class="math display">\[
+X \sim \operatorname{BN}(r = 4, p = 0.25)
+\]</span></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="modelos-de-probabilidad-discretos.html#cb57-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb57-2"><a href="modelos-de-probabilidad-discretos.html#cb57-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">4</span>         <span class="co"># número de éxitos deseados</span></span>
+<span id="cb57-3"><a href="modelos-de-probabilidad-discretos.html#cb57-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.25</span>      <span class="co"># probabilidad de éxito</span></span>
+<span id="cb57-4"><a href="modelos-de-probabilidad-discretos.html#cb57-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span>         <span class="co"># número de fracasos</span></span>
+<span id="cb57-5"><a href="modelos-de-probabilidad-discretos.html#cb57-5" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="modelos-de-probabilidad-discretos.html#cb57-6" tabindex="-1"></a><span class="co">#a. Probabilidad puntual</span></span>
+<span id="cb57-7"><a href="modelos-de-probabilidad-discretos.html#cb57-7" tabindex="-1"></a>prob_5_fallos <span class="ot">&lt;-</span> <span class="fu">dnbinom</span>(x, <span class="at">size =</span> r, <span class="at">prob =</span> p)</span>
+<span id="cb57-8"><a href="modelos-de-probabilidad-discretos.html#cb57-8" tabindex="-1"></a>prob_5_fallos</span></code></pre></div>
+<pre><code>## [1] 0.0519104</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="modelos-de-probabilidad-discretos.html#cb59-1" tabindex="-1"></a><span class="co">#b. Esperanza y Varianza</span></span>
+<span id="cb59-2"><a href="modelos-de-probabilidad-discretos.html#cb59-2" tabindex="-1"></a>esperanza <span class="ot">&lt;-</span> r <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> p</span>
+<span id="cb59-3"><a href="modelos-de-probabilidad-discretos.html#cb59-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> r <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> p<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb59-4"><a href="modelos-de-probabilidad-discretos.html#cb59-4" tabindex="-1"></a>esperanza</span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="modelos-de-probabilidad-discretos.html#cb61-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 48</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="modelos-de-probabilidad-discretos.html#cb63-1" tabindex="-1"></a><span class="co">#c. Simulación de 10,000 repeticiones</span></span>
+<span id="cb63-2"><a href="modelos-de-probabilidad-discretos.html#cb63-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb63-3"><a href="modelos-de-probabilidad-discretos.html#cb63-3" tabindex="-1"></a>simulaciones <span class="ot">&lt;-</span> <span class="fu">rnbinom</span>(<span class="dv">10000</span>, <span class="at">size =</span> r, <span class="at">prob =</span> p)</span>
+<span id="cb63-4"><a href="modelos-de-probabilidad-discretos.html#cb63-4" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="modelos-de-probabilidad-discretos.html#cb63-5" tabindex="-1"></a><span class="co"># Media y varianza empíricas</span></span>
+<span id="cb63-6"><a href="modelos-de-probabilidad-discretos.html#cb63-6" tabindex="-1"></a><span class="fu">mean</span>(simulaciones)</span></code></pre></div>
+<pre><code>## [1] 11.8066</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="modelos-de-probabilidad-discretos.html#cb65-1" tabindex="-1"></a><span class="fu">var</span>(simulaciones)</span></code></pre></div>
+<pre><code>## [1] 46.39244</code></pre>
+</div>
+<div id="distribución-poisson-textpoissonlambda" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span><a href="#distribuci%C3%B3n-poisson-textpoissonlambda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> sigue una <strong>distribución de Poisson</strong> con parámetro <span class="math inline">\(\lambda &gt; 0\)</span>, que se denota como:</p>
+<p><span class="math display">\[
+X \sim \text{Poisson}(\lambda)
+\]</span></p>
+<p>cuando modeliza el número de veces que ocurre un determinado suceso en un intervalo fijo de tiempo o espacio, siempre que:</p>
+<ul>
+<li>Los sucesos ocurren de forma independiente,</li>
+<li>La tasa media de ocurrencia <span class="math inline">\(\lambda\)</span> es constante en el tiempo o el espacio,</li>
+<li>No hay ocurrencias simultáneas (la probabilidad de más de un suceso en un instante infinitesimal es despreciable).</li>
+</ul>
+<p>Desde un punto de vista conceptual, la distribución de Poisson <strong>cuenta la cantidad de sucesos RAROS, discretos y aleatorios que ocurren en un intervalo determinado</strong>.</p>
+<p>Aunque, en teoría, una variable aleatoria con distribución de Poisson puede tomar cualquier valor natural, en la práctica las probabilidades de que adopte valores grandes disminuyen rápidamente a medida que estos crecen. Esto significa que, para un valor dado de <span class="math inline">\(\lambda\)</span>, la mayor parte de la probabilidad se concentra en torno a unos pocos valores cercanos a la media, haciendo que tomar valores mucho mayores sea altamente improbable. Como consecuencia, la distribución de Poisson resulta especialmente útil para describir sucesos que, aunque posibles, tienen una baja probabilidad de ocurrencia en gran número dentro de un intervalo. Por este motivo, a la distribución de Poisson también se la conoce como la <strong><em>distribución de los sucesos raros</em></strong>.</p>
+<p>El valor de <span class="math inline">\(\lambda\)</span> representa tanto la media como la varianza del número de sucesos esperados en ese intervalo.</p>
+<p>El soporte de la variable aleatoria es:</p>
+<p><span class="math display">\[
+X \in \{0, 1, 2, \dots\}
+\]</span></p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución de Poisson es muy útil en la modelización de sucesos que:</p>
+<ul>
+<li>Ocurren de forma aleatoria en el tiempo o en el espacio,</li>
+<li>Son poco frecuentes o esporádicos, pero cuantificables.</li>
+</ul>
+<p>Las aplicaciones más habituales en economía y empresa</p>
+<ul>
+<li>Número de llamadas recibidas en un centro de atención por hora.</li>
+<li>Llegada de clientes a una tienda o entidad financiera.</li>
+<li>Número de errores de producción por lote o unidad de tiempo.</li>
+<li>Incidencias logísticas, como retrasos en entregas o fallos técnicos por día.</li>
+<li>Peticiones de préstamos o reclamaciones recibidas en un periodo fijo.</li>
+</ul>
+<p>Dado que solo requiere un parámetro <span class="math inline">\(\lambda\)</span>, es una distribución muy versátil, especialmente útil cuando el número de oportunidades de que ocurra el suceso no está bien definido, pero sí su frecuencia media.</p>
+<p><strong>Teoría</strong></p>
+<p>Una variable aleatoria discreta <span class="math inline">\(X\)</span> se dice que sigue una distribución de Poisson con parámetro <span class="math inline">\(\lambda &gt; 0\)</span> si:</p>
+<p><span class="math display">\[
+X \sim \text{Poisson}(\lambda)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\lambda\)</span>: número medio de sucesos que se espera que ocurran en un intervalo de tiempo (o espacio),</li>
+<li><span class="math inline">\(X \in \{0, 1, 2, \dots\}\)</span>: número de ocurrencias observadas.</li>
+</ul>
+<p><strong>Función de cuantía</strong></p>
+<p>La función de cuantía de la distribución de Poisson es:</p>
+<p><span class="math display">\[
+P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!}, \quad x = 0, 1, 2, \dots
+\]</span></p>
+<p>Esta fórmula representa la probabilidad de que ocurran exactamente <span class="math inline">\(x\)</span> sucesos en un intervalo dado, cuando el número medio de ocurrencias es <span class="math inline">\(\lambda\)</span>.</p>
+<p><strong>Parámetros fundamentales</strong></p>
+<p>- <span class="math inline">\(\lambda\)</span>: número medio de ocurrencias del suceso en un intervalo (es la media y la varianza)</p>
+<p><strong>Momentos</strong></p>
+<ul>
+<li><p>Media: <span class="math inline">\(E(X) = \lambda\)</span></p></li>
+<li><p>Varianza: <span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span></p></li>
+</ul>
+<p><strong>Propiedad aditiva o reproductiva de la <em>Poisson</em></strong></p>
+<p>Sean las variables aleatorias independientes <span class="math inline">\(( X_1, X_2, \dots, X_n )\)</span>, tales que cada <span class="math inline">\(( X_j )\)</span> sigue una distribución de Poisson con parámetro <span class="math inline">\(( \lambda_j )\)</span>, es decir:</p>
+<p><span class="math display">\[
+X_j \sim \text{Poisson}(\lambda_j)
+\]</span></p>
+<p>Entonces, la <strong>suma</strong> de estas variables también sigue una distribución de Poisson.</p>
+<p>Definimos:</p>
+<p><span class="math display">\[
+Y = X_1 + X_2 + \cdots + X_n
+\]</span></p>
+<p>Por tanto, la variable <span class="math inline">\(Y\)</span> también sigue una distribución de Poisson, con parámetro:</p>
+<p><span class="math display">\[
+\lambda = \sum_{j=1}^{n} \lambda_j
+\]</span></p>
+<p>y se concluye que:</p>
+<p><span class="math display">\[
+Y \sim \text{Poisson} \left( \sum_{j=1}^{n} \lambda_j \right)
+\]</span></p>
+<p>Esta propiedad confirma que la <strong>distribución de Poisson es aditiva</strong>: la suma de variables independientes que siguen Poisson también es Poisson, siempre que los parámetros se sumen.</p>
+<p><em>Ejemplo de la propiedad aditiva de la Poisson</em></p>
+<p>Supongamos que en una empresa:</p>
+<ul>
+<li>El departamento A recibe, en promedio, 2 correos electrónicos por hora.</li>
+<li>El departamento B recibe, en promedio, 3 correos electrónicos por hora.</li>
+</ul>
+<p>Ambos procesos son independientes y se pueden modelar con variables aleatorias:</p>
+<p><span class="math display">\[
+X_1 \sim \text{Poisson}(2), \quad X_2 \sim \text{Poisson}(3)
+\]</span></p>
+<p>La variable <span class="math inline">\(Y=X_1 + X_2\)</span> representa el número total de correos recibidos por ambos departamentos en una hora.</p>
+<p>¿Cuál es la distribución de <span class="math inline">\(X_1 + X_2\)</span>? Por la propiedad aditiva de la distribución de Poisson:</p>
+<p><span class="math display">\[
+Y=X_1 + X_2 \sim \text{Poisson}(2 + 3) = \text{Poisson}(5)
+\]</span></p>
+<p><strong>Ejercicios resueltos: Distribución de Poisson</strong></p>
+<p><strong>Ejercicio 1: Número de reclamaciones</strong></p>
+<p>Una aseguradora recibe, en promedio, 3 reclamaciones por día. ¿Cuál es la probabilidad de que en un día se reciban exactamente 5 reclamaciones?</p>
+<p><em>Solución:</em></p>
+<p>Modelamos la variable aleatoria con:</p>
+<p><span class="math display">\[
+X \sim \text{Poisson}(3)
+\]</span></p>
+<p>La probabilidad de que se reciban exactamente 5 reclamaciones, utulizando la función de cuantía de la Poisson es:</p>
+<p><span class="math display">\[
+P(X = 5) = \frac{3^5 \cdot e^{-3}}{5!} = \frac{243 \cdot e^{-3}}{120} \approx 0.1008
+\]</span></p>
+<p>En R:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="modelos-de-probabilidad-discretos.html#cb67-1" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">5</span>, <span class="at">lambda =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1008188</code></pre>
+<p><strong>Ejercicio 2: Probabilidad de más de 6 llamadas</strong></p>
+<p>En una centralita telefónica se reciben, de media, 4 llamadas por hora. ¿Cuál es la probabilidad de que en una hora se reciban más de 6 llamadas?</p>
+<p><em>Solución:</em></p>
+<p>La variable aleatoria que representa el número de llamadas por hora se modeliza como:</p>
+<p><span class="math display">\[
+X \sim \text{Poisson}(4)
+\]</span></p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(X &gt; 6) = 1 - P(X \leq 6)
+\]</span></p>
+<p>Primero calculamos <span class="math inline">\(P(X \leq 6)\)</span> sumando las probabilidades desde 0 hasta 6:</p>
+<p><span class="math display">\[
+P(X \leq 6) = \sum_{x = 0}^{6} \frac{4^x e^{-4}}{x!}
+\]</span></p>
+<p>Calculamos cada término (aproximado):</p>
+<p><span class="math display">\[
+\begin{align*}
+P(X = 0) &amp;= \frac{4^0 e^{-4}}{0!} = e^{-4} \approx 0.0183 \\
+P(X = 1) &amp;= \frac{4^1 e^{-4}}{1!} = 4e^{-4} \approx 0.0733 \\
+P(X = 2) &amp;= \frac{4^2 e^{-4}}{2!} = 8e^{-4} \approx 0.1465 \\
+P(X = 3) &amp;= \frac{4^3 e^{-4}}{3!} = \frac{64e^{-4}}{6} \approx 0.1953 \\
+P(X = 4) &amp;= \frac{256e^{-4}}{24} \approx 0.1953 \\
+P(X = 5) &amp;= \frac{1024e^{-4}}{120} \approx 0.1563 \\
+P(X = 6) &amp;= \frac{4096e^{-4}}{720} \approx 0.1042 \\
+\end{align*}
+\]</span></p>
+<p>Sumamos:</p>
+<p><span class="math display">\[
+P(X \leq 6) \approx 0.0183 + 0.0733 + 0.1465 + 0.1953 + 0.1953 + 0.1563 + 0.1042 = 0.8892
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+P(X &gt; 6) = 1 - 0.8892 = 0.1108
+\]</span></p>
+<p><em>Resolución en R:</em></p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="modelos-de-probabilidad-discretos.html#cb69-1" tabindex="-1"></a><span class="co"># Parámetro de la Poisson</span></span>
+<span id="cb69-2"><a href="modelos-de-probabilidad-discretos.html#cb69-2" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="modelos-de-probabilidad-discretos.html#cb69-3" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb69-4"><a href="modelos-de-probabilidad-discretos.html#cb69-4" tabindex="-1"></a></span>
+<span id="cb69-5"><a href="modelos-de-probabilidad-discretos.html#cb69-5" tabindex="-1"></a><span class="co"># Probabilidad de más de 6 llamadas</span></span>
+<span id="cb69-6"><a href="modelos-de-probabilidad-discretos.html#cb69-6" tabindex="-1"></a></span>
+<span id="cb69-7"><a href="modelos-de-probabilidad-discretos.html#cb69-7" tabindex="-1"></a>prob_mas_6 <span class="ot">&lt;-</span> <span class="fu">ppois</span>(<span class="dv">6</span>, <span class="at">lambda =</span> lambda, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>); prob_mas_6</span></code></pre></div>
+<pre><code>## [1] 0.110674</code></pre>
+<p><strong>Ejercicio con R: Gestión de solicitudes de préstamos</strong></p>
+<p>Un banco recibe, en promedio, 6 solicitudes de préstamo por hora a través de su plataforma online. Este número puede variar de hora en hora, pero se asume que las solicitudes llegan de forma independiente y a una tasa constante a lo largo del día. Por tanto, el número de solicitudes por hora se modeliza mediante una distribución de Poisson:</p>
+<p><span class="math display">\[
+X \sim \text{Poisson}(\lambda = 6)
+\]</span></p>
+<p>Se pide resolver con R las siguientes cuestiones:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de que se reciban exactamente 8 solicitudes en una hora.<br />
+</li>
+<li>Calcular la probabilidad de que se reciban como máximo 4 solicitudes en una hora.<br />
+</li>
+<li>Calcular la probabilidad de que se reciban más de 10 solicitudes en una hora.<br />
+</li>
+<li>Simular lo que ocurriría durante una jornada laboral de 7 horas. ¿Cuántas solicitudes se reciben en total?<br />
+</li>
+<li>Simular 10.000 jornadas laborales para estimar:
+<ul>
+<li>La media y la varianza empírica del número total de solicitudes por jornada,</li>
+<li>La proporción de jornadas en las que se reciben más de 50 solicitudes, lo que se considera un nivel de saturación operativa.</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="modelos-de-probabilidad-discretos.html#cb71-1" tabindex="-1"></a><span class="co"># Parámetro por hora</span></span>
+<span id="cb71-2"><a href="modelos-de-probabilidad-discretos.html#cb71-2" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb71-3"><a href="modelos-de-probabilidad-discretos.html#cb71-3" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="modelos-de-probabilidad-discretos.html#cb71-4" tabindex="-1"></a><span class="co">#1. probabilidad de que se reciban exactamente 8 solicitudes en una hora</span></span>
+<span id="cb71-5"><a href="modelos-de-probabilidad-discretos.html#cb71-5" tabindex="-1"></a>prob_8 <span class="ot">&lt;-</span> <span class="fu">dpois</span>(<span class="dv">8</span>, <span class="at">lambda =</span> lambda)</span>
+<span id="cb71-6"><a href="modelos-de-probabilidad-discretos.html#cb71-6" tabindex="-1"></a>prob_8</span></code></pre></div>
+<pre><code>## [1] 0.1032577</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="modelos-de-probabilidad-discretos.html#cb73-1" tabindex="-1"></a><span class="co">#2. probabilidad de que se reciban como máximo 4 solicitudes en una hora.  </span></span>
+<span id="cb73-2"><a href="modelos-de-probabilidad-discretos.html#cb73-2" tabindex="-1"></a></span>
+<span id="cb73-3"><a href="modelos-de-probabilidad-discretos.html#cb73-3" tabindex="-1"></a>prob_4_o_menos <span class="ot">&lt;-</span> <span class="fu">ppois</span>(<span class="dv">4</span>, <span class="at">lambda =</span> lambda)</span>
+<span id="cb73-4"><a href="modelos-de-probabilidad-discretos.html#cb73-4" tabindex="-1"></a>prob_4_o_menos</span></code></pre></div>
+<pre><code>## [1] 0.2850565</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="modelos-de-probabilidad-discretos.html#cb75-1" tabindex="-1"></a><span class="co">#3. probabilidad de que se reciban más de 10 solicitudes en una hora.  </span></span>
+<span id="cb75-2"><a href="modelos-de-probabilidad-discretos.html#cb75-2" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="modelos-de-probabilidad-discretos.html#cb75-3" tabindex="-1"></a>prob_mas_10 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">10</span>, <span class="at">lambda =</span> lambda)</span>
+<span id="cb75-4"><a href="modelos-de-probabilidad-discretos.html#cb75-4" tabindex="-1"></a>prob_mas_10</span></code></pre></div>
+<pre><code>## [1] 0.04262092</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="modelos-de-probabilidad-discretos.html#cb77-1" tabindex="-1"></a><span class="co">#4.  Simular lo que ocurriría durante una jornada laboral de 7 horas. ¿Cuántas solicitudes se reciben en total?  </span></span>
+<span id="cb77-2"><a href="modelos-de-probabilidad-discretos.html#cb77-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># para reproducibilidad</span></span>
+<span id="cb77-3"><a href="modelos-de-probabilidad-discretos.html#cb77-3" tabindex="-1"></a>jornada <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">rpois</span>(<span class="dv">7</span>, <span class="at">lambda =</span> lambda))</span>
+<span id="cb77-4"><a href="modelos-de-probabilidad-discretos.html#cb77-4" tabindex="-1"></a>jornada</span></code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="modelos-de-probabilidad-discretos.html#cb79-1" tabindex="-1"></a><span class="co">#5  Simular 10.000 jornadas laborales para estimar:</span></span>
+<span id="cb79-2"><a href="modelos-de-probabilidad-discretos.html#cb79-2" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="modelos-de-probabilidad-discretos.html#cb79-3" tabindex="-1"></a>sim_jornadas <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">sum</span>(<span class="fu">rpois</span>(<span class="dv">7</span>, <span class="at">lambda =</span> lambda)))</span>
+<span id="cb79-4"><a href="modelos-de-probabilidad-discretos.html#cb79-4" tabindex="-1"></a></span>
+<span id="cb79-5"><a href="modelos-de-probabilidad-discretos.html#cb79-5" tabindex="-1"></a><span class="co">#5.1 La media y la varianza empírica del número total de solicitudes por jornada,</span></span>
+<span id="cb79-6"><a href="modelos-de-probabilidad-discretos.html#cb79-6" tabindex="-1"></a>   </span>
+<span id="cb79-7"><a href="modelos-de-probabilidad-discretos.html#cb79-7" tabindex="-1"></a><span class="co"># Media empírica</span></span>
+<span id="cb79-8"><a href="modelos-de-probabilidad-discretos.html#cb79-8" tabindex="-1"></a><span class="fu">mean</span>(sim_jornadas)</span></code></pre></div>
+<pre><code>## [1] 41.8975</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="modelos-de-probabilidad-discretos.html#cb81-1" tabindex="-1"></a><span class="co"># Varianza empírica</span></span>
+<span id="cb81-2"><a href="modelos-de-probabilidad-discretos.html#cb81-2" tabindex="-1"></a><span class="fu">var</span>(sim_jornadas)</span></code></pre></div>
+<pre><code>## [1] 41.86078</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="modelos-de-probabilidad-discretos.html#cb83-1" tabindex="-1"></a><span class="co">#5.2 La proporción de jornadas en las que se reciben más de 50 solicitudes, lo que se considera un nivel de saturación operativa.</span></span>
+<span id="cb83-2"><a href="modelos-de-probabilidad-discretos.html#cb83-2" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="modelos-de-probabilidad-discretos.html#cb83-3" tabindex="-1"></a><span class="fu">mean</span>(sim_jornadas <span class="sc">&gt;</span> <span class="dv">50</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0946</code></pre>
+</div>
+<div id="distribución-geométrica-gp" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Distribución geométrica <span class="math inline">\((G(p))\)</span><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> sigue una distribución geométrica con parámetro <span class="math inline">\(p\)</span>, que se denota como:</p>
+<p><span class="math display">\[
+X \sim G(p)
+\]</span></p>
+<p>cuando representa el número de <strong>ensayos necesarios hasta la obtención del primer éxito</strong> en una secuencia de ensayos de Bernoulli independientes, cada uno con probabilidad de éxito <span class="math inline">\(p\)</span> y fracaso <span class="math inline">\(q = 1 - p\)</span>.</p>
+<p>Desde un punto de vista conceptual, la distribución geométrica modeliza situaciones en las que se repite un mismo experimento aleatorio dicotómico hasta que se produce el primer éxito.</p>
+<p>En este contexto, <span class="math inline">\(X\)</span> toma valores en el conjunto:</p>
+<p><span class="math display">\[
+X \in \{1, 2, 3, \dots\}
+\]</span></p>
+<p>Su interpretación es clara: si <span class="math inline">\(X = 4\)</span>, significa que han sido necesarios cuatro intentos para obtener el primer éxito, y que los tres primeros intentos fueron fracasos.</p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución geométrica es útil en contextos donde se desea modelar el número de intentos necesarios hasta obtener un resultado positivo. Algunas aplicaciones en economía y empresa son:</p>
+<ul>
+<li><strong>Tiempos de espera en servicios</strong>: número de clientes atendidos hasta lograr una venta.</li>
+<li><strong>Modelos de respuesta de clientes</strong>: número de llamadas o correos hasta obtener respuesta.</li>
+<li><strong>Gestión de inventarios</strong>: número de periodos sin ventas hasta que se produce una compra.</li>
+<li><strong>Riesgo crediticio</strong>: número de créditos concedidos hasta observar el primer impago.</li>
+</ul>
+<p>Su interpretación intuitiva y su estructura simple la hacen muy útil en modelos probabilísticos básicos y en simulaciones.</p>
+<p><strong>Teoría</strong></p>
+<p>Una variable aleatoria discreta <span class="math inline">\(X\)</span> se distribuye geométricamente con parámetro <span class="math inline">\(p \in (0,1)\)</span> si modeliza el número de intentos necesarios hasta obtener el primer éxito. Se denota:</p>
+<p><span class="math display">\[
+X \sim G(p)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(p\)</span> es la probabilidad de éxito en cada ensayo.</li>
+<li><span class="math inline">\(q = 1 - p\)</span> es la probabilidad de fracaso.</li>
+<li><span class="math inline">\(X \in \{1, 2, 3, \dots\}\)</span></li>
+</ul>
+<p><strong>Función de cuantía</strong></p>
+<p>La función de cuantía (función de probabilidad) de la distribución geométrica es:</p>
+<p><span class="math display">\[
+P(X = x) = q^{x - 1} \cdot p, \quad \text{para } x = 1, 2, 3, \dots
+\]</span></p>
+<p>Esta fórmula representa la probabilidad de que se produzcan <span class="math inline">\(x - 1\)</span> fracasos seguidos antes de obtener el primer éxito.</p>
+<p><strong>Parámetros fundamentales</strong></p>
+<ul>
+<li><p>Media: <span class="math inline">\(E(X) = \frac{1}{p}\)</span></p></li>
+<li><p>Varianza:<span class="math inline">\(\text{Var}(X) = \frac{1 - p}{p^2}\)</span></p></li>
+</ul>
+<p><strong>Ejercicios resueltos: Distribución Geomñetrica</strong></p>
+<p><strong>Ejercicio 1</strong></p>
+<p>Un agente comercial realiza llamadas a posibles clientes. La probabilidad de que una llamada termine en una venta es <span class="math inline">\(p = 0.2\)</span> ¿Cuál es la probabilidad de que la primera venta se consiga en el cuarto intento?</p>
+<p>Solución:</p>
+<p>Sea <span class="math inline">\(X \sim G(0.2)\)</span>, donde <span class="math inline">\(X\)</span> representa el número de llamadas hasta la primera venta.</p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(X = 4) = q^{4 - 1} \cdot p = (1 - 0.2)^3 \cdot 0.2 = 0.8^3 \cdot 0.2 = 0.512 \cdot 0.2 = 0.1024
+\]</span></p>
+<p>Interpretación: Existe aproximadamente un 10,24% de probabilidad de que el agente realice tres llamadas fallidas y consiga una venta en el cuarto intento.</p>
+<p><strong>Ejercicio 2: Resolución con R</strong></p>
+<p>Supón ahora que la probabilidad de éxito es <span class="math inline">\(p = 0.1\)</span>. Se pide:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de que la primera venta se logre en el sexto intento.<br />
+</li>
+<li>Calcular la probabilidad de que se logre en 6 o menos intentos.<br />
+</li>
+<li>Calcular la media y la varianza de la distribución.<br />
+</li>
+<li>Simular 10.000 experimentos y estimar la media empírica.</li>
+</ol>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="modelos-de-probabilidad-discretos.html#cb85-1" tabindex="-1"></a><span class="co"># Parámetro</span></span>
+<span id="cb85-2"><a href="modelos-de-probabilidad-discretos.html#cb85-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb85-3"><a href="modelos-de-probabilidad-discretos.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="modelos-de-probabilidad-discretos.html#cb85-4" tabindex="-1"></a><span class="co"># 1. P(X = 6)</span></span>
+<span id="cb85-5"><a href="modelos-de-probabilidad-discretos.html#cb85-5" tabindex="-1"></a>prob_6 <span class="ot">&lt;-</span> <span class="fu">dgeom</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prob =</span> p)  <span class="co"># en R, la geométrica cuenta fracasos antes del primer éxito</span></span>
+<span id="cb85-6"><a href="modelos-de-probabilidad-discretos.html#cb85-6" tabindex="-1"></a>prob_6</span></code></pre></div>
+<pre><code>## [1] 0.059049</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="modelos-de-probabilidad-discretos.html#cb87-1" tabindex="-1"></a><span class="co"># 2. P(X &lt;= 6)</span></span>
+<span id="cb87-2"><a href="modelos-de-probabilidad-discretos.html#cb87-2" tabindex="-1"></a>prob_acum_6 <span class="ot">&lt;-</span> <span class="fu">pgeom</span>(<span class="dv">6</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="at">prob =</span> p)</span>
+<span id="cb87-3"><a href="modelos-de-probabilidad-discretos.html#cb87-3" tabindex="-1"></a>prob_acum_6</span></code></pre></div>
+<pre><code>## [1] 0.468559</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="modelos-de-probabilidad-discretos.html#cb89-1" tabindex="-1"></a><span class="co"># 3. Media y varianza teóricas</span></span>
+<span id="cb89-2"><a href="modelos-de-probabilidad-discretos.html#cb89-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> p</span>
+<span id="cb89-3"><a href="modelos-de-probabilidad-discretos.html#cb89-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> (p<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb89-4"><a href="modelos-de-probabilidad-discretos.html#cb89-4" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="modelos-de-probabilidad-discretos.html#cb91-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 90</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="modelos-de-probabilidad-discretos.html#cb93-1" tabindex="-1"></a><span class="co"># 4. Simulación de 10.000 experimentos</span></span>
+<span id="cb93-2"><a href="modelos-de-probabilidad-discretos.html#cb93-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb93-3"><a href="modelos-de-probabilidad-discretos.html#cb93-3" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">rgeom</span>(<span class="dv">10000</span>, <span class="at">prob =</span> p) <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># sumamos 1 porque R devuelve fracasos</span></span>
+<span id="cb93-4"><a href="modelos-de-probabilidad-discretos.html#cb93-4" tabindex="-1"></a><span class="fu">mean</span>(sim)</span></code></pre></div>
+<pre><code>## [1] 9.8619</code></pre>
+</div>
+<div id="distribución-hipergeométrica-hn-k-n" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria discreta <span class="math inline">\(X\)</span> sigue una <strong>distribución hipergeométrica</strong> cuando representa el número de éxitos obtenidos al seleccionar una muestra aleatoria <strong>sin reemplazo</strong> de una población finita que contiene un número determinado de elementos exitosos y no exitosos.</p>
+<p>Se denota como:</p>
+<p><span class="math display">\[
+X \sim H(N, K, n)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(N\)</span>: tamaño total de la población,</li>
+<li><span class="math inline">\(K\)</span>: número total de elementos exitosos en la población,</li>
+<li><span class="math inline">\(n\)</span>: tamaño de la muestra extraída sin reemplazo,</li>
+<li><span class="math inline">\(X\)</span>: número de éxitos en la muestra.</li>
+</ul>
+<p>El soporte de <span class="math inline">\(X\)</span> está dado por los valores enteros que cumplen:</p>
+<p><span class="math display">\[
+\max(0, n - (N - K)) \leq X \leq \min(n, K)
+\]</span></p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución hipergeométrica es útil para modelar situaciones de muestreo <strong>sin reemplazo</strong>, muy habituales en contextos reales donde la proporción de éxitos cambia con cada extracción.</p>
+<p><strong>Aplicaciones en economía y empresa:</strong></p>
+<ul>
+<li><strong>Control de calidad</strong>: extraer productos sin reemplazo para evaluar cuántos son defectuosos.</li>
+<li><strong>Auditorías</strong>: verificar cuántas facturas con errores hay en una muestra de registros contables.</li>
+<li><strong>Inspección de lotes en inventarios</strong>.</li>
+<li><strong>Selección de consumidores</strong> para una campaña donde algunos ya han sido contactados.</li>
+<li><strong>Evaluación del fraude</strong> o incumplimiento en una muestra finita de expedientes.</li>
+</ul>
+<p><strong>Teoría</strong></p>
+<p>Sea una población de tamaño <span class="math inline">\(N\)</span>, con <span class="math inline">\(K\)</span> elementos exitosos y <span class="math inline">\(N - K\)</span> fracasos. Si se extrae una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, sin reemplazo, la variable aleatoria <span class="math inline">\(X\)</span> que representa el número de éxitos en la muestra se distribuye como:</p>
+<p><span class="math display">\[
+X \sim H(N, K, n)
+\]</span></p>
+<p><strong>Función de cuantía</strong></p>
+<p>La función de cuantía (función de probabilidad) de la distribución hipergeométrica es:</p>
+<p><span class="math display">\[
+P(X = x) = \frac{\binom{K}{x} \binom{N - K}{n - x}}{\binom{N}{n}}, \quad \text{para } x = \max(0, n - (N - K)), \dots, \min(n, K)
+\]</span></p>
+<p>Esta fórmula expresa el cociente entre:</p>
+<ul>
+<li>El número de formas de seleccionar <span class="math inline">\(x\)</span> éxitos entre los <span class="math inline">\(K\)</span> existentes y <span class="math inline">\(n - x\)</span> fracasos entre los <span class="math inline">\(N - K\)</span> restantes,</li>
+<li>y el número total de formas de seleccionar <span class="math inline">\(n\)</span> elementos de entre los <span class="math inline">\(N\)</span>.</li>
+</ul>
+<p><strong>Parámetros fundamentales</strong></p>
+<ul>
+<li><span class="math inline">\(N\)</span>: tamaño de la población,</li>
+<li><span class="math inline">\(K\)</span>: número total de éxitos en la población,</li>
+<li><span class="math inline">\(n\)</span>: tamaño de la muestra.</li>
+</ul>
+<p><strong>Momentos</strong></p>
+<p><strong>- Media:</strong> <span class="math inline">\(E(X) = n \cdot \frac{K}{N}\)</span></p>
+<p><strong>- Varianza</strong>:</p>
+<p><span class="math inline">\(\text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N - K}{N} \cdot \frac{N - n}{N - 1}\)</span></p>
+<p><strong>Ejercicios</strong></p>
+<p><strong>Ejercicio 1:</strong> Un lote contiene 20 productos, de los cuales 6 son defectuosos. Se selecciona una muestra aleatoria de 5 productos sin reemplazo. ¿Cuál es la probabilidad de que haya exactamente 2 productos defectuosos en la muestra?</p>
+<p><em>Solución:</em></p>
+<p>Sea <span class="math inline">\(X \sim H(20, 6, 5)\)</span>, y queremos calcular <span class="math inline">\(P(X = 2)\)</span>. Aplicamos la función de cuantía:</p>
+<p><span class="math display">\[
+P(X = 2) = \frac{\binom{6}{2} \binom{14}{3}}{\binom{20}{5}} = \frac{15 \cdot 364}{15504} \approx 0.352
+\]</span></p>
+<p><em>Interpretación:</em><br />
+Existe un 35.2 % de probabilidad de que exactamente 2 de los 5 productos seleccionados sean defectuosos.</p>
+<p><strong>Ejercicio 2 en R.</strong></p>
+<p>Supongamos que se tiene una población de 50 elementos, de los cuales 12 son considerados “éxito”. Se toma una muestra de tamaño 10 sin reemplazo. Se pide:</p>
+<ol style="list-style-type: decimal">
+<li>Calcular la probabilidad de obtener exactamente 3 éxitos.</li>
+<li>Calcular la probabilidad de obtener 3 o menos éxitos.</li>
+<li>Calcular la esperanza y la varianza teóricas.</li>
+</ol>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="modelos-de-probabilidad-discretos.html#cb95-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb95-2"><a href="modelos-de-probabilidad-discretos.html#cb95-2" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">50</span>   <span class="co"># población total</span></span>
+<span id="cb95-3"><a href="modelos-de-probabilidad-discretos.html#cb95-3" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">12</span>   <span class="co"># número de éxitos en la población</span></span>
+<span id="cb95-4"><a href="modelos-de-probabilidad-discretos.html#cb95-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>   <span class="co"># tamaño de la muestra</span></span>
+<span id="cb95-5"><a href="modelos-de-probabilidad-discretos.html#cb95-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb95-6"><a href="modelos-de-probabilidad-discretos.html#cb95-6" tabindex="-1"></a></span>
+<span id="cb95-7"><a href="modelos-de-probabilidad-discretos.html#cb95-7" tabindex="-1"></a><span class="co"># 1. Probabilidad de obtener exactamente 3 éxitos</span></span>
+<span id="cb95-8"><a href="modelos-de-probabilidad-discretos.html#cb95-8" tabindex="-1"></a><span class="fu">dhyper</span>(x, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span></code></pre></div>
+<pre><code>## [1] 0.2702863</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="modelos-de-probabilidad-discretos.html#cb97-1" tabindex="-1"></a><span class="co"># 2. Probabilidad de obtener 3 o menos éxitos</span></span>
+<span id="cb97-2"><a href="modelos-de-probabilidad-discretos.html#cb97-2" tabindex="-1"></a><span class="fu">phyper</span>(x, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span></code></pre></div>
+<pre><code>## [1] 0.8209435</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="modelos-de-probabilidad-discretos.html#cb99-1" tabindex="-1"></a><span class="co"># 3. Media y varianza teóricas</span></span>
+<span id="cb99-2"><a href="modelos-de-probabilidad-discretos.html#cb99-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> n <span class="sc">*</span> K <span class="sc">/</span> N</span>
+<span id="cb99-3"><a href="modelos-de-probabilidad-discretos.html#cb99-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> n <span class="sc">*</span> (K <span class="sc">/</span> N) <span class="sc">*</span> ((N <span class="sc">-</span> K) <span class="sc">/</span> N) <span class="sc">*</span> ((N <span class="sc">-</span> n) <span class="sc">/</span> (N <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb99-4"><a href="modelos-de-probabilidad-discretos.html#cb99-4" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 2.4</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="modelos-de-probabilidad-discretos.html#cb101-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 1.48898</code></pre>
+</div>
+<div id="distribución-multinomial-mn-p_i" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span><a href="#distribuci%C3%B3n-multinomial-mn-p_i" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribución multinomial generaliza la distribución binomial a más de dos categorías posibles. Una variable aleatoria <span class="math inline">\(\boldsymbol{X} = (X_1, X_2, \dots, X_k)\)</span> sigue una <strong>distribución multinomial</strong> cuando describe el número de veces que ocurren <span class="math inline">\(k\)</span> posibles resultados mutuamente excluyentes tras realizar <span class="math inline">\(n\)</span> ensayos independientes, cada uno con las mismas probabilidades.</p>
+<p>Se denota como:</p>
+<p><span class="math display">\[
+(X_1, X_2, \dots, X_k) \sim \text{Multinomial}(n; p_1, p_2, \dots, p_k)
+\]</span></p>
+<p>o</p>
+<p><span class="math display">\[
+(X_1, X_2, \dots, X_k) \sim M(n; p_1, p_2, \dots, p_k)
+\]</span></p>
+<p>donde <span class="math inline">\(n\)</span> es el número total de repeticiones y <span class="math inline">\(p_j\)</span> son las probabilidades de que ocurra cada una de las posibles categorías o clases.</p>
+<p><strong>¿Para qué sirve?</strong></p>
+<p>La distribución multinomial resulta especialmente útil cuando se desea modelar situaciones en las que un experimento puede arrojar <strong>más de dos posibles resultados excluyentes</strong> y se repite un número fijo de veces bajo condiciones de independencia. A diferencia de la binomial, que solo contempla dos categorías (éxito/fracaso), la multinomial permite trabajar con <strong>tres o más categorías</strong></p>
+<p>En el ámbito económico y empresarial, su utilidad es muy amplia. Por ejemplo:</p>
+<ul>
+<li><p><strong>Investigación de mercados</strong>: permite modelar cómo se distribuyen las preferencias de los consumidores entre distintas marcas, productos o servicios. Si una empresa desea saber cómo se reparte el mercado entre varias marcas competidoras, la distribución multinomial ofrece una base probabilística sólida para estimarlo.</p></li>
+<li><p><strong>Análisis de comportamiento del consumidor</strong>: se puede emplear para estudiar la distribución de respuestas en una encuesta donde los participantes deben elegir una sola opción entre varias (por ejemplo, tipo de transporte utilizado, canal de compra preferido, nivel de satisfacción, etc.).</p></li>
+<li><p><strong>Gestión de inventarios o logística</strong>: es útil para modelar cómo se reparte la demanda entre distintas categorías de productos en una tienda o cómo se distribuyen los envíos entre diferentes zonas geográficas.</p></li>
+<li><p><strong>Evaluación de riesgos financieros o crediticios</strong>: permite estudiar cómo se clasifican los clientes en diferentes niveles de solvencia o riesgo.</p></li>
+</ul>
+<p><strong>Teoría</strong></p>
+<p>Supongamos un experimento con <span class="math inline">\(k\)</span> resultados posibles mutuamente excluyentes: <span class="math inline">\(X_1, X_2, \dots, X_k\)</span>, con:</p>
+<p><span class="math display">\[
+P(X_j) = p_j \quad \text{para todo } j = 1, \dots, k, \quad \text{y } \sum_{j=1}^{k} p_j = 1
+\]</span></p>
+<p>Si se repite el experimento <span class="math inline">\(n\)</span> veces de forma independiente, y se observa <span class="math inline">\(x_j\)</span> veces el resultado <span class="math inline">\(X_j\)</span>, el vector aleatorio:</p>
+<p><span class="math display">\[
+(x_1, x_2, \dots, x_k)
+\]</span></p>
+<p>sigue una distribución multinomial.</p>
+<p><strong>Función de cuantía</strong></p>
+<p>La función de probabilidad conjunta es:</p>
+<p><span class="math display">\[
+P(X_1 = x_1, X_2 = x_2, \dots, X_k = x_k) = \frac{n!}{x_1! \cdot x_2! \cdots x_k!} \cdot p_1^{x_1} \cdot p_2^{x_2} \cdots p_k^{x_k}
+\]</span></p>
+<p>para todo <span class="math inline">\(x_1 + x_2 + \cdots + x_k = n\)</span>.</p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(n\)</span>: número total de repeticiones del experimento aleatorio,</li>
+<li><span class="math inline">\(p_j \in (0,1)\)</span>: probabilidad de que ocurra el resultado <span class="math inline">\(X_j\)</span>,</li>
+<li><span class="math inline">\(\sum_{j=1}^{k} p_j = 1\)</span>,</li>
+<li><span class="math inline">\(x_j\)</span>: número de veces que se observa el resultado <span class="math inline">\(X_j\)</span>,</li>
+<li><span class="math inline">\(\sum_{j=1}^{k} x_j = n\)</span>.</li>
+</ul>
+<p><strong>Parámetros fundamentales</strong></p>
+<ul>
+<li><span class="math inline">\(n \in \mathbb{N}\)</span>: número de ensayos.</li>
+<li><span class="math inline">\(p_1, p_2, \dots, p_k \in (0, 1)\)</span> tales que <span class="math inline">\(\sum_{j=1}^k p_j = 1\)</span></li>
+</ul>
+<p><strong>Momentos</strong></p>
+<ul>
+<li><span class="math inline">\(E(X_j) = n \cdot p_j\)</span></li>
+<li><span class="math inline">\(\text{Var}(X_j) = n \cdot p_j (1 - p_j)\)</span></li>
+<li><span class="math inline">\(\text{Cov}(X_i, X_j) = -n \cdot p_i \cdot p_j \quad \text{para } i \neq j\)</span></li>
+</ul>
+<p><strong>Ejercicio</strong></p>
+<p>En una encuesta, se pregunta a 10 personas por su preferencia entre tres marcas de teléfono: A, B y C. Las probabilidades de preferencia son <span class="math inline">\(p_A = 0.5\)</span>, <span class="math inline">\(p_B = 0.3\)</span> y <span class="math inline">\(p_C = 0.2\)</span> ¿Cuál es la probabilidad de que exactamente 4 personas prefieran A, 3 prefieran B y 3 prefieran C?</p>
+<p><em>Solución:</em></p>
+<p>Aplicamos la función de cuantía:</p>
+<p><span class="math display">\[
+P(X_A = 4, X_B = 3, X_C = 3) = \frac{10!}{4! \cdot 3! \cdot 3!} \cdot 0.5^4 \cdot 0.3^3 \cdot 0.2^3
+\]</span></p>
+<p>Calculamos paso a paso:</p>
+<p><span class="math display">\[
+\frac{10!}{4!3!3!} = \frac{3628800}{24 \cdot 6 \cdot 6} = \frac{3628800}{864} = 4200
+\]</span></p>
+<p><span class="math display">\[
+P = 4200 \cdot 0.0625 \cdot 0.027 \cdot 0.008 = 4200 \cdot 0.0000135 \approx 0.0567
+\]</span></p>
+<p><strong>Ejemplo en R</strong></p>
+<p>Vamos a calcular la probabilidad anterior usando R.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="modelos-de-probabilidad-discretos.html#cb103-1" tabindex="-1"></a><span class="co"># Carga de paquete necesario</span></span>
+<span id="cb103-2"><a href="modelos-de-probabilidad-discretos.html#cb103-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;gtools&quot;</span>) <span class="co"># si no lo tienes instalado</span></span></code></pre></div>
+<pre><code>## Installing package into &#39;C:/Users/JT.5029698/AppData/Local/R/win-library/4.3&#39;
+## (as &#39;lib&#39; is unspecified)</code></pre>
+<pre><code>## package &#39;gtools&#39; successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\JT.5029698\AppData\Local\Temp\RtmpQBE4r8\downloaded_packages</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="modelos-de-probabilidad-discretos.html#cb106-1" tabindex="-1"></a><span class="fu">library</span>(gtools)</span></code></pre></div>
+<pre><code>## Warning: package &#39;gtools&#39; was built under R version 4.3.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;gtools&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:futile.logger&#39;:
+## 
+##     scat</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="modelos-de-probabilidad-discretos.html#cb110-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb110-2"><a href="modelos-de-probabilidad-discretos.html#cb110-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb110-3"><a href="modelos-de-probabilidad-discretos.html#cb110-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb110-4"><a href="modelos-de-probabilidad-discretos.html#cb110-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>)</span>
+<span id="cb110-5"><a href="modelos-de-probabilidad-discretos.html#cb110-5" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="modelos-de-probabilidad-discretos.html#cb110-6" tabindex="-1"></a><span class="co"># Probabilidad multinomial</span></span>
+<span id="cb110-7"><a href="modelos-de-probabilidad-discretos.html#cb110-7" tabindex="-1"></a><span class="fu">dmultinom</span>(x, <span class="at">prob =</span> p)</span></code></pre></div>
+<pre><code>## [1] 0.0567</code></pre>
+</div>
+<div id="resumen-de-las-distribuciones-discretas" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Resumen de las distribuciones discretas<a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Distribución</th>
+<th>Variable</th>
+<th>Parámetros</th>
+<th>Espacio muestral</th>
+<th>Función de cuantía</th>
+<th>Media</th>
+<th>Varianza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binomial</strong></td>
+<td>Número de éxitos en <span class="math inline">\(n\)</span> ensayos</td>
+<td><span class="math inline">\(n \in \mathbb{N},\ p \in (0,1)\)</span></td>
+<td><span class="math inline">\(\{0, 1, \dots, n\}\)</span></td>
+<td><span class="math inline">\(P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}\)</span></td>
+<td><span class="math inline">\(np\)</span></td>
+<td><span class="math inline">\(np(1 - p)\)</span></td>
+</tr>
+<tr>
+<td><strong>Bernoulli</strong></td>
+<td>Éxito o fracaso (1 experimento)</td>
+<td><span class="math inline">\(p \in (0,1)\)</span></td>
+<td><span class="math inline">\(\{0, 1\}\)</span></td>
+<td><span class="math inline">\(P(X = x) = p^x (1 - p)^{1 - x}\)</span></td>
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(p(1 - p)\)</span></td>
+</tr>
+<tr>
+<td><strong>Poisson</strong></td>
+<td>Número de eventos en un intervalo</td>
+<td><span class="math inline">\(\lambda &gt; 0\)</span></td>
+<td><span class="math inline">\(\mathbb{N}_0\)</span></td>
+<td><span class="math inline">\(P(X = x) = \dfrac{\lambda^x e^{-\lambda}}{x!}\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+</tr>
+<tr>
+<td><strong>Geométrica</strong></td>
+<td>Ensayos hasta el 1er éxito</td>
+<td><span class="math inline">\(p \in (0,1)\)</span></td>
+<td><span class="math inline">\(\{1, 2, 3, \dots\}\)</span></td>
+<td><span class="math inline">\(P(X = x) = (1 - p)^{x - 1} p\)</span></td>
+<td><span class="math inline">\(\frac{1}{p}\)</span></td>
+<td><span class="math inline">\(\frac{1 - p}{p^2}\)</span></td>
+</tr>
+<tr>
+<td><strong>Binomial negativa</strong></td>
+<td>Ensayos hasta <span class="math inline">\(r\)</span>-ésimo éxito</td>
+<td><span class="math inline">\(r \in \mathbb{N},\ p \in (0,1)\)</span></td>
+<td><span class="math inline">\(\{r, r + 1, \dots\}\)</span></td>
+<td><span class="math inline">\(P(X = x) = \binom{x - 1}{r - 1} p^r (1 - p)^{x - r}\)</span></td>
+<td><span class="math inline">\(\frac{r}{p}\)</span></td>
+<td><span class="math inline">\(\frac{r(1 - p)}{p^2}\)</span></td>
+</tr>
+<tr>
+<td><strong>Hipergeométrica</strong></td>
+<td>Éxitos en muestra sin reemplazo</td>
+<td><span class="math inline">\(N,\ K,\ n \in \mathbb{N}\)</span></td>
+<td><span class="math inline">\(\max(0, n - (N - K)) \leq x \leq \min(n, K)\)</span></td>
+<td><span class="math inline">\(P(X = x) = \dfrac{\binom{K}{x} \binom{N - K}{n - x}}{\binom{N}{n}}\)</span></td>
+<td><span class="math inline">\(n \cdot \frac{K}{N}\)</span></td>
+<td><span class="math inline">\(n \cdot \frac{K}{N} \cdot \frac{N - K}{N} \cdot \frac{N - n}{N - 1}\)</span></td>
+</tr>
+<tr>
+<td><strong>Multinomial</strong></td>
+<td>Recuento de <span class="math inline">\(k\)</span> categorías en <span class="math inline">\(n\)</span> ensayos</td>
+<td><span class="math inline">\(n \in \mathbb{N},\ p_1 + \cdots + p_k = 1\)</span></td>
+<td><span class="math inline">\(\{(x_1, \dots, x_k): \sum x_j = n\}\)</span></td>
+<td><span class="math inline">\(P(X_1 = x_1, \dots, X_k = x_k) = \dfrac{n!}{x_1!\cdots x_k!} p_1^{x_1} \cdots p_k^{x_k}\)</span></td>
+<td><span class="math inline">\(\mathbb{E}(X_j) = np_j\)</span></td>
+<td><span class="math inline">\(\text{Var}(X_j) = np_j(1 - p_j)\)</span>, <span class="math inline">\(\text{Cov}(X_i, X_j) = -np_i p_j\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notas:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{N}\)</span> denota los enteros positivos, y <span class="math inline">\(\mathbb{N}_0 = \{0, 1, 2, \dots\}\)</span>.</li>
+<li>La <strong>multinomial</strong> se interpreta como la generalización de la binomial para más de dos categorías.</li>
+</ul>
+</div>
+<div id="funciones-disponibles-en-r-para-funciones-discretas" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Funciones disponibles en R para funciones discretas<a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para cada distribución discreta se tienen 4 funciones, a continuación el listado de funciones y su utilidad.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="modelos-de-probabilidad-discretos.html#cb112-1" tabindex="-1"></a><span class="fu">dxxx</span>(x, ...)  <span class="co"># Función de masa de probabilidad, f(x)</span></span>
+<span id="cb112-2"><a href="modelos-de-probabilidad-discretos.html#cb112-2" tabindex="-1"></a><span class="fu">pxxx</span>(q, ...)  <span class="co"># Función de distribución acumulada hasta q, F(x)</span></span>
+<span id="cb112-3"><a href="modelos-de-probabilidad-discretos.html#cb112-3" tabindex="-1"></a><span class="fu">qxxx</span>(p, ...)  <span class="co"># Cuantil para el cual P(X &lt;= q) = p</span></span>
+<span id="cb112-4"><a href="modelos-de-probabilidad-discretos.html#cb112-4" tabindex="-1"></a><span class="fu">rxxx</span>(n, ...)  <span class="co"># Generador de números aleatorios.</span></span></code></pre></div>
+<p>En el lugar de las letras <code>xxx</code> se de debe colocar el nombre de la distribución en R, a continuación el listado de nombres disponibles para las 6 distribuciones discretas básicas.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="modelos-de-probabilidad-discretos.html#cb113-1" tabindex="-1"></a>binom     <span class="co"># Binomial</span></span>
+<span id="cb113-2"><a href="modelos-de-probabilidad-discretos.html#cb113-2" tabindex="-1"></a>geo       <span class="co"># Geométrica</span></span>
+<span id="cb113-3"><a href="modelos-de-probabilidad-discretos.html#cb113-3" tabindex="-1"></a>nbinom    <span class="co"># Binomial negativa</span></span>
+<span id="cb113-4"><a href="modelos-de-probabilidad-discretos.html#cb113-4" tabindex="-1"></a>hyper     <span class="co"># Hipergeométrica</span></span>
+<span id="cb113-5"><a href="modelos-de-probabilidad-discretos.html#cb113-5" tabindex="-1"></a>pois      <span class="co"># Poisson</span></span>
+<span id="cb113-6"><a href="modelos-de-probabilidad-discretos.html#cb113-6" tabindex="-1"></a>multinom  <span class="co"># Multinomial</span></span></code></pre></div>
+<p>Combinando las funciones y los nombres se tiene un total de 24 funciones, por ejemplo, para obtener la función de masa de probabilidad <span class="math inline">\(f(x)\)</span> de una binomial se usa la función <code>dbinom( )</code> y para obtener la función acumulada <span class="math inline">\(F(x)\)</span> de una Poisson se usa la función <code>ppois( )</code>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variables-aleatorias.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelos-de-probabilidad-continuos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed",
+"collapse": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

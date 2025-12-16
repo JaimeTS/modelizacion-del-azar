@@ -1,0 +1,39 @@
+/* Estilo base del contenido */
+.book .book-body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Títulos principales */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #2c3e50;
+}
+
+/* Panel lateral (índice) */
+.book .book-summary {
+  background-color: #f4f4f4;
+}
+
+/* Color del capítulo activo en el menú */
+.book .book-summary ul.summary li.active > a {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Bloques de código */
+pre {
+  background-color: #f9f9f9;
+  border-left: 4px solid #2980b9;
+  padding: 10px;
+  font-size: 90%;
+}
+
+/* Bloques tipo note/tip/warning */
+div.note, div.tip {
+  background-color: #eef9ff;
+  border-left: 5px solid #3498db;
+  padding: 10px;
+  margin: 1em 0;
+}

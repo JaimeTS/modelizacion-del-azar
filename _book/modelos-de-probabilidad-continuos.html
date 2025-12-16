@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 5 Modelos de probabilidad continuos | modelizacion-del-azar.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 5 Modelos de probabilidad continuos | modelizacion-del-azar.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 5 Modelos de probabilidad continuos | modelizacion-del-azar.knit" />
+  
+  
+  
+
+<meta name="author" content="" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modelos-de-probabilidad-discretos.html"/>
+<link rel="next" href="relación-entre-distribuciones.-convergencia-en-distribución.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Modelización del azar</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="05-distribuciones-continuas.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="05-distribuciones-continuas.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>2.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad.html"><a href="probabilidad.html#sucesos-y-operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="probabilidad.html"><a href="probabilidad.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>2.2.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probabilidad.html"><a href="probabilidad.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>2.2.2</b> Tipos de sucesos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="probabilidad.html"><a href="probabilidad.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>2.2.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="2.2.4" data-path="05-distribuciones-continuas.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>2.2.4</b> Propiedades del álgebra de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad.html"><a href="probabilidad.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Concepto de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad.html"><a href="probabilidad.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>2.3.1</b> Interpretaciones de la probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="05-distribuciones-continuas.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>2.4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad.html"><a href="probabilidad.html#axioma-1-no-negatividad"><i class="fa fa-check"></i><b>2.4.1</b> Axioma 1: No negatividad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="05-distribuciones-continuas.html"><a href="#axioma-2-normalizaci%C3%B3n"><i class="fa fa-check"></i><b>2.4.2</b> Axioma 2: Normalización</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad.html"><a href="probabilidad.html#propiedades-derivadas-de-los-axiomas"><i class="fa fa-check"></i><b>2.4.3</b> Propiedades derivadas de los axiomas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad.html"><a href="probabilidad.html#reglas-teoremas-de-la-probabilidad"><i class="fa fa-check"></i><b>2.5</b> Reglas (Teoremas) de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad.html"><a href="probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>2.5.1</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="2.5.2" data-path="probabilidad.html"><a href="probabilidad.html#regla-del-producto"><i class="fa fa-check"></i><b>2.5.2</b> Regla del producto</a></li>
+<li class="chapter" data-level="2.5.3" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-la-probabilidad-total"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de la probabilidad total</a></li>
+<li class="chapter" data-level="2.5.4" data-path="probabilidad.html"><a href="probabilidad.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.4</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad.html"><a href="probabilidad.html#independencia-de-sucesos"><i class="fa fa-check"></i><b>2.6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="05-distribuciones-continuas.html"><a href="#regla-del-producto-o-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.6.1</b> Regla del producto o de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="05-distribuciones-continuas.html"><a href="#combinatoria-t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>2.7</b> Combinatoria: Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="05-distribuciones-continuas.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>2.7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="2.7.2" data-path="probabilidad.html"><a href="probabilidad.html#combinaciones"><i class="fa fa-check"></i><b>2.7.2</b> Combinaciones</a></li>
+<li class="chapter" data-level="2.7.3" data-path="probabilidad.html"><a href="probabilidad.html#variaciones"><i class="fa fa-check"></i><b>2.7.3</b> Variaciones</a></li>
+<li class="chapter" data-level="2.7.4" data-path="probabilidad.html"><a href="probabilidad.html#permutaciones"><i class="fa fa-check"></i><b>2.7.4</b> Permutaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="05-distribuciones-continuas.html"><a href="#clasificaci%C3%B3n-de-las-variables-aleatorias"><i class="fa fa-check"></i><b>3.1</b> Clasificación de las variables aleatorias</a></li>
+<li class="chapter" data-level="3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias Unidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i><b>3.2.1</b> Variables aleatorias discretas</a></li>
+<li class="chapter" data-level="3.2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i><b>3.2.2</b> Variables aleatorias continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="05-distribuciones-continuas.html"><a href="#momentos-estad%C3%ADsticos-de-una-variable-aleatoria-unidimensional-esperanza-y-varianza"><i class="fa fa-check"></i><b>3.3</b> Momentos estadísticos de una variable aleatoria unidimensional: esperanza y varianza</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-del-origen"><i class="fa fa-check"></i><b>3.3.1</b> Momentos respecto del origen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-de-la-media"><i class="fa fa-check"></i><b>3.3.2</b> Momentos respecto de la media</a></li>
+<li class="chapter" data-level="3.3.3" data-path="05-distribuciones-continuas.html"><a href="#relaci%C3%B3n-entre-los-momentos-respecto-de-la-media-y-del-origen"><i class="fa fa-check"></i><b>3.3.3</b> Relación entre los momentos respecto de la media y del origen</a></li>
+<li class="chapter" data-level="3.3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-y-varianza-de-las-variables-aleatorias-unidimensionales"><i class="fa fa-check"></i><b>3.3.4</b> Esperanza y varianza de las variables aleatorias unidimensionales</a></li>
+<li class="chapter" data-level="3.3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades-de-la-esperanza-y-la-varianza"><i class="fa fa-check"></i><b>3.3.5</b> Propiedades de la esperanza y la varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4</b> Variables aleatorias Bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-discretas"><i class="fa fa-check"></i><b>3.4.1</b> Variables aleatorias bidimensionales discretas</a></li>
+<li class="chapter" data-level="3.4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-bidimensionales-continuas"><i class="fa fa-check"></i><b>3.4.2</b> Variables aleatorias bidimensionales continuas</a></li>
+<li class="chapter" data-level="3.4.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#independencia-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.4.3</b> Independencia de variables aleatorias bidimensionales</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-de-variables-aleatorias-bidimensionales"><i class="fa fa-check"></i><b>3.5</b> Momentos de variables aleatorias bidimensionales</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-al-origen"><i class="fa fa-check"></i><b>3.5.1</b> Momentos respecto al origen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#momentos-respecto-a-la-media"><i class="fa fa-check"></i><b>3.5.2</b> Momentos respecto a la media</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html"><i class="fa fa-check"></i><b>4</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>4.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="4.2" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>4.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="4.3" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>4.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>4.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>4.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>4.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>4.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>4.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="4.9" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>4.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="4.10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>4.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html"><i class="fa fa-check"></i><b>5</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>5.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="5.2" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>5.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>5.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>5.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>5.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>5.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>5.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>5.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>5.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>5.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="5.6" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>5.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="5.7" data-path="05-distribuciones-continuas.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>5.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="5.8" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="5.9" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="05-distribuciones-continuas.html"><a href="#relaci%C3%B3n-entre-distribuciones.-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="05-distribuciones-continuas.html"><a href="#introducci%C3%B3n-2"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="05-distribuciones-continuas.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="05-distribuciones-continuas.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="05-distribuciones-continuas.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="05-distribuciones-continuas.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="05-distribuciones-continuas.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="05-distribuciones-continuas.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="6.3.5" data-path="05-distribuciones-continuas.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="05-distribuciones-continuas.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="6.5" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>7.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="7.1.3" data-path="05-distribuciones-continuas.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>7.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="7.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>7.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>7.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-1-probabilidad"><i class="fa fa-check"></i><b>7.2.1</b> Ejercicios del Tema 1: Probabilidad</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>7.2.2</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>7.2.3</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>7.3</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modelos-de-probabilidad-continuos" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Tema 5</span> Modelos de probabilidad continuos<a href="modelos-de-probabilidad-continuos.html#modelos-de-probabilidad-continuos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En este tema nos centraremos en el estudio de los modelos de probabilidad continuos, es decir, aquellos que describen situaciones en las que las variables aleatorias pueden tomar un número infinito no numerable de valores posibles dentro de un intervalo. Este tipo de modelos es especialmente relevante cuando se analizan fenómenos que varían de forma gradual y continua, como el tiempo, las cantidades económicas o los rendimientos financieros.</p>
+<p>Comprender estos modelos es crucial para abordar con éxito muchos problemas prácticos en economía, empresa y finanzas. Por ejemplo, permiten modelizar tiempos de espera, ingresos, tasas de conversión, precios, volúmenes de producción y muchos otros aspectos que se expresan mediante variables continuas. El estudio de sus propiedades, estructuras y aplicaciones nos ofrece una base sólida para interpretar datos reales y tomar decisiones fundamentadas en contextos de incertidumbre.</p>
+<p>Este documento desarrolla los casos prácticos de cada distribución continua, incluyendo su teoría, aplicaciones en el ámbito económico-empresarial y ejercicios resueltos tanto manualmente como con el uso de R. El objetivo es proporcionar al alumno una herramienta completa que le permita comprender los fundamentos teóricos de cada modelo y aplicarlos a problemas reales que surgen en el análisis y modelización de datos continuos.</p>
+<div id="distribución-uniforme-ua-b" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Distribución uniforme <span class="math inline">\((U(a, b))\)</span><a href="#distribuci%C3%B3n-uniforme-ua-b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria continua <span class="math inline">\(X\)</span> sigue una <strong>distribución uniforme continua</strong> en el intervalo <span class="math inline">\([a, b]\)</span>, con <span class="math inline">\(a &lt; b\)</span>, si su función de densidad de probabilidad es constante en ese intervalo:</p>
+<p><span class="math display">\[
+X \sim U(a, b)
+\]</span></p>
+<p>La <strong>función de desnsidad</strong> es:</p>
+<p><span class="math display">\[
+f(x) = \begin{cases}
+\frac{1}{b - a}, &amp; \text{si } a \le x \le b \\
+0, &amp; \text{en otro caso}
+\end{cases}
+\]</span></p>
+<p>y la <strong>Función de distribución</strong></p>
+<p><span class="math display">\[
+F(x) = \begin{cases}
+0, &amp; x &lt; a \\
+\frac{x - a}{b - a}, &amp; a \le x \le b \\
+1, &amp; x &gt; b
+\end{cases}
+\]</span></p>
+<p><strong>Momentos</strong></p>
+<p>- Media: <span class="math inline">\(E(X) = \frac{a + b}{2}\)</span></p>
+<p>- Varianza: <span class="math inline">\(\operatorname{Var}(X) = \frac{(b - a)^2}{12}\)</span></p>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución uniforme continua se utiliza cuando se considera que todos los valores dentro de un intervalo son igualmente probables. Es adecuada en situaciones como:</p>
+<ul>
+<li>Tiempo de llegada aleatoria dentro de un intervalo de tiempo (por ejemplo, llegada de un cliente entre las 9:00 y las 10:00).</li>
+<li>Generación de números aleatorios en simulaciones.</li>
+<li>Modelización de incertidumbre en parámetros desconocidos dentro de rangos conocidos.</li>
+</ul>
+<p><strong>Representación gráfica</strong></p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-uniforme-1.png" width="672" /></p>
+<p><strong>Ejemplo:</strong></p>
+<p>Una tienda online recibe cada día un único pedido especial que llega en algún momento entre las 9:00 y las 11:00 de la mañana. El responsable logístico considera que, debido a la falta de patrón histórico, <strong>la hora de llegada de ese pedido puede modelarse como una variable aleatoria con distribución uniforme continua en el intervalo</strong> <span class="math inline">\([9, 11]\)</span>.</p>
+<p>Se pide:</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que el pedido llegue entre las 9:30 y las 10:15?</li>
+<li>Calcular la hora media esperada de llegada y la varianza del tiempo de llegada.</li>
+</ol>
+<p><strong>Solución:</strong></p>
+<p>Sea <span class="math inline">\(X \sim U(9, 11)\)</span>, donde <span class="math inline">\(X\)</span> representa la hora (en formato decimal) a la que llega el pedido.</p>
+<ol style="list-style-type: decimal">
+<li>Para calcular <span class="math inline">\(P(9.5 \leq X \leq 10.25)\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+P(9.5 \leq X \leq 10.25) = \frac{10.25 - 9.5}{11 - 9} = \frac{0.75}{2} = 0.375
+\]</span></p>
+<p><em>Nota didáctica:</em> Para calcular la probabilidad de que una variable uniforme continua tome un valor dentro de un subintervalo del soporte, se pueden usar dos enfoques equivalentes:</p>
+<ul>
+<li><p>El primero se basa en que, para una distribución uniforme continua, la probabilidad de un intervalo dentro del soporte se obtiene dividiendo la longitud del intervalo de interés entre la longitud total del soporte. Es decir: <span class="math display">\[
+P(d \leq X \leq c) = \frac{c - d}{b -a} \]</span></p>
+<p>Esto es posible solo cuando el intervalo <span class="math display">\[[c, d] \subseteq [a, b]\]</span> y es la forma más rápida de resolverlo cuando estás trabajando a mano y no tienes acceso a funciones acumuladas.</p></li>
+<li><p>El segundo se basa en el cáclulo de la diferencia de las funciones de distribución <span class="math inline">\(P(d \leq X \leq c) = F(d)-F(c)\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>La media y la varianza son:</li>
+</ol></li>
+</ul>
+<p><span class="math inline">\(E(X) = \frac{9 + 11}{2} = 10 \quad \text{(hora media de llegada)}\)</span></p>
+<p><span class="math inline">\(V(X) = \frac{(11 - 9)^2}{12} = \frac{4}{12} = 0.333\)</span></p>
+<p><strong>Interpretación:</strong></p>
+<ul>
+<li>Hay una probabilidad del <strong>37.5 %</strong> de que el pedido especial llegue entre las 9:30 y las 10:15.</li>
+<li>En promedio, se espera que llegue a las 10:00, con una dispersión medida por una varianza de 0.333 (horas cuadradas).</li>
+</ul>
+<p><strong>Ejemplo en R</strong></p>
+<p>Una empresa abre un periodo de recepción de solicitudes de financiación entre el día 10 y el día 20 de un mes. Se considera que la llegada de una solicitud en ese intervalo es completamente aleatoria.</p>
+<p>Se desea conocer:</p>
+<ol style="list-style-type: decimal">
+<li><p>La probabilidad de que una solicitud llegue entre el día 12 y el 15.</p></li>
+<li><p>La media y la varianza del día de llegada.</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="modelos-de-probabilidad-continuos.html#cb2-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="modelos-de-probabilidad-continuos.html#cb2-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb2-3"><a href="modelos-de-probabilidad-continuos.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="modelos-de-probabilidad-continuos.html#cb2-4" tabindex="-1"></a><span class="co"># Probabilidad de llegada entre los días 12 y 15</span></span>
+<span id="cb2-5"><a href="modelos-de-probabilidad-continuos.html#cb2-5" tabindex="-1"></a>dia_inicio <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb2-6"><a href="modelos-de-probabilidad-continuos.html#cb2-6" tabindex="-1"></a>dia_fin <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb2-7"><a href="modelos-de-probabilidad-continuos.html#cb2-7" tabindex="-1"></a><span class="co">#Calculamos la probabilidad como F(15)-F(12)</span></span>
+<span id="cb2-8"><a href="modelos-de-probabilidad-continuos.html#cb2-8" tabindex="-1"></a>probabilidad <span class="ot">&lt;-</span> <span class="fu">punif</span>(dia_fin, <span class="at">min =</span> a, <span class="at">max =</span> b) <span class="sc">-</span> <span class="fu">punif</span>(dia_inicio, <span class="at">min =</span> a, <span class="at">max =</span> b)</span>
+<span id="cb2-9"><a href="modelos-de-probabilidad-continuos.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="modelos-de-probabilidad-continuos.html#cb2-10" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
+<span id="cb2-11"><a href="modelos-de-probabilidad-continuos.html#cb2-11" tabindex="-1"></a>media <span class="ot">&lt;-</span> (a <span class="sc">+</span> b) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb2-12"><a href="modelos-de-probabilidad-continuos.html#cb2-12" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> (b <span class="sc">-</span> a)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">12</span></span>
+<span id="cb2-13"><a href="modelos-de-probabilidad-continuos.html#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="modelos-de-probabilidad-continuos.html#cb2-14" tabindex="-1"></a>probabilidad</span></code></pre></div>
+<pre><code>## [1] 0.3</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="modelos-de-probabilidad-continuos.html#cb4-1" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+</div>
+<div id="distribución-normal" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Distribución Normal<a href="#distribuci%C3%B3n-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribución normal es una de las más importantes en la estadística y la probabilidad, tanto por sus propiedades matemáticas como por su relevancia empírica. Su importancia se justifica por varias razones fundamentales:</p>
+<ul>
+<li><p><strong>Aparece naturalmente en muchos fenómenos</strong>: Muchas variables económicas, sociales, biológicas y físicas tienden a distribuirse aproximadamente de forma normal, al menos en situaciones de equilibrio o estabilidad (por ejemplo, los salarios, el rendimiento de carteras diversificadas o los errores de medición).</p></li>
+<li><p><strong>Teorema Central del Límite</strong>: Este resultado fundamental de la estadística establece que, bajo condiciones generales, la suma (o media) de muchas variables aleatorias independientes tiende a distribuirse normalmente, incluso si las variables originales no siguen una normal. Esto explica por qué la normal aparece de forma tan frecuente en el análisis de datos reales.</p></li>
+<li><p><strong>Simplicidad analítica</strong>: Tiene una función de densidad suave, continua, simétrica y con una forma conocida (la famosa campana de Gauss), lo que facilita el cálculo de probabilidades, inferencias y simulaciones.</p></li>
+<li><p><strong>Papel clave en inferencia estadística</strong>: Muchos procedimientos estadísticos clásicos (contrastes de hipótesis, intervalos de confianza, regresión, etc.) se basan en la suposición de normalidad o aproximaciones normales.</p></li>
+<li><p><strong>Aplicaciones económicas y empresariales</strong>: Se utiliza para modelar el comportamiento de retornos financieros, distribución de ingresos, demanda agregada, tiempos de servicio, entre otros.</p></li>
+</ul>
+<p>En la práctica, es habitual trabajar con dos versiones de la distribución normal:</p>
+<ul>
+<li>La <strong>distribución normal general</strong> <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span> permite modelar directamente fenómenos con una media y una dispersión específicas, como salarios, costes o tiempos de producción.</li>
+<li>La <strong>distribución normal estándar</strong> <span class="math inline">\(\mathcal{N}(0, 1)\)</span> es una versión simplificada que tiene media 0 y desviación típica 1.</li>
+</ul>
+<p>Utilizar la versión estándar es muy útil porque:</p>
+<ul>
+<li>Permite usar tablas estadísticas universales sin necesidad de calcular integrales para cada caso.</li>
+<li>Facilita la resolución de ejercicios mediante la técnica de estandarización, transformando cualquier variable normal en una estándar.</li>
+<li>Hace posible comparar variables normales con diferentes unidades o escalas.</li>
+</ul>
+<div id="distribución-normal-mu-sigma.-mathcalnmu-sigma" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria continua <span class="math inline">\(X\)</span> sigue una distribución <strong>normal</strong> <span class="math inline">\((\mu, \sigma)\)</span> si su función de densidad de probabilidad es:</p>
+<p><span class="math display">\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x - \mu}{\sigma}\right)^2}, \quad x \in \mathbb{R} \]</span></p>
+<p>Se denota:</p>
+<p><span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma)\)</span></p>
+<p>donde:</p>
+<ul>
+<li><p><span class="math inline">\(\mu \in \mathbb{R}\)</span> es la media (centro de la distribución)</p></li>
+<li><p><span class="math inline">\(\sigma^2 &gt; 0\)</span> es la varianza (dispersión)</p></li>
+</ul>
+<p><strong>Caractrerísticas</strong></p>
+<ul>
+<li>La curva es simétrica respecto a <span class="math inline">\(\mu\)</span></li>
+<li>El valor de máxima densidad ocurre en <span class="math inline">\(x = \mu\)</span></li>
+<li>La función nunca es cero, pero tiende a cero en los extremos</li>
+<li>La distribución es unimodal</li>
+</ul>
+<p><strong>Momentos</strong></p>
+<ul>
+<li><p><span class="math inline">\(E(X)= \mu\)</span></p></li>
+<li><p><span class="math inline">\(V⁡(X) = \sigma^2\)</span></p></li>
+</ul>
+<p><strong>Representación gráfica</strong></p>
+<p>A continuación, se representa gráficamente la función de densidad de una variable aleatoria con distribución normal <span class="math inline">\(\mathcal{N}(2000, 300^2)\)</span>.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-normal-1.png" width="672" /></p>
+<p><strong>Cambios de Varianza y media en la Normal</strong> Efecto de un <strong>cambio en la varianza</strong>. La siguiente figura muestra cómo afecta el valor de la varianza a la forma de la función de densidad: a mayor varianza, más extendida (aplanada, platicúritca) es la curva; a menor varianza, más concentrada alrededor de la media (leptocúrtica).</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Efecto de un <strong>cambio en la media</strong>. La siguiente figura muestra cómo afecta el valor de la media a la localización de la distribución normal, manteniendo constante la varianza. La forma de la curva no cambia, pero su centro se desplaza ha derecha o izquierda en función del valor de la media.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><strong>Propiedad aditiva o reproductiva de la Normal</strong></p>
+<p>La distribución normal es <strong>reproductiva</strong>, lo que significa que la suma de variables aleatorias normales independientes también sigue una distribución normal.</p>
+<p>Si:</p>
+<p><span class="math display">\[
+X_1 \sim \mathcal{N}(\mu_1, \sigma_1), \quad X_2 \sim \mathcal{N}(\mu_2, \sigma_2), \quad X_1 \perp X_2
+\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[
+X_1 + X_2 \sim \mathcal{N}(\mu_1 + \mu_2, \sqrt{\sigma_1^2 + \sigma_2^2})
+\]</span></p>
+<p>Es decir:</p>
+<ul>
+<li>La media de la suma es <span class="math inline">\(\mu_1 + \mu_2\)</span></li>
+<li>La desviación típica de la suma es <span class="math inline">\(\sqrt{\sigma_1^2 + \sigma_2^2}\)</span></li>
+</ul>
+<p>Ejemplo: Si dos departamentos de una empresa tienen ingresos aleatorios independientes modelizados por normales, el ingreso total de la empresa también seguirá una distribución normal. La media del ingreso total será la suma de las medias, y la desviación típica reflejará la incertidumbre combinada de ambas fuentes.</p>
+<p>Si se <strong>generaliza</strong> esta propiedad (es decir, si se realiza un cambio en la media y en la varianza), es decir, si se hace una combinación lineal de un conjunto de variables alaeatorias normales la propiedad será:</p>
+<p><span class="math display">\[
+X_j \sim \mathcal{N}(\mu_j, \sigma_j) \quad \text{para } j = 1, \dots, n
+\]</span></p>
+<p>Y una combinación lineal de ellas (<span class="math inline">\(Y\)</span>) :</p>
+<p><span class="math display">\[
+Y = b + \sum_{j=1}^{n} a_j x_j
+\]</span></p>
+<p>donde <span class="math inline">\(b \in \mathbb{R}\)</span>, <span class="math inline">\(a_j \in \mathbb{R}\)</span>, y no todos los <span class="math inline">\(a_j\)</span> son cero. Entonces, <span class="math inline">\(Y\)</span> también sigue una distribución normal con:</p>
+<p><span class="math display">\[
+\omega \sim \mathcal{N}\left( b + \sum_{j=1}^{n} a_j \mu_j, \; \sqrt{\sum_{j=1}^{n} a_j^2 \sigma_j^2} \right)
+\]</span></p>
+<p><strong>Casos particulares de la propiedad aditivva o reproductiva</strong></p>
+<p>A continuación se presentan algunos casos particulares relevantes de la propiedad aditiva para la distribución normal:</p>
+<ol style="list-style-type: decimal">
+<li>Variables independientes con distinta media y desviación típica</li>
+</ol>
+<p>Si <span class="math inline">\(X_i \sim \mathcal{N}(\mu_i, \sigma_i)\)</span> y son independientes, la combinación lineal <span class="math inline">\(Y = \sum_{i =1}^{n} X_i\)</span> entonces:</p>
+<p><span class="math display">\[
+Y = X_1 + X_2 + \cdots + X_n \sim \mathcal{N}\left( \sum_{i=1}^{n} \mu_i, \; \sqrt{ \sum_{i=1}^{n} \sigma_i^2 } \right)
+\]</span></p>
+<p>2. Variables independientes con misma desviación típica <span class="math inline">\(\sigma\)</span></p>
+<p>Si <span class="math inline">\(X_i \sim \mathcal{N}(\mu_i, \sigma)\)</span> y son independientes, la combinación lineal <span class="math inline">\(Y = \sum_{i =1}^{n} X_i\)</span> entonces:</p>
+<p><span class="math display">\[
+Y \sim \mathcal{N}\left( \sum_{i=1}^{n} \mu_i, \; \sigma \sqrt{n} \right)
+\]</span></p>
+<p>3. Promedio de variables normales independientes con diferente media y desviación típica</p>
+<p>Si <span class="math inline">\(X_i \sim \mathcal{N}(\mu_i, \sigma_i)\)</span>, independientes, la combinación lineal <span class="math inline">\(Y = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span> entonces:</p>
+<p><span class="math display">\[
+Y = \frac{1}{n} \sum_{i=1}^{n} X_i \sim \mathcal{N}\left( \frac{1}{n} \sum_{i=1}^{n} \mu_i, \; \sqrt{ \frac{1}{n^2} \sum_{i=1}^{n} \sigma_i^2 } \right)
+\]</span></p>
+<p>4. Promedio de variables normales iid con misma media y desviación típica</p>
+<p>Si <span class="math inline">\(X_i \overset{iid}{\sim} \mathcal{N}(\mu, \sigma)\)</span>, la combinación lineal <span class="math inline">\(Y = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span> entonces:</p>
+<p><span class="math display">\[
+Y  \sim \mathcal{N}\left( \mu, \; \frac{\sigma}{\sqrt{n}} \right)
+\]</span></p>
+<p><strong>Estandarización</strong></p>
+<p>Cualquier variable normal <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma)\)</span> puede transformarse en una <strong>normal estándar</strong> <span class="math inline">\(Z \sim \mathcal{N}(0, 1)\)</span> mediante:</p>
+<p><span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span></p>
+<p>Esto permite usar tablas de la normal estándar para calcular probabilidades.</p>
+<p><strong>Ejercicio:</strong><br />
+El salario mensual de los empleados de una empresa sigue una distribución normal con media 2000€ y desviación típica 300€. Sea <span class="math inline">\(X \sim \mathcal{N}(2000, 300)\)</span>. Calcular:</p>
+<ol style="list-style-type: decimal">
+<li>La probabilidad de que un empleado cobre menos de 2300€<br />
+</li>
+<li>La probabilidad de que su salario esté entre 1850€ y 2150€</li>
+</ol>
+<p><strong>Solución:</strong></p>
+<p>Se estandariza:</p>
+<ul>
+<li><p><span class="math inline">\(Z_1 = \frac{2300 - 2000}{300} = 1\)</span></p></li>
+<li><p><span class="math inline">\(Z_2 = \frac{1850 - 2000}{300} = -0.5\)</span></p></li>
+<li><p><span class="math inline">\(Z_3 = \frac{2150 - 2000}{300} = 0.5\)</span></p></li>
+</ul>
+<p>Consultando la tabla de la normal estándar:</p>
+<ul>
+<li><p><span class="math inline">\(P(Z &lt; 1) = 0.8413\)</span></p></li>
+<li><p><span class="math inline">\(P(Z &lt; 0.5) = 0.6915\)</span></p></li>
+<li><p><span class="math inline">\(P(Z &lt; -0.5) = 0.3085\)</span></p></li>
+</ul>
+<p>En consecuencia</p>
+<p><span class="math inline">\(P(X &lt; 2300) = 0.8413\)</span></p>
+<p><span class="math inline">\(P(1850 &lt; X &lt; 2150) = 0.6915 - 0.3085 = 0.3830\)</span></p>
+<p><strong>Solución con R</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="modelos-de-probabilidad-continuos.html#cb6-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb6-2"><a href="modelos-de-probabilidad-continuos.html#cb6-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb6-3"><a href="modelos-de-probabilidad-continuos.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="modelos-de-probabilidad-continuos.html#cb6-4" tabindex="-1"></a><span class="co"># a) P(X &lt; 2300)</span></span>
+<span id="cb6-5"><a href="modelos-de-probabilidad-continuos.html#cb6-5" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2300</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
+<pre><code>## [1] 0.8413447</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="modelos-de-probabilidad-continuos.html#cb8-1" tabindex="-1"></a><span class="co"># b) P(1850 &lt; X &lt; 2150)</span></span>
+<span id="cb8-2"><a href="modelos-de-probabilidad-continuos.html#cb8-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2150</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">1850</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
+<pre><code>## [1] 0.3829249</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="modelos-de-probabilidad-continuos.html#cb10-1" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
+<span id="cb10-2"><a href="modelos-de-probabilidad-continuos.html#cb10-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> mu</span>
+<span id="cb10-3"><a href="modelos-de-probabilidad-continuos.html#cb10-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> sigma<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb10-4"><a href="modelos-de-probabilidad-continuos.html#cb10-4" tabindex="-1"></a>media</span></code></pre></div>
+<pre><code>## [1] 2000</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="modelos-de-probabilidad-continuos.html#cb12-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<pre><code>## [1] 90000</code></pre>
+<p><strong>Representación gráfica de las probabilidades</strong></p>
+<p>Visualizamos a continuación las dos situaciones planteadas en el ejemplo: la probabilidad de cobrar menos de 2300€, y la probabilidad de cobrar entre 1850€ y 2150€.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="distribución-normal-estándar-mathcaln0-1" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Definición</strong></p>
+<p>La <strong>distribución normal estándar</strong> es un caso particular de la distribución normal general en la que:</p>
+<p><span class="math inline">\(X \sim \mathcal{N}(0, 1)\)</span></p>
+<p>Es decir:</p>
+<ul>
+<li>Tiene <strong>media</strong> <span class="math inline">\(\mu = 0\)</span></li>
+<li>Tiene <strong>desviación típica</strong> <span class="math inline">\(\sigma = 1\)</span></li>
+</ul>
+<p>Su <strong>función de densidad</strong> es:</p>
+<p><span class="math inline">\(f(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}z^2}, \quad z \in \mathbb{R}\)</span></p>
+<p><strong>Propiedades</strong></p>
+<ul>
+<li>Es simétrica respecto al origen (<span class="math inline">\(z = 0\)</span>)</li>
+<li>La mayor parte del área bajo la curva se concentra entre <span class="math inline">\(z = -3\)</span> y <span class="math inline">\(z = 3\)</span></li>
+<li>El valor máximo de la densidad ocurre en <span class="math inline">\(z = 0\)</span></li>
+<li>Es unimodal y su forma es la famosa “campana de Gauss”</li>
+</ul>
+<p><strong>Importancia de la normal estándar</strong></p>
+<ul>
+<li>Permite el cálculo de probabilidades sin necesidad de integrar para cada caso</li>
+<li>Las tablas de la normal estándar están ampliamente disponibles y permiten resolver problemas de cualquier normal mediante un cambio de variable</li>
+</ul>
+<p>Representación gráfica</p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-normal-estandar-1.png" width="672" /></p>
+<p><strong>Ejemplo:</strong> El tiempo de atención al cliente en un servicio financiero se distribuye como <span class="math inline">\(X \sim \mathcal{N}(15, 2)\)</span>. Calcular la probabilidad de que un cliente tarde menos de 17 minutos en ser atendido.</p>
+<p>Solución:</p>
+<p><span class="math inline">\(Z = \frac{17 - 15}{2} = 1 \Rightarrow P(X &lt; 17) = P(Z &lt; 1) = 0.8413\)</span></p>
+<p>Aproximadamente el 84.13% de los clientes son atendidos en menos de 17 minutos.</p>
+<p><strong>Ejemplo en R</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="modelos-de-probabilidad-continuos.html#cb14-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb14-2"><a href="modelos-de-probabilidad-continuos.html#cb14-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb14-3"><a href="modelos-de-probabilidad-continuos.html#cb14-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> (<span class="dv">17</span> <span class="sc">-</span> mu)<span class="sc">/</span>sigma</span>
+<span id="cb14-4"><a href="modelos-de-probabilidad-continuos.html#cb14-4" tabindex="-1"></a><span class="fu">pnorm</span>(z) <span class="co"># P(Z &lt; 1)</span></span></code></pre></div>
+<pre><code>## [1] 0.8413447</code></pre>
+<p><strong>Cálculo de probabilidades directas usando tablas de la normal estándar (N(0, 1))</strong></p>
+<p>Las tablas que utilizamos en este curso proporcionan el valor de la probabilidad acumulada <strong>a la derecha</strong> del valor de <span class="math inline">\(z\)</span>, es decir: <span class="math inline">\(P(Z &gt; z)\)</span></p>
+<p>Por tanto:</p>
+<ul>
+<li><span class="math inline">\(P(Z &lt; z) = 1 - P(Z &gt; z)\)</span></li>
+<li><span class="math inline">\(P(Z &gt; z) = \text{valor directo de la tabla}\)</span></li>
+<li><span class="math inline">\(P(Z &lt; -z) = P(Z &gt; z)\)</span> (por simetría)</li>
+<li><span class="math inline">\(P(|Z| &lt; z) = 1 - 2 \cdot P(Z &gt; z)\)</span></li>
+</ul>
+<p><strong><em>Cálculo manual con tabla</em></strong></p>
+<p>Calcular:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(P(Z &gt; 1.25)\)</span></li>
+<li><span class="math inline">\(P(Z &lt; 1.25)\)</span></li>
+<li><span class="math inline">\(P(Z &lt; -1.25)\)</span></li>
+<li><span class="math inline">\(P(|Z| &lt; 1.25)\)</span></li>
+<li><span class="math inline">\(P(Z \geq -1.85)\)</span></li>
+<li><span class="math inline">\(P(0.20 &lt; Z \leq 1.95)\)</span></li>
+<li><span class="math inline">\(P(-1.60 \leq Z \leq -0.45)\)</span></li>
+</ol>
+<p>Solución:</p>
+<p>A partir de la tabla (observa el dibujo que aprece en R para saber que necesitas calcular):</p>
+<ul>
+<li><span class="math inline">\(P(Z &gt; 1.25) = 0.1056\)</span></li>
+<li><span class="math inline">\(P(Z \&lt; 1.25) = 1 - P(Z \geq 1.25)=1 - 0.1056 = 0.8944\)</span></li>
+<li><span class="math inline">\(P(Z &lt; -1.25) = P(Z &gt; 1.25) = 0.1056\)</span></li>
+<li><span class="math inline">\(P(|Z| &lt; 1.25) = 1 - 2 \cdot 0.1056 = 0.7888\)</span></li>
+<li><span class="math inline">\(P(Z \geq -1.85) = 1 - P(Z \leq -1.85) = 1 - 0.0322 = 0.9678\)</span></li>
+<li><span class="math inline">\(P(0.20 &lt; Z \leq 1.95) = P(Z \geq 0.20) - P(Z \geq 1.95)=0.4207-0.0256=0.3951\)</span></li>
+<li><span class="math inline">\(P(-1.60 \leq Z \leq -0.45)= P(Z ≥ 0.45) - P(Z ≥ 1.60)=0.3264-0.0548=0.2716\)</span></li>
+</ul>
+<p>Búsqueda en tablas de la distribución normal estándar</p>
+<p>La distribución normal estándar se denota como:</p>
+<p><span class="math inline">\(Z \sim \mathcal{N}(0, 1)\)</span></p>
+<p>Las tablas que utilizamos en este curso proporcionan el valor de la probabilidad acumulada <strong>a la derecha</strong> del valor de <span class="math inline">\(z\)</span>, es decir:</p>
+<p><span class="math inline">\(P(Z &gt; z)\)</span></p>
+<p>Por tanto:</p>
+<ul>
+<li><span class="math inline">\(P(Z &lt; z) = 1 - P(Z &gt; z)\)</span></li>
+<li><span class="math inline">\(P(Z &gt; z) = \text{valor directo de la tabla}\)</span></li>
+<li><span class="math inline">\(P(Z &lt; -z) = P(Z &gt; z)\)</span> (por simetría)</li>
+<li><span class="math inline">\(P(|Z| &lt; z) = 1 - 2 \cdot P(Z &gt; z)\)</span></li>
+</ul>
+<p><strong><em>Cálculo de probabilidades con R:</em></strong></p>
+<p>Nota: Antes de nada, las fórmulas de R caclulan por defecto las probabilidades acumuladas (es decir, desde el punto que se busca e inferiores a el <code>lower.tail=TRUE</code>). Sin embargo, las tablas impresas que empleamos están construidas hacia la derecha.</p>
+<ol style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(Z &gt; 1.25)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="modelos-de-probabilidad-continuos.html#cb16-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1056498</code></pre>
+<p>Representación gráfica:</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(Z &lt; 1.25)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="modelos-de-probabilidad-continuos.html#cb18-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8943502</code></pre>
+<p>Representación gráfica:</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(Z &lt; -1.25)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="modelos-de-probabilidad-continuos.html#cb20-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.25</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1056498</code></pre>
+<p>Representación gráfica:</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(|Z| &lt; 1.25)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="modelos-de-probabilidad-continuos.html#cb22-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.7887005</code></pre>
+<p>Representación gráfica:</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Calcular <span class="math inline">\(P(Z \geq -1.85)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="modelos-de-probabilidad-continuos.html#cb24-1" tabindex="-1"></a>z<span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.85</span></span>
+<span id="cb24-2"><a href="modelos-de-probabilidad-continuos.html#cb24-2" tabindex="-1"></a><span class="fu">pnorm</span>(z, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9678432</code></pre>
+<p><span class="math display">\[
+P(Z \geq -1.85) = 1 - P(Z \leq -1.85) = 1 - 0.0322 = 0.9678
+\]</span></p>
+<p>Representación gráfica</p>
+<pre><code>## [1] 0.9678432</code></pre>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li><span class="math inline">\(P(0.20 &lt; Z \leq 1,95)\)</span></li>
+</ol>
+<p>Calculamos:
+<span class="math display">\[
+P(0.20 &lt; Z \leq 1.95) = P(Z \geq 0.20) - P(Z \geq 1.95)
+\]</span></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="modelos-de-probabilidad-continuos.html#cb27-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb27-2"><a href="modelos-de-probabilidad-continuos.html#cb27-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">1.95</span></span>
+<span id="cb27-3"><a href="modelos-de-probabilidad-continuos.html#cb27-3" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="modelos-de-probabilidad-continuos.html#cb27-4" tabindex="-1"></a><span class="co"># Cálculo de la probabilidad</span></span>
+<span id="cb27-5"><a href="modelos-de-probabilidad-continuos.html#cb27-5" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(a, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(b, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-6"><a href="modelos-de-probabilidad-continuos.html#cb27-6" tabindex="-1"></a>prob</span></code></pre></div>
+<pre><code>## [1] 0.3951522</code></pre>
+<p>Representación gráfica</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li><span class="math inline">\(P(-1.60 \leq Z \leq -0.45)\)</span></li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="modelos-de-probabilidad-continuos.html#cb29-1" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.60</span></span>
+<span id="cb29-2"><a href="modelos-de-probabilidad-continuos.html#cb29-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.45</span></span>
+<span id="cb29-3"><a href="modelos-de-probabilidad-continuos.html#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="modelos-de-probabilidad-continuos.html#cb29-4" tabindex="-1"></a><span class="co"># Cálculo usando simetría: P(Z ≥ 0.45) - P(Z ≥ 1.60)</span></span>
+<span id="cb29-5"><a href="modelos-de-probabilidad-continuos.html#cb29-5" tabindex="-1"></a>prob2 <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>a2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>b2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb29-6"><a href="modelos-de-probabilidad-continuos.html#cb29-6" tabindex="-1"></a>prob2 </span></code></pre></div>
+<pre><code>## [1] -0.2715559</code></pre>
+<p>Representación gráfica</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><strong>Cálculo de probabilidad inversa de la Normal Estándar</strong></p>
+<p>De la misma forma que hemos calculado una serie de valores de probabilidades normales, cuando conocemos el suceso podemos encontrarnos en la situación inversa, es decir, conocida la probabilidad, hallar el valor de la abscisa.</p>
+<p>En estos casos es necesario, en la mayoría de las tablas de la distribución <span class="math inline">\(\mathcal{N}(0,1)\)</span>, determinar el <strong>signo de la abscisa</strong>, como se indica en el siguiente cuadro:</p>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Suceso
+</th>
+<th style="text-align:center;">
+&gt; 0,5
+</th>
+<th style="text-align:center;">
+&lt; 0,5
+</th>
+<th style="text-align:center;">
+= 0,5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(Z \geq a\)</span>
+</td>
+<td style="text-align:center;">
+Negativa
+</td>
+<td style="text-align:center;">
+Positiva
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(Z \leq a\)</span>
+</td>
+<td style="text-align:center;">
+Positiva
+</td>
+<td style="text-align:center;">
+Negativa
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Ejemplos</em></strong></p>
+<ul>
+<li>1. <span class="math inline">\(P(Z \geq a) = 0.35\)</span></li>
+</ul>
+<p>Como <span class="math inline">\(P(Z \geq a) = 0.35\)</span>, se cumple que:</p>
+<p><span class="math display">\[
+P(Z \leq a) = 1 - 0.35 = 0.65
+\]</span></p>
+<p>Buscamos el valor de <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(Z \leq a) = 0.65\)</span>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="modelos-de-probabilidad-continuos.html#cb31-1" tabindex="-1"></a><span class="co"># Inversa de la normal estándar</span></span>
+<span id="cb31-2"><a href="modelos-de-probabilidad-continuos.html#cb31-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
+<span id="cb31-3"><a href="modelos-de-probabilidad-continuos.html#cb31-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb31-4"><a href="modelos-de-probabilidad-continuos.html#cb31-4" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
+<pre><code>## [1] 0.3853205</code></pre>
+<p>En este caso <span class="math inline">\(a\)</span> es positivo.</p>
+<ul>
+<li>2. <span class="math inline">\(P(Z \geq a) = 0.65\)</span></li>
+</ul>
+<p>Como <span class="math inline">\(P(Z \geq a) = 0.65\)</span>, se cumple que:</p>
+<p><span class="math display">\[
+P(Z \leq a) = 1 - 0.65 = 0.35
+\]</span></p>
+<p>Buscamos el valor de <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(Z \leq a) = 0.35\)</span>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="modelos-de-probabilidad-continuos.html#cb33-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
+<span id="cb33-2"><a href="modelos-de-probabilidad-continuos.html#cb33-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb33-3"><a href="modelos-de-probabilidad-continuos.html#cb33-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
+<pre><code>## [1] -0.3853205</code></pre>
+<p>En este caso <span class="math inline">\(a\)</span> es negativo</p>
+<ul>
+<li>3. <span class="math inline">\(P(Z \leq a) = 0.65\)</span></li>
+</ul>
+<p>Buscamos directamente el valor de <span class="math inline">\(a\)</span> tal que:</p>
+<p><span class="math display">\[
+P(Z \leq a) = 0.65
+\]</span></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="modelos-de-probabilidad-continuos.html#cb35-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
+<span id="cb35-2"><a href="modelos-de-probabilidad-continuos.html#cb35-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb35-3"><a href="modelos-de-probabilidad-continuos.html#cb35-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
+<pre><code>## [1] 0.3853205</code></pre>
+<p>En este caso <span class="math inline">\(a\)</span> es positivo.</p>
+<ul>
+<li>4. <span class="math inline">\(P(Z \leq a) = 0.35\)</span></li>
+</ul>
+<p>Buscamos directamente el valor de <span class="math inline">\(a\)</span> tal que:</p>
+<p><span class="math display">\[
+P(Z \leq a) = 0.35
+\]</span></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="modelos-de-probabilidad-continuos.html#cb37-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
+<span id="cb37-2"><a href="modelos-de-probabilidad-continuos.html#cb37-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb37-3"><a href="modelos-de-probabilidad-continuos.html#cb37-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
+<pre><code>## [1] -0.3853205</code></pre>
+<p>En este caso <span class="math inline">\(a\)</span> es negativo.</p>
+</div>
+</div>
+<div id="distribuciones-derivadas-de-la-normal" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Distribuciones derivadas de la Normal<a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En muchas aplicaciones estadísticas no trabajamos directamente con variables que siguen una distribución normal, sino con funciones de variables normales. Estas funciones dan lugar a nuevas distribuciones conocidas como <strong>distribuciones derivadas de la normal</strong>.</p>
+<p>Las más importantes son:</p>
+<ul>
+<li>La <strong>distribución ji-cuadrado</strong> (<span class="math inline">\(\chi^2\)</span>), que aparece al elevar al cuadrado variables normales estándar.</li>
+<li>La <strong>distribución t de Student</strong>, que surge al estudiar la media muestral cuando la varianza poblacional es desconocida.</li>
+<li>La <strong>distribución F de Snedecor</strong>, que se utiliza al comparar dos varianzas.</li>
+</ul>
+<p>Estas distribuciones desempeñan un papel fundamental en la <strong>estadística inferencial</strong>, ya que permiten realizar estimaciones y contrastes de hipótesis sobre medias y varianzas, incluso cuando no se conoce toda la información poblacional.</p>
+<p>A continuación, estudiaremos cada una de estas distribuciones, su definición, propiedades, y cómo se relacionan con la distribución normal.</p>
+<div id="distribución-ji-cuadrado-chi2" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span><a href="#distribuci%C3%B3n-ji-cuadrado-chi2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>distribución chi-cuadrado</strong> (<span class="math inline">\(\chi^2\)</span>) es una distribución continua que aparece de forma natural cuando se eleva al cuadrado una variable normal estándar o se suman los cuadrados de varias variables normales estándar independientes.</p>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span> al ser elevada al cuadrado sigue una distribución <span class="math inline">\(\chi^2\)</span> con 1 grado de libertad:</p>
+<p><span class="math display">\[
+Z^2 \sim \chi^2_1
+\]</span></p>
+<p>Más generalmente, si <span class="math inline">\(Z_1, Z_2, \dots, Z_n\)</span> son variables normales estándar independientes:</p>
+<p><span class="math display">\[
+\chi^2_k = Z_1^2 + Z_2^2 + \dots + Z_n^2
+\]</span></p>
+<p>Entonces decimos que <span class="math inline">\(\chi^2_k\)</span> sigue una distribución chi-cuadrado con <span class="math inline">\(n\)</span> grados de libertad.</p>
+<p><strong>Función de densidad de la distribución</strong> <span class="math inline">\(\chi^2_n\)</span></p>
+<p>La función de densidad de una variable aleatoria que sigue una distribución <span class="math inline">\(\chi^2_n\)</span> con <span class="math inline">\(n\)</span> grados de libertad es:</p>
+<p><span class="math display">\[
+f(x, n) = \frac{1}{2^{n/2} \, \Gamma(n/2)} \, x^{(n/2 - 1)} \, e^{-x/2}, \quad x &gt; 0
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\cdot)\)</span> es la función gamma.</p>
+<p>La forma de su función de densidad depende de los grados de libertad de la distribución, aunque su presentación gráfica es una distribución asimétrica positiva bastante pronunciada.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-densidad-chi2-1.png" width="672" /></p>
+<p><strong>Propiedades básicas</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in [0, \infty)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(E(\chi^2_n) = n\)</span></li>
+<li><strong>Varianza</strong>: <span class="math inline">\(V(\chi^2_n) = 2n\)</span></li>
+<li>Es una distribución <strong>asimétrica positiva</strong>, aunque <strong>se aproxima a la normal</strong> a medida que aumentan los grados de libertad.</li>
+</ul>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución <span class="math inline">\(\chi^2\)</span> ocupa un lugar central en la estadística inferencial, ya que permite realizar contrastes de hipótesis y evaluar la variabilidad en distintos contextos. Su importancia va más allá de la teoría: en economía y en las ciencias sociales, se utiliza de forma habitual para validar modelos, analizar relaciones entre variables y verificar supuestos estadísticos clave. Entender la distribución <span class="math inline">\(\chi^2\)</span> y sus aplicaciones es esencial para interpretar correctamente los resultados de numerosos análisis cuantitativos en el ámbito económico.</p>
+<p>Algunas de sus aplicaciones clave son:</p>
+<ul>
+<li><p>Base para la construcción de la distribución <strong>t de Student</strong> y <strong>F de Snedecor</strong>. La distribución <span class="math inline">\(\chi^2\)</span> para construir dos de las distribuciones más importantes derivadas de la Normal.</p></li>
+<li><p><strong>Contrastes de independencia</strong>: en análisis de datos categóricos, se utiliza la <span class="math inline">\(\chi^2\)</span> para contrastar si dos variables (por ejemplo, nivel educativo y tipo de empleo) son independientes.</p></li>
+<li><p><strong>Contrastes de bondad de ajuste</strong>: permite evaluar si los datos observados siguen una determinada distribución teórica, útil en estudios de ingresos, gasto, precios, etc.</p></li>
+<li><p><strong>Contrastes de varianzas</strong>: en estudios de riesgo o volatilidad (por ejemplo, en finanzas), se emplea la <span class="math inline">\(\chi^2\)</span> para verificar si la variabilidad observada es compatible con ciertos supuestos.</p></li>
+<li><p><strong>Modelización econométrica</strong>: en pruebas de especificación o de homocedasticidad (como la prueba de Breusch-Pagan), la distribución <span class="math inline">\(\chi^2\)</span> aparece como distribución de referencia para contrastes.</p></li>
+<li><p><strong>Análisis multivariante</strong>: en modelos como el análisis factorial o la estimación por máxima verosimilitud, se utilizan contrastes basados en la <span class="math inline">\(\chi^2\)</span> para evaluar la adecuación del modelo a los datos.</p></li>
+</ul>
+<p><strong>Manejo de tablas</strong></p>
+<p>Para el cálculo de probabilidades asociadas a la distribución <span class="math inline">\(\chi^2\)</span>, es habitual recurrir a <strong>tablas estadísticas</strong> que proporcionan valores aproximados, del mismo modo que ocurre con la distribución normal <span class="math inline">\(\mathcal{N}(0,1)\)</span>.</p>
+<p>Estas tablas suelen proporcionar valores de la <strong>probabilidad del suceso</strong>:</p>
+<p><span class="math display">\[
+P(\chi_n^2 \geq a)
+\]</span></p>
+<p>Es decir, dan el área bajo la curva situada <strong>a la derecha del valor</strong> <span class="math inline">\(a\)</span>.</p>
+<p>A diferencia de la distribución normal, la distribución <span class="math inline">\(\chi^2\)</span>, no es simétrica y no admite valores negativos.</p>
+<p><strong>Interpretación gráfica</strong></p>
+<p>A continuación se representa el área sombreada que corresponde a <span class="math inline">\(P(\chi^2(n) \geq a)\)</span>:</p>
+<p><img src="chi%20prob.png" /></p>
+<p><strong>Ejemplo de búsqueda en tablas</strong></p>
+<ol style="list-style-type: decimal">
+<li><em>Cálculo de una probabilidad directa</em></li>
+</ol>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(3.94 \leq \chi_{10}^2 \leq 15.987)
+\]</span></p>
+<p>Utilizando la tabla:</p>
+<ul>
+<li><span class="math inline">\(P(\chi_{10}^2 \geq 3.94) = 0.95\)</span></li>
+<li><span class="math inline">\(P(\chi_{10}^2 \geq 15.987) = 0.05\)</span></li>
+</ul>
+<p>Por tanto:</p>
+<p><span class="math display">\[
+P(3.94 \leq \chi_{10}^2 \leq 15.987) = F(3.94)-F(15.987)= 0.95 - 0.05 = 0.90
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Cálculo de probabilidad inversa (calculo de la probabilidad a partir de un valor)</em></li>
+</ol>
+<p>Sabemos que:</p>
+<p><span class="math display">\[
+P(8.231 \leq \chi_{19}^2 \leq a) = 0.725
+\]</span></p>
+<p>Entonces:</p>
+<ul>
+<li><span class="math inline">\(P(\chi_{19}^2 \geq 8.231) = 0.95\)</span></li>
+<li>Necesitamos encontrar <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(\chi_{19}^2 \geq a) = 0.225\)</span></li>
+</ul>
+<p>Buscando en la tabla para <span class="math inline">\(\chi_{19}^2\)</span>, encontramos:</p>
+<p><span class="math display">\[
+a \approx 12.338
+\]</span></p>
+<p><strong>Ejemplos de cálculo de probabilidades con R</strong></p>
+<p>- Probabilidad directa con <code>pchisq</code></p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(\chi_{12}^2 \leq 18.55)
+\]</span></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="modelos-de-probabilidad-continuos.html#cb39-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb39-2"><a href="modelos-de-probabilidad-continuos.html#cb39-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(<span class="fl">18.55</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
+<span id="cb39-3"><a href="modelos-de-probabilidad-continuos.html#cb39-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.8986</span></span></code></pre></div>
+<pre><code>## [1] 0.9000175</code></pre>
+<p>Búsqueda dprobabilidad inversa con <code>qchisq</code></p>
+<p>Queremos encontrar el valor <span class="math inline">\(a\)</span> tal que:</p>
+<p><span class="math display">\[
+P(\chi_{15}^2 \geq a) = 0.10
+\]</span></p>
+<p>Es decir, buscamos el percentil que deja un 10% de probabilidad a la derecha.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="modelos-de-probabilidad-continuos.html#cb41-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(chi² ≥ a) = 0.10 → cola derecha</span></span>
+<span id="cb41-2"><a href="modelos-de-probabilidad-continuos.html#cb41-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque calcula P(X ≤ a)</span></span>
+<span id="cb41-3"><a href="modelos-de-probabilidad-continuos.html#cb41-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 22.307</span></span></code></pre></div>
+<pre><code>## [1] 22.30713</code></pre>
+</div>
+<div id="distribución-t-de-student-t_n" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Distribución t de Student <span class="math inline">\((t_n)\)</span><a href="#distribuci%C3%B3n-t-de-student-t_n" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>distribución t de Student</strong> es una distribución continua que surge de forma natural cuando se trabaja con muestras pequeñas de una población normal, especialmente cuando la varianza poblacional es desconocida.</p>
+<p><strong>Definición</strong></p>
+<p>Si <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span> y <span class="math inline">\(U \sim \chi^2_n\)</span>, con <span class="math inline">\(Z\)</span> y <span class="math inline">\(U\)</span> independientes, entonces la variable:</p>
+<p><span class="math display">\[
+T = \frac{Z}{\sqrt{U/n}} \sim t_n
+\]</span></p>
+<p>sigue una distribución t de Student con <span class="math inline">\(n\)</span> grados de libertad.</p>
+<p><strong>Función de densidad de la distribución</strong> <span class="math inline">\(t_n\)</span></p>
+<p>La función de densidad de la distribución t de Student con <span class="math inline">\(n\)</span> grados de libertad es:</p>
+<p><span class="math display">\[
+f(x, n) = \frac{\Gamma\left( \frac{n+1}{2} \right)}{\sqrt{n\pi} \, \Gamma\left( \frac{n}{2} \right)} \left(1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}}, \quad x \in \mathbb{R}
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\cdot)\)</span> es la función gamma.</p>
+<p>Esta distribución tiene <strong>cola más pesada</strong> que la normal, y tiende a la normal estándar conforme aumentan los grados de libertad.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-densidad-t-1.png" width="672" /></p>
+<p><strong>Propiedades básicas</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in (-\infty, \infty)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(E(t_n) = 0\)</span> si <span class="math inline">\(n &gt; 1\)</span></li>
+<li><strong>Varianza</strong>: <span class="math inline">\(V(t_n) = \frac{n}{n-2}\)</span> si <span class="math inline">\(n &gt; 2\)</span></li>
+<li>Tiene una forma similar a la normal, pero con colas más pesadas (mayor probabilidad en los extremos).</li>
+<li>A medida que <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(t_n \to \mathcal{N}(0,1)\)</span></li>
+</ul>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución t de Student es fundamental en estadística inferencial y análisis económico, especialmente cuando trabajamos con muestras pequeñas y no conocemos la varianza poblacional. Algunas de sus aplicaciones clave son:</p>
+<ul>
+<li>Estimación y contrastes de hipótesis para <strong>medias</strong> con varianza desconocida.</li>
+<li>Construcción de <strong>intervalos de confianza</strong> en econometría y análisis financiero.</li>
+<li>Aplicaciones en <strong>tests de regresión</strong> (por ejemplo, para contrastar si un coeficiente es significativamente distinto de cero).</li>
+<li>Evaluación de resultados experimentales o de encuestas en economía con tamaños muestrales limitados.</li>
+</ul>
+<p><strong>Manejo de tablas</strong></p>
+<p>Las tablas de la t de Student proporcionan valores críticos <span class="math inline">\(a\)</span> tales que:</p>
+<p><span class="math display">\[
+P(T_n \geq a) \quad \text{o} \quad P(|T_n| \geq a)
+\]</span></p>
+<p>Dado que la t es <strong>simétrica respecto a 0</strong>, se pueden obtener valores de colas unilaterales y bilaterales. A diferencia de la <span class="math inline">\(\chi^2\)</span>, admite valores negativos y positivos, y su interpretación es muy parecida a la de la normal estándar.</p>
+<p><strong>Ejemplo gráfico</strong></p>
+<p>Se muestra el área a la derecha de un valor <span class="math inline">\(a\)</span> para la t de Student con n grados de libertad:</p>
+<p><img src="t%20prob.png" /></p>
+<p><strong>Ejemplos de búsqueda en tablas</strong></p>
+<ol style="list-style-type: decimal">
+<li><em>Búsqueda directa de una probabilidad</em></li>
+</ol>
+<p>Sea <span class="math inline">\(T \sim t_{12}\)</span>. Calcula <span class="math inline">\(P(T \geq 1.782)\)</span>.</p>
+<p>Resolución:</p>
+<ol style="list-style-type: decimal">
+<li>Consultamos la tabla t para <span class="math inline">\(n = 12\)</span> y buscamos el valor <span class="math inline">\(t = 1.782\)</span>.</li>
+<li>En las tablas t de cola derecha, encontramos que:</li>
+</ol>
+<p><span class="math display">\[
+P(T \geq 1.782) = 0.05
+\]</span></p>
+<p>La probabilidad de que <span class="math inline">\(T\)</span> tome un valor mayor o igual que 1.782 es 0.05.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Búsqueda inversa de un valor crítico</em></li>
+</ol>
+<p>Sea <span class="math inline">\(T \sim t_{15}\)</span>. ¿Qué valor de <span class="math inline">\(t\)</span> cumple que <span class="math inline">\(P(T \geq t) = 0.10\)</span>?</p>
+<p>Resolución:</p>
+<ol style="list-style-type: decimal">
+<li>Buscamos en la tabla t, en la fila correspondiente a <span class="math inline">\(n = 15\)</span> y la columna de probabilidad 0.10 (cola derecha).</li>
+<li>Encontramos:</li>
+</ol>
+<p><span class="math display">\[
+t = 1.341
+\]</span></p>
+<p>El valor crítico que deja una probabilidad de 0.10 a la derecha en una t de Student con 15 grados de libertad es <span class="math inline">\(t = 1.341\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><em>Probabilidad bilateral centrada en 0</em></li>
+</ol>
+<p>Sea <span class="math inline">\(T \sim t_{10}\)</span>. Calcula <span class="math inline">\(P(-2.228 \leq T \leq 2.228)\)</span>.</p>
+<p>Resolución:</p>
+<ol style="list-style-type: decimal">
+<li>Dado que la distribución t es simétrica, tenemos:</li>
+</ol>
+<p><span class="math display">\[
+P(-2.228 \leq T \leq 2.228) = 1 - 2 \cdot P(T \geq 2.228)
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>En la tabla, para <span class="math inline">\(n = 10\)</span> y <span class="math inline">\(t = 2.228\)</span>, encontramos:</li>
+</ol>
+<p><span class="math display">\[
+P(T \geq 2.228) = 0.025
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Por tanto:</li>
+</ol>
+<p><span class="math display">\[
+P(-2.228 \leq T \leq 2.228) = 1 - 2 \cdot 0.025 = 0.95
+\]</span></p>
+<p>El 95% de la distribución t con 10 grados de libertad se encuentra entre -2.228 y 2.228.</p>
+<p><strong>Ejemplos de cálculo de probabilidades con R</strong></p>
+<p><em>Probabilidad directa con <code>pt</code></em></p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(T_{12} \leq 1.782)
+\]</span></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="modelos-de-probabilidad-continuos.html#cb43-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb43-2"><a href="modelos-de-probabilidad-continuos.html#cb43-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pt</span>(<span class="fl">1.782</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
+<span id="cb43-3"><a href="modelos-de-probabilidad-continuos.html#cb43-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9499</span></span></code></pre></div>
+<pre><code>## [1] 0.9499756</code></pre>
+<p><strong><em>Probabilidad inversa con <code>qt</code></em></strong></p>
+<p>Queremos encontrar el valor <span class="math inline">\(a\)</span> tal que:</p>
+<p><span class="math display">\[
+P(T_{15} \geq a) = 0.10
+\]</span></p>
+<p>Es decir, buscamos el percentil que deja un 10% de probabilidad a la derecha.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="modelos-de-probabilidad-continuos.html#cb45-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(t ≥ a) = 0.10</span></span>
+<span id="cb45-2"><a href="modelos-de-probabilidad-continuos.html#cb45-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque qt calcula P(t ≤ a)</span></span>
+<span id="cb45-3"><a href="modelos-de-probabilidad-continuos.html#cb45-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 1.3406</span></span></code></pre></div>
+<pre><code>## [1] 1.340606</code></pre>
+</div>
+<div id="distribución-f-de-snedecor-fn_1n_2" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>distribución F de Snedecor</strong> es una distribución continua que surge al comparar dos varianzas muestrales provenientes de poblaciones normales. Es fundamental en el análisis de la varianza (ANOVA) y en contrastes de hipótesis sobre varianzas.</p>
+<p><strong>Definición</strong></p>
+<p>Si <span class="math inline">\(U_1 \sim \chi^2_{n_1}\)</span> y <span class="math inline">\(U_2 \sim \chi^2_{n_2}\)</span>, independientes, entonces la variable:</p>
+<p><span class="math display">\[
+F = \frac{U_1 / n_1}{U_2 / n_2} \sim F_{n_1, n_2}
+\]</span></p>
+<p>sigue una distribución F con <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> grados de libertad en el numerador y denominador, respectivamente.</p>
+<p><strong>Función de densidad de la distribución</strong> <span class="math inline">\(F_{n_1, n_2}\)</span></p>
+<p>La función de densidad de la distribución F con <span class="math inline">\(n_1\)</span> grados de libertad en el numerador y <span class="math inline">\(n_2\)</span> en el denominador es:</p>
+<p><span class="math display">\[
+f(x) = \frac{\left(\frac{n_1}{n_2}\right)^{n_1/2} \Gamma\left(\frac{n_1 + n_2}{2}\right)}{\Gamma\left(\frac{n_1}{2}\right) \Gamma\left(\frac{n_2}{2}\right)} \cdot x^{(n_1/2 - 1)} \cdot \left(1 + \frac{n_1}{n_2}x\right)^{-\frac{n_1 + n_2}{2}}, \quad x &gt; 0
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\cdot)\)</span> es la función gamma.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><strong>Propiedades básicas</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in (0, \infty)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(E(F_{n_1, n_2}) = \frac{n_2}{n_2 - 2}\)</span>, si <span class="math inline">\(n_2 &gt; 2\)</span></li>
+<li><strong>Varianza</strong>: más compleja, pero decrece al aumentar los grados de libertad.</li>
+<li>Es una distribución <strong>asimétrica positiva</strong>.</li>
+<li>A medida que <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> aumentan, la distribución F se aproxima a una distribución normal.</li>
+</ul>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución F es especialmente útil en:</p>
+<ul>
+<li><strong>Contrastes de varianzas</strong>: comparar la variabilidad entre dos poblaciones.</li>
+<li><strong>Análisis de la varianza (ANOVA)</strong>: comparar medias de varios grupos.</li>
+<li><strong>Contrastes sobre modelos de regresión</strong>: evaluar si un modelo explica significativamente la variable dependiente.</li>
+<li><strong>Econometría</strong>: pruebas globales de significatividad en modelos lineales.</li>
+</ul>
+<p><strong>Manejo de tablas</strong></p>
+<p>Las tablas de la F de Snedecor suelen proporcionar valores críticos <span class="math inline">\(x\)</span> tales que:</p>
+<p><span class="math display">\[
+P(F_{n_1, n_2} \geq x)
+\]</span></p>
+<p>Es decir, indican el valor de <span class="math inline">\(x\)</span> a partir del cual queda una cierta probabilidad a la derecha (cola superior). Como la distribución F <strong>no es simétrica</strong> ni admite valores negativos, siempre se calcula el área bajo la cola derecha.</p>
+<p><strong>Ejemplo gráfico</strong></p>
+<p>Se muestra el área a la derecha de un valor <span class="math inline">\(x\)</span> en una distribución <span class="math inline">\(F_{n_1, n_2}\)</span>:</p>
+<p><img src="F%20prob.png" /></p>
+<p><strong>Cálculo de probabilidades usando tablas</strong></p>
+<p>Las tablas de la distribución F de Snedecor suelen mostrar <strong>valores críticos</strong> <span class="math inline">\(x\)</span> tales que:</p>
+<p><span class="math display">\[
+P(F_{n_1, n_2} \geq x) = \alpha
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li><em>Búsqueda directa de una probabilidad</em></li>
+</ol>
+<p>Sea <span class="math inline">\(F \sim F_{5, 10}\)</span>. Calcula <span class="math inline">\(P(F \geq 3.33)\)</span>.</p>
+<p>Resolución:</p>
+<ol style="list-style-type: decimal">
+<li>Consultamos la tabla F en la fila correspondiente a <span class="math inline">\(n_1 = 5\)</span> y la columna <span class="math inline">\(n_2 = 10\)</span>.</li>
+<li>En muchas tablas aparece que:</li>
+</ol>
+<p><span class="math display">\[
+F_{5, 10}(0.05) = 3.33
+\]</span></p>
+<p>Esto indica que:</p>
+<p><span class="math display">\[
+P(F \geq 3.33) = 0.05
+\]</span></p>
+<p>La probabilidad de que <span class="math inline">\(F\)</span> tome un valor mayor o igual a 3.33 es 0.05.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Búsqueda inversa de un valor crítico</em></li>
+</ol>
+<p>Sea <span class="math inline">\(F \sim F_{8, 12}\)</span>. ¿Qué valor <span class="math inline">\(x\)</span> cumple que <span class="math inline">\(P(F \geq x) = 0.01\)</span>?</p>
+<p>Resolución:</p>
+<ol style="list-style-type: decimal">
+<li>Buscamos en la tabla F en la fila de <span class="math inline">\(n_1 = 8\)</span> y columna <span class="math inline">\(n_2 = 12\)</span>, en el nivel <span class="math inline">\(\alpha = 0.01\)</span>.</li>
+<li>Encontramos:</li>
+</ol>
+<p><span class="math display">\[
+F_{8, 12}(0.01) = 5.40
+\]</span></p>
+<p>El valor crítico que deja un 1% de probabilidad a la derecha es <span class="math inline">\(x = 5.40\)</span>.</p>
+<p><strong>Ejemplos de cálculo de probabilidades con R</strong></p>
+<p><em>- Probabilidad directa con <code>pf</code></em></p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(F_{5, 10} \leq 3.33)
+\]</span></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="modelos-de-probabilidad-continuos.html#cb47-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb47-2"><a href="modelos-de-probabilidad-continuos.html#cb47-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pf</span>(<span class="fl">3.33</span>, <span class="at">df1 =</span> <span class="dv">5</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
+<span id="cb47-3"><a href="modelos-de-probabilidad-continuos.html#cb47-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9502</span></span></code></pre></div>
+<pre><code>## [1] 0.9501687</code></pre>
+<p><em>- Probabilidad inversa con <code>qf</code></em></p>
+<p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
+<p><span class="math display">\[P(F_{8, 12} \geq x) = 0.05\]</span></p>
+<p>Es decir, buscamos el percentil que deja un 5% de probabilidad a la derecha.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="modelos-de-probabilidad-continuos.html#cb49-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(F ≥ x) = 0.05</span></span>
+<span id="cb49-2"><a href="modelos-de-probabilidad-continuos.html#cb49-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.95</span>, <span class="at">df1 =</span> <span class="dv">8</span>, <span class="at">df2 =</span> <span class="dv">12</span>)  <span class="co"># usamos 0.95 porque qf calcula P(F ≤ x)</span></span>
+<span id="cb49-3"><a href="modelos-de-probabilidad-continuos.html#cb49-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 2.9012</span></span></code></pre></div>
+<pre><code>## [1] 2.848565</code></pre>
+</div>
+<div id="aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal<a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Distribución</strong> <span class="math inline">\(\chi^2\)</span></p>
+<ul>
+<li><p><strong>Evaluación del perfil del consumidor</strong>: mediante tablas de contingencia y pruebas de independencia (basadas en <span class="math inline">\(\chi^2\)</span>), se puede estudiar si variables como el género y la preferencia por un producto están relacionadas.</p></li>
+<li><p><strong>Análisis de resultados electorales</strong>: se puede contrastar si la distribución de votos difiere de lo esperado por azar entre distintas regiones o franjas de edad.</p></li>
+<li><p><strong>Control de calidad</strong>: en la industria, la <span class="math inline">\(\chi^2\)</span> se usa para comprobar si la variabilidad de los procesos se mantiene dentro de lo permitido por la normativa.</p></li>
+</ul>
+<p><strong>Distribución t de Student</strong></p>
+<ul>
+<li><p><strong>Estudios de mercado con muestras pequeñas</strong>: al analizar encuestas piloto sobre precios, demanda o satisfacción de clientes, se utiliza la t para estimar medias o realizar contrastes sin conocer la varianza poblacional.</p></li>
+<li><p><strong>Evaluación de impacto económico local</strong>: en proyectos de desarrollo o inversión, si se toman muestras pequeñas (por ejemplo, ventas antes y después de una intervención), la t permite estimar si el cambio es significativo.</p></li>
+<li><p><strong>Detección de fraude o manipulación</strong>: al comparar medias de ingresos o gastos entre grupos (empresas, municipios), se puede detectar comportamientos anómalos mediante contrastes t.</p></li>
+</ul>
+<p><strong>Distribución F de Snedecor</strong></p>
+<ul>
+<li><p><strong>Comparación de modelos económicos</strong>: en econometría, la F se utiliza para comparar modelos de regresión (por ejemplo, uno restringido y uno general) y decidir si añadir nuevas variables mejora significativamente la explicación.</p></li>
+<li><p><strong>Análisis del rendimiento académico</strong>: si se quiere saber si las medias de distintas titulaciones universitarias (o facultades) difieren entre sí, se aplica ANOVA, que se basa en la F.</p></li>
+<li><p><strong>Estudios sobre desigualdad</strong>: en análisis territorial, se puede utilizar la F para estudiar si la variabilidad en el nivel de renta entre regiones es significativamente distinta de la variabilidad dentro de cada región.</p></li>
+</ul>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Distribución
+</th>
+<th style="text-align:center;">
+Aplicaciones en Ciencias Sociales
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math display">\[\chi^2\]</span>
+</td>
+<td style="text-align:center;">
+• Pruebas de independencia (datos categóricos)<br>• Contrastes de bondad de ajuste<br>• Control de calidad<br>• Validación de modelos en economía y sociología
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math display">\[t_n\]</span>
+</td>
+<td style="text-align:center;">
+• Estimación y contraste de medias con muestras pequeñas<br>• Análisis de impacto en encuestas piloto<br>• Evaluación de intervenciones económicas<br>• Detección de anomalías o fraude
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math display">\[F_{n_1,n_2}\]</span>
+</td>
+<td style="text-align:center;">
+• Comparación de modelos en regresión<br>• Análisis de la varianza (ANOVA)<br>• Estudios regionales de desigualdad<br>• Contrastes globales de significatividad
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="distribución-exponencial-explambda" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span><a href="#distribuci%C3%B3n-exponencial-explambda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribución <strong>exponencial</strong> es un caso particular de la distribución Gamma, y se utiliza frecuentemente para modelar el <strong>tiempo entre eventos</strong> en un proceso aleatorio que ocurre a una tasa constante, como llegadas de clientes, fallos de sistemas o accidentes.</p>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> tiene una distribución <strong>exponencial</strong> de parámetro <span class="math inline">\(\lambda &gt; 0\)</span> <span class="math inline">\(X \sim Exp(\lambda)\)</span> si su función de densidad es:</p>
+<p><span class="math display">\[
+f(x; \lambda) = \lambda e^{-\lambda x}, \quad x &gt; 0
+\]</span></p>
+<p><strong>Función de distribución</strong></p>
+<p>La función de distribución acumulada es:</p>
+<p><span class="math display">\[
+F(x) = P(X \leq x) = 1 - e^{-\lambda x}, \quad x &gt; 0
+\]</span></p>
+<p>Por tanto, la probabilidad de que el evento <strong>aún no haya ocurrido antes de tiempo</strong> <span class="math inline">\(x\)</span> es:</p>
+<p><span class="math display">\[
+P(X &gt; x) = e^{-\lambda x}
+\]</span></p>
+<p><strong>Relación con la distribución Gamma</strong></p>
+<p>La distribución exponencial es un caso particular de la distribución Gamma:</p>
+<p><span class="math display">\[
+\text{Exponencial}(\lambda) \equiv \text{Gamma}(\alpha = 1, \beta = 1/\lambda)
+\]</span></p>
+<p><strong>Propiedades</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in (0, \infty)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(E(X) = \frac{1}{\lambda}\)</span></li>
+<li><strong>Varianza</strong>: <span class="math inline">\(V(X) = \frac{1}{\lambda^2}\)</span></li>
+<li><strong>Asimétrica positiva</strong>, con una larga cola hacia la derecha.</li>
+<li>Cumple la <strong>propiedad de falta de memoria</strong>:</li>
+</ul>
+<p><span class="math display">\[
+P(X &gt; s + t \mid X &gt; s) = P(X &gt; t)
+\]</span></p>
+<p>Esta propiedad significa que el tiempo esperado restante <strong>no depende del tiempo ya transcurrido</strong>.</p>
+<p><strong>Función de densidad para distintos valores de</strong> <span class="math inline">\(\lambda\)</span></p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-exponencial-1.png" width="672" /></p>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución exponencial es una de las más utilizadas en estadística aplicada debido a su simplicidad y a que describe adecuadamente fenómenos donde interesa medir el <strong>tiempo hasta que ocurre un evento</strong>.</p>
+<p>Algunas de sus aplicaciones más relevantes son:</p>
+<ul>
+<li><p><strong>Modelado del tiempo entre eventos en procesos de Poisson</strong>: En procesos en los que los eventos ocurren de forma aleatoria pero a una tasa constante (por ejemplo, llamadas a un call center, llegadas de clientes a un establecimiento o fallos de una máquina), el tiempo entre dos eventos consecutivos sigue una distribución exponencial. Esto permite simular, prever y gestionar recursos en sistemas de atención, logística o producción.</p></li>
+<li><p><strong>Análisis de supervivencia</strong>: En estudios médicos y de ingeniería, se utiliza para modelar el tiempo hasta que ocurre un evento como la muerte, una recaída, o el fallo de un componente. Aunque la exponencial es un caso particular dentro del análisis de supervivencia, sirve como modelo base cuando el <strong>riesgo es constante</strong> a lo largo del tiempo.</p></li>
+<li><p><strong>Economía y finanzas</strong>: La exponencial permite modelar el tiempo entre:</p>
+<ul>
+<li>operaciones bursátiles o transacciones bancarias,</li>
+<li>impagos de clientes,</li>
+<li>reclamaciones de seguros,</li>
+<li>cambios de régimen en modelos de series temporales.</li>
+</ul>
+<p>Su facilidad de interpretación la hace útil también como aproximación inicial en estudios de fiabilidad o de riesgo.</p></li>
+<li><p><strong>Procesos industriales y mantenimiento</strong>: En entornos industriales, se usa para estimar la duración media de una máquina antes de que falle. Esto permite optimizar el mantenimiento preventivo. Si los fallos ocurren al azar y con una tasa constante, entonces el tiempo hasta el fallo sigue una distribución exponencial.</p></li>
+</ul>
+<p><strong>Ejemplos de cálculo con R</strong></p>
+<p><em>- 1: Cálculo de la Probabilidad directa</em></p>
+<p>Sea <span class="math inline">\(X \sim \text{Exponencial}(0.25)\)</span>, calcular <span class="math inline">\(P(X \leq 5)\)</span>, es decir, la probabilidad de que el evento ocurra antes de 5 unidades de tiempo:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="modelos-de-probabilidad-continuos.html#cb51-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="dv">5</span>, <span class="at">rate =</span> <span class="fl">0.25</span>)</span>
+<span id="cb51-2"><a href="modelos-de-probabilidad-continuos.html#cb51-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.7135</span></span></code></pre></div>
+<pre><code>## [1] 0.7134952</code></pre>
+<p><em>- 2: Cálculo de la Probabilidad inversa</em></p>
+<p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
+<p><span class="math display">\[
+P(X \geq x) = 0.1, \quad X \sim \text{Exponencial}(\lambda = 0.5)
+\]</span></p>
+<p>Dado que la función <code>qexp()</code> calcula la probabilidad acumulada a la izquierda <span class="math inline">\(P(X \leq x)\)</span>, necesitamos encontrar el cuantil correspondiente al 90%:</p>
+<p><span class="math display">\[
+P(X \geq x) = 0.1 \quad \Rightarrow \quad P(X \leq x) = 0.9
+\]</span></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="modelos-de-probabilidad-continuos.html#cb53-1" tabindex="-1"></a><span class="co"># Valor crítico correspondiente al percentil 90</span></span>
+<span id="cb53-2"><a href="modelos-de-probabilidad-continuos.html#cb53-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qexp</span>(<span class="fl">0.9</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
+<span id="cb53-3"><a href="modelos-de-probabilidad-continuos.html#cb53-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 4.605</span></span></code></pre></div>
+<pre><code>## [1] 4.60517</code></pre>
+</div>
+<div id="distribución-gamma-gammaalpha" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span><a href="#distribuci%C3%B3n-gamma-gammaalpha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La <strong>distribución Gamma</strong> es una distribución continua que generaliza la distribución <span class="math inline">\(\chi^2\)</span> y se utiliza en contextos donde modelamos tiempos de espera, vida útil de productos o fenómenos con tasas constantes.</p>
+<p>La función gamma se define mediante la siguiente integral:</p>
+<p><span class="math display">\[
+\Gamma(p) = \int_0^{\infty} x^{p - 1} e^{-x} \, dx \quad \text{si } x &gt; 0 \text{ y } p &gt; 0.
+\]</span></p>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> sigue una distribución Gamma de parámetros <span class="math inline">\(\alpha &gt; 0\)</span> (parámetro de forma) y <span class="math inline">\(\beta &gt; 0\)</span> (parámetro de escala) <span class="math inline">\(X \sim Ga(\alpha, \beta)\)</span> si su función de densidad es:</p>
+<p><span class="math display">\[
+f(x; \alpha, \beta) = \frac{1}{\Gamma(\alpha) \beta^\alpha} \, x^{\alpha - 1} e^{-x / \beta}, \quad x &gt; 0
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\alpha)\)</span> es la función gamma.</p>
+<p><strong>Función de densidad para diferentes valores de</strong> <span class="math inline">\(\alpha\)</span></p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-densidad-gamma-1.png" width="672" /></p>
+<p><strong>Propiedades básicas</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in (0, \infty)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(E(X) = \alpha \beta\)</span></li>
+<li><strong>Varianza</strong>: <span class="math inline">\(V(X) = \alpha \beta^2\)</span></li>
+<li>Si <span class="math inline">\(\alpha = n/2\)</span>, <span class="math inline">\(\beta = 2\)</span> → <span class="math inline">\(X \sim \chi^2_n\)</span></li>
+<li>Para <span class="math inline">\(\alpha = 1\)</span>, se convierte en una <strong>distribución exponencial</strong>.</li>
+</ul>
+<p><strong>Aplicaciones</strong></p>
+<ul>
+<li>Modelización de <strong>tiempos de espera</strong> hasta la ocurrencia de un evento (por ejemplo, averías, llegadas de clientes).</li>
+<li>Análisis de la <strong>vida útil de productos o componentes</strong>.</li>
+<li>En <strong>seguros</strong>, para modelar el importe de reclamaciones agregadas.</li>
+<li>En <strong>hidrología</strong>, para modelar el volumen de lluvias extremas.</li>
+<li>En <strong>teoría de colas y procesos de Poisson</strong>, al estudiar el tiempo hasta el <span class="math inline">\(\alpha\)</span>-ésimo evento.</li>
+</ul>
+<p><strong>Ejemplos de cálculo de probabilidades con R</strong></p>
+<p>Pasamos directamente al cálculo en R porque las probabilidades de esta distribución no suele buscarse con tablas estadísticas.</p>
+<p><em>- 1. Probabilidad directa con <code>pgamma</code></em></p>
+<p>Queremos calcular:</p>
+<p><span class="math display">\[
+P(X \leq 6), \quad X \sim \text{Gamma}(\alpha = 3, \beta = 2)
+\]</span></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="modelos-de-probabilidad-continuos.html#cb55-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pgamma</span>(<span class="dv">6</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
+<span id="cb55-2"><a href="modelos-de-probabilidad-continuos.html#cb55-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.5768</span></span></code></pre></div>
+<pre><code>## [1] 0.5768099</code></pre>
+<p><em>- 2. Valor crítico (probabilidad inversa) con <code>qgamma</code></em></p>
+<p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
+<p><span class="math display">\[
+P(X \geq x) = 0.05, \quad X \sim \text{Gamma}(\alpha = 3, \beta = 2)
+\]</span></p>
+<p>Dado que la función <code>qgamma</code> calcula la probabilidad acumulada a la izquierda <span class="math inline">\(P(X \leq x)\)</span>, buscamos:</p>
+<p><span class="math display">\[
+P(X \leq x) = 0.95
+\]</span></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="modelos-de-probabilidad-continuos.html#cb57-1" tabindex="-1"></a><span class="co"># Valor crítico para una cola derecha del 5%</span></span>
+<span id="cb57-2"><a href="modelos-de-probabilidad-continuos.html#cb57-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="fl">0.95</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
+<span id="cb57-3"><a href="modelos-de-probabilidad-continuos.html#cb57-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 9.4877</span></span></code></pre></div>
+<pre><code>## [1] 12.59159</code></pre>
+</div>
+<div id="distribución-beta-mathsfbetaalpha-beta" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribución <strong>Beta</strong> es una distribución continua definida en el intervalo <span class="math inline">\([0,1]\)</span> y muy versátil, especialmente útil en estadística bayesiana, teoría de la probabilidad y simulación. Es una generalización de la distribución uniforme sobre <span class="math inline">\([0,1]\)</span>.</p>
+<p>La <strong>función beta</strong> se define mediante la siguiente integral:</p>
+<p><span class="math display">\[
+B(\alpha, \beta) = \int_0^1 x^{\alpha - 1}(1 - x)^{\beta - 1} \, dx = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\cdot)\)</span> es la función gamma, y se requiere que <span class="math inline">\(\alpha &gt; 0\)</span>, <span class="math inline">\(\beta &gt; 0\)</span>.</p>
+<p><strong>Distribución beta</strong></p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> tiene una <strong>distribución beta</strong> con parámetros <span class="math inline">\(\alpha &gt; 0\)</span> y <span class="math inline">\(\beta &gt; 0\)</span> si su función de densidad es:</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha - 1}(1 - x)^{\beta - 1}, &amp; 0 &lt; x &lt; 1 \\
+0, &amp; \text{en otro caso}
+\end{cases}
+\]</span></p>
+<p>Esta distribución está acotada en el intervalo <span class="math inline">\((0,1)\)</span>, y su forma depende fuertemente de los valores de los parámetros.</p>
+<blockquote>
+<p>Nota: Cuando <span class="math inline">\(\alpha = 1\)</span> y <span class="math inline">\(\beta = 1\)</span>, se obtiene la distribución <strong>uniforme</strong> sobre el intervalo <span class="math inline">\([0,1]\)</span>.</p>
+</blockquote>
+<p><strong>Propiedades básicas</strong></p>
+<ul>
+<li><strong>Soporte</strong>: <span class="math inline">\(x \in (0, 1)\)</span></li>
+<li><strong>Media</strong>: <span class="math inline">\(\mathbb{E}[X] = \frac{\alpha}{\alpha + \beta}\)</span></li>
+<li><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \frac{\alpha \beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}\)</span></li>
+<li>La forma de la densidad depende de la relación entre <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>:
+<ul>
+<li>Si <span class="math inline">\(\alpha = \beta = 1\)</span>, la distribución es <strong>uniforme</strong>.</li>
+<li>Si <span class="math inline">\(\alpha &gt; 1\)</span> y <span class="math inline">\(\beta &gt; 1\)</span>, tiene forma de campana (simétrica o asimétrica).</li>
+<li>Si <span class="math inline">\(\alpha &lt; 1\)</span> o <span class="math inline">\(\beta &lt; 1\)</span>, puede presentar <strong>asimetría o forma en U</strong>.</li>
+</ul></li>
+<li>Es una distribución útil para <strong>modelar proporciones o probabilidades</strong>.</li>
+</ul>
+<p><strong>Representación gráfica</strong></p>
+<p><img src="modelizacion-del-azar_files/figure-html/grafico-densidad-beta-1.png" width="672" /></p>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución beta es especialmente útil para modelar variables continuas que <strong>toman valores en el intervalo [0, 1]</strong>, como <strong>proporciones, porcentajes o probabilidades</strong>. Gracias a la flexibilidad que permiten sus dos parámetros <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>, puede adoptar formas simétricas, asimétricas, en U o en forma de campana, adaptándose a distintos tipos de datos.</p>
+<p>A continuación, se detallan algunas aplicaciones relevantes:</p>
+<p><strong><em>- Estadística bayesiana:</em></strong> La beta es la distribución <strong>a priori conjugada</strong> de la binomial. Esto significa que, cuando se utiliza una beta para modelar la probabilidad desconocida de éxito en un experimento binomial, la distribución posterior también será una beta. Esto facilita los cálculos y la interpretación.</p>
+<p><strong><em>- Análisis de proporciones en ciencias sociales:</em></strong> En estudios de encuestas o demografía, las respuestas pueden ser proporciones: porcentaje de ciudadanos que votan, nivel de satisfacción en una escala de 0 a 1, proporción de hogares con acceso a internet, etc. La beta permite modelar estas proporciones de forma continua y flexible.</p>
+<p><strong><em>- Economía y finanzas:</em></strong></p>
+<ul>
+<li>En análisis de eficiencia, los scores obtenidos por métodos como DEA (Data Envelopment Analysis) toman valores entre 0 y 1. La distribución beta se ajusta perfectamente para representar su distribución empírica.</li>
+<li>También se utiliza para modelar <strong>tasas de rendimiento normalizadas</strong> (por ejemplo, la rentabilidad diaria de un fondo como proporción del rendimiento máximo teórico).</li>
+<li>En estudios de desigualdad, el <strong>índice de Theil</strong> o el <strong>índice de Atkinson</strong> se expresan como proporciones y pueden ser analizados con distribuciones beta.</li>
+</ul>
+<p>- <strong><em>Gestión de riesgos y marketing:</em></strong></p>
+<ul>
+<li>En marketing, al estimar tasas de conversión (por ejemplo, porcentaje de clics sobre impresiones), la distribución beta permite incorporar incertidumbre y construir intervalos creíbles o probabilísticos para la tasa real de conversión.</li>
+<li>En seguros o análisis actuarial, puede usarse para modelar el <strong>proporción del siniestro cubierto</strong>, o la fracción de gasto en salud respecto al ingreso familiar.</li>
+</ul>
+<p><strong><em>- Simulación y generación de datos aleatorios:</em></strong> En simulación Monte Carlo, la distribución beta se usa para modelar inputs inciertos cuando los valores están acotados en [0,1], y se desea evitar asumir simetría o forma normal.</p>
+<p><strong>Ejemplos de cálculo con R</strong></p>
+<p><em>1: Cálculo de la Probabilidad directa</em></p>
+<p>Sea <span class="math inline">\(X \sim \text{Beta}(2, 5)\)</span>. Calcular <span class="math inline">\(P(X \leq 0.3)\)</span>:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="modelos-de-probabilidad-continuos.html#cb59-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
+<span id="cb59-2"><a href="modelos-de-probabilidad-continuos.html#cb59-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.4718</span></span></code></pre></div>
+<pre><code>## [1] 0.579825</code></pre>
+<p><em>-2: Valor crítico (probabilidad inversa)</em></p>
+<p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
+<p><span class="math display">\[
+P(X \leq x) = 0.90, \quad X \sim \text{Beta}(2, 5)
+\]</span></p>
+<p>Para obtener este valor usamos la función <code>qbeta()</code> en R, que nos devuelve el cuantil correspondiente a la probabilidad acumulada deseada.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="modelos-de-probabilidad-continuos.html#cb61-1" tabindex="-1"></a><span class="co"># Cálculo del percentil 90 para Beta(2, 5)</span></span>
+<span id="cb61-2"><a href="modelos-de-probabilidad-continuos.html#cb61-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.90</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
+<span id="cb61-3"><a href="modelos-de-probabilidad-continuos.html#cb61-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 0.6217</span></span></code></pre></div>
+<pre><code>## [1] 0.5103163</code></pre>
+</div>
+<div id="distribución-de-pareto" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Distribución de Pareto<a href="#distribuci%C3%B3n-de-pareto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La <strong>distribución de Pareto</strong> es especialmente útil para describir fenómenos en los que una pequeña parte de la población concentra una gran proporción de un recurso, como ocurre en la distribución de la renta, la riqueza o el tamaño de empresas. Gracias a su forma de cola pesada, permite modelar con precisión valores extremos y desigualdades marcadas en contextos económicos y sociales.</p>
+<p><strong>Definición</strong></p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> sigue una distribución de Pareto con parámetros <span class="math inline">\(x_m &gt; 0\)</span> (mínimo) y <span class="math inline">\(\alpha &gt; 0\)</span> (parámetro de forma), si su función de densidad es:</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\displaystyle \frac{\alpha x_m^\alpha}{x^{\alpha + 1}}, &amp; x \geq x_m \\
+0, &amp; x &lt; x_m
+\end{cases}
+\]</span></p>
+<p>donde:</p>
+<p>- <span class="math inline">\(\alpha &gt; 0\)</span>: determina la concentración de la distribución (a mayor <span class="math inline">\(\alpha\)</span>, menor desigualdad).</p>
+<p>- <span class="math inline">\(x_m &gt; 0\)</span>: es el valor mínimo (umbral) a partir del cual se define la variable aleatoria.</p>
+<p>Estas condiciones aseguran que la función sea una densidad válida, es decir, que su integral en <span class="math inline">\([x_m, \infty)\)</span> sea igual a 1.</p>
+<p><strong>Función de distribución acumulada</strong></p>
+<p>La función de distribución acumulada (FDA) es:</p>
+<p><span class="math display">\[
+F(x) = P(X \leq x) = 1 - \left( \frac{x_m}{x} \right)^{\alpha}, \quad x \geq x_m
+\]</span></p>
+<p><strong>Propiedades</strong></p>
+<ul>
+<li><p><strong>Soporte</strong>: <span class="math inline">\(x \in [x_m, \infty)\)</span></p></li>
+<li><p><strong>Media</strong>: <span class="math inline">\(E(X) = \begin{cases}
+\infty, &amp; \text{si } \alpha \leq 1 \\
+\frac{\alpha x_m}{\alpha - 1}, &amp; \text{si } \alpha &gt; 1
+\end{cases}\)</span></p></li>
+<li><p><strong>Varianza</strong>: <span class="math inline">\(V(X) = \begin{cases}
+\infty, &amp; \text{si } \alpha \leq 2 \\
+\frac{x_m^2 \alpha}{(\alpha - 1)^2(\alpha - 2)}, &amp; \text{si } \alpha &gt; 2
+\end{cases}\)</span></p></li>
+<li><p>Es una distribución <strong>asimétrica positiva</strong>, con <strong>cola pesada</strong>.</p></li>
+</ul>
+<p><strong>Aplicaciones</strong></p>
+<p>La distribución de Pareto es ampliamente utilizada en:</p>
+<ul>
+<li><p><strong>Economía y distribución de la riqueza</strong> - <strong>Ley de Pareto (80/20)</strong>: Una pequeña fracción de la población (el 20%) acumula una gran parte de la riqueza (el 80%). - Se usa para modelar <strong>distribuciones de ingreso</strong> o <strong>riqueza</strong>, especialmente en los niveles altos (cola de la distribución).</p></li>
+<li><p><strong>Finanzas y seguros</strong></p>
+<ul>
+<li><p>Modelado de <strong>pérdidas extremas</strong> o <strong>reclamaciones grandes</strong>.</p></li>
+<li><p>Distribución base en el análisis de <strong>riesgos de cola</strong> y <strong>modelos de ruina</strong>.</p></li>
+</ul></li>
+<li><p><strong>Marketing y gestión empresarial</strong></p>
+<ul>
+<li><p>Análisis de clientes: una pequeña parte genera la mayor parte de las ventas (clientes clave).</p></li>
+<li><p>Modelado del tamaño de empresas o número de productos vendidos.</p></li>
+</ul></li>
+</ul>
+<p><strong>Ejemplos de cálculo con R</strong></p>
+<p>- 1: Densidad</p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><em>- 2: Cáclulo de probabilidad directa</em></p>
+<p>Queremos calcular la probabilidad de que una variable aleatoria <span class="math inline">\(X \sim \text{Pareto}(x_m = 1, \alpha = 2)\)</span> tome un valor menor o igual que 3, es decir:</p>
+<p><span class="math display">\[
+P(X \leq 3)
+\]</span></p>
+<p>Usamos la función de distribución acumulada:</p>
+<p><span class="math display">\[
+F(x) = 1 - \left( \frac{x_m}{x} \right)^\alpha
+\]</span></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="modelos-de-probabilidad-continuos.html#cb63-1" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb63-2"><a href="modelos-de-probabilidad-continuos.html#cb63-2" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb63-3"><a href="modelos-de-probabilidad-continuos.html#cb63-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb63-4"><a href="modelos-de-probabilidad-continuos.html#cb63-4" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="modelos-de-probabilidad-continuos.html#cb63-5" tabindex="-1"></a><span class="co"># Probabilidad acumulada</span></span>
+<span id="cb63-6"><a href="modelos-de-probabilidad-continuos.html#cb63-6" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (xm <span class="sc">/</span> x)<span class="sc">^</span>alpha</span>
+<span id="cb63-7"><a href="modelos-de-probabilidad-continuos.html#cb63-7" tabindex="-1"></a>F  <span class="co"># Resultado ≈ 0.8889</span></span></code></pre></div>
+<pre><code>## [1] 0.8888889</code></pre>
+<p><em>-3: Cálculo de probabilidad inversa</em></p>
+<p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
+<p><span class="math display">\[
+P(X \geq x) = 0.05
+\]</span></p>
+<p>Si <span class="math inline">\(X \sim \text{Pareto}(x_m = 1, \alpha = 2)\)</span>, podemos utilizar la función de distribución acumulada inversa.<br />
+Recordamos que:</p>
+<p><span class="math display">\[
+F(x) = 1 - \left( \frac{x_m}{x} \right)^\alpha \quad \Rightarrow \quad x = x_m \cdot (1 - p)^{-1/\alpha}
+\]</span></p>
+<p>Donde <span class="math inline">\(p\)</span> es la probabilidad acumulada a la izquierda.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="modelos-de-probabilidad-continuos.html#cb65-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb65-2"><a href="modelos-de-probabilidad-continuos.html#cb65-2" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb65-3"><a href="modelos-de-probabilidad-continuos.html#cb65-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb65-4"><a href="modelos-de-probabilidad-continuos.html#cb65-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.05</span>  <span class="co"># P(X ≥ x) = 0.05 → P(X ≤ x) = 0.95</span></span>
+<span id="cb65-5"><a href="modelos-de-probabilidad-continuos.html#cb65-5" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="modelos-de-probabilidad-continuos.html#cb65-6" tabindex="-1"></a><span class="co"># Cálculo del valor crítico</span></span>
+<span id="cb65-7"><a href="modelos-de-probabilidad-continuos.html#cb65-7" tabindex="-1"></a>x_critico <span class="ot">&lt;-</span> xm <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> alpha)</span>
+<span id="cb65-8"><a href="modelos-de-probabilidad-continuos.html#cb65-8" tabindex="-1"></a>x_critico  <span class="co"># Resultado ≈ 4.4721</span></span></code></pre></div>
+<pre><code>## [1] 1.025978</code></pre>
+</div>
+<div id="resumen-de-las-distribuciones-continuas" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Resumen de las distribuciones continuas<a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A continuación se presenta una tabla resumen con las principales distribuciones continuas tratadas en este tema:</p>
+<table class="table" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Distribución
+</th>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Parámetros
+</th>
+<th style="text-align:left;">
+Soporte…x..
+</th>
+<th style="text-align:left;">
+Densidad…f.x…
+</th>
+<th style="text-align:left;">
+Media
+</th>
+<th style="text-align:left;">
+Varianza
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Normal
+</td>
+<td style="text-align:left;">
+Variable continua simétrica
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mu,\ \sigma\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mathbb{R}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mu\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Exponencial
+</td>
+<td style="text-align:left;">
+Tiempo entre eventos
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\lambda\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\([0,\infty)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\lambda e^{-\lambda x}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{\lambda}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{\lambda^2}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chi-cuadrado
+</td>
+<td style="text-align:left;">
+Suma de cuadrados normales estándar
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(k\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\([0,\infty)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{2^{k/2}\Gamma(k/2)} x^{k/2 - 1} e^{-x/2}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(k\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(2k\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+t de Student
+</td>
+<td style="text-align:left;">
+Media muestral con varianza desconocida
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(n\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mathbb{R}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\Gamma(\frac{n+1}{2})}{\sqrt{n\pi}\Gamma(n/2)} \left(1 + \frac{x^2}{n}\right)^{-\frac{n+1}{2}}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(0\)</span> si <span class="math inline">\(n \gt 1\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{n}{n - 2}\)</span> si <span class="math inline">\(n \gt 2\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+F de Snedecor
+</td>
+<td style="text-align:left;">
+Cociente de dos chi-cuadrado normalizados
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(n_1,\ n_2\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\([0,\infty)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\Gamma((n_1 + n_2)/2)}{\Gamma(n_1/2)\Gamma(n_2/2)} \cdot \frac{(n_1/n_2)^{n_1/2} x^{n_1/2 - 1}}{(1 + \frac{n_1}{n_2} x)^{(n_1+n_2)/2}}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{n_2}{n_2 - 2}\)</span> si <span class="math inline">\(n_2 \gt 2\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{2n_2^2(n_1 + n_2 - 2)}{n_1(n_2 - 2)^2(n_2 - 4)}\)</span> si <span class="math inline">\(n_2 \gt 4\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gamma
+</td>
+<td style="text-align:left;">
+Variable con crecimiento exponencial
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\alpha,\ \beta\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\([0,\infty)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha - 1} e^{-x/\beta}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\alpha\beta\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\alpha\beta^2\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beta
+</td>
+<td style="text-align:left;">
+Proporciones entre 0 y 1
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\alpha,\ \beta\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\((0,1)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{1}{B(\alpha,\beta)} x^{\alpha-1}(1-x)^{\beta-1}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\alpha}{\alpha + \beta}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pareto
+</td>
+<td style="text-align:left;">
+Distribución de ingresos/riqueza
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(x_m,\ \alpha\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\([x_m,\infty)\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\alpha x_m^\alpha}{x^{\alpha+1}}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\alpha x_m}{\alpha - 1}\)</span> si <span class="math inline">\(\alpha \gt 1\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\frac{\alpha x_m^2}{(\alpha - 1)^2(\alpha - 2)}\)</span> si <span class="math inline">\(\alpha \gt 2\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funciones-disponibles-en-r-para-distribuciones-continuas" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Funciones disponibles en R para distribuciones continuas<a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R proporciona un conjunto de funciones estándar para trabajar con distribuciones de probabilidad continuas. Estas funciones permiten:</p>
+<ul>
+<li><strong>Calcular la densidad de probabilidad</strong>: <code>dxxx()</code></li>
+<li><strong>Calcular la función de distribución acumulada</strong>: <code>pxxx()</code></li>
+<li><strong>Obtener valores críticos (cuantiles)</strong>: <code>qxxx()</code></li>
+<li><strong>Simular valores aleatorios</strong>: <code>rxxx()</code></li>
+</ul>
+<p>A continuación se resumen las funciones más comunes:</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Distribución</th>
+<th>Densidad</th>
+<th>Acumulada</th>
+<th>Cuantil</th>
+<th>Aleatoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td><code>dnorm()</code></td>
+<td><code>pnorm()</code></td>
+<td><code>qnorm()</code></td>
+<td><code>rnorm()</code></td>
+</tr>
+<tr>
+<td>Exponencial</td>
+<td><code>dexp()</code></td>
+<td><code>pexp()</code></td>
+<td><code>qexp()</code></td>
+<td><code>rexp()</code></td>
+</tr>
+<tr>
+<td>Chi-cuadrado</td>
+<td><code>dchisq()</code></td>
+<td><code>pchisq()</code></td>
+<td><code>qchisq()</code></td>
+<td><code>rchisq()</code></td>
+</tr>
+<tr>
+<td>t de Student</td>
+<td><code>dt()</code></td>
+<td><code>pt()</code></td>
+<td><code>qt()</code></td>
+<td><code>rt()</code></td>
+</tr>
+<tr>
+<td>F de Snedecor</td>
+<td><code>df()</code></td>
+<td><code>pf()</code></td>
+<td><code>qf()</code></td>
+<td><code>rf()</code></td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td><code>dgamma()</code></td>
+<td><code>pgamma()</code></td>
+<td><code>qgamma()</code></td>
+<td><code>rgamma()</code></td>
+</tr>
+<tr>
+<td>Beta</td>
+<td><code>dbeta()</code></td>
+<td><code>pbeta()</code></td>
+<td><code>qbeta()</code></td>
+<td><code>rbeta()</code></td>
+</tr>
+<tr>
+<td>Pareto (no base R)</td>
+<td>Ver más abajo</td>
+<td>Ver más abajo</td>
+<td>Ver más abajo</td>
+<td>Ver más abajo</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Nota</strong>: La distribución de Pareto no está incluida por defecto en R base. Para trabajar con ella se pueden definir funciones personalizadas o utilizar paquetes como <code>VGAM</code> o <code>actuar</code>.</p>
+</blockquote>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modelos-de-probabilidad-discretos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="relación-entre-distribuciones.-convergencia-en-distribución.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed",
+"collapse": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

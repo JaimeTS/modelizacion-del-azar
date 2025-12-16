@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 3 Sucesos y operaciones con sucesos | Tema 1: Probabilidad</title>
+  <meta name="description" content="Tema 3 Sucesos y operaciones con sucesos | Tema 1: Probabilidad" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 3 Sucesos y operaciones con sucesos | Tema 1: Probabilidad" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 3 Sucesos y operaciones con sucesos | Tema 1: Probabilidad" />
+  
+  
+  
+
+<meta name="author" content="" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="probabilidad.html"/>
+<link rel="next" href="axiomas-de-kolmogórov.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Modelización del azar</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="portada.html"><a href="portada.html"><i class="fa fa-check"></i>Portada</a></li>
+<li class="chapter" data-level="1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a></li>
+<li class="chapter" data-level="3" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html"><i class="fa fa-check"></i><b>3</b> Sucesos y operaciones con sucesos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#experimento-aleatorio-y-espacio-muestral"><i class="fa fa-check"></i><b>3.1</b> Experimento aleatorio y espacio muestral</a></li>
+<li class="chapter" data-level="3.2" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#sucesos"><i class="fa fa-check"></i><b>3.2</b> Sucesos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#tipos-de-sucesos"><i class="fa fa-check"></i><b>3.2.1</b> Tipos de sucesos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#operaciones-con-sucesos"><i class="fa fa-check"></i><b>3.3</b> Operaciones con sucesos</a></li>
+<li class="chapter" data-level="3.4" data-path="02-probabilidad.html"><a href="#propiedades-del-%C3%A1lgebra-de-sucesos"><i class="fa fa-check"></i><b>3.4</b> Propiedades del álgebra de sucesos</a></li>
+<li class="chapter" data-level="3.5" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#concepto-de-probabilidad"><i class="fa fa-check"></i><b>3.5</b> Concepto de probabilidad</a></li>
+<li class="chapter" data-level="3.6" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#interpretaciones-de-la-probabilidad"><i class="fa fa-check"></i><b>3.6</b> Interpretaciones de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="02-probabilidad.html"><a href="#probabilidad-cl%C3%A1sica"><i class="fa fa-check"></i><b>3.6.1</b> Probabilidad clásica</a></li>
+<li class="chapter" data-level="3.6.2" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#probabilidad-frecuentista"><i class="fa fa-check"></i><b>3.6.2</b> Probabilidad frecuentista</a></li>
+<li class="chapter" data-level="3.6.3" data-path="sucesos-y-operaciones-con-sucesos.html"><a href="sucesos-y-operaciones-con-sucesos.html#probabilidad-bayesiana"><i class="fa fa-check"></i><b>3.6.3</b> Probabilidad bayesiana</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="02-probabilidad.html"><a href="#axiomas-de-kolmog%C3%B3rov"><i class="fa fa-check"></i><b>4</b> Axiomas de Kolmogórov</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="axiomas-de-kolmogórov.html"><a href="axiomas-de-kolmogórov.html"><i class="fa fa-check"></i><b>4.1</b> Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reglas-de-la-probabilidad.html"><a href="reglas-de-la-probabilidad.html"><i class="fa fa-check"></i><b>5</b> Reglas de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reglas-de-la-probabilidad.html"><a href="reglas-de-la-probabilidad.html#probabilidad-total"><i class="fa fa-check"></i><b>5.1</b> Probabilidad total</a></li>
+<li class="chapter" data-level="5.2" data-path="reglas-de-la-probabilidad.html"><a href="reglas-de-la-probabilidad.html#probabilidad-condicionada"><i class="fa fa-check"></i><b>5.2</b> Probabilidad condicionada</a></li>
+<li class="chapter" data-level="5.3" data-path="reglas-de-la-probabilidad.html"><a href="reglas-de-la-probabilidad.html#teorema-de-bayes"><i class="fa fa-check"></i><b>5.3</b> Teorema de Bayes</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="independencia-de-sucesos.html"><a href="independencia-de-sucesos.html"><i class="fa fa-check"></i><b>6</b> Independencia de sucesos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="02-probabilidad.html"><a href="#definici%C3%B3n"><i class="fa fa-check"></i><b>6.1</b> Definición</a></li>
+<li class="chapter" data-level="6.2" data-path="independencia-de-sucesos.html"><a href="independencia-de-sucesos.html#propiedades-1"><i class="fa fa-check"></i><b>6.2</b> Propiedades</a></li>
+<li class="chapter" data-level="6.3" data-path="02-probabilidad.html"><a href="#regla-de-la-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Regla de la multiplicación</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="02-probabilidad.html"><a href="#t%C3%A9cnicas-de-enumeraci%C3%B3n"><i class="fa fa-check"></i><b>7</b> Técnicas de enumeración</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="02-probabilidad.html"><a href="#principio-de-multiplicaci%C3%B3n"><i class="fa fa-check"></i><b>7.1</b> Principio de multiplicación</a></li>
+<li class="chapter" data-level="7.2" data-path="técnicas-de-enumeración.html"><a href="técnicas-de-enumeración.html"><i class="fa fa-check"></i><b>7.2</b> Permutaciones</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="02-probabilidad.html"><a href="#sin-repetici%C3%B3n"><i class="fa fa-check"></i><b>7.2.1</b> Sin repetición:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="02-probabilidad.html"><a href="#con-repetici%C3%B3n"><i class="fa fa-check"></i><b>7.2.2</b> Con repetición:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="técnicas-de-enumeración.html"><a href="técnicas-de-enumeración.html#combinaciones"><i class="fa fa-check"></i><b>7.3</b> Combinaciones</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="02-probabilidad.html"><a href="#sin-repetici%C3%B3n-1"><i class="fa fa-check"></i><b>7.3.1</b> Sin repetición:</a></li>
+<li class="chapter" data-level="7.3.2" data-path="02-probabilidad.html"><a href="#con-repetici%C3%B3n-1"><i class="fa fa-check"></i><b>7.3.2</b> Con repetición:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ejemplos-con-r.html"><a href="ejemplos-con-r.html"><i class="fa fa-check"></i><b>8</b> Ejemplos con R</a></li>
+<li class="chapter" data-level="9" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>9</b> Variables aleatorias</a></li>
+<li class="chapter" data-level="10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html"><i class="fa fa-check"></i><b>10</b> Modelos de probabilidad discretos</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-discreta-u_d"><i class="fa fa-check"></i><b>10.1</b> Distribución uniforme discreta <span class="math inline">\((U_d)\)</span></a></li>
+<li class="chapter" data-level="10.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-bernoulli-b1-p"><i class="fa fa-check"></i><b>10.2</b> Distribución Bernoulli <span class="math inline">\((B(1, p))\)</span></a></li>
+<li class="chapter" data-level="10.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-bn-p"><i class="fa fa-check"></i><b>10.3</b> Distribución binomial <span class="math inline">\((B(n, p))\)</span></a></li>
+<li class="chapter" data-level="10.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-binomial-negativa-bnr-p"><i class="fa fa-check"></i><b>10.4</b> Distribución binomial negativa <span class="math inline">\((BN(r, p))\)</span></a></li>
+<li class="chapter" data-level="10.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-poisson-textpoissonlambda"><i class="fa fa-check"></i><b>10.5</b> Distribución Poisson <span class="math inline">\((\text{Poisson}(\lambda))\)</span></a></li>
+<li class="chapter" data-level="10.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-geom%C3%A9trica-gp"><i class="fa fa-check"></i><b>10.6</b> Distribución geométrica <span class="math inline">\((G(p))\)</span></a></li>
+<li class="chapter" data-level="10.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-hipergeom%C3%A9trica-hn-k-n"><i class="fa fa-check"></i><b>10.7</b> Distribución hipergeométrica <span class="math inline">\((H(N, K, n))\)</span></a></li>
+<li class="chapter" data-level="10.8" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-multinomial-mn-p_i"><i class="fa fa-check"></i><b>10.8</b> Distribución multinomial <span class="math inline">\((M(n; {p_i}))\)</span></a></li>
+<li class="chapter" data-level="10.9" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#resumen-de-las-distribuciones-discretas"><i class="fa fa-check"></i><b>10.9</b> Resumen de las distribuciones discretas</a></li>
+<li class="chapter" data-level="10.10" data-path="modelos-de-probabilidad-discretos.html"><a href="modelos-de-probabilidad-discretos.html#funciones-disponibles-en-r-para-funciones-discretas"><i class="fa fa-check"></i><b>10.10</b> Funciones disponibles en R para funciones discretas</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html"><i class="fa fa-check"></i><b>11</b> Modelos de probabilidad continuos</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-uniforme-ua-b"><i class="fa fa-check"></i><b>11.1</b> Distribución uniforme <span class="math inline">\((U(a, b))\)</span></a></li>
+<li class="chapter" data-level="11.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>11.2</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-mu-sigma.-mathcalnmu-sigma"><i class="fa fa-check"></i><b>11.2.1</b> Distribución Normal <span class="math inline">\((\mu\)</span> , <span class="math inline">\(\sigma)\)</span>. <span class="math inline">\(\mathcal{N}(\mu, \sigma)\)</span></a></li>
+<li class="chapter" data-level="11.2.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1"><i class="fa fa-check"></i><b>11.2.2</b> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>11.3</b> Distribuciones derivadas de la Normal</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-ji-cuadrado-chi2"><i class="fa fa-check"></i><b>11.3.1</b> Distribución ji-cuadrado <span class="math inline">\((\chi^2)\)</span></a></li>
+<li class="chapter" data-level="11.3.2" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-t-de-student-t_n"><i class="fa fa-check"></i><b>11.3.2</b> Distribución t de Student <span class="math inline">\((t_n)\)</span></a></li>
+<li class="chapter" data-level="11.3.3" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-f-de-snedecor-fn_1n_2"><i class="fa fa-check"></i><b>11.3.3</b> Distribución F de Snedecor <span class="math inline">\((F{n_1,n_2})\)</span></a></li>
+<li class="chapter" data-level="11.3.4" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal"><i class="fa fa-check"></i><b>11.3.4</b> Aplicaciones a las Ciencias Sociales de las distribuciones derivadas de la Normal</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-exponencial-explambda"><i class="fa fa-check"></i><b>11.4</b> Distribución Exponencial <span class="math inline">\((Exp(\lambda))\)</span></a></li>
+<li class="chapter" data-level="11.5" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-gamma-gammaalpha"><i class="fa fa-check"></i><b>11.5</b> Distribución Gamma <span class="math inline">\((\Gamma(\alpha))\)</span></a></li>
+<li class="chapter" data-level="11.6" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-beta-mathsfbetaalpha-beta"><i class="fa fa-check"></i><b>11.6</b> Distribución Beta <span class="math inline">\((\mathsf{Beta}(\alpha, \beta))\)</span></a></li>
+<li class="chapter" data-level="11.7" data-path="02-probabilidad.html"><a href="#distribuci%C3%B3n-de-pareto"><i class="fa fa-check"></i><b>11.7</b> Distribución de Pareto</a></li>
+<li class="chapter" data-level="11.8" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>11.8</b> Resumen de las distribuciones continuas</a></li>
+<li class="chapter" data-level="11.9" data-path="modelos-de-probabilidad-continuos.html"><a href="modelos-de-probabilidad-continuos.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>11.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-entre-distribuciones.-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>12</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>12.1</b> Introducción</a></li>
+<li class="chapter" data-level="12.2" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html"><i class="fa fa-check"></i><b>12.2</b> Relaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="02-probabilidad.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>12.2.1</b> Aproximaciones clásicas</a></li>
+<li class="chapter" data-level="12.2.2" data-path="02-probabilidad.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>12.2.2</b> Condiciones de validez para cada aproximación</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="02-probabilidad.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>12.3</b> Convergencia en distribución</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="02-probabilidad.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>12.3.1</b> Tipos de convergencia y definición formal</a></li>
+<li class="chapter" data-level="12.3.2" data-path="02-probabilidad.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>12.3.2</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="12.3.3" data-path="02-probabilidad.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>12.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
+<li class="chapter" data-level="12.3.4" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>12.3.4</b> Ejemplos y visualizaciones</a></li>
+<li class="chapter" data-level="12.3.5" data-path="02-probabilidad.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>12.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="02-probabilidad.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>12.4</b> Ejercicios prácticos</a></li>
+<li class="chapter" data-level="12.5" data-path="relación-entre-distribuciones.-convergencia-en-distribución.html"><a href="relación-entre-distribuciones.-convergencia-en-distribución.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>12.5</b> Ejercicio guiado en R</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>13</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test"><i class="fa fa-check"></i><b>13.1</b> Preguntas tipo test</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>13.1.1</b> Preguntas tipo test – Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="13.1.2" data-path="ejercicios.html"><a href="ejercicios.html#preguntas-tipo-test-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>13.1.2</b> Preguntas tipo test – Tema 5: Distribuciones continuas</a></li>
+<li class="chapter" data-level="13.1.3" data-path="02-probabilidad.html"><a href="#preguntas-tipo-test-tema-6-convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>13.1.3</b> Preguntas tipo test – Tema 6: Convergencia en distribución</a></li>
+<li class="chapter" data-level="13.1.4" data-path="ejercicios.html"><a href="ejercicios.html#soluciones-a-los-ejercicios-tipo-test"><i class="fa fa-check"></i><b>13.1.4</b> Soluciones a los ejercicios tipo test</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-a-desarrollar"><i class="fa fa-check"></i><b>13.2</b> Ejercicios a desarrollar</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-4-distribuciones-discretas"><i class="fa fa-check"></i><b>13.2.1</b> Ejercicios del Tema 4: Distribuciones discretas</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-5-distribuciones-continuas"><i class="fa fa-check"></i><b>13.2.2</b> Ejercicios del Tema 5: Distribuciones continuas</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-del-tema-6-convergencia-entre-distribuciones"><i class="fa fa-check"></i><b>13.3</b> Ejercicios del Tema 6: Convergencia entre distribuciones</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tema 1: Probabilidad</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sucesos-y-operaciones-con-sucesos" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Tema 3</span> Sucesos y operaciones con sucesos<a href="sucesos-y-operaciones-con-sucesos.html#sucesos-y-operaciones-con-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Antes de estudiar la probabilidad de un fenómeno aleatorio, es fundamental comprender qué es un experimento aleatorio, qué posibles resultados puede tener y cómo representarlos.</p>
+<div id="experimento-aleatorio-y-espacio-muestral" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Experimento aleatorio y espacio muestral<a href="sucesos-y-operaciones-con-sucesos.html#experimento-aleatorio-y-espacio-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un <strong>experimento aleatorio</strong> es un proceso cuyo resultado no puede preverse con certeza, aunque se conocen todos los posibles resultados que pueden ocurrir.</p>
+<p>El conjunto de todos los posibles resultados de un experimento aleatorio se denomina <strong>espacio muestral</strong> y se denota habitualmente por <span class="math inline">\(\Omega\)</span> o <span class="math inline">\(E\)</span>.</p>
+<p><strong>Ejemplo:</strong> Si lanzamos una moneda una vez, el espacio muestral es <span class="math inline">\(\Omega = \{ c, + \}\)</span>, donde <span class="math inline">\(c\)</span> representa cruz y <span class="math inline">\(+\)</span> cara. Si la lanzamos dos veces, <span class="math inline">\(\Omega = \{ cc, c+, +c, ++ \}\)</span>. Si lanzamos un dado una vez, <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>.</p>
+</div>
+<div id="sucesos" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Sucesos<a href="sucesos-y-operaciones-con-sucesos.html#sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un <strong>suceso</strong> (también llamado evento) es cualquier subconjunto del espacio muestral <span class="math inline">\(A \subseteq \Omega\)</span>. Si el suceso consta de un solo resultado, se llama <strong>suceso elemental</strong>; si está formado por varios, se denomina <strong>suceso compuesto</strong>.</p>
+<p><strong>Ejemplo:</strong> En el lanzamiento de un dado, el suceso “salir número par” se representa por <span class="math inline">\(A = \{2, 4, 6\}\)</span>, que es un suceso compuesto. El suceso “salir un 3” es <span class="math inline">\(\{3\}\)</span>, que es un suceso elemental.</p>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-omega-A-1.png" width="672" /></p>
+<div id="tipos-de-sucesos" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Tipos de sucesos<a href="sucesos-y-operaciones-con-sucesos.html#tipos-de-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Suceso seguro</strong>: Aquel que contiene a todos los elementos del espacio muestral. Siempre ocurre. <span class="math inline">\(A = \Omega\)</span>.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:diagrama-suceso-seguro"></span>
+<img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-seguro-1.png" alt="Suceso seguro: A = Ω" width="60%" />
+<p class="caption">
+Figure 3.1: Suceso seguro: A = Ω
+</p>
+</div>
+<ul>
+<li><strong>Suceso imposible</strong>: Aquel que no contiene ningún resultado. Nunca ocurre. <span class="math inline">\(A = \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-imposible-1.png" width="672" /></p>
+<ul>
+<li><strong>Sucesos incompatibles</strong>: No pueden ocurrir a la vez. <span class="math inline">\(A \cap B = \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-1-1.png" width="60%" /></p>
+<ul>
+<li><strong>Sucesos compatibles</strong>: Pueden ocurrir simultáneamente. <span class="math inline">\(A \cap B \neq \emptyset\)</span>.</li>
+</ul>
+<p><img src="modelizacion-del-azar_files/figure-html/sucesos-compatibles-1.png" width="60%" /></p>
+</div>
+</div>
+<div id="operaciones-con-sucesos" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Operaciones con sucesos<a href="sucesos-y-operaciones-con-sucesos.html#operaciones-con-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las operaciones con sucesos se corresponden con operaciones de conjuntos.</p>
+<ul>
+<li><strong>Unión</strong>: El suceso <span class="math inline">\(A \cup B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, o ambos.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:union-sucesos"></span>
+<img src="modelizacion-del-azar_files/figure-html/union-sucesos-1.png" alt="Unión de sucesos: A ∪ B" width="60%" />
+<p class="caption">
+Figure 3.2: Unión de sucesos: A ∪ B
+</p>
+</div>
+<ul>
+<li><strong>Intersección</strong>: El suceso <span class="math inline">\(A \cap B\)</span> ocurre solo si ocurren ambos sucesos a la vez.</li>
+</ul>
+<pre><code>## (polygon[GRID.polygon.31], polygon[GRID.polygon.32], polygon[GRID.polygon.33], polygon[GRID.polygon.34], text[GRID.text.35], text[GRID.text.36], text[GRID.text.37], text[GRID.text.38], text[GRID.text.39])</code></pre>
+<ul>
+<li><strong>Complemento</strong>: El suceso <span class="math inline">\(\overline{A}\)</span> (también denotado <span class="math inline">\(A^c\)</span>) ocurre si no ocurre <span class="math inline">\(A\)</span>.</li>
+<li><strong>Diferencia</strong>: El suceso <span class="math inline">\(A - B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span> y no ocurre <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><strong>Ejemplo:</strong> Si <span class="math inline">\(A = \{2, 4, 6\}\)</span> y <span class="math inline">\(B = \{1, 2, 3, 4\}\)</span>, entonces: - <span class="math inline">\(A \cup B = \{1, 2, 3, 4, 6\}\)</span> - <span class="math inline">\(A \cap B = \{2, 4\}\)</span> - <span class="math inline">\(\overline{A} = \{1, 3, 5\}\)</span> - <span class="math inline">\(A - B = \{6\}\)</span></p>
+</div>
+<div id="propiedades-del-álgebra-de-sucesos" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Propiedades del álgebra de sucesos<a href="#propiedades-del-%C3%A1lgebra-de-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sean <span class="math inline">\(A, B, C\)</span> sucesos del espacio muestral <span class="math inline">\(\Omega\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Idempotencia: <span class="math inline">\(A \cup A = A\)</span>, <span class="math inline">\(A \cap A = A\)</span></li>
+<li>Conmutativa: <span class="math inline">\(A \cup B = B \cup A\)</span>, <span class="math inline">\(A \cap B = B \cap A\)</span></li>
+<li>Asociativa: <span class="math inline">\((A \cup B) \cup C = A \cup (B \cup C)\)</span>, etc.</li>
+<li>Distributiva: <span class="math inline">\((A \cup B) \cap C = (A \cap C) \cup (B \cap C)\)</span></li>
+<li>Neutro: <span class="math inline">\(A \cup \emptyset = A\)</span>, <span class="math inline">\(A \cap \Omega = A\)</span></li>
+<li>Absorbente: <span class="math inline">\(A \cup \Omega = \Omega\)</span>, <span class="math inline">\(A \cap \emptyset = \emptyset\)</span></li>
+<li>Complemento: <span class="math inline">\(A \cup \overline{A} = \Omega\)</span>, <span class="math inline">\(A \cap \overline{A} = \emptyset\)</span></li>
+<li>Doble complemento: <span class="math inline">\(\overline{\overline{A}} = A\)</span></li>
+<li>Leyes de Morgan: <span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span>, <span class="math inline">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
+</ol>
+<p>Estas propiedades son esenciales para simplificar expresiones y resolver ejercicios con sucesos.</p>
+</div>
+<div id="concepto-de-probabilidad" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Concepto de probabilidad<a href="sucesos-y-operaciones-con-sucesos.html#concepto-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La probabilidad es el lenguaje matemático con el que medimos la incertidumbre. Nos permite asignar un valor numérico a qué tan probable es que ocurra un determinado suceso dentro de un experimento aleatorio. Esta asignación es clave cuando pasamos de describir lo que ha ocurrido —estadística descriptiva— a estimar lo que podría ocurrir en el futuro o en otros contextos —inferencia estadística—.</p>
+<p>En estadística, trabajamos habitualmente con muestras para extraer conclusiones sobre poblaciones. Sin embargo, como las muestras se obtienen al azar, necesitamos herramientas para cuantificar hasta qué punto las conclusiones que obtenemos son fiables. Aquí es donde entra en juego la probabilidad: es la base teórica que justifica los métodos inferenciales.</p>
+<p>El objetivo de esta sección es proporcionar una primera aproximación al concepto de probabilidad, mostrar las principales interpretaciones existentes y presentar las herramientas que nos permitirán calcularla en distintos contextos. Estos fundamentos son esenciales para todo el análisis probabilístico posterior, incluyendo el estudio de variables aleatorias y distribuciones.</p>
+<p>La probabilidad es una herramienta matemática fundamental para analizar fenómenos inciertos. Su utilidad es clave en la toma de decisiones bajo incertidumbre, en ámbitos tan diversos como los seguros, la economía, la gestión empresarial o las ciencias sociales. Antes de aplicar reglas o fórmulas, es necesario entender qué significa hablar de la probabilidad de un suceso.</p>
+</div>
+<div id="interpretaciones-de-la-probabilidad" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Interpretaciones de la probabilidad<a href="sucesos-y-operaciones-con-sucesos.html#interpretaciones-de-la-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="probabilidad-clásica" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Probabilidad clásica<a href="#probabilidad-cl%C3%A1sica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es la forma más antigua de interpretar la probabilidad y se basa en el supuesto de que todos los resultados posibles de un experimento son igualmente probables.</p>
+<p><span class="math display">\[
+P(A) = \frac{n(A)}{n(S)}
+\]</span></p>
+<p>Donde: - <span class="math inline">\(n(A)\)</span>: número de casos favorables al suceso <span class="math inline">\(A\)</span>. - <span class="math inline">\(n(S)\)</span>: número total de casos posibles.</p>
+<p><strong>Ejemplo:</strong> Al lanzar un dado equilibrado, la probabilidad de obtener un número par es: <span class="math display">\[
+P(\text{par}) = \frac{3}{6} = 0.5
+\]</span></p>
+</div>
+<div id="probabilidad-frecuentista" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Probabilidad frecuentista<a href="sucesos-y-operaciones-con-sucesos.html#probabilidad-frecuentista" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esta interpretación se basa en la repetición del experimento muchas veces. La probabilidad se estima como la frecuencia relativa con la que ocurre el suceso:</p>
+<p><span class="math display">\[
+P(A) \approx \frac{n_A}{n} \quad \text{cuando } n \to \infty
+\]</span></p>
+<p><strong>Ejemplo:</strong> Si lanzamos una moneda 1000 veces y sale cara 495 veces, estimamos: <span class="math display">\[
+P(\text{cara}) \approx \frac{495}{1000} = 0.495
+\]</span></p>
+</div>
+<div id="probabilidad-bayesiana" class="section level3 hasAnchor" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> Probabilidad bayesiana<a href="sucesos-y-operaciones-con-sucesos.html#probabilidad-bayesiana" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Se interpreta como un grado de creencia subjetiva basado en la información disponible, que puede actualizarse con nueva evidencia.</p>
+<p><strong>Ejemplo:</strong> Si sabemos que un paciente pertenece a un grupo de riesgo, nuestra creencia inicial sobre que esté enfermo puede cambiar tras un resultado de una prueba médica.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probabilidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="axiomas-de-kolmogórov.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelizacion-del-azar.pdf", "modelizacion-del-azar.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "fixed",
+"collapse": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
