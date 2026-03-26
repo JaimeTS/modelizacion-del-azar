@@ -405,7 +405,7 @@ Figure 2.1: Suceso seguro: A = Ω
 <ul>
 <li><strong>Sucesos incompatibles</strong>: No pueden ocurrir a la vez. <span class="math inline">\(A \cap B = \emptyset\)</span>.</li>
 </ul>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-31-1.png" width="60%" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-1-1.png" width="60%" /></p>
 <ul>
 <li><strong>Sucesos compatibles</strong>: Pueden ocurrir simultáneamente. <span class="math inline">\(A \cap B \neq \emptyset\)</span>.</li>
 </ul>
@@ -426,18 +426,17 @@ Figure 2.2: Unión de sucesos: A ∪ B
 <ul>
 <li><strong>Intersección</strong>: El suceso <span class="math inline">\(A \cap B\)</span> ocurre solo si ocurren ambos sucesos a la vez.</li>
 </ul>
-<pre><code>## Loading required package: futile.logger</code></pre>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <ul>
 <li><strong>Complementario</strong>: El suceso <span class="math inline">\(\overline{A}\)</span> (también denotado <span class="math inline">\(A^c\)</span>) ocurre cuando no ocurre el suceso <span class="math inline">\(A\)</span>.</li>
 </ul>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <ul>
 <li><strong>Diferencia</strong>: El suceso <span class="math inline">\(A - B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span> pero no ocurre <span class="math inline">\(B\)</span>.</li>
 </ul>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Por analogía, el suceso <span class="math inline">\(B-A\)</span> ocurre si ocurre <span class="math inline">\(B\)</span> pero no ocurre <span class="math inline">\(A\)</span>.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><strong>Ejemplo:</strong>Dado el espacio muestral <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>, y los sucesos:</p>
 <p>- <span class="math inline">\(A = \{2, 4, 6\}\)</span></p>
 <p>- <span class="math inline">\(B = \{1, 2, 3, 4\}\)</span></p>
@@ -468,12 +467,12 @@ Figure 2.2: Unión de sucesos: A ∪ B
 <li>Primera ley de Morgan: <span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></li>
 </ol>
 <p>La <strong>primera ley</strong> indica que todo lo que <strong>no pertenece a la unión</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cup B}\)</span>, coincide con lo que está <strong>fuera de</strong> <span class="math inline">\(A\)</span> y <strong>fuera de</strong> <span class="math inline">\(B\)</span> simultáneamente.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Segunda Ley de Morgan: <span class="math inline">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
 </ol>
 <p>La <strong>segunda ley</strong> señala que todo lo que <strong>no pertenece a la intersección</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cap B}\)</span>, equivale a lo que <strong>no está en</strong> <span class="math inline">\(A\)</span> o <strong>no está en</strong> <span class="math inline">\(B\)</span>.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Estas leyes nos permiten transformar expresiones con complementos de conjuntos compuestos en otras más manejables, lo cual resulta especialmente útil al calcular probabilidades y trabajar con eventos complejos.</p>
 <p>###Ejercicios</p>
 <ol style="list-style-type: decimal">
@@ -757,8 +756,8 @@ P(B_i \mid A) = \frac{P(B_i) \cdot P(A \mid B_i)}{\sum_{j=1}^n P(B_j) \cdot P(A 
 <li>Entre los no fumadores, el <strong>40% son hombres</strong>.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:arbol-bayes"></span>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-27bb5ede33703c63c26c" style="width:80%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-27bb5ede33703c63c26c">{"x":{"diagram":"\ndigraph bayes_tree {\n  graph [rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightYellow]\n\n  Inicio -> Fuma [label = \"0.4\"]\n  Inicio -> NoFuma [label = \"0.6\"]\n  Fuma -> HombreF [label = \"0.75\"]\n  Fuma -> MujerF [label = \"0.25\"]\n  NoFuma -> HombreNF [label = \"0.4\"]\n  NoFuma -> MujerNF [label = \"0.6\"]\n\n  Inicio [label=\"Inicio\", fillcolor=LightBlue]\n  Fuma [label=\"Fuma\"]\n  NoFuma [label=\"No fuma\"]\n  HombreF [label=\"Hombre\"]\n  MujerF [label=\"Mujer\"]\n  HombreNF [label=\"Hombre\"]\n  MujerNF [label=\"Mujer\"]\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-44a3b3b6c0c2cb206ec2" style="width:80%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-44a3b3b6c0c2cb206ec2">{"x":{"diagram":"\ndigraph bayes_tree {\n  graph [rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightYellow]\n\n  Inicio -> Fuma [label = \"0.4\"]\n  Inicio -> NoFuma [label = \"0.6\"]\n  Fuma -> HombreF [label = \"0.75\"]\n  Fuma -> MujerF [label = \"0.25\"]\n  NoFuma -> HombreNF [label = \"0.4\"]\n  NoFuma -> MujerNF [label = \"0.6\"]\n\n  Inicio [label=\"Inicio\", fillcolor=LightBlue]\n  Fuma [label=\"Fuma\"]\n  NoFuma [label=\"No fuma\"]\n  HombreF [label=\"Hombre\"]\n  MujerF [label=\"Mujer\"]\n  HombreNF [label=\"Hombre\"]\n  MujerNF [label=\"Mujer\"]\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 2.3: Diagrama de árbol para el Teorema de Bayes
 </p>
@@ -868,42 +867,42 @@ P(A \mid S) = \frac{0.3 \cdot 0.9}{0.3 \cdot 0.9 + 0.7 \cdot 0.6} = \frac{0.27}{
 </ul>
 <p>Pregunta: Si un correo ha sido marcado como spam, ¿cuál es la probabilidad de que realmente lo sea?</p>
 <p><strong>Solución</strong> En primer lugar simulamos con R:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="prob.html#cb2-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb2-2"><a href="prob.html#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="prob.html#cb2-3" tabindex="-1"></a><span class="co"># Tamaño de muestra</span></span>
-<span id="cb2-4"><a href="prob.html#cb2-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb2-5"><a href="prob.html#cb2-5" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="prob.html#cb2-6" tabindex="-1"></a><span class="co"># Generamos si el correo es spam (10%)</span></span>
-<span id="cb2-7"><a href="prob.html#cb2-7" tabindex="-1"></a>es_spam <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>)</span>
-<span id="cb2-8"><a href="prob.html#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="prob.html#cb2-9" tabindex="-1"></a><span class="co"># Clasificador identifica spam con sensibilidad 98% y especificidad 90%</span></span>
-<span id="cb2-10"><a href="prob.html#cb2-10" tabindex="-1"></a>marcado_spam <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(es_spam <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb2-11"><a href="prob.html#cb2-11" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.98</span>),  <span class="co"># verdadero positivo</span></span>
-<span id="cb2-12"><a href="prob.html#cb2-12" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>))  <span class="co"># falso positivo</span></span>
-<span id="cb2-13"><a href="prob.html#cb2-13" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="prob.html#cb2-14" tabindex="-1"></a><span class="co"># Guardamos en un data.frame</span></span>
-<span id="cb2-15"><a href="prob.html#cb2-15" tabindex="-1"></a>correos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(es_spam, marcado_spam)</span>
-<span id="cb2-16"><a href="prob.html#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="prob.html#cb2-17" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
-<span id="cb2-18"><a href="prob.html#cb2-18" tabindex="-1"></a><span class="fu">table</span>(correos<span class="sc">$</span>marcado_spam, correos<span class="sc">$</span>es_spam,</span>
-<span id="cb2-19"><a href="prob.html#cb2-19" tabindex="-1"></a>      <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;Marcado como spam&quot;</span>, <span class="st">&quot;Es spam&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="prob.html#cb1-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-2"><a href="prob.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="prob.html#cb1-3" tabindex="-1"></a><span class="co"># Tamaño de muestra</span></span>
+<span id="cb1-4"><a href="prob.html#cb1-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb1-5"><a href="prob.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="prob.html#cb1-6" tabindex="-1"></a><span class="co"># Generamos si el correo es spam (10%)</span></span>
+<span id="cb1-7"><a href="prob.html#cb1-7" tabindex="-1"></a>es_spam <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>)</span>
+<span id="cb1-8"><a href="prob.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="prob.html#cb1-9" tabindex="-1"></a><span class="co"># Clasificador identifica spam con sensibilidad 98% y especificidad 90%</span></span>
+<span id="cb1-10"><a href="prob.html#cb1-10" tabindex="-1"></a>marcado_spam <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(es_spam <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-11"><a href="prob.html#cb1-11" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.98</span>),  <span class="co"># verdadero positivo</span></span>
+<span id="cb1-12"><a href="prob.html#cb1-12" tabindex="-1"></a>                       <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.10</span>))  <span class="co"># falso positivo</span></span>
+<span id="cb1-13"><a href="prob.html#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="prob.html#cb1-14" tabindex="-1"></a><span class="co"># Guardamos en un data.frame</span></span>
+<span id="cb1-15"><a href="prob.html#cb1-15" tabindex="-1"></a>correos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(es_spam, marcado_spam)</span>
+<span id="cb1-16"><a href="prob.html#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="prob.html#cb1-17" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
+<span id="cb1-18"><a href="prob.html#cb1-18" tabindex="-1"></a><span class="fu">table</span>(correos<span class="sc">$</span>marcado_spam, correos<span class="sc">$</span>es_spam,</span>
+<span id="cb1-19"><a href="prob.html#cb1-19" tabindex="-1"></a>      <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;Marcado como spam&quot;</span>, <span class="st">&quot;Es spam&quot;</span>))</span></code></pre></div>
 <pre><code>##                  Es spam
 ## Marcado como spam    0    1
 ##                 0 8093   20
 ##                 1  876 1011</code></pre>
 <p>A continuación calculamos la probabilidad empírica:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="prob.html#cb4-1" tabindex="-1"></a><span class="co"># Correos marcados como spam</span></span>
-<span id="cb4-2"><a href="prob.html#cb4-2" tabindex="-1"></a>correos_marcados <span class="ot">&lt;-</span> correos[correos<span class="sc">$</span>marcado_spam <span class="sc">==</span> <span class="dv">1</span>, ]</span>
-<span id="cb4-3"><a href="prob.html#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="prob.html#cb4-4" tabindex="-1"></a><span class="co"># Proporción de verdaderos spam entre los marcados</span></span>
-<span id="cb4-5"><a href="prob.html#cb4-5" tabindex="-1"></a>prob_spam_dado_marcado <span class="ot">&lt;-</span> <span class="fu">mean</span>(correos_marcados<span class="sc">$</span>es_spam)</span>
-<span id="cb4-6"><a href="prob.html#cb4-6" tabindex="-1"></a>prob_spam_dado_marcado</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="prob.html#cb3-1" tabindex="-1"></a><span class="co"># Correos marcados como spam</span></span>
+<span id="cb3-2"><a href="prob.html#cb3-2" tabindex="-1"></a>correos_marcados <span class="ot">&lt;-</span> correos[correos<span class="sc">$</span>marcado_spam <span class="sc">==</span> <span class="dv">1</span>, ]</span>
+<span id="cb3-3"><a href="prob.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="prob.html#cb3-4" tabindex="-1"></a><span class="co"># Proporción de verdaderos spam entre los marcados</span></span>
+<span id="cb3-5"><a href="prob.html#cb3-5" tabindex="-1"></a>prob_spam_dado_marcado <span class="ot">&lt;-</span> <span class="fu">mean</span>(correos_marcados<span class="sc">$</span>es_spam)</span>
+<span id="cb3-6"><a href="prob.html#cb3-6" tabindex="-1"></a>prob_spam_dado_marcado</span></code></pre></div>
 <pre><code>## [1] 0.5357711</code></pre>
 <p>Aunque el clasificador es bastante preciso (98% de sensibilidad y 90% de especificidad), solo el 53.6% de los correos marcados como spam son realmente spam.</p>
 <p>Esto ocurre porque el evento “ser spam” es poco frecuente (solo el 10% de todos los correos). En estos casos, incluso una pequeña tasa de error puede provocar que muchos correos legítimos sean marcados erróneamente como spam (falsos positivos), y eso hace que la probabilidad de que un correo marcado como spam sea realmente spam no sea tan alta como cabría esperar.</p>
 <p><strong>Conclusión clave:</strong> El valor del 53.6% muestra que en contextos con baja prevalencia (como el spam), la probabilidad posterior puede alejarse bastante de la sensibilidad del test. Es decir, tener un buen clasificador no garantiza una alta fiabilidad en los positivos si el evento que se intenta detectar es raro. Esto es una consecuencia directa del teorema de Bayes.</p>
 <p><strong>Visualización</strong></p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Interpretación del gráfico Barra izquierda (Spam): Mayoritariamente clasificados correctamente como spam (color rojo). Barra derecha (No spam): Un pequeño porcentaje se clasifica erróneamente como spam (falsos positivos).</p>
 <p><strong>✅ Conclusión</strong> Con esta simulación, hemos estimado empíricamente la probabilidad <span class="math inline">\(P(Spam∣Marcado)\)</span>, es decir, la probabilidad de que un correo realmente sea spam si ha sido clasificado como tal. Este valor estará alrededor del 52%, mostrando cómo incluso un buen clasificador puede producir una alta tasa de falsos positivos cuando el evento es poco frecuente.</p>
 </div>
@@ -963,19 +962,19 @@ P(A) \cdot P(B) = 0.5 \cdot 0.5 = 0.25 = P(A \cap B)
 \]</span></p>
 <p><strong>Simulación en R</strong></p>
 <p>Vamos a simular este experimento 100.000 veces y comprobar empíricamente la independencia:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="prob.html#cb6-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb6-2"><a href="prob.html#cb6-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
-<span id="cb6-3"><a href="prob.html#cb6-3" tabindex="-1"></a>dado <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-4"><a href="prob.html#cb6-4" tabindex="-1"></a>moneda <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;cara&quot;</span>, <span class="st">&quot;cruz&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-5"><a href="prob.html#cb6-5" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="prob.html#cb6-6" tabindex="-1"></a>A <span class="ot">&lt;-</span> dado <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
-<span id="cb6-7"><a href="prob.html#cb6-7" tabindex="-1"></a>B <span class="ot">&lt;-</span> moneda <span class="sc">==</span> <span class="st">&quot;cara&quot;</span></span>
-<span id="cb6-8"><a href="prob.html#cb6-8" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="prob.html#cb6-9" tabindex="-1"></a>p_A <span class="ot">&lt;-</span> <span class="fu">mean</span>(A)</span>
-<span id="cb6-10"><a href="prob.html#cb6-10" tabindex="-1"></a>p_B <span class="ot">&lt;-</span> <span class="fu">mean</span>(B)</span>
-<span id="cb6-11"><a href="prob.html#cb6-11" tabindex="-1"></a>p_AB <span class="ot">&lt;-</span> <span class="fu">mean</span>(A <span class="sc">&amp;</span> B)</span>
-<span id="cb6-12"><a href="prob.html#cb6-12" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="prob.html#cb6-13" tabindex="-1"></a><span class="fu">c</span>(<span class="at">P_A =</span> p_A, <span class="at">P_B =</span> p_B, <span class="at">P_AyB =</span> p_AB, <span class="at">Producto =</span> p_A <span class="sc">*</span> p_B, <span class="at">dif =</span> p_AB <span class="sc">-</span> p_A <span class="sc">*</span> p_B)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="prob.html#cb5-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb5-2"><a href="prob.html#cb5-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb5-3"><a href="prob.html#cb5-3" tabindex="-1"></a>dado <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-4"><a href="prob.html#cb5-4" tabindex="-1"></a>moneda <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;cara&quot;</span>, <span class="st">&quot;cruz&quot;</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-5"><a href="prob.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="prob.html#cb5-6" tabindex="-1"></a>A <span class="ot">&lt;-</span> dado <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb5-7"><a href="prob.html#cb5-7" tabindex="-1"></a>B <span class="ot">&lt;-</span> moneda <span class="sc">==</span> <span class="st">&quot;cara&quot;</span></span>
+<span id="cb5-8"><a href="prob.html#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="prob.html#cb5-9" tabindex="-1"></a>p_A <span class="ot">&lt;-</span> <span class="fu">mean</span>(A)</span>
+<span id="cb5-10"><a href="prob.html#cb5-10" tabindex="-1"></a>p_B <span class="ot">&lt;-</span> <span class="fu">mean</span>(B)</span>
+<span id="cb5-11"><a href="prob.html#cb5-11" tabindex="-1"></a>p_AB <span class="ot">&lt;-</span> <span class="fu">mean</span>(A <span class="sc">&amp;</span> B)</span>
+<span id="cb5-12"><a href="prob.html#cb5-12" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="prob.html#cb5-13" tabindex="-1"></a><span class="fu">c</span>(<span class="at">P_A =</span> p_A, <span class="at">P_B =</span> p_B, <span class="at">P_AyB =</span> p_AB, <span class="at">Producto =</span> p_A <span class="sc">*</span> p_B, <span class="at">dif =</span> p_AB <span class="sc">-</span> p_A <span class="sc">*</span> p_B)</span></code></pre></div>
 <pre><code>##         P_A         P_B       P_AyB    Producto         dif 
 ## 0.498520000 0.498450000 0.249800000 0.248487294 0.001312706</code></pre>
 <p>Nota: al ser un experimento empírico, la igualdad no se cumple perfectamente. Obsérvese que sacar un número par en un lanzamiento de un dado no es exáctamente 0.5, y lo mismo ocurre con el número de caras al lanzar una moneda. Si se incrementa el número de repeticiones se espera que esas diferencias son menores.</p>
@@ -1015,15 +1014,15 @@ P(A \cap B \cap C) = 0.9 \cdot 0.8 \cdot 0.7=0.504
 \boxed{P(A \cap B \cap C) = 0.504}
 \]</span></p>
 <p>Podemos confirmar este resultado <strong>mediante simulación</strong>. Supongamos que repetimos este proceso 10000 veces:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="prob.html#cb8-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb8-2"><a href="prob.html#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="prob.html#cb8-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb8-4"><a href="prob.html#cb8-4" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.9</span></span>
-<span id="cb8-5"><a href="prob.html#cb8-5" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">&amp;</span> A         <span class="co"># B depende de A</span></span>
-<span id="cb8-6"><a href="prob.html#cb8-6" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.7</span> <span class="sc">&amp;</span> A <span class="sc">&amp;</span> B     <span class="co"># C depende de A y B</span></span>
-<span id="cb8-7"><a href="prob.html#cb8-7" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="prob.html#cb8-8" tabindex="-1"></a><span class="co"># Probabilidad empírica de que A, B y C ocurran a la vez</span></span>
-<span id="cb8-9"><a href="prob.html#cb8-9" tabindex="-1"></a><span class="fu">mean</span>(A <span class="sc">&amp;</span> B <span class="sc">&amp;</span> C)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="prob.html#cb7-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-2"><a href="prob.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="prob.html#cb7-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb7-4"><a href="prob.html#cb7-4" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.9</span></span>
+<span id="cb7-5"><a href="prob.html#cb7-5" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.8</span> <span class="sc">&amp;</span> A         <span class="co"># B depende de A</span></span>
+<span id="cb7-6"><a href="prob.html#cb7-6" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">runif</span>(n) <span class="sc">&lt;</span> <span class="fl">0.7</span> <span class="sc">&amp;</span> A <span class="sc">&amp;</span> B     <span class="co"># C depende de A y B</span></span>
+<span id="cb7-7"><a href="prob.html#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="prob.html#cb7-8" tabindex="-1"></a><span class="co"># Probabilidad empírica de que A, B y C ocurran a la vez</span></span>
+<span id="cb7-9"><a href="prob.html#cb7-9" tabindex="-1"></a><span class="fu">mean</span>(A <span class="sc">&amp;</span> B <span class="sc">&amp;</span> C)</span></code></pre></div>
 <pre><code>## [1] 0.5041</code></pre>
 </div>
 </div>
@@ -1060,7 +1059,7 @@ C(n,k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}
 C(5,3) = \frac{5!}{3! \cdot 2!} = 10
 \]</span></p>
 <p><strong>En R</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="prob.html#cb10-1" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="prob.html#cb9-1" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">5</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 </div>
 <div id="combinaciones-con-repetición" class="section level4 hasAnchor" number="2.7.2.2">
@@ -1075,8 +1074,8 @@ C&#39;(n,k) = \binom{n + k - 1}{k} = \frac{(n + k - 1)!}{k!(n - 1)!}
 C&#39;(4,3) = \binom{4 + 3 - 1}{3} = \binom{6}{3} = 20
 \]</span></p>
 <p><strong>En R</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="prob.html#cb12-1" tabindex="-1"></a><span class="co"># Número de combinaciones con repetición de 3 elementos tomados de 4 tipos</span></span>
-<span id="cb12-2"><a href="prob.html#cb12-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">4</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="prob.html#cb11-1" tabindex="-1"></a><span class="co"># Número de combinaciones con repetición de 3 elementos tomados de 4 tipos</span></span>
+<span id="cb11-2"><a href="prob.html#cb11-2" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">4</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 </div>
 </div>
@@ -1096,8 +1095,8 @@ V(5,2) = \frac{5!}{(5 - 2)!} = \frac{120}{6} = 20
 \]</span></p>
 <p><strong>Código en R</strong></p>
 <p>No existe una fórmula directa para calcular las variaciones, así que se calcula directamente mediante factoriales.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="prob.html#cb14-1" tabindex="-1"></a><span class="co"># Variaciones sin repetición: V(5,2)</span></span>
-<span id="cb14-2"><a href="prob.html#cb14-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="fu">factorial</span>(<span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="prob.html#cb13-1" tabindex="-1"></a><span class="co"># Variaciones sin repetición: V(5,2)</span></span>
+<span id="cb13-2"><a href="prob.html#cb13-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">5</span>) <span class="sc">/</span> <span class="fu">factorial</span>(<span class="dv">5</span> <span class="sc">-</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 <p>####Variaciones con repetición</p>
 <p>Una <strong>variación con repetición</strong> es una disposición de <span class="math inline">\(K\)</span> elementos seleccionados de un conjunto de <span class="math inline">\(n\)</span> elementos, <strong>permitiendo repetición</strong> y <strong>teniendo en cuenta el orden</strong>. SU fórmula es:</p>
@@ -1111,8 +1110,8 @@ V&#39;(n,k) = n^k
 V&#39;(4,3) = 4^3 = 64
 \]</span></p>
 <p><strong>Código en R</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="prob.html#cb16-1" tabindex="-1"></a><span class="co"># Variaciones con repetición: V&#39;(4,3)</span></span>
-<span id="cb16-2"><a href="prob.html#cb16-2" tabindex="-1"></a><span class="dv">4</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="prob.html#cb15-1" tabindex="-1"></a><span class="co"># Variaciones con repetición: V&#39;(4,3)</span></span>
+<span id="cb15-2"><a href="prob.html#cb15-2" tabindex="-1"></a><span class="dv">4</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 64</code></pre>
 </div>
 </div>
@@ -1132,8 +1131,8 @@ P(n) = n!
 P(4) = 4! = 24
 \]</span></p>
 <p><strong>Código en R</strong> No hay una fórmula expresa para las permuntaciones, sino que se caclula con la función ‘factorial’.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="prob.html#cb18-1" tabindex="-1"></a><span class="co"># Permutaciones sin repetición: P(4)</span></span>
-<span id="cb18-2"><a href="prob.html#cb18-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="prob.html#cb17-1" tabindex="-1"></a><span class="co"># Permutaciones sin repetición: P(4)</span></span>
+<span id="cb17-2"><a href="prob.html#cb17-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 24</code></pre>
 </div>
 <div id="permutaciones-con-repetición" class="section level4 hasAnchor" number="2.7.4.2">
@@ -1155,8 +1154,8 @@ P(n; n_1, n_2, \dots, n_k) = \frac{n!}{n_1! \cdot n_2! \cdots n_k!}
 P = \frac{3!}{2! \cdot 1!} = \frac{6}{2} = 3
 \]</span></p>
 <p><strong>Código en R</strong> COmo en el caso anterior, no existe una fórmula para las permutaciones.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="prob.html#cb20-1" tabindex="-1"></a><span class="co"># Permutaciones con repetición: letras de &quot;ANA&quot;</span></span>
-<span id="cb20-2"><a href="prob.html#cb20-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>) <span class="sc">/</span> (<span class="fu">factorial</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">factorial</span>(<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="prob.html#cb19-1" tabindex="-1"></a><span class="co"># Permutaciones con repetición: letras de &quot;ANA&quot;</span></span>
+<span id="cb19-2"><a href="prob.html#cb19-2" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">3</span>) <span class="sc">/</span> (<span class="fu">factorial</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">factorial</span>(<span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 
 </div>

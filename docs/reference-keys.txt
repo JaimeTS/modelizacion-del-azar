@@ -1,7 +1,7 @@
 fig:diagrama-suceso-seguro
 fig:union-sucesos
 fig:arbol-bayes
-tab:unnamed-chunk-115
+tab:unnamed-chunk-85
 intro
 prob
 introducción

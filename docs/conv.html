@@ -54,6 +54,10 @@
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -390,7 +394,7 @@ p_n = \frac{\text{número de caras}}{n}
 p_n \to 0.5
 \]</span></p>
 <p>Esto ilustra una idea fundamental: aunque cada lanzamiento es aleatorio, el comportamiento global es predecible.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 </div>
 <div id="ejemplo-media-muestral" class="section level3 hasAnchor" number="6.1.3">
 <h3><span class="header-section-number">6.1.3</span> Ejemplo: media muestral<a href="conv.html#ejemplo-media-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -432,7 +436,7 @@ p_n = \frac{1}{n}
 p_n \to 0
 \]</span></p>
 <p>Este ejemplo no es aleatorio, pero resulta útil para introducir la idea de convergencia de forma sencilla: los términos de la sucesión se van acercando a un valor fijo.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>Aunque este ejemplo no es aleatorio, ayuda a entender la idea básica:</p>
 <p>- Los valores se van acercando a 0</p>
 <p>- La variabilidad desaparece</p>
@@ -560,8 +564,8 @@ F_n(x) \to F(x)
 <li>La convergencia en distribución puede darse incluso si <span class="math inline">\(X_n\)</span> y <span class="math inline">\(X\)</span> no están definidas en el mismo espacio de probabilidad.</li>
 </ul>
 <p>Esta jerarquía de convergencias proporciona el marco formal necesario para entender los resultados asintóticos y las aproximaciones entre distribuciones que estudiaremos en los siguientes apartados.</p>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1d5df3d80f5735caaf13" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-1d5df3d80f5735caaf13">{"x":{"diagram":"\ndigraph jerarquia_convergencia {\n  graph [rankdir=TB, layout=dot]\n\n  # Nodos\n  cs [label = \"Convergencia casi segura\", shape = ellipse, style = filled, fillcolor = gray95]\n  mq [label = \"Convergencia en media cuadrática (L²)\", shape = ellipse, style = filled, fillcolor = gray95]\n  cp [label = \"Convergencia en probabilidad\", shape = ellipse, style = filled, fillcolor = gray95]\n  cd [label = \"Convergencia en distribución\", shape = ellipse, style = filled, fillcolor = gray95]\n\n  # Agrupar nodos en el mismo nivel\n  {rank = same; cs; mq}\n\n  # Flechas\n  cs -> cp\n  mq -> cp\n  cp -> cd\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d2e77a63e3d58ef1b9ef" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-d2e77a63e3d58ef1b9ef">{"x":{"diagram":"\ndigraph jerarquia_convergencia {\n  graph [rankdir=TB, layout=dot]\n\n  # Nodos\n  cs [label = \"Convergencia casi segura\", shape = ellipse, style = filled, fillcolor = gray95]\n  mq [label = \"Convergencia en media cuadrática (L²)\", shape = ellipse, style = filled, fillcolor = gray95]\n  cp [label = \"Convergencia en probabilidad\", shape = ellipse, style = filled, fillcolor = gray95]\n  cd [label = \"Convergencia en distribución\", shape = ellipse, style = filled, fillcolor = gray95]\n\n  # Agrupar nodos en el mismo nivel\n  {rank = same; cs; mq}\n\n  # Flechas\n  cs -> cp\n  mq -> cp\n  cp -> cd\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Figura 2. Jerarquía entre tipos de convergencia</p>
 </div>
 <div id="ejercicio-guía-una-misma-sucesión-vista-desde-varios-tipos-de-convergencia" class="section level3 hasAnchor" number="6.2.7">
@@ -628,7 +632,7 @@ X_n \xrightarrow{d} 0
 \]</span></p>
 <p><strong>e) Representación gráfica</strong></p>
 <p>Para visualizar este resultado, simulamos varias realizaciones de la sucesión <span class="math inline">\(X_n = X/n\)</span>, donde <span class="math inline">\(X \sim U(0,1)\)</span>.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 <p>En el gráfico se representan varias trayectorias posibles de la sucesión.</p>
 <p>Se observa que:</p>
 <ul>
@@ -799,7 +803,7 @@ Z_n \xrightarrow{d} \mathcal{N}(0,1)
 <div id="representación-gráfica-intuición-del-tcl" class="section level3 hasAnchor" number="6.3.5">
 <h3><span class="header-section-number">6.3.5</span> Representación gráfica (intuición del TCL)<a href="#representaci%C3%B3n-gr%C3%A1fica-intuici%C3%B3n-del-tcl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Simulamos como converge la distribución de la media muestral a la Normal a medida que el tamaño muestral aumenta.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
 </div>
 </div>
 <div id="aproximaciones-entre-distribuciones" class="section level2 hasAnchor" number="6.4">
@@ -938,8 +942,8 @@ X \approx N(\lambda, \sqrt\lambda )
 </ul>
 <p>Estas condiciones son de carácter práctico y deben verificarse antes de aplicar la aproximación. En caso contrario, se corre el riesgo de obtener resultados imprecisos.</p>
 <p>En el siguiente diagrama se puede ver una ilustración de las aproximaciones clásicas y sus condiciones.</p>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-67c25ca3336b15b0293a" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-67c25ca3336b15b0293a">{"x":{"diagram":"\ndigraph {\n  rankdir=TB;\n  node [shape=ellipse, style=filled, fillcolor=gray95, fontname=Helvetica];\n  Bin [label=\"Distribución Binomial\"];\n  Poi [label=\"Distribución Poisson\"];\n  Nor [label=\"Distribución Normal\"];\n  Bin -> Poi [label=\"n grande, p pequeño, np = constante\"];\n  Bin -> Nor [label=\"np ≥ 5, n(1-p) ≥ 5\"];\n  Poi -> Nor [label=\"λ ≥ 10\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ee900d115c125f7b2c61" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ee900d115c125f7b2c61">{"x":{"diagram":"\ndigraph {\n  rankdir=TB;\n  node [shape=ellipse, style=filled, fillcolor=gray95, fontname=Helvetica];\n  Bin [label=\"Distribución Binomial\"];\n  Poi [label=\"Distribución Poisson\"];\n  Nor [label=\"Distribución Normal\"];\n  Bin -> Poi [label=\"n grande, p pequeño, np = constante\"];\n  Bin -> Nor [label=\"np ≥ 5, n(1-p) ≥ 5\"];\n  Poi -> Nor [label=\"λ ≥ 10\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p><img src="Modelos-continuos_files/aproximaciones%20cl%C3%A1sicas.png" /></p>
 <p><strong>Figura 1:</strong> Diagrama de las relaciones de aproximación entre la distribución binomial, Poisson y normal. Las flechas indican que una distribución sirve de aproximación a otra bajo las condiciones señaladas junto a cada flecha. Por ejemplo, una <span class="math inline">\(B(n,p)\)</span> con <span class="math inline">\(n\)</span> muy grande y <span class="math inline">\(p\)</span> muy pequeño (de modo que <span class="math inline">\(np\)</span> se mantiene aproximadamente constante) se puede aproximar mediante una <span class="math inline">\(P(n p)\)</span>; si <span class="math inline">\(np\)</span> y <span class="math inline">\(n(1-p)\)</span> son bastante grandes, <span class="math inline">\(B(n,p)\)</span> se aproxima bien por una normal; y si <span class="math inline">\(\lambda\)</span> es grande, <span class="math inline">\(P(\lambda)\)</span> se aproxima por <span class="math inline">\(\mathcal{N}(\lambda,\lambda)\)</span>.</p>
 </div>
@@ -1116,7 +1120,7 @@ X \approx P(2)
 <div id="visualización-de-la-convergencia" class="section level3 hasAnchor" number="6.5.4">
 <h3><span class="header-section-number">6.5.4</span> Visualización de la convergencia<a href="#visualizaci%C3%B3n-de-la-convergencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podemos visualizar cómo mejora la estimación al aumentar el tamaño muestral.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
 <p><strong>Interpretación</strong></p>
 <ul>
 <li><p>Al inicio, la media acumulada fluctúa</p></li>
@@ -1202,7 +1206,7 @@ P(X \geq 85)
 \mu = np = 80, \quad \sigma = \sqrt{np(1-p)} = 4
 \]</span></p>
 <p><em>1. Cálculo exacto (con software)</em></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="conv.html#cb2-1" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">84</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.8</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="conv.html#cb171-1" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">84</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">prob =</span> <span class="fl">0.8</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1285055</code></pre>
 <p>Resultado aproximado:</p>
 <p><span class="math display">\[

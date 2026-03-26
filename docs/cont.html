@@ -418,22 +418,22 @@ P(d \leq X \leq c) = \frac{c - d}{b -a} \]</span></p>
 <li><p>La probabilidad de que una solicitud llegue entre el día 12 y el 15.</p></li>
 <li><p>La media y la varianza del día de llegada.</p></li>
 </ol>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="cont.html#cb110-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb110-2"><a href="cont.html#cb110-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb110-3"><a href="cont.html#cb110-3" tabindex="-1"></a></span>
-<span id="cb110-4"><a href="cont.html#cb110-4" tabindex="-1"></a><span class="co"># Probabilidad de llegada entre los días 12 y 15</span></span>
-<span id="cb110-5"><a href="cont.html#cb110-5" tabindex="-1"></a>dia_inicio <span class="ot">&lt;-</span> <span class="dv">12</span></span>
-<span id="cb110-6"><a href="cont.html#cb110-6" tabindex="-1"></a>dia_fin <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb110-7"><a href="cont.html#cb110-7" tabindex="-1"></a><span class="co">#Calculamos la probabilidad como F(15)-F(12)</span></span>
-<span id="cb110-8"><a href="cont.html#cb110-8" tabindex="-1"></a>probabilidad <span class="ot">&lt;-</span> <span class="fu">punif</span>(dia_fin, <span class="at">min =</span> a, <span class="at">max =</span> b) <span class="sc">-</span> <span class="fu">punif</span>(dia_inicio, <span class="at">min =</span> a, <span class="at">max =</span> b)</span>
-<span id="cb110-9"><a href="cont.html#cb110-9" tabindex="-1"></a></span>
-<span id="cb110-10"><a href="cont.html#cb110-10" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
-<span id="cb110-11"><a href="cont.html#cb110-11" tabindex="-1"></a>media <span class="ot">&lt;-</span> (a <span class="sc">+</span> b) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb110-12"><a href="cont.html#cb110-12" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> (b <span class="sc">-</span> a)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">12</span></span>
-<span id="cb110-13"><a href="cont.html#cb110-13" tabindex="-1"></a></span>
-<span id="cb110-14"><a href="cont.html#cb110-14" tabindex="-1"></a>probabilidad</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="cont.html#cb105-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb105-2"><a href="cont.html#cb105-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb105-3"><a href="cont.html#cb105-3" tabindex="-1"></a></span>
+<span id="cb105-4"><a href="cont.html#cb105-4" tabindex="-1"></a><span class="co"># Probabilidad de llegada entre los días 12 y 15</span></span>
+<span id="cb105-5"><a href="cont.html#cb105-5" tabindex="-1"></a>dia_inicio <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb105-6"><a href="cont.html#cb105-6" tabindex="-1"></a>dia_fin <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb105-7"><a href="cont.html#cb105-7" tabindex="-1"></a><span class="co">#Calculamos la probabilidad como F(15)-F(12)</span></span>
+<span id="cb105-8"><a href="cont.html#cb105-8" tabindex="-1"></a>probabilidad <span class="ot">&lt;-</span> <span class="fu">punif</span>(dia_fin, <span class="at">min =</span> a, <span class="at">max =</span> b) <span class="sc">-</span> <span class="fu">punif</span>(dia_inicio, <span class="at">min =</span> a, <span class="at">max =</span> b)</span>
+<span id="cb105-9"><a href="cont.html#cb105-9" tabindex="-1"></a></span>
+<span id="cb105-10"><a href="cont.html#cb105-10" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
+<span id="cb105-11"><a href="cont.html#cb105-11" tabindex="-1"></a>media <span class="ot">&lt;-</span> (a <span class="sc">+</span> b) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb105-12"><a href="cont.html#cb105-12" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> (b <span class="sc">-</span> a)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">12</span></span>
+<span id="cb105-13"><a href="cont.html#cb105-13" tabindex="-1"></a></span>
+<span id="cb105-14"><a href="cont.html#cb105-14" tabindex="-1"></a>probabilidad</span></code></pre></div>
 <pre><code>## [1] 0.3</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="cont.html#cb112-1" tabindex="-1"></a>media</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="cont.html#cb107-1" tabindex="-1"></a>media</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 </div>
 <div id="distribución-normal" class="section level2 hasAnchor" number="5.2">
@@ -485,9 +485,9 @@ P(d \leq X \leq c) = \frac{c - d}{b -a} \]</span></p>
 <p>A continuación, se representa gráficamente la función de densidad de una variable aleatoria con distribución normal <span class="math inline">\(\mathcal{N}(2000, 300^2)\)</span>.</p>
 <p><img src="modelizacion-del-azar_files/figure-html/grafico-normal-1.png" width="672" /></p>
 <p><strong>Cambios de Varianza y media en la Normal</strong> Efecto de un <strong>cambio en la varianza</strong>. La siguiente figura muestra cómo afecta el valor de la varianza a la forma de la función de densidad: a mayor varianza, más extendida (aplanada, platicúritca) es la curva; a menor varianza, más concentrada alrededor de la media (leptocúrtica).</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <p>Efecto de un <strong>cambio en la media</strong>. La siguiente figura muestra cómo afecta el valor de la media a la localización de la distribución normal, manteniendo constante la varianza. La forma de la curva no cambia, pero su centro se desplaza ha derecha o izquierda en función del valor de la media.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p><strong>Propiedad aditiva o reproductiva de la Normal</strong></p>
 <p>La distribución normal es <strong>reproductiva</strong>, lo que significa que la suma de variables aleatorias normales independientes también sigue una distribución normal.</p>
 <p>Si:</p>
@@ -568,25 +568,25 @@ El salario mensual de los empleados de una empresa sigue una distribución norma
 <p><span class="math inline">\(P(X &lt; 2300) = 0.8413\)</span></p>
 <p><span class="math inline">\(P(1850 &lt; X &lt; 2150) = 0.6915 - 0.3085 = 0.3830\)</span></p>
 <p><strong>Solución con R</strong></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="cont.html#cb114-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
-<span id="cb114-2"><a href="cont.html#cb114-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">300</span></span>
-<span id="cb114-3"><a href="cont.html#cb114-3" tabindex="-1"></a></span>
-<span id="cb114-4"><a href="cont.html#cb114-4" tabindex="-1"></a><span class="co"># a) P(X &lt; 2300)</span></span>
-<span id="cb114-5"><a href="cont.html#cb114-5" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2300</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="cont.html#cb109-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb109-2"><a href="cont.html#cb109-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb109-3"><a href="cont.html#cb109-3" tabindex="-1"></a></span>
+<span id="cb109-4"><a href="cont.html#cb109-4" tabindex="-1"></a><span class="co"># a) P(X &lt; 2300)</span></span>
+<span id="cb109-5"><a href="cont.html#cb109-5" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2300</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
 <pre><code>## [1] 0.8413447</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="cont.html#cb116-1" tabindex="-1"></a><span class="co"># b) P(1850 &lt; X &lt; 2150)</span></span>
-<span id="cb116-2"><a href="cont.html#cb116-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2150</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">1850</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="cont.html#cb111-1" tabindex="-1"></a><span class="co"># b) P(1850 &lt; X &lt; 2150)</span></span>
+<span id="cb111-2"><a href="cont.html#cb111-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2150</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">1850</span>, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
 <pre><code>## [1] 0.3829249</code></pre>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="cont.html#cb118-1" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
-<span id="cb118-2"><a href="cont.html#cb118-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> mu</span>
-<span id="cb118-3"><a href="cont.html#cb118-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> sigma<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb118-4"><a href="cont.html#cb118-4" tabindex="-1"></a>media</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="cont.html#cb113-1" tabindex="-1"></a><span class="co"># Media y varianza</span></span>
+<span id="cb113-2"><a href="cont.html#cb113-2" tabindex="-1"></a>media <span class="ot">&lt;-</span> mu</span>
+<span id="cb113-3"><a href="cont.html#cb113-3" tabindex="-1"></a>varianza <span class="ot">&lt;-</span> sigma<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb113-4"><a href="cont.html#cb113-4" tabindex="-1"></a>media</span></code></pre></div>
 <pre><code>## [1] 2000</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="cont.html#cb120-1" tabindex="-1"></a>varianza</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="cont.html#cb115-1" tabindex="-1"></a>varianza</span></code></pre></div>
 <pre><code>## [1] 90000</code></pre>
 <p><strong>Representación gráfica de las probabilidades</strong></p>
 <p>Visualizamos a continuación las dos situaciones planteadas en el ejemplo: la probabilidad de cobrar menos de 2300€, y la probabilidad de cobrar entre 1850€ y 2150€.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 </div>
 <div id="distribución-normal-estándar-mathcaln0-1" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Distribución Normal Estándar <span class="math inline">\(\mathcal{N}(0, 1)\)</span><a href="#distribuci%C3%B3n-normal-est%C3%A1ndar-mathcaln0-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -619,10 +619,10 @@ El salario mensual de los empleados de una empresa sigue una distribución norma
 <p><span class="math inline">\(Z = \frac{17 - 15}{2} = 1 \Rightarrow P(X &lt; 17) = P(Z &lt; 1) = 0.8413\)</span></p>
 <p>Aproximadamente el 84.13% de los clientes son atendidos en menos de 17 minutos.</p>
 <p><strong>Ejemplo en R</strong></p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="cont.html#cb122-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb122-2"><a href="cont.html#cb122-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb122-3"><a href="cont.html#cb122-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> (<span class="dv">17</span> <span class="sc">-</span> mu)<span class="sc">/</span>sigma</span>
-<span id="cb122-4"><a href="cont.html#cb122-4" tabindex="-1"></a><span class="fu">pnorm</span>(z) <span class="co"># P(Z &lt; 1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="cont.html#cb117-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb117-2"><a href="cont.html#cb117-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb117-3"><a href="cont.html#cb117-3" tabindex="-1"></a>z <span class="ot">&lt;-</span> (<span class="dv">17</span> <span class="sc">-</span> mu)<span class="sc">/</span>sigma</span>
+<span id="cb117-4"><a href="cont.html#cb117-4" tabindex="-1"></a><span class="fu">pnorm</span>(z) <span class="co"># P(Z &lt; 1)</span></span></code></pre></div>
 <pre><code>## [1] 0.8413447</code></pre>
 <p><strong>Cálculo de probabilidades directas usando tablas de la normal estándar (N(0, 1))</strong></p>
 <p>Las tablas que utilizamos en este curso proporcionan el valor de la probabilidad acumulada <strong>a la derecha</strong> del valor de <span class="math inline">\(z\)</span>, es decir: <span class="math inline">\(P(Z &gt; z)\)</span></p>
@@ -672,43 +672,43 @@ El salario mensual de los empleados de una empresa sigue una distribución norma
 <ol style="list-style-type: decimal">
 <li>Calcular <span class="math inline">\(P(Z &gt; 1.25)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="cont.html#cb124-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="cont.html#cb119-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1056498</code></pre>
 <p>Representación gráfica:</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Calcular <span class="math inline">\(P(Z &lt; 1.25)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="cont.html#cb126-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="cont.html#cb121-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.25</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8943502</code></pre>
 <p>Representación gráfica:</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Calcular <span class="math inline">\(P(Z &lt; -1.25)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="cont.html#cb128-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="cont.html#cb123-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.25</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1056498</code></pre>
 <p>Representación gráfica:</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Calcular <span class="math inline">\(P(|Z| &lt; 1.25)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="cont.html#cb130-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="cont.html#cb125-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="fl">1.25</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7887005</code></pre>
 <p>Representación gráfica:</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Calcular <span class="math inline">\(P(Z \geq -1.85)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="cont.html#cb132-1" tabindex="-1"></a>z<span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.85</span></span>
-<span id="cb132-2"><a href="cont.html#cb132-2" tabindex="-1"></a><span class="fu">pnorm</span>(z, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="cont.html#cb127-1" tabindex="-1"></a>z<span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.85</span></span>
+<span id="cb127-2"><a href="cont.html#cb127-2" tabindex="-1"></a><span class="fu">pnorm</span>(z, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9678432</code></pre>
 <p><span class="math display">\[
 P(Z \geq -1.85) = 1 - P(Z \leq -1.85) = 1 - 0.0322 = 0.9678
 \]</span></p>
 <p>Representación gráfica</p>
 <pre><code>## [1] 0.9678432</code></pre>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li><span class="math inline">\(P(0.20 &lt; Z \leq 1,95)\)</span></li>
 </ol>
@@ -716,27 +716,27 @@ P(Z \geq -1.85) = 1 - P(Z \leq -1.85) = 1 - 0.0322 = 0.9678
 <span class="math display">\[
 P(0.20 &lt; Z \leq 1.95) = P(Z \geq 0.20) - P(Z \geq 1.95)
 \]</span></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="cont.html#cb135-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
-<span id="cb135-2"><a href="cont.html#cb135-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">1.95</span></span>
-<span id="cb135-3"><a href="cont.html#cb135-3" tabindex="-1"></a></span>
-<span id="cb135-4"><a href="cont.html#cb135-4" tabindex="-1"></a><span class="co"># Cálculo de la probabilidad</span></span>
-<span id="cb135-5"><a href="cont.html#cb135-5" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(a, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(b, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb135-6"><a href="cont.html#cb135-6" tabindex="-1"></a>prob</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="cont.html#cb130-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb130-2"><a href="cont.html#cb130-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">1.95</span></span>
+<span id="cb130-3"><a href="cont.html#cb130-3" tabindex="-1"></a></span>
+<span id="cb130-4"><a href="cont.html#cb130-4" tabindex="-1"></a><span class="co"># Cálculo de la probabilidad</span></span>
+<span id="cb130-5"><a href="cont.html#cb130-5" tabindex="-1"></a>prob <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(a, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(b, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb130-6"><a href="cont.html#cb130-6" tabindex="-1"></a>prob</span></code></pre></div>
 <pre><code>## [1] 0.3951522</code></pre>
 <p>Representación gráfica</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li><span class="math inline">\(P(-1.60 \leq Z \leq -0.45)\)</span></li>
 </ol>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="cont.html#cb137-1" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.60</span></span>
-<span id="cb137-2"><a href="cont.html#cb137-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.45</span></span>
-<span id="cb137-3"><a href="cont.html#cb137-3" tabindex="-1"></a></span>
-<span id="cb137-4"><a href="cont.html#cb137-4" tabindex="-1"></a><span class="co"># Cálculo usando simetría: P(Z ≥ 0.45) - P(Z ≥ 1.60)</span></span>
-<span id="cb137-5"><a href="cont.html#cb137-5" tabindex="-1"></a>prob2 <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>a2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>b2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb137-6"><a href="cont.html#cb137-6" tabindex="-1"></a>prob2 </span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="cont.html#cb132-1" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">1.60</span></span>
+<span id="cb132-2"><a href="cont.html#cb132-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.45</span></span>
+<span id="cb132-3"><a href="cont.html#cb132-3" tabindex="-1"></a></span>
+<span id="cb132-4"><a href="cont.html#cb132-4" tabindex="-1"></a><span class="co"># Cálculo usando simetría: P(Z ≥ 0.45) - P(Z ≥ 1.60)</span></span>
+<span id="cb132-5"><a href="cont.html#cb132-5" tabindex="-1"></a>prob2 <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>a2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>b2, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb132-6"><a href="cont.html#cb132-6" tabindex="-1"></a>prob2 </span></code></pre></div>
 <pre><code>## [1] -0.2715559</code></pre>
 <p>Representación gráfica</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p><strong>Cálculo de probabilidad inversa de la Normal Estándar</strong></p>
 <p>De la misma forma que hemos calculado una serie de valores de probabilidades normales, cuando conocemos el suceso podemos encontrarnos en la situación inversa, es decir, conocida la probabilidad, hallar el valor de la abscisa.</p>
 <p>En estos casos es necesario, en la mayoría de las tablas de la distribución <span class="math inline">\(\mathcal{N}(0,1)\)</span>, determinar el <strong>signo de la abscisa</strong>, como se indica en el siguiente cuadro:</p>
@@ -797,10 +797,10 @@ Negativa
 P(Z \leq a) = 1 - 0.35 = 0.65
 \]</span></p>
 <p>Buscamos el valor de <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(Z \leq a) = 0.65\)</span>.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="cont.html#cb139-1" tabindex="-1"></a><span class="co"># Inversa de la normal estándar</span></span>
-<span id="cb139-2"><a href="cont.html#cb139-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
-<span id="cb139-3"><a href="cont.html#cb139-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
-<span id="cb139-4"><a href="cont.html#cb139-4" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="cont.html#cb134-1" tabindex="-1"></a><span class="co"># Inversa de la normal estándar</span></span>
+<span id="cb134-2"><a href="cont.html#cb134-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
+<span id="cb134-3"><a href="cont.html#cb134-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb134-4"><a href="cont.html#cb134-4" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
 <pre><code>## [1] 0.3853205</code></pre>
 <p>En este caso <span class="math inline">\(a\)</span> es positivo.</p>
 <ul>
@@ -811,9 +811,9 @@ P(Z \leq a) = 1 - 0.35 = 0.65
 P(Z \leq a) = 1 - 0.65 = 0.35
 \]</span></p>
 <p>Buscamos el valor de <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(Z \leq a) = 0.35\)</span>.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="cont.html#cb141-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
-<span id="cb141-2"><a href="cont.html#cb141-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
-<span id="cb141-3"><a href="cont.html#cb141-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="cont.html#cb136-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
+<span id="cb136-2"><a href="cont.html#cb136-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb136-3"><a href="cont.html#cb136-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
 <pre><code>## [1] -0.3853205</code></pre>
 <p>En este caso <span class="math inline">\(a\)</span> es negativo</p>
 <ul>
@@ -823,9 +823,9 @@ P(Z \leq a) = 1 - 0.65 = 0.35
 <p><span class="math display">\[
 P(Z \leq a) = 0.65
 \]</span></p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="cont.html#cb143-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
-<span id="cb143-2"><a href="cont.html#cb143-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
-<span id="cb143-3"><a href="cont.html#cb143-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="cont.html#cb138-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.65</span></span>
+<span id="cb138-2"><a href="cont.html#cb138-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb138-3"><a href="cont.html#cb138-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 0.385</span></span></code></pre></div>
 <pre><code>## [1] 0.3853205</code></pre>
 <p>En este caso <span class="math inline">\(a\)</span> es positivo.</p>
 <ul>
@@ -835,9 +835,9 @@ P(Z \leq a) = 0.65
 <p><span class="math display">\[
 P(Z \leq a) = 0.35
 \]</span></p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="cont.html#cb145-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
-<span id="cb145-2"><a href="cont.html#cb145-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
-<span id="cb145-3"><a href="cont.html#cb145-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="cont.html#cb140-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.35</span></span>
+<span id="cb140-2"><a href="cont.html#cb140-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(p)</span>
+<span id="cb140-3"><a href="cont.html#cb140-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ -0.385</span></span></code></pre></div>
 <pre><code>## [1] -0.3853205</code></pre>
 <p>En este caso <span class="math inline">\(a\)</span> es negativo.</p>
 </div>
@@ -942,9 +942,9 @@ a \approx 12.338
 <p><span class="math display">\[
 P(\chi_{12}^2 \leq 18.55)
 \]</span></p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="cont.html#cb147-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
-<span id="cb147-2"><a href="cont.html#cb147-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(<span class="fl">18.55</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
-<span id="cb147-3"><a href="cont.html#cb147-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.8986</span></span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="cont.html#cb142-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb142-2"><a href="cont.html#cb142-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(<span class="fl">18.55</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
+<span id="cb142-3"><a href="cont.html#cb142-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.8986</span></span></code></pre></div>
 <pre><code>## [1] 0.9000175</code></pre>
 <p>Búsqueda dprobabilidad inversa con <code>qchisq</code></p>
 <p>Queremos encontrar el valor <span class="math inline">\(a\)</span> tal que:</p>
@@ -952,9 +952,9 @@ P(\chi_{12}^2 \leq 18.55)
 P(\chi_{15}^2 \geq a) = 0.10
 \]</span></p>
 <p>Es decir, buscamos el percentil que deja un 10% de probabilidad a la derecha.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="cont.html#cb149-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(chi² ≥ a) = 0.10 → cola derecha</span></span>
-<span id="cb149-2"><a href="cont.html#cb149-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque calcula P(X ≤ a)</span></span>
-<span id="cb149-3"><a href="cont.html#cb149-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 22.307</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="cont.html#cb144-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(chi² ≥ a) = 0.10 → cola derecha</span></span>
+<span id="cb144-2"><a href="cont.html#cb144-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque calcula P(X ≤ a)</span></span>
+<span id="cb144-3"><a href="cont.html#cb144-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 22.307</span></span></code></pre></div>
 <pre><code>## [1] 22.30713</code></pre>
 </div>
 <div id="distribución-t-de-student-t_n" class="section level3 hasAnchor" number="5.3.2">
@@ -1056,9 +1056,9 @@ P(-2.228 \leq T \leq 2.228) = 1 - 2 \cdot 0.025 = 0.95
 <p><span class="math display">\[
 P(T_{12} \leq 1.782)
 \]</span></p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="cont.html#cb151-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
-<span id="cb151-2"><a href="cont.html#cb151-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pt</span>(<span class="fl">1.782</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
-<span id="cb151-3"><a href="cont.html#cb151-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9499</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="cont.html#cb146-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb146-2"><a href="cont.html#cb146-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pt</span>(<span class="fl">1.782</span>, <span class="at">df =</span> <span class="dv">12</span>)</span>
+<span id="cb146-3"><a href="cont.html#cb146-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9499</span></span></code></pre></div>
 <pre><code>## [1] 0.9499756</code></pre>
 <p><strong><em>Probabilidad inversa con <code>qt</code></em></strong></p>
 <p>Queremos encontrar el valor <span class="math inline">\(a\)</span> tal que:</p>
@@ -1066,9 +1066,9 @@ P(T_{12} \leq 1.782)
 P(T_{15} \geq a) = 0.10
 \]</span></p>
 <p>Es decir, buscamos el percentil que deja un 10% de probabilidad a la derecha.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="cont.html#cb153-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(t ≥ a) = 0.10</span></span>
-<span id="cb153-2"><a href="cont.html#cb153-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque qt calcula P(t ≤ a)</span></span>
-<span id="cb153-3"><a href="cont.html#cb153-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 1.3406</span></span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="cont.html#cb148-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(t ≥ a) = 0.10</span></span>
+<span id="cb148-2"><a href="cont.html#cb148-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.90</span>, <span class="at">df =</span> <span class="dv">15</span>)  <span class="co"># usamos 0.90 porque qt calcula P(t ≤ a)</span></span>
+<span id="cb148-3"><a href="cont.html#cb148-3" tabindex="-1"></a>a  <span class="co"># Resultado ≈ 1.3406</span></span></code></pre></div>
 <pre><code>## [1] 1.340606</code></pre>
 </div>
 <div id="distribución-f-de-snedecor-fn_1n_2" class="section level3 hasAnchor" number="5.3.3">
@@ -1086,7 +1086,7 @@ F = \frac{U_1 / n_1}{U_2 / n_2} \sim F_{n_1, n_2}
 f(x) = \frac{\left(\frac{n_1}{n_2}\right)^{n_1/2} \Gamma\left(\frac{n_1 + n_2}{2}\right)}{\Gamma\left(\frac{n_1}{2}\right) \Gamma\left(\frac{n_2}{2}\right)} \cdot x^{(n_1/2 - 1)} \cdot \left(1 + \frac{n_1}{n_2}x\right)^{-\frac{n_1 + n_2}{2}}, \quad x &gt; 0
 \]</span></p>
 <p>donde <span class="math inline">\(\Gamma(\cdot)\)</span> es la función gamma.</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 <p><strong>Propiedades básicas</strong></p>
 <ul>
 <li><strong>Soporte</strong>: <span class="math inline">\(x \in (0, \infty)\)</span></li>
@@ -1153,17 +1153,17 @@ F_{8, 12}(0.01) = 5.40
 <p><span class="math display">\[
 P(F_{5, 10} \leq 3.33)
 \]</span></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="cont.html#cb155-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
-<span id="cb155-2"><a href="cont.html#cb155-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pf</span>(<span class="fl">3.33</span>, <span class="at">df1 =</span> <span class="dv">5</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
-<span id="cb155-3"><a href="cont.html#cb155-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9502</span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="cont.html#cb150-1" tabindex="-1"></a><span class="co"># Probabilidad acumulada a la izquierda</span></span>
+<span id="cb150-2"><a href="cont.html#cb150-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pf</span>(<span class="fl">3.33</span>, <span class="at">df1 =</span> <span class="dv">5</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
+<span id="cb150-3"><a href="cont.html#cb150-3" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.9502</span></span></code></pre></div>
 <pre><code>## [1] 0.9501687</code></pre>
 <p><em>- Probabilidad inversa con <code>qf</code></em></p>
 <p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
 <p><span class="math display">\[P(F_{8, 12} \geq x) = 0.05\]</span></p>
 <p>Es decir, buscamos el percentil que deja un 5% de probabilidad a la derecha.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="cont.html#cb157-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(F ≥ x) = 0.05</span></span>
-<span id="cb157-2"><a href="cont.html#cb157-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.95</span>, <span class="at">df1 =</span> <span class="dv">8</span>, <span class="at">df2 =</span> <span class="dv">12</span>)  <span class="co"># usamos 0.95 porque qf calcula P(F ≤ x)</span></span>
-<span id="cb157-3"><a href="cont.html#cb157-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 2.9012</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="cont.html#cb152-1" tabindex="-1"></a><span class="co"># Valor crítico tal que P(F ≥ x) = 0.05</span></span>
+<span id="cb152-2"><a href="cont.html#cb152-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.95</span>, <span class="at">df1 =</span> <span class="dv">8</span>, <span class="at">df2 =</span> <span class="dv">12</span>)  <span class="co"># usamos 0.95 porque qf calcula P(F ≤ x)</span></span>
+<span id="cb152-3"><a href="cont.html#cb152-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 2.9012</span></span></code></pre></div>
 <pre><code>## [1] 2.848565</code></pre>
 </div>
 <div id="aplicaciones-a-las-ciencias-sociales-de-las-distribuciones-derivadas-de-la-normal" class="section level3 hasAnchor" number="5.3.4">
@@ -1281,8 +1281,8 @@ P(X &gt; s + t \mid X &gt; s) = P(X &gt; t)
 <p><strong>Ejemplos de cálculo con R</strong></p>
 <p><em>- 1: Cálculo de la Probabilidad directa</em></p>
 <p>Sea <span class="math inline">\(X \sim \text{Exponencial}(0.25)\)</span>, calcular <span class="math inline">\(P(X \leq 5)\)</span>, es decir, la probabilidad de que el evento ocurra antes de 5 unidades de tiempo:</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="cont.html#cb159-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="dv">5</span>, <span class="at">rate =</span> <span class="fl">0.25</span>)</span>
-<span id="cb159-2"><a href="cont.html#cb159-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.7135</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="cont.html#cb154-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="dv">5</span>, <span class="at">rate =</span> <span class="fl">0.25</span>)</span>
+<span id="cb154-2"><a href="cont.html#cb154-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.7135</span></span></code></pre></div>
 <pre><code>## [1] 0.7134952</code></pre>
 <p><em>- 2: Cálculo de la Probabilidad inversa</em></p>
 <p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
@@ -1293,9 +1293,9 @@ P(X \geq x) = 0.1, \quad X \sim \text{Exponencial}(\lambda = 0.5)
 <p><span class="math display">\[
 P(X \geq x) = 0.1 \quad \Rightarrow \quad P(X \leq x) = 0.9
 \]</span></p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="cont.html#cb161-1" tabindex="-1"></a><span class="co"># Valor crítico correspondiente al percentil 90</span></span>
-<span id="cb161-2"><a href="cont.html#cb161-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qexp</span>(<span class="fl">0.9</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
-<span id="cb161-3"><a href="cont.html#cb161-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 4.605</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="cont.html#cb156-1" tabindex="-1"></a><span class="co"># Valor crítico correspondiente al percentil 90</span></span>
+<span id="cb156-2"><a href="cont.html#cb156-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qexp</span>(<span class="fl">0.9</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
+<span id="cb156-3"><a href="cont.html#cb156-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 4.605</span></span></code></pre></div>
 <pre><code>## [1] 4.60517</code></pre>
 </div>
 <div id="distribución-gamma-gammaalpha" class="section level2 hasAnchor" number="5.5">
@@ -1336,8 +1336,8 @@ f(x; \alpha, \beta) = \frac{1}{\Gamma(\alpha) \beta^\alpha} \, x^{\alpha - 1} e^
 <p><span class="math display">\[
 P(X \leq 6), \quad X \sim \text{Gamma}(\alpha = 3, \beta = 2)
 \]</span></p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="cont.html#cb163-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pgamma</span>(<span class="dv">6</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
-<span id="cb163-2"><a href="cont.html#cb163-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.5768</span></span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="cont.html#cb158-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pgamma</span>(<span class="dv">6</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
+<span id="cb158-2"><a href="cont.html#cb158-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.5768</span></span></code></pre></div>
 <pre><code>## [1] 0.5768099</code></pre>
 <p><em>- 2. Valor crítico (probabilidad inversa) con <code>qgamma</code></em></p>
 <p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
@@ -1348,9 +1348,9 @@ P(X \geq x) = 0.05, \quad X \sim \text{Gamma}(\alpha = 3, \beta = 2)
 <p><span class="math display">\[
 P(X \leq x) = 0.95
 \]</span></p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="cont.html#cb165-1" tabindex="-1"></a><span class="co"># Valor crítico para una cola derecha del 5%</span></span>
-<span id="cb165-2"><a href="cont.html#cb165-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="fl">0.95</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
-<span id="cb165-3"><a href="cont.html#cb165-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 9.4877</span></span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="cont.html#cb160-1" tabindex="-1"></a><span class="co"># Valor crítico para una cola derecha del 5%</span></span>
+<span id="cb160-2"><a href="cont.html#cb160-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qgamma</span>(<span class="fl">0.95</span>, <span class="at">shape =</span> <span class="dv">3</span>, <span class="at">scale =</span> <span class="dv">2</span>)</span>
+<span id="cb160-3"><a href="cont.html#cb160-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 9.4877</span></span></code></pre></div>
 <pre><code>## [1] 12.59159</code></pre>
 </div>
 <div id="distribución-beta-mathsfbetaalpha-beta" class="section level2 hasAnchor" number="5.6">
@@ -1409,8 +1409,8 @@ f(x) =
 <p><strong>Ejemplos de cálculo con R</strong></p>
 <p><em>1: Cálculo de la Probabilidad directa</em></p>
 <p>Sea <span class="math inline">\(X \sim \text{Beta}(2, 5)\)</span>. Calcular <span class="math inline">\(P(X \leq 0.3)\)</span>:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="cont.html#cb167-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
-<span id="cb167-2"><a href="cont.html#cb167-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.4718</span></span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="cont.html#cb162-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">pbeta</span>(<span class="fl">0.3</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
+<span id="cb162-2"><a href="cont.html#cb162-2" tabindex="-1"></a>p  <span class="co"># Resultado ≈ 0.4718</span></span></code></pre></div>
 <pre><code>## [1] 0.579825</code></pre>
 <p><em>-2: Valor crítico (probabilidad inversa)</em></p>
 <p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
@@ -1418,9 +1418,9 @@ f(x) =
 P(X \leq x) = 0.90, \quad X \sim \text{Beta}(2, 5)
 \]</span></p>
 <p>Para obtener este valor usamos la función <code>qbeta()</code> en R, que nos devuelve el cuantil correspondiente a la probabilidad acumulada deseada.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="cont.html#cb169-1" tabindex="-1"></a><span class="co"># Cálculo del percentil 90 para Beta(2, 5)</span></span>
-<span id="cb169-2"><a href="cont.html#cb169-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.90</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
-<span id="cb169-3"><a href="cont.html#cb169-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 0.6217</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="cont.html#cb164-1" tabindex="-1"></a><span class="co"># Cálculo del percentil 90 para Beta(2, 5)</span></span>
+<span id="cb164-2"><a href="cont.html#cb164-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.90</span>, <span class="at">shape1 =</span> <span class="dv">2</span>, <span class="at">shape2 =</span> <span class="dv">5</span>)</span>
+<span id="cb164-3"><a href="cont.html#cb164-3" tabindex="-1"></a>x  <span class="co"># Resultado ≈ 0.6217</span></span></code></pre></div>
 <pre><code>## [1] 0.5103163</code></pre>
 </div>
 <div id="distribución-de-pareto" class="section level2 hasAnchor" number="5.7">
@@ -1474,7 +1474,7 @@ F(x) = P(X \leq x) = 1 - \left( \frac{x_m}{x} \right)^{\alpha}, \quad x \geq x_m
 </ul>
 <p><strong>Ejemplos de cálculo con R</strong></p>
 <p>- 1: Densidad</p>
-<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <p><em>- 2: Cáclulo de probabilidad directa</em></p>
 <p>Queremos calcular la probabilidad de que una variable aleatoria <span class="math inline">\(X \sim \text{Pareto}(x_m = 1, \alpha = 2)\)</span> tome un valor menor o igual que 3, es decir:</p>
 <p><span class="math display">\[
@@ -1484,13 +1484,13 @@ P(X \leq 3)
 <p><span class="math display">\[
 F(x) = 1 - \left( \frac{x_m}{x} \right)^\alpha
 \]</span></p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="cont.html#cb171-1" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb171-2"><a href="cont.html#cb171-2" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb171-3"><a href="cont.html#cb171-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb171-4"><a href="cont.html#cb171-4" tabindex="-1"></a></span>
-<span id="cb171-5"><a href="cont.html#cb171-5" tabindex="-1"></a><span class="co"># Probabilidad acumulada</span></span>
-<span id="cb171-6"><a href="cont.html#cb171-6" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (xm <span class="sc">/</span> x)<span class="sc">^</span>alpha</span>
-<span id="cb171-7"><a href="cont.html#cb171-7" tabindex="-1"></a>F  <span class="co"># Resultado ≈ 0.8889</span></span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="cont.html#cb166-1" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb166-2"><a href="cont.html#cb166-2" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb166-3"><a href="cont.html#cb166-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb166-4"><a href="cont.html#cb166-4" tabindex="-1"></a></span>
+<span id="cb166-5"><a href="cont.html#cb166-5" tabindex="-1"></a><span class="co"># Probabilidad acumulada</span></span>
+<span id="cb166-6"><a href="cont.html#cb166-6" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (xm <span class="sc">/</span> x)<span class="sc">^</span>alpha</span>
+<span id="cb166-7"><a href="cont.html#cb166-7" tabindex="-1"></a>F  <span class="co"># Resultado ≈ 0.8889</span></span></code></pre></div>
 <pre><code>## [1] 0.8888889</code></pre>
 <p><em>-3: Cálculo de probabilidad inversa</em></p>
 <p>Queremos encontrar el valor <span class="math inline">\(x\)</span> tal que:</p>
@@ -1503,14 +1503,14 @@ Recordamos que:</p>
 F(x) = 1 - \left( \frac{x_m}{x} \right)^\alpha \quad \Rightarrow \quad x = x_m \cdot (1 - p)^{-1/\alpha}
 \]</span></p>
 <p>Donde <span class="math inline">\(p\)</span> es la probabilidad acumulada a la izquierda.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="cont.html#cb173-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
-<span id="cb173-2"><a href="cont.html#cb173-2" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb173-3"><a href="cont.html#cb173-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb173-4"><a href="cont.html#cb173-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.05</span>  <span class="co"># P(X ≥ x) = 0.05 → P(X ≤ x) = 0.95</span></span>
-<span id="cb173-5"><a href="cont.html#cb173-5" tabindex="-1"></a></span>
-<span id="cb173-6"><a href="cont.html#cb173-6" tabindex="-1"></a><span class="co"># Cálculo del valor crítico</span></span>
-<span id="cb173-7"><a href="cont.html#cb173-7" tabindex="-1"></a>x_critico <span class="ot">&lt;-</span> xm <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> alpha)</span>
-<span id="cb173-8"><a href="cont.html#cb173-8" tabindex="-1"></a>x_critico  <span class="co"># Resultado ≈ 4.4721</span></span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="cont.html#cb168-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb168-2"><a href="cont.html#cb168-2" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb168-3"><a href="cont.html#cb168-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb168-4"><a href="cont.html#cb168-4" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.05</span>  <span class="co"># P(X ≥ x) = 0.05 → P(X ≤ x) = 0.95</span></span>
+<span id="cb168-5"><a href="cont.html#cb168-5" tabindex="-1"></a></span>
+<span id="cb168-6"><a href="cont.html#cb168-6" tabindex="-1"></a><span class="co"># Cálculo del valor crítico</span></span>
+<span id="cb168-7"><a href="cont.html#cb168-7" tabindex="-1"></a>x_critico <span class="ot">&lt;-</span> xm <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> alpha)</span>
+<span id="cb168-8"><a href="cont.html#cb168-8" tabindex="-1"></a>x_critico  <span class="co"># Resultado ≈ 4.4721</span></span></code></pre></div>
 <pre><code>## [1] 1.025978</code></pre>
 </div>
 <div id="resumen-de-las-distribuciones-continuas" class="section level2 hasAnchor" number="5.8">
