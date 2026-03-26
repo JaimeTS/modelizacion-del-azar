@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tema 2 Probabilidad | modelizacion-del-azar</title>
+  <title>Tema 2 Probabilidad | modelizacion-del-azar.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tema 2 Probabilidad | modelizacion-del-azar" />
+  <meta property="og:title" content="Tema 2 Probabilidad | modelizacion-del-azar.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tema 2 Probabilidad | modelizacion-del-azar" />
+  <meta name="twitter:title" content="Tema 2 Probabilidad | modelizacion-del-azar.knit" />
   
   
   
@@ -56,6 +56,8 @@
 <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -250,24 +252,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="cont.html"><a href="cont.html#resumen-de-las-distribuciones-continuas"><i class="fa fa-check"></i><b>5.8</b> Resumen de las distribuciones continuas</a></li>
 <li class="chapter" data-level="5.9" data-path="cont.html"><a href="cont.html#funciones-disponibles-en-r-para-distribuciones-continuas"><i class="fa fa-check"></i><b>5.9</b> Funciones disponibles en R para distribuciones continuas</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="conv.html"><a href="conv.html"><i class="fa fa-check"></i><b>6</b> Relación entre Distribuciones. Convergencia en Distribución</a>
+<li class="chapter" data-level="6" data-path="conv.html"><a href="conv.html"><i class="fa fa-check"></i><b>6</b> Convergencia: cuando el azar se vuelve predecible</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>6.1</b> Introducción</a></li>
-<li class="chapter" data-level="6.2" data-path="conv.html"><a href="conv.html#relaciones-entre-distribuciones"><i class="fa fa-check"></i><b>6.2</b> Relaciones entre distribuciones</a>
+<li class="chapter" data-level="6.1" data-path="02-probabilidad.html"><a href="#intuici%C3%B3n-del-caos-al-orden"><i class="fa fa-check"></i><b>6.1</b> Intuición: del caos al orden</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="02-probabilidad.html"><a href="#aproximaciones-cl%C3%A1sicas"><i class="fa fa-check"></i><b>6.2.1</b> Aproximaciones clásicas</a></li>
-<li class="chapter" data-level="6.2.2" data-path="02-probabilidad.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.2.2</b> Condiciones de validez para cada aproximación</a></li>
+<li class="chapter" data-level="6.1.1" data-path="02-probabilidad.html"><a href="#qu%C3%A9-significa-converger"><i class="fa fa-check"></i><b>6.1.1</b> ¿Qué significa converger?</a></li>
+<li class="chapter" data-level="6.1.2" data-path="conv.html"><a href="conv.html#ejemplo-lanzamiento-de-moneda"><i class="fa fa-check"></i><b>6.1.2</b> Ejemplo: lanzamiento de moneda</a></li>
+<li class="chapter" data-level="6.1.3" data-path="conv.html"><a href="conv.html#ejemplo-media-muestral"><i class="fa fa-check"></i><b>6.1.3</b> Ejemplo: media muestral</a></li>
+<li class="chapter" data-level="6.1.4" data-path="conv.html"><a href="conv.html#interpretaciones-de-la-convergencia"><i class="fa fa-check"></i><b>6.1.4</b> Interpretaciones de la convergencia</a></li>
+<li class="chapter" data-level="6.1.5" data-path="conv.html"><a href="conv.html#ejercicio-sencillo"><i class="fa fa-check"></i><b>6.1.5</b> Ejercicio sencillo</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="02-probabilidad.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.3</b> Convergencia en distribución</a>
+<li class="chapter" data-level="6.2" data-path="conv.html"><a href="conv.html#tipos-de-convergencia"><i class="fa fa-check"></i><b>6.2</b> Tipos de convergencia</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="02-probabilidad.html"><a href="#tipos-de-convergencia-y-definici%C3%B3n-formal"><i class="fa fa-check"></i><b>6.3.1</b> Tipos de convergencia y definición formal</a></li>
-<li class="chapter" data-level="6.3.2" data-path="02-probabilidad.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.2</b> Teorema Central del Límite (TCL)</a></li>
-<li class="chapter" data-level="6.3.3" data-path="02-probabilidad.html"><a href="#convergencia-de-distribuciones-emp%C3%ADricas-f_n"><i class="fa fa-check"></i><b>6.3.3</b> Convergencia de distribuciones empíricas <span class="math inline">\(F_n\)</span></a></li>
-<li class="chapter" data-level="6.3.4" data-path="conv.html"><a href="conv.html#ejemplos-y-visualizaciones"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplos y visualizaciones</a></li>
-<li class="chapter" data-level="6.3.5" data-path="02-probabilidad.html"><a href="#aplicaciones-en-econom%C3%ADa-empresa-y-an%C3%A1lisis-de-datos"><i class="fa fa-check"></i><b>6.3.5</b> Aplicaciones en Economía, empresa y análisis de datos</a></li>
+<li class="chapter" data-level="6.2.1" data-path="02-probabilidad.html"><a href="#introducci%C3%B3n-1"><i class="fa fa-check"></i><b>6.2.1</b> Introducción</a></li>
+<li class="chapter" data-level="6.2.2" data-path="conv.html"><a href="conv.html#convergencia-casi-segura"><i class="fa fa-check"></i><b>6.2.2</b> Convergencia casi segura</a></li>
+<li class="chapter" data-level="6.2.3" data-path="02-probabilidad.html"><a href="#convergencia-en-media-cuadr%C3%A1tica"><i class="fa fa-check"></i><b>6.2.3</b> Convergencia en media cuadrática</a></li>
+<li class="chapter" data-level="6.2.4" data-path="conv.html"><a href="conv.html#convergencia-en-probabilidad"><i class="fa fa-check"></i><b>6.2.4</b> Convergencia en probabilidad</a></li>
+<li class="chapter" data-level="6.2.5" data-path="02-probabilidad.html"><a href="#convergencia-en-distribuci%C3%B3n"><i class="fa fa-check"></i><b>6.2.5</b> Convergencia en distribución</a></li>
+<li class="chapter" data-level="6.2.6" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-entre-los-tipos-de-convergencia"><i class="fa fa-check"></i><b>6.2.6</b> Relación entre los tipos de convergencia</a></li>
+<li class="chapter" data-level="6.2.7" data-path="02-probabilidad.html"><a href="#ejercicio-gu%C3%ADa-una-misma-sucesi%C3%B3n-vista-desde-varios-tipos-de-convergencia"><i class="fa fa-check"></i><b>6.2.7</b> Ejercicio guía: una misma sucesión vista desde varios tipos de convergencia</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="02-probabilidad.html"><a href="#ejercicios-pr%C3%A1cticos"><i class="fa fa-check"></i><b>6.4</b> Ejercicios prácticos</a></li>
-<li class="chapter" data-level="6.5" data-path="conv.html"><a href="conv.html#ejercicio-guiado-en-r"><i class="fa fa-check"></i><b>6.5</b> Ejercicio guiado en R</a></li>
+<li class="chapter" data-level="6.3" data-path="conv.html"><a href="conv.html#resultados-fundamentales-de-la-convergencia"><i class="fa fa-check"></i><b>6.3</b> Resultados fundamentales de la convergencia</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="02-probabilidad.html"><a href="#ley-d%C3%A9bil-de-los-grandes-n%C3%BAmeros-ldgn"><i class="fa fa-check"></i><b>6.3.1</b> Ley débil de los grandes números (LDGN)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="02-probabilidad.html"><a href="#ley-fuerte-de-los-grandes-n%C3%BAmeros-lfgn"><i class="fa fa-check"></i><b>6.3.2</b> Ley fuerte de los grandes números (LFGN)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="02-probabilidad.html"><a href="#teorema-central-del-l%C3%ADmite-tcl"><i class="fa fa-check"></i><b>6.3.3</b> Teorema Central del Límite (TCL)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="02-probabilidad.html"><a href="#ejemplo-sencillo-proporci%C3%B3n-muestral"><i class="fa fa-check"></i><b>6.3.4</b> Ejemplo sencillo: proporción muestral</a></li>
+<li class="chapter" data-level="6.3.5" data-path="02-probabilidad.html"><a href="#representaci%C3%B3n-gr%C3%A1fica-intuici%C3%B3n-del-tcl"><i class="fa fa-check"></i><b>6.3.5</b> Representación gráfica (intuición del TCL)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="conv.html"><a href="conv.html#aproximaciones-entre-distribuciones"><i class="fa fa-check"></i><b>6.4</b> Aproximaciones entre distribuciones</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="02-probabilidad.html"><a href="#por-qu%C3%A9-aproximar"><i class="fa fa-check"></i><b>6.4.1</b> ¿Por qué aproximar?</a></li>
+<li class="chapter" data-level="6.4.2" data-path="02-probabilidad.html"><a href="#aproximaci%C3%B3n-binomial-normal"><i class="fa fa-check"></i><b>6.4.2</b> Aproximación binomial → normal</a></li>
+<li class="chapter" data-level="6.4.3" data-path="02-probabilidad.html"><a href="#aproximaci%C3%B3n-binomial-poisson"><i class="fa fa-check"></i><b>6.4.3</b> Aproximación binomial → Poisson</a></li>
+<li class="chapter" data-level="6.4.4" data-path="02-probabilidad.html"><a href="#aproximaci%C3%B3n-poisson-normal"><i class="fa fa-check"></i><b>6.4.4</b> Aproximación Poisson → normal</a></li>
+<li class="chapter" data-level="6.4.5" data-path="02-probabilidad.html"><a href="#condiciones-de-validez-para-cada-aproximaci%C3%B3n"><i class="fa fa-check"></i><b>6.4.5</b> Condiciones de validez para cada aproximación</a></li>
+<li class="chapter" data-level="6.4.6" data-path="02-probabilidad.html"><a href="#aplicaciones-pr%C3%A1cticas-de-las-aproximaciones"><i class="fa fa-check"></i><b>6.4.6</b> Aplicaciones prácticas de las aproximaciones</a></li>
+<li class="chapter" data-level="6.4.7" data-path="conv.html"><a href="conv.html#ejercicio-sencillo-1"><i class="fa fa-check"></i><b>6.4.7</b> Ejercicio sencillo</a></li>
+<li class="chapter" data-level="6.4.8" data-path="02-probabilidad.html"><a href="#relaci%C3%B3n-con-el-teorema-central-del-l%C3%ADmite"><i class="fa fa-check"></i><b>6.4.8</b> Relación con el Teorema Central del Límite</a></li>
+<li class="chapter" data-level="6.4.9" data-path="conv.html"><a href="conv.html#idea-clave-del-apartado"><i class="fa fa-check"></i><b>6.4.9</b> Idea clave del apartado</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="02-probabilidad.html"><a href="#aplicaciones-de-la-teor%C3%ADa-a-la-toma-de-decisiones"><i class="fa fa-check"></i><b>6.5</b> Aplicaciones: de la teoría a la toma de decisiones</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="02-probabilidad.html"><a href="#simulaci%C3%B3n-y-m%C3%A9todo-de-monte-carlo"><i class="fa fa-check"></i><b>6.5.1</b> Simulación y método de Monte Carlo</a></li>
+<li class="chapter" data-level="6.5.2" data-path="02-probabilidad.html"><a href="#estimaci%C3%B3n-de-par%C3%A1metros"><i class="fa fa-check"></i><b>6.5.2</b> Estimación de parámetros</a></li>
+<li class="chapter" data-level="6.5.3" data-path="conv.html"><a href="conv.html#toma-de-decisiones-bajo-incertidumbre"><i class="fa fa-check"></i><b>6.5.3</b> Toma de decisiones bajo incertidumbre</a></li>
+<li class="chapter" data-level="6.5.4" data-path="02-probabilidad.html"><a href="#visualizaci%C3%B3n-de-la-convergencia"><i class="fa fa-check"></i><b>6.5.4</b> Visualización de la convergencia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="conv.html"><a href="conv.html#ejercicios-finales"><i class="fa fa-check"></i><b>6.6</b> Ejercicios finales</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="02-probabilidad.html"><a href="#ejercicio-1.-aproximaci%C3%B3n-de-la-binomial-por-la-distribuci%C3%B3n-de-poisson"><i class="fa fa-check"></i><b>6.6.1</b> Ejercicio 1. Aproximación de la binomial por la distribución de Poisson</a></li>
+<li class="chapter" data-level="6.6.2" data-path="02-probabilidad.html"><a href="#ejercicio-2.-aproximaci%C3%B3n-de-la-binomial-por-la-distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>6.6.2</b> Ejercicio 2. Aproximación de la binomial por la distribución normal</a></li>
+<li class="chapter" data-level="6.6.3" data-path="02-probabilidad.html"><a href="#ejercicio-3.-jerarqu%C3%ADa-entre-tipos-de-convergencia"><i class="fa fa-check"></i><b>6.6.3</b> Ejercicio 3. Jerarquía entre tipos de convergencia</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios</a>
 <ul>
@@ -350,13 +387,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Ejemplo:</strong> Se lanza un dado y se observa el número que aparece. El espacio muestral es: <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span><br />
 - <span class="math inline">\(A = \{2, 4, 6\}\)</span>: suceso compuesto (“salir número par”).<br />
 - <span class="math inline">\(B = \{3\}\)</span>: suceso elemental (“salir un 3”).</p>
-<p><img src="02-probabilidad_files/figure-html/diagrama-omega-A-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-omega-A-1.png" width="672" /></p>
 <p><strong>Casos particulares de de sucesos</strong></p>
 <ul>
 <li><strong>Suceso seguro</strong>: contiene todos los resultados posibles (todos los elementos del espacio muestral). Siempre ocurre. <span class="math inline">\(A = \Omega\)</span>.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:diagrama-suceso-seguro"></span>
-<img src="02-probabilidad_files/figure-html/diagrama-suceso-seguro-1.png" alt="Suceso seguro: A = Ω" width="60%" />
+<img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-seguro-1.png" alt="Suceso seguro: A = Ω" width="60%" />
 <p class="caption">
 Figure 2.1: Suceso seguro: A = Ω
 </p>
@@ -364,15 +401,15 @@ Figure 2.1: Suceso seguro: A = Ω
 <ul>
 <li><strong>Suceso imposible</strong>: no contiene ningún resultado. Nunca ocurre. <span class="math inline">\(A = \emptyset\)</span>.</li>
 </ul>
-<p><img src="02-probabilidad_files/figure-html/diagrama-suceso-imposible-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/diagrama-suceso-imposible-1.png" width="672" /></p>
 <ul>
 <li><strong>Sucesos incompatibles</strong>: No pueden ocurrir a la vez. <span class="math inline">\(A \cap B = \emptyset\)</span>.</li>
 </ul>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-1-1.png" width="60%" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-31-1.png" width="60%" /></p>
 <ul>
 <li><strong>Sucesos compatibles</strong>: Pueden ocurrir simultáneamente. <span class="math inline">\(A \cap B \neq \emptyset\)</span>.</li>
 </ul>
-<p><img src="02-probabilidad_files/figure-html/sucesos-compatibles-1.png" width="60%" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/sucesos-compatibles-1.png" width="60%" /></p>
 </div>
 <div id="operaciones-con-sucesos" class="section level3 hasAnchor" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Operaciones con sucesos<a href="prob.html#operaciones-con-sucesos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -381,7 +418,7 @@ Figure 2.1: Suceso seguro: A = Ω
 <li><strong>Unión</strong>: El suceso <span class="math inline">\(A \cup B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, o ambos.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:union-sucesos"></span>
-<img src="02-probabilidad_files/figure-html/union-sucesos-1.png" alt="Unión de sucesos: A ∪ B" width="60%" />
+<img src="modelizacion-del-azar_files/figure-html/union-sucesos-1.png" alt="Unión de sucesos: A ∪ B" width="60%" />
 <p class="caption">
 Figure 2.2: Unión de sucesos: A ∪ B
 </p>
@@ -390,17 +427,17 @@ Figure 2.2: Unión de sucesos: A ∪ B
 <li><strong>Intersección</strong>: El suceso <span class="math inline">\(A \cap B\)</span> ocurre solo si ocurren ambos sucesos a la vez.</li>
 </ul>
 <pre><code>## Loading required package: futile.logger</code></pre>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <ul>
 <li><strong>Complementario</strong>: El suceso <span class="math inline">\(\overline{A}\)</span> (también denotado <span class="math inline">\(A^c\)</span>) ocurre cuando no ocurre el suceso <span class="math inline">\(A\)</span>.</li>
 </ul>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <ul>
 <li><strong>Diferencia</strong>: El suceso <span class="math inline">\(A - B\)</span> ocurre si ocurre <span class="math inline">\(A\)</span> pero no ocurre <span class="math inline">\(B\)</span>.</li>
 </ul>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 <p>Por analogía, el suceso <span class="math inline">\(B-A\)</span> ocurre si ocurre <span class="math inline">\(B\)</span> pero no ocurre <span class="math inline">\(A\)</span>.</p>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p><strong>Ejemplo:</strong>Dado el espacio muestral <span class="math inline">\(\Omega = \{1, 2, 3, 4, 5, 6\}\)</span>, y los sucesos:</p>
 <p>- <span class="math inline">\(A = \{2, 4, 6\}\)</span></p>
 <p>- <span class="math inline">\(B = \{1, 2, 3, 4\}\)</span></p>
@@ -431,12 +468,12 @@ Figure 2.2: Unión de sucesos: A ∪ B
 <li>Primera ley de Morgan: <span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B}\)</span></li>
 </ol>
 <p>La <strong>primera ley</strong> indica que todo lo que <strong>no pertenece a la unión</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cup B}\)</span>, coincide con lo que está <strong>fuera de</strong> <span class="math inline">\(A\)</span> y <strong>fuera de</strong> <span class="math inline">\(B\)</span> simultáneamente.</p>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Segunda Ley de Morgan: <span class="math inline">\(\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
 </ol>
 <p>La <strong>segunda ley</strong> señala que todo lo que <strong>no pertenece a la intersección</strong> de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, es decir, <span class="math inline">\(\overline{A \cap B}\)</span>, equivale a lo que <strong>no está en</strong> <span class="math inline">\(A\)</span> o <strong>no está en</strong> <span class="math inline">\(B\)</span>.</p>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 <p>Estas leyes nos permiten transformar expresiones con complementos de conjuntos compuestos en otras más manejables, lo cual resulta especialmente útil al calcular probabilidades y trabajar con eventos complejos.</p>
 <p>###Ejercicios</p>
 <ol style="list-style-type: decimal">
@@ -720,8 +757,8 @@ P(B_i \mid A) = \frac{P(B_i) \cdot P(A \mid B_i)}{\sum_{j=1}^n P(B_j) \cdot P(A 
 <li>Entre los no fumadores, el <strong>40% son hombres</strong>.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:arbol-bayes"></span>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-529caf7c500a6f2c59b6" style="width:80%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-529caf7c500a6f2c59b6">{"x":{"diagram":"\ndigraph bayes_tree {\n  graph [rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightYellow]\n\n  Inicio -> Fuma [label = \"0.4\"]\n  Inicio -> NoFuma [label = \"0.6\"]\n  Fuma -> HombreF [label = \"0.75\"]\n  Fuma -> MujerF [label = \"0.25\"]\n  NoFuma -> HombreNF [label = \"0.4\"]\n  NoFuma -> MujerNF [label = \"0.6\"]\n\n  Inicio [label=\"Inicio\", fillcolor=LightBlue]\n  Fuma [label=\"Fuma\"]\n  NoFuma [label=\"No fuma\"]\n  HombreF [label=\"Hombre\"]\n  MujerF [label=\"Mujer\"]\n  HombreNF [label=\"Hombre\"]\n  MujerNF [label=\"Mujer\"]\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-27bb5ede33703c63c26c" style="width:80%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-27bb5ede33703c63c26c">{"x":{"diagram":"\ndigraph bayes_tree {\n  graph [rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightYellow]\n\n  Inicio -> Fuma [label = \"0.4\"]\n  Inicio -> NoFuma [label = \"0.6\"]\n  Fuma -> HombreF [label = \"0.75\"]\n  Fuma -> MujerF [label = \"0.25\"]\n  NoFuma -> HombreNF [label = \"0.4\"]\n  NoFuma -> MujerNF [label = \"0.6\"]\n\n  Inicio [label=\"Inicio\", fillcolor=LightBlue]\n  Fuma [label=\"Fuma\"]\n  NoFuma [label=\"No fuma\"]\n  HombreF [label=\"Hombre\"]\n  MujerF [label=\"Mujer\"]\n  HombreNF [label=\"Hombre\"]\n  MujerNF [label=\"Mujer\"]\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 2.3: Diagrama de árbol para el Teorema de Bayes
 </p>
@@ -866,7 +903,7 @@ P(A \mid S) = \frac{0.3 \cdot 0.9}{0.3 \cdot 0.9 + 0.7 \cdot 0.6} = \frac{0.27}{
 <p>Esto ocurre porque el evento “ser spam” es poco frecuente (solo el 10% de todos los correos). En estos casos, incluso una pequeña tasa de error puede provocar que muchos correos legítimos sean marcados erróneamente como spam (falsos positivos), y eso hace que la probabilidad de que un correo marcado como spam sea realmente spam no sea tan alta como cabría esperar.</p>
 <p><strong>Conclusión clave:</strong> El valor del 53.6% muestra que en contextos con baja prevalencia (como el spam), la probabilidad posterior puede alejarse bastante de la sensibilidad del test. Es decir, tener un buen clasificador no garantiza una alta fiabilidad en los positivos si el evento que se intenta detectar es raro. Esto es una consecuencia directa del teorema de Bayes.</p>
 <p><strong>Visualización</strong></p>
-<p><img src="02-probabilidad_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="modelizacion-del-azar_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p>Interpretación del gráfico Barra izquierda (Spam): Mayoritariamente clasificados correctamente como spam (color rojo). Barra derecha (No spam): Un pequeño porcentaje se clasifica erróneamente como spam (falsos positivos).</p>
 <p><strong>✅ Conclusión</strong> Con esta simulación, hemos estimado empíricamente la probabilidad <span class="math inline">\(P(Spam∣Marcado)\)</span>, es decir, la probabilidad de que un correo realmente sea spam si ha sido clasificado como tal. Este valor estará alrededor del 52%, mostrando cómo incluso un buen clasificador puede producir una alta tasa de falsos positivos cuando el evento es poco frecuente.</p>
 </div>
