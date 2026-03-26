@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Modelización del azar y toma de decisiones {#portada .unnumbered}
 
 ![](figures/portada.jpeg)
@@ -29,3 +30,36 @@ El objetivo es introducir los conceptos fundamentales de probabilidad y variable
 Este material está licenciado bajo  
 **Creative Commons Atribución–NoComercial–CompartirIgual 4.0 Internacional**.
 
+=======
+# Modelización del azar y toma de decisiones {#portada .unnumbered}
+
+![](figures/portada.jpeg)
+
+**Autor: Jaime Turrión**
+
+*Edición de 2026*
+
+Estos apuntes están pensados como material de apoyo para la asignatura **Modelización del Azar y Toma de Decisiones**, dirigida a estudiantes de primer curso.
+
+El objetivo es introducir los conceptos fundamentales de probabilidad y variables aleatorias combinando:
+
+\- Explicaciones teóricas claras
+
+\- Ejemplos resueltos paso a paso
+
+\- Simulaciones y visualizaciones con R
+
+*Nota: Estos apuntes están en fase de preparación. Todavía están en desarrollo y se irán introduciendo mejoras a lo largo del curso.*
+
+---
+
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Licencia Creative Commons"
+       style="border-width:0"
+       src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+</a>
+
+Este material está licenciado bajo  
+**Creative Commons Atribución–NoComercial–CompartirIgual 4.0 Internacional**.
+
+>>>>>>> 1b064de29e69253818f9e4edf73c8beb1c564064

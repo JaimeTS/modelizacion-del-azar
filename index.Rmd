@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 site: bookdown::bookdown_site
 documentclass: book
@@ -6,3 +7,13 @@ output:
     split_by: chapter
 ---
 
+=======
+---
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook:
+    split_by: chapter
+---
+
+>>>>>>> 1b064de29e69253818f9e4edf73c8beb1c564064
